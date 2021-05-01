@@ -1,0 +1,1466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/quality_assurance.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Quality Assurance</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Quality Assurance</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="quality-assurance">
+<h1>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="patrole">
+<span id="team-wallaby-patrole"></span><h3>patrole<a class="headerlink" href="#patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.12.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>54fc749ddcf76d0868903ad7ce7fed14a0c1581b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>5c466a2301ecf6471a7f36633ffa994de9a4abf8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tempest">
+<span id="team-wallaby-tempest"></span><h3>tempest<a class="headerlink" href="#tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v27.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-27.0.0.tar.gz">27.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-27.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>771fee43341e104527a82d1b1bfae839cd651761</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-26.1.0.tar.gz">26.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-26.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>271f8201d4d927830d289c34744ca20a92bee33c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-26.0.0.tar.gz">26.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-26.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>f9d31f2c46204abbbef53d3c0ae0f80125878fc9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-patrole">
+<span id="id1"></span><h3>patrole<a class="headerlink" href="#team-victoria-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.10.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>782375db0a478d8772332e98d3de0d00ad35af05</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-tempest">
+<span id="id2"></span><h3>tempest<a class="headerlink" href="#team-victoria-tempest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-25.0.1.tar.gz">25.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-25.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>94a76091f616a4e4a46534b82d4974534d197643</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-25.0.0.tar.gz">25.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-25.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>c8d7a01014d4b82dd9960679db5e77dc31f4d87a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-patrole">
+<span id="id3"></span><h3>patrole<a class="headerlink" href="#team-ussuri-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.9.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>6f0c119f9c36851d39bb95b1390d2aa01e238574</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>5bbdaa4fde46cf3924c4be02b6c5db8bc157e468</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-tempest">
+<span id="id4"></span><h3>tempest<a class="headerlink" href="#team-ussuri-tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v24.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-24.0.0.tar.gz">24.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-24.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>c73e6b11dcc1fcd878ff62e353441a5c8c794c83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-23.0.0.tar.gz">23.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-23.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>d43223773d75d2e82fb33a1281038e611c41d0f3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-patrole">
+<span id="id5"></span><h3>patrole<a class="headerlink" href="#team-train-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.7.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>a5068ba179447a088596a36454849d4e2d8a7cc7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>cb29d64c1b9a0f0e7a39429c84a912ad81d1714d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-tempest">
+<span id="id6"></span><h3>tempest<a class="headerlink" href="#team-train-tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v22.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-22.1.0.tar.gz">22.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-22.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>c93345233e06c173a65a3edcb769c4220386b3bd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-22.0.0.tar.gz">22.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-22.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>13c190d62e4c4596339eeee93eb0425cd525d71f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-21.0.0.tar.gz">21.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-21.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>702b21c1e4350ecf99542d8f1df545adb3f71d75</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-patrole">
+<span id="id7"></span><h3>patrole<a class="headerlink" href="#team-stein-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.5.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>9cd0a43c19516c28a9937f79e9ff53bf87822160</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-tempest">
+<span id="id8"></span><h3>tempest<a class="headerlink" href="#team-stein-tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v20.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>f9d31f2c46204abbbef53d3c0ae0f80125878fc9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-20.0.0.tar.gz">20.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-20.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>a955095f8369e2e15c97a536edc1a9c077208129</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-patrole">
+<span id="id9"></span><h3>patrole<a class="headerlink" href="#team-rocky-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.4.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>9ee07cf523583ffa0b6988de54c8dfe9b7e6e645</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-tempest">
+<span id="id10"></span><h3>tempest<a class="headerlink" href="#team-rocky-tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v19.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-19.0.0.tar.gz">19.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-19.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>8316f962c52b01edc5be466b18e54904e2a1248a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-patrole">
+<span id="id11"></span><h3>patrole<a class="headerlink" href="#team-queens-patrole" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/patrole/v0.3.0.html">patrole</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>b0069835255dc45bbaca7a4e45fe41051b6b4246</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-tempest">
+<span id="id12"></span><h3>tempest<a class="headerlink" href="#team-queens-tempest" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/tempest/v18.0.0.html">tempest</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-18.0.0.tar.gz">18.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-18.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>b9f9f892958be615dad47e740e6329c3046b6dbd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.2.0.tar.gz">17.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>9bd78bcd65c46623b6f04ebdc3efe18375fd296f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.1.0.tar.gz">17.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>fbd26cf12483c9e7bd9587cdc75507a658c48e41</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-patrole">
+<span id="id13"></span><h3>patrole<a class="headerlink" href="#team-pike-patrole" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>45fffa50e0020d4a34b1c3eac4b553522bf5fb35</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/patrole/patrole-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/patrole</p></td>
+<td><p>13ff694f76c0f528552e0b6d1b70cb12e370e26d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-tempest">
+<span id="id14"></span><h3>tempest<a class="headerlink" href="#team-pike-tempest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>ad75393a990e0bd6cfa694d554b43136216db03b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-16.1.0.tar.gz">16.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-16.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>19e20abb9311dc3c786d32418966185085af6a3e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>517c95fcb7f6eb61550039b6bb3c51d2019662ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-tempest">
+<span id="id15"></span><h3>tempest<a class="headerlink" href="#team-ocata-tempest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>8f98c4b60bf06a8c15e8c054848d2440c46077d0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest</p></td>
+<td><p>fba6f756afd15cb09742b7a9f237a4e061dcda70</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-tempest">
+<span id="id16"></span><h3>tempest<a class="headerlink" href="#team-newton-tempest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-13.0.0.tar.gz">13.0.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>ad37086e6a2aec99b81ec5c938782a6a917aeea1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-12.2.0.tar.gz">12.2.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>c59270760a9e44f4c1f2c37bc3a1bb6222cc19b6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-12.1.0.tar.gz">12.1.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>aaff550edab124a744b2888bcf7a7d70d3abfa0c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-12.0.0.tar.gz">12.0.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>aff9cc072bbbb222b09a3411b203c180b493eae8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-tempest">
+<span id="id17"></span><h3>tempest<a class="headerlink" href="#team-mitaka-tempest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-11.0.0.tar.gz">11.0.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>8a86763152e26a006c459613cf1d8b25e0a4c5dd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest/tempest-10.0.0.tar.gz">10.0.0</a></p></td>
+<td></td>
+<td><p>openstack/tempest</p></td>
+<td><p>09a60155435cfb8bfd1edb6eab3d4bec30515b8f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bashate">
+<span id="team-independent-bashate"></span><h3>bashate<a class="headerlink" href="#bashate" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/bashate</p></td>
+<td><p>349e45cb419a435f41586e0ad0ed93d12ba84d14</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/bashate</p></td>
+<td><p>49c5f16d629d0aa5fe4a9f2ff6bc65b79c6ba134</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/bashate/bashate-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/bashate</p></td>
+<td><p>8e303ee19406652bbd7587581b03c9931e75b67d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="devstack-tools">
+<span id="team-independent-devstack-tools"></span><h3>devstack-tools<a class="headerlink" href="#devstack-tools" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>de912aef554f443b93aae2c5a76eacb40eef63ce</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>60fc831b64a5715585216ba173e04f382c9ae6f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>58e562be3a5bc2eaed52813efe2def08882a2cd0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>8a9057a4e2a854f77f8bee2ea3ed1e006fb0a45a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>c5626f3b4bef206c704f4be871526f1907a6a39a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.2.1.tar.gz">0.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>375e772a6e83ef53657c954eae1f1f6676afc403</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>cf9093ec580806d973a11220dd8a87f3d5b95ad7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.4.tar.gz">0.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>1384ec992db4ea1692e66427dfa56edfe9a75528</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.3.tar.gz">0.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>2c8054020bec7f43cb4a7de3ac05a87f3b9d0b83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.2.tar.gz">0.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>dae9f3be8d03feafef4b63a8b19771789d659608</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.1.tar.gz">0.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>dde87e097fca533c8e8b4ca77d9eee528643e4fc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/devstack-tools/devstack-tools-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/devstack-tools</p></td>
+<td><p>3ecd349bfe5127dbd246777c3553c22a09433315</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="eslint-config-openstack">
+<span id="team-independent-eslint-config-openstack"></span><h3>eslint-config-openstack<a class="headerlink" href="#eslint-config-openstack" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>3c9bc333ed891e4a4a9549aa5723f4c0f23168b9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>4549ae61e2ed19659c3d641ebd37ebdf12eb4d7f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>adb1c12b37a9be498094808632cdd49aec0a0570</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>be774d754dbc6032839e96b72f24c471d66088c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.4.tar.gz">1.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>9f4fcab83874420cd4e2d757601c9faea2aef102</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.3.tar.gz">1.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>36d8d9deb98c1da41c0f3b94a1bcb88a2a26b872</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.2.tar.gz">1.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>2c5d458d935b6e96d98a5656386a9f680bccff49</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>835416849ec9ea9e5696745e5defbf0ca90ce44a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/eslint-config-openstack/eslint-config-openstack-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/eslint-config-openstack</p></td>
+<td><p>20b818fbf3e2561ebb7da518460ef98cfd860844</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hacking">
+<span id="team-independent-hacking"></span><h3>hacking<a class="headerlink" href="#hacking" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>dfb09fb05515bdcbd60c3798c995a442d1e6b8df</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>f82f995d022f5e1786460900266dc0e54786eacd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>93e6cd290471f9e58f6d052eea508213a55f98c3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>e664ef421c60ade4c2557e8d7029b81ccb8478a0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>d30425b3d89ed47c9e19f17062d74ed395353a4d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>d5486f9dd3e04f19964c2e48f57cedd26c9474c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>172d34813dfbcbbba68552f7f607483c8f5eca5f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>0a43156fab3ca870334098afd1914b5e0bdbc3e6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>d842b77cab8ea1ac76c006b7d99455c835475549</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.13.0.tar.gz">0.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>e72ce1831aad4947fe07adbb8d55a79b8e16571b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>6be124c025019c04e31dabe58448a69bf21c76fa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>059ee83ad7a938701c9098cfbdf34068f9ef8014</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.3.tar.gz">0.10.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>64ab385e180ae0471aa3e9eb77a0f7f4ed13efb5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.2.tar.gz">0.10.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>bc4b1118e155784bc306c01733375ffec56b89b3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.1.tar.gz">0.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>e25679be7f3b9b2f2bbea6ce5af4fcd69ba2d574</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>ec6048f13558b93653091e83d8d0dc621f3cbefb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.7.tar.gz">0.9.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>d987e18e6978b07f562a01d4b4dc060b05f03a9d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.6.tar.gz">0.9.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>f63394c9a427bdad21bf219135eeb030c2e01145</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.5.tar.gz">0.9.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>3af414c0c9e5c64cb764c0e131a876b22a0553cd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.4.tar.gz">0.9.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>b45ac441395f06399662963a04d84c84470e14a8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.3.tar.gz">0.9.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>4e258c4222d1c9ff06213ba783035802e3bdbc46</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.2.tar.gz">0.9.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>e56eddf55b4e8be9826e8eb968b2893ecab7201b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.1.tar.gz">0.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>2d76161033be1682382d095588eb2ebabb52f992</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>4e300803f2ab44becbe737abdd1459aa026000c9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.8.1.tar.gz">0.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>86ef983ce39ebee9b4426efa296eb427fd2ac852</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>2214bf033bc262934a8fc71033421e0aee82fd14</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.2.tar.gz">0.7.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>00ccb88d61cf5c6dda5c07a16be4a93b7fd6351e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.1.tar.gz">0.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>af33512bf3bd7fb7a4934254ae9710a9d64c3a36</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>6e1404cb221190645c7ef66e8d77e3402cba01eb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.6.tar.gz">0.5.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>ce26036d816a4e2bd99c73c23fe794b4fc5a0a67</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.5.tar.gz">0.5.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>87b6b5b7ddbf603817fdbfb751464fa8576a40a4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.4.tar.gz">0.5.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>99ecd73f4711d2a53829d7a5e7c61494d2f6ec38</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.3.tar.gz">0.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>e28296ed27c7aa355f7be8cea7dc949d2cebf8da</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.2.tar.gz">0.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>54b008fafeb2aa7e95e1d14bb075c3961e797ce3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.1.tar.gz">0.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>5e64a3a3774f04e2a29299698fdc3b4c72fa8040</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/hacking/hacking-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/hacking</p></td>
+<td><p>4e90f08824bc947b8fc968b19ff1a3729ee6a222</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="karma-subunit-reporter">
+<span id="team-independent-karma-subunit-reporter"></span><h3>karma-subunit-reporter<a class="headerlink" href="#karma-subunit-reporter" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/karma-subunit-reporter/karma-subunit-reporter-0.0.4.tar.gz">0.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/karma-subunit-reporter/karma-subunit-reporter-0.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/karma-subunit-reporter</p></td>
+<td><p>9d30bc6a28d60ad75138b18ee46931628f58e2bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/karma-subunit-reporter/karma-subunit-reporter-0.0.3.tar.gz">0.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/karma-subunit-reporter/karma-subunit-reporter-0.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/karma-subunit-reporter</p></td>
+<td><p>45c359feea1e40ed3a6c4c38462dc8d9ac51cc3a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-testr">
+<span id="team-independent-os-testr"></span><h3>os-testr<a class="headerlink" href="#os-testr" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>248dc815d087e7f95cf318d8c336943c16110231</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>414bbf6d85550d0146f0885c1f5242e753471a81</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>7dd678e3720c326afb3ca7adfd01ec7324d5f5c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.2.tar.gz">0.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>e84d06292b3ab0600a0aeaf85dfb012652ec0b2e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.1.tar.gz">0.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>07e0b06f88b588aa579660264c78fd20fc9e0eab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>0de62e38e6c833471bee690c4e5a0375ee609fca</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>e5e11dca2ed106fc24af4f814a1176e2a33b4c7d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>29c64b1287222f98b1deb231ec1aa0ec2a085722</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>befba5c1116f9a30b53cdf47cc01e7c99c3fe4ae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.2.tar.gz">0.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>65e1e1867c30fc70e4963df7f5bd9a15acf54a68</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.1.tar.gz">0.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>d577844b7bc9d7fd25d11affe3e17609a843d9b2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>368a2553cd3e309445a58b129a74c8751fd3e5f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>5a739f9ac0536cf9830d1c0682182c966abb4c8f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>16330c052656deccb8cea89f2bc84542c38a7603</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-testr/os-testr-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-testr</p></td>
+<td><p>78f9371161c311f3f2f730f118b73aa8370a5b70</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="qinling.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Qinling"></i></a>
+          
+          
+            <a href="rally.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Rally"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Quality Assurance</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#patrole">patrole</a></li>
+<li><a class="reference internal" href="#tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-victoria-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-ussuri-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-train-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-stein-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-rocky-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-queens-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-patrole">patrole</a></li>
+<li><a class="reference internal" href="#team-pike-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-tempest">tempest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#bashate">bashate</a></li>
+<li><a class="reference internal" href="#devstack-tools">devstack-tools</a></li>
+<li><a class="reference internal" href="#eslint-config-openstack">eslint-config-openstack</a></li>
+<li><a class="reference internal" href="#hacking">hacking</a></li>
+<li><a class="reference internal" href="#karma-subunit-reporter">karma-subunit-reporter</a></li>
+<li><a class="reference internal" href="#os-testr">os-testr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/quality_assurance.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+</html>

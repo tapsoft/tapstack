@@ -1,0 +1,3635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/sahara.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Sahara</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Sahara</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="sahara">
+<h1>Sahara<a class="headerlink" href="#sahara" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-saharaclient">
+<span id="team-wallaby-python-saharaclient"></span><h3>python-saharaclient<a class="headerlink" href="#python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/wallaby.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>401e663f6791bfb813c75f1acba40f1fb4db196c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-sahara">
+<span id="id1"></span><h3>sahara<a class="headerlink" href="#team-wallaby-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/wallaby.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>f18611595861d82d27d9d8322215784ed9d0ee31</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-dashboard">
+<span id="team-wallaby-sahara-dashboard"></span><h3>sahara-dashboard<a class="headerlink" href="#sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/wallaby.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>084b61a636789ec32ddc9d34f34fc4ab7fb7ec0a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-extra">
+<span id="team-wallaby-sahara-extra"></span><h3>sahara-extra<a class="headerlink" href="#sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>cf5762829e5ac2f348d793f950f72dc234ce785e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-image-elements">
+<span id="team-wallaby-sahara-image-elements"></span><h3>sahara-image-elements<a class="headerlink" href="#sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>ded80db2667438313bab6d448d19ef2305f2e527</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-ambari">
+<span id="team-wallaby-sahara-plugin-ambari"></span><h3>sahara-plugin-ambari<a class="headerlink" href="#sahara-plugin-ambari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-ambari/wallaby.html">sahara-plugin-ambari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-ambari</p></td>
+<td><p>a02327853d27e653e481456ad3699c0da12549b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-cdh">
+<span id="team-wallaby-sahara-plugin-cdh"></span><h3>sahara-plugin-cdh<a class="headerlink" href="#sahara-plugin-cdh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-cdh/wallaby.html">sahara-plugin-cdh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>c3ba70309809ce925451a96648156420b89363a0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-mapr">
+<span id="team-wallaby-sahara-plugin-mapr"></span><h3>sahara-plugin-mapr<a class="headerlink" href="#sahara-plugin-mapr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-mapr/wallaby.html">sahara-plugin-mapr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>f9c6df0c6d4c6a34318f3c032416676ea0d4394c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-spark">
+<span id="team-wallaby-sahara-plugin-spark"></span><h3>sahara-plugin-spark<a class="headerlink" href="#sahara-plugin-spark" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-spark/wallaby.html">sahara-plugin-spark</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-spark</p></td>
+<td><p>31fc4cbef8416928d3aee7270aedb6448ce1d325</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-storm">
+<span id="team-wallaby-sahara-plugin-storm"></span><h3>sahara-plugin-storm<a class="headerlink" href="#sahara-plugin-storm" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-storm/wallaby.html">sahara-plugin-storm</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-storm</p></td>
+<td><p>c1237046988eb6db33f5fb6691276ef01ed85870</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-plugin-vanilla">
+<span id="team-wallaby-sahara-plugin-vanilla"></span><h3>sahara-plugin-vanilla<a class="headerlink" href="#sahara-plugin-vanilla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-vanilla/wallaby.html">sahara-plugin-vanilla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-vanilla</p></td>
+<td><p>07e627e3e8290823b63dea154ff32c98741c6f9e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara-tests">
+<span id="team-wallaby-sahara-tests"></span><h3>sahara-tests<a class="headerlink" href="#sahara-tests" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.13.0.tar.gz">0.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>98063d3fd93ce77cb3ecbbd33868bbe5dd3a6865</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>edcd88782ba5221cf804a3c4b5a3c8bb5ef44b67</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-saharaclient">
+<span id="id2"></span><h3>python-saharaclient<a class="headerlink" href="#team-victoria-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/victoria.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.2.1.tar.gz">3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>a9fee07108c432e20a3ca7760541d4fcb4f14811</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>c2eb453deb9aae28a9892f63a30d8d34763a4c97</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara">
+<span id="id3"></span><h3>sahara<a class="headerlink" href="#team-victoria-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/victoria.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>d32f7d6cf9fe188b83eb01b885065723cfd3d9fb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-dashboard">
+<span id="id4"></span><h3>sahara-dashboard<a class="headerlink" href="#team-victoria-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/victoria.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>3fc494d1730b90a3e49855c2498958c92a2c1ee5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-extra">
+<span id="id5"></span><h3>sahara-extra<a class="headerlink" href="#team-victoria-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>cf5762829e5ac2f348d793f950f72dc234ce785e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-image-elements">
+<span id="id6"></span><h3>sahara-image-elements<a class="headerlink" href="#team-victoria-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>ded80db2667438313bab6d448d19ef2305f2e527</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-ambari">
+<span id="id7"></span><h3>sahara-plugin-ambari<a class="headerlink" href="#team-victoria-sahara-plugin-ambari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-ambari/victoria.html">sahara-plugin-ambari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-ambari</p></td>
+<td><p>add152d6e7623e5d044585d239a3dd4c3c580e27</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-cdh">
+<span id="id8"></span><h3>sahara-plugin-cdh<a class="headerlink" href="#team-victoria-sahara-plugin-cdh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-cdh/victoria.html">sahara-plugin-cdh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>8429c530fad71e04e3bfb9bf26d21fbe9a8bc435</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-mapr">
+<span id="id9"></span><h3>sahara-plugin-mapr<a class="headerlink" href="#team-victoria-sahara-plugin-mapr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-mapr/victoria.html">sahara-plugin-mapr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>07d787ff45ae9394ad00f40240e05f73f3f68d3e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-spark">
+<span id="id10"></span><h3>sahara-plugin-spark<a class="headerlink" href="#team-victoria-sahara-plugin-spark" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-spark/victoria.html">sahara-plugin-spark</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-spark</p></td>
+<td><p>0300afc2c185318cd27611a45ae2cc1dccfbd1c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-storm">
+<span id="id11"></span><h3>sahara-plugin-storm<a class="headerlink" href="#team-victoria-sahara-plugin-storm" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-storm/victoria.html">sahara-plugin-storm</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-storm</p></td>
+<td><p>a0f41eea5313ab10256ecce78a063b3191b13ad7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-plugin-vanilla">
+<span id="id12"></span><h3>sahara-plugin-vanilla<a class="headerlink" href="#team-victoria-sahara-plugin-vanilla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-vanilla/victoria.html">sahara-plugin-vanilla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-vanilla</p></td>
+<td><p>3e3f94e6c9fddb6c2cba3efc830620d60aa3231f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-sahara-tests">
+<span id="id13"></span><h3>sahara-tests<a class="headerlink" href="#team-victoria-sahara-tests" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>51817cc5821363142457c7cdccb59d31de765fa0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-saharaclient">
+<span id="id14"></span><h3>python-saharaclient<a class="headerlink" href="#team-ussuri-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/ussuri.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>830d4607c3f20910c5a044ab5aa4d91e6bdb042a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>82ecc50fbe247ba72b0b3cfb73ff83d89390cd9d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara">
+<span id="id15"></span><h3>sahara<a class="headerlink" href="#team-ussuri-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/ussuri.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>a6ee52234382f8c52023796ed13cb3cdc8521098</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-dashboard">
+<span id="id16"></span><h3>sahara-dashboard<a class="headerlink" href="#team-ussuri-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/ussuri.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>0fa9e96aa8588063edf95c7b5dd45e982f82bedc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-extra">
+<span id="id17"></span><h3>sahara-extra<a class="headerlink" href="#team-ussuri-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>c45a7073733bed15992ef776303c7633d0b4aa18</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-image-elements">
+<span id="id18"></span><h3>sahara-image-elements<a class="headerlink" href="#team-ussuri-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>6a316ee9bf880141b5b8af0f07d3aa0e0db6d316</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-ambari">
+<span id="id19"></span><h3>sahara-plugin-ambari<a class="headerlink" href="#team-ussuri-sahara-plugin-ambari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-ambari/ussuri.html">sahara-plugin-ambari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-ambari</p></td>
+<td><p>860469398fa201c4bf64e3b4661b206bae00b3d0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-cdh">
+<span id="id20"></span><h3>sahara-plugin-cdh<a class="headerlink" href="#team-ussuri-sahara-plugin-cdh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-cdh/ussuri.html">sahara-plugin-cdh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>78b3ab272a5609b743577393d1a0970680410845</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-mapr">
+<span id="id21"></span><h3>sahara-plugin-mapr<a class="headerlink" href="#team-ussuri-sahara-plugin-mapr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-mapr/ussuri.html">sahara-plugin-mapr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>498cc2998d70f3137150d31cd6acd022946de450</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-spark">
+<span id="id22"></span><h3>sahara-plugin-spark<a class="headerlink" href="#team-ussuri-sahara-plugin-spark" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-spark/ussuri.html">sahara-plugin-spark</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-spark</p></td>
+<td><p>a286258d61ab727b2842403edf5e2203434a0fa9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-storm">
+<span id="id23"></span><h3>sahara-plugin-storm<a class="headerlink" href="#team-ussuri-sahara-plugin-storm" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-storm/ussuri.html">sahara-plugin-storm</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-storm</p></td>
+<td><p>f5a760eac445626836bcf15fde5e39ea9af832d9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-plugin-vanilla">
+<span id="id24"></span><h3>sahara-plugin-vanilla<a class="headerlink" href="#team-ussuri-sahara-plugin-vanilla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-vanilla/ussuri.html">sahara-plugin-vanilla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-vanilla</p></td>
+<td><p>ec604cbf32688206fa42d4d5e27083c443eee65f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-sahara-tests">
+<span id="id25"></span><h3>sahara-tests<a class="headerlink" href="#team-ussuri-sahara-tests" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>53f70d9d9290e1bd267eec095eaa40408bb6ac2a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-saharaclient">
+<span id="id26"></span><h3>python-saharaclient<a class="headerlink" href="#team-train-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/train.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>3107b452467537f4eef3d9ecfb5e35d110d19662</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara">
+<span id="id27"></span><h3>sahara<a class="headerlink" href="#team-train-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/train.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>8501b5235cb4c4d23eba796f201eace350e08bf2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-dashboard">
+<span id="id28"></span><h3>sahara-dashboard<a class="headerlink" href="#team-train-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/train.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>b72364c36d8d25ddc94bc02b4fd3c5be9c4dacf9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>3a8b05b3a150f81483dea7ed09fb0c068012e923</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-extra">
+<span id="id29"></span><h3>sahara-extra<a class="headerlink" href="#team-train-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>b7c24df8582bda0dcbdf8d621efd2d13b0860e2c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-image-elements">
+<span id="id30"></span><h3>sahara-image-elements<a class="headerlink" href="#team-train-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>b60f08f7599a2e01c84ca3e3958021804a50ea7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>24a0ea0195febff2554d2275b9a30972f8071dee</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-ambari">
+<span id="id31"></span><h3>sahara-plugin-ambari<a class="headerlink" href="#team-train-sahara-plugin-ambari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-ambari/train.html">sahara-plugin-ambari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-ambari</p></td>
+<td><p>2fd443ec4374aa81bfb7aaad0697ba082acbad83</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-cdh">
+<span id="id32"></span><h3>sahara-plugin-cdh<a class="headerlink" href="#team-train-sahara-plugin-cdh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-cdh/train.html">sahara-plugin-cdh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>c4c8cbbcada44b448a7d4bb074a46e4c792482d7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-mapr">
+<span id="id33"></span><h3>sahara-plugin-mapr<a class="headerlink" href="#team-train-sahara-plugin-mapr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-mapr/train.html">sahara-plugin-mapr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>a7b37aac861c515aa073d02fe34f06e497ca4acb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>62fe610b1423cea0735c90b860d0154805602b3f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-spark">
+<span id="id34"></span><h3>sahara-plugin-spark<a class="headerlink" href="#team-train-sahara-plugin-spark" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-spark/train.html">sahara-plugin-spark</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-spark</p></td>
+<td><p>5fa6190700508bb5ec1a9919952db804d2a2a334</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-storm">
+<span id="id35"></span><h3>sahara-plugin-storm<a class="headerlink" href="#team-train-sahara-plugin-storm" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-storm/train.html">sahara-plugin-storm</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-storm</p></td>
+<td><p>3c0331869c0df96c85b3f0066a9dd0aa987a28f7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-plugin-vanilla">
+<span id="id36"></span><h3>sahara-plugin-vanilla<a class="headerlink" href="#team-train-sahara-plugin-vanilla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-vanilla/train.html">sahara-plugin-vanilla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-vanilla</p></td>
+<td><p>9fcba44db76227e324ccdf7682fe94d75738712e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-sahara-tests">
+<span id="id37"></span><h3>sahara-tests<a class="headerlink" href="#team-train-sahara-tests" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-tests/index.html">sahara-tests</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.9.1.tar.gz">0.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>a225824efc44271e36bc1242d9160a153537c722</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-saharaclient">
+<span id="id38"></span><h3>python-saharaclient<a class="headerlink" href="#team-stein-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/stein.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>564380af2e297c86d31af092fdbb64a735b2d669</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>25043cbdf1fdfdb37201f130bd03d3e96dcce330</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>9ebd05065d759434b6f341421fb6cce23f7b8249</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara">
+<span id="id39"></span><h3>sahara<a class="headerlink" href="#team-stein-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/stein.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>1fa76ce666539a2d8381cad5286993e27322b56a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>bb5f75db7f7f3ee1b94beb91f4694d7a530688dc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-dashboard">
+<span id="id40"></span><h3>sahara-dashboard<a class="headerlink" href="#team-stein-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/stein.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>a63c7b419bc54dc9401beda9b49eb5064e8c8b90</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>5f297e007943c9345792fe243a9f4f0c109f980a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>fd0bef08b54c233be7a8af7ac95a0b39044ffdaf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-extra">
+<span id="id41"></span><h3>sahara-extra<a class="headerlink" href="#team-stein-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.3.0.tar.gz">9.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>40a9ccae89a45ade9af268a456b3c4a138503d80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-image-elements">
+<span id="id42"></span><h3>sahara-image-elements<a class="headerlink" href="#team-stein-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>04810f9523f6201cb7f806ebecb2ba8e22c4467a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>74d96bcc67de37e828f77ca690e1229ba0082662</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>48491edb728266ffe260fba4347134526094531e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-ambari">
+<span id="id43"></span><h3>sahara-plugin-ambari<a class="headerlink" href="#team-stein-sahara-plugin-ambari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-ambari/stein.html">sahara-plugin-ambari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-ambari/sahara-plugin-ambari-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-ambari</p></td>
+<td><p>471f55da91df84b4f0317ca27dcf672185865e0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-cdh">
+<span id="id44"></span><h3>sahara-plugin-cdh<a class="headerlink" href="#team-stein-sahara-plugin-cdh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-cdh/stein.html">sahara-plugin-cdh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>3c4b42448bb3b341e150bad64e4e2d3840902d7b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-cdh/sahara-plugin-cdh-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-cdh</p></td>
+<td><p>0c427c1b9fc7804533f9958139a02cf7d277a5cd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-mapr">
+<span id="id45"></span><h3>sahara-plugin-mapr<a class="headerlink" href="#team-stein-sahara-plugin-mapr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-mapr/stein.html">sahara-plugin-mapr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>f58087bbb184b22dfa25a5ceb8f8cdf18499800d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>ee926298eaf6b66d8a9ada545a6ed3360e5faa1d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-mapr/sahara-plugin-mapr-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-mapr</p></td>
+<td><p>1f4353f1582c2898d66ff2bccde6d246a8682525</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-spark">
+<span id="id46"></span><h3>sahara-plugin-spark<a class="headerlink" href="#team-stein-sahara-plugin-spark" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-spark/stein.html">sahara-plugin-spark</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-spark/sahara-plugin-spark-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-spark</p></td>
+<td><p>a0df51e4f9712187721258588875e11ad80ab2fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-storm">
+<span id="id47"></span><h3>sahara-plugin-storm<a class="headerlink" href="#team-stein-sahara-plugin-storm" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-storm/stein.html">sahara-plugin-storm</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-storm/sahara-plugin-storm-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-storm</p></td>
+<td><p>a24b19cc296fedbbb1593e11ec51b6253d7f0f8b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-plugin-vanilla">
+<span id="id48"></span><h3>sahara-plugin-vanilla<a class="headerlink" href="#team-stein-sahara-plugin-vanilla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-plugin-vanilla/stein.html">sahara-plugin-vanilla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-plugin-vanilla/sahara-plugin-vanilla-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-plugin-vanilla</p></td>
+<td><p>62ebd23a5f70967708213b41b023be1e2e1b0877</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-sahara-tests">
+<span id="id49"></span><h3>sahara-tests<a class="headerlink" href="#team-stein-sahara-tests" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-tests/index.html">sahara-tests</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>edcd88782ba5221cf804a3c4b5a3c8bb5ef44b67</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>994b21aacd0d4119afbbc46b2ed0b525cf5ed64c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>7e39b7b05d0c41940e99b97b0d898d2dbd46a2f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-saharaclient">
+<span id="id50"></span><h3>python-saharaclient<a class="headerlink" href="#team-rocky-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/rocky.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>2a66f9a7150cd92e45f29bb028b60863a27fa443</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>c3fd27e49bbe286d71cc2e2e17cdf149591826eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-sahara">
+<span id="id51"></span><h3>sahara<a class="headerlink" href="#team-rocky-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/rocky.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>8677168b80aeee669d468a09bfb754498f81f5c2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>9ae675fdc83bf51fa3d16880ff978eecee458180</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>7d9483b21c1e45ef4834f3d3d9973d95d181df3c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-sahara-dashboard">
+<span id="id52"></span><h3>sahara-dashboard<a class="headerlink" href="#team-rocky-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/rocky.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>51a46eab08704053c9feea430831313740c847ae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>6e3f7538ce7779612d8e82b069597c06c2225a77</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>db8283502a9fe1d3b540dbacf9e607255d81a110</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-sahara-extra">
+<span id="id53"></span><h3>sahara-extra<a class="headerlink" href="#team-rocky-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.2.0.tar.gz">9.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>abacf8f2d43b0b5d2769849d48e78120c58fe163</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>c118e53a8e85ca93f3aa5e8f268c934f325c679a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>82fb1fd1f4bbd4db104ab7ba5260ee1ef06749b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-sahara-image-elements">
+<span id="id54"></span><h3>sahara-image-elements<a class="headerlink" href="#team-rocky-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>60896d55a4ddf1606e5c36bb85749ae0babc7b8a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>10b745f552d6c2b6a45116d4c895496a6f92b03c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>5eeec728593d88bb5a220b43206bf5a071151bbd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-sahara-tests">
+<span id="id55"></span><h3>sahara-tests<a class="headerlink" href="#team-rocky-sahara-tests" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-tests/index.html">sahara-tests</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-tests/sahara-tests-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-tests</p></td>
+<td><p>bb23a5bd1998d4feefe75e207409e27d0791a5d2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-saharaclient">
+<span id="id56"></span><h3>python-saharaclient<a class="headerlink" href="#team-queens-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/queens.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ee5f17307a1d7949ce2408f22c3678966d3272c1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>4728d992080aeee1b015cfa6460571ec8f23e174</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-sahara">
+<span id="id57"></span><h3>sahara<a class="headerlink" href="#team-queens-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/queens.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.3.tar.gz">8.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>ca9345d0358995f28ee0e94375b349b665d66e75</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>f8e7026561eb0ab6fa2ad8147e1b771dfb478265</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>f8f4d45ab4f2ddc757d4ab1d09d2d16ad48d4a58</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>fbd7abb754318e1633d19409e2e5eaad74282801</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-sahara-dashboard">
+<span id="id58"></span><h3>sahara-dashboard<a class="headerlink" href="#team-queens-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/queens.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>0fb5197b80642817761b8e68db3bbace412e357c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>707059ff4e372ae66b21b82050a9e16295176782</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>ccfab2ced2a42e206f86a613ccab11e55dafbabb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-sahara-extra">
+<span id="id59"></span><h3>sahara-extra<a class="headerlink" href="#team-queens-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>391c425e94e94bd1e838fc83e6f7ec3be1e6c353</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>dd99413cd308883fe0283282515737cee1fce7ae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-sahara-image-elements">
+<span id="id60"></span><h3>sahara-image-elements<a class="headerlink" href="#team-queens-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>e3246b488589535a7ac91dcee3ef19d1ff171062</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>86763b3f7927b475cbacf8be0040d23ea108ee7f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>8a9185373f92ab3ac201fdff725b45cf7f01f553</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-saharaclient">
+<span id="id61"></span><h3>python-saharaclient<a class="headerlink" href="#team-pike-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/pike.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>e6589628165546df850ac290f74fd2680fc2b5ee</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>4275d17a9fbbed0126783e893aeaa821197ecafb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>fb2e3677036fbe90f2321330e14308d17b917964</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-sahara">
+<span id="id62"></span><h3>sahara<a class="headerlink" href="#team-pike-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/pike.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.4.tar.gz">7.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>e1df924576d2e5063453f3bbe9143b89060b1a8c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.3.tar.gz">7.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>35b9e784e281dda8df235be6f0e0de7042329be7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>a39c690aeca04dcde56384448ce577fd50eb8bf1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>a39c690aeca04dcde56384448ce577fd50eb8bf1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>30a3b8b58867a176b502ad0e5601533655d7336b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-sahara-dashboard">
+<span id="id63"></span><h3>sahara-dashboard<a class="headerlink" href="#team-pike-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/pike.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.4.tar.gz">7.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>eaa0d35df5c087e6955bd5b02561714fec975892</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.3.tar.gz">7.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>a2ca07143252257c0c0b0635a8824637d502f6ff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>d56477dba6f4073ab4df6126bb489743779a3270</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>d56477dba6f4073ab4df6126bb489743779a3270</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>7394ec618343bc997e097958ac897b1a33d3cb1c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-sahara-extra">
+<span id="id64"></span><h3>sahara-extra<a class="headerlink" href="#team-pike-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>557cf9fc7f6f08785eccb65c54b309a5f5113a83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>557cf9fc7f6f08785eccb65c54b309a5f5113a83</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>557cf9fc7f6f08785eccb65c54b309a5f5113a83</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-sahara-image-elements">
+<span id="id65"></span><h3>sahara-image-elements<a class="headerlink" href="#team-pike-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.3.tar.gz">7.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>27e74cf3af3bb9bff24fb600deabaae6524f93fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>5cad99d24cf869f316e0acc333e10dd817bde2ac</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>078a5b7e9df7fea40e2584c61d0e7dff0afbf6ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>79369e39e40e1d9ba1cbca6039a3a06afbaf1685</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-saharaclient">
+<span id="id66"></span><h3>python-saharaclient<a class="headerlink" href="#team-ocata-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/ocata.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>6865768726fafcf519ae5f986557c120d650632b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ea15f60307c5cea6b0f2f567c9b6fa67e0723946</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-sahara">
+<span id="id67"></span><h3>sahara<a class="headerlink" href="#team-ocata-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/ocata.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.3.tar.gz">6.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>a2843e8a54465be9c7a5b58e36c854e6b3ad090a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>054bb99ca51f937539e34d5b353f6b2dc23abc3b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>8e8b93080da9f1341c4bd950f740f57356fce9bf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>89b5dbc51d57302027bdaa4e472d0d57e89d5eb4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>479aa19f5948e1e80903662320c42ddb188871cd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>edfc54aca89173678f53b9f49f9e4fee60a5df9d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>919ab93f46a2d0bf757610c09e1da3484fcdc8c0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>89b5dbc51d57302027bdaa4e472d0d57e89d5eb4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>0d87211d1a35d826f82fb808e8a7f41ebf5ca895</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara</p></td>
+<td><p>c465fa80b9b769e886ad0fb5750ed4fff17f0eaa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>dccee666aa7e48ca2d14aee6512dda998b659574</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>85fd5506fad64fe87693ba5a6a31b26638f82fb6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>35f727613196e52eee470f1b64d24258ea700b3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-sahara-dashboard">
+<span id="id68"></span><h3>sahara-dashboard<a class="headerlink" href="#team-ocata-sahara-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara-dashboard/ocata.html">sahara-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.3.tar.gz">6.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>a93165f6dc3dca1e7e562c6c9bdf53650864a7ab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>8e8b93080da9f1341c4bd950f740f57356fce9bf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>919ab93f46a2d0bf757610c09e1da3484fcdc8c0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>dccee666aa7e48ca2d14aee6512dda998b659574</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-sahara-extra">
+<span id="id69"></span><h3>sahara-extra<a class="headerlink" href="#team-ocata-sahara-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.3.tar.gz">6.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>89b5dbc51d57302027bdaa4e472d0d57e89d5eb4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>89b5dbc51d57302027bdaa4e472d0d57e89d5eb4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>89b5dbc51d57302027bdaa4e472d0d57e89d5eb4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>85fd5506fad64fe87693ba5a6a31b26638f82fb6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-sahara-image-elements">
+<span id="id70"></span><h3>sahara-image-elements<a class="headerlink" href="#team-ocata-sahara-image-elements" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.3.tar.gz">6.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>1098b70175baf27ea706a2ca308ba212a1018ad1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>479aa19f5948e1e80903662320c42ddb188871cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>0d87211d1a35d826f82fb808e8a7f41ebf5ca895</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>35f727613196e52eee470f1b64d24258ea700b3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-saharaclient">
+<span id="id71"></span><h3>python-saharaclient<a class="headerlink" href="#team-newton-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/newton.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.18.0.tar.gz">0.18.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>8323dcce2bffead93d2d61daf4aaabc5eaa38088</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.17.0.tar.gz">0.17.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>9a440b9f06fb7bd2872170356969df93779c3f29</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.16.0.tar.gz">0.16.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>cb31c568afb2e339d36d7e90494a39b550d4d4eb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.15.0.tar.gz">0.15.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>d7cd6cd410447c2adbc89b9e49f5cd1b5b01e81b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-sahara">
+<span id="id72"></span><h3>sahara<a class="headerlink" href="#team-newton-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/newton.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>0dc238ea602e3a08910734a26340eaefcd8b3538</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>fed6bed0409f7c52426391b29ea73f3355bf190d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>fc147fe56343847056f8573b2b14329de24795ec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>04ac8d8da19ec027daa3e1d30201d2f1a1685636</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>04d5b6f557cf5e97dc9a57c61c98cb0dc4c17af1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>e8c6017ef042c959e355be7f46071964b8fea327</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>fc147fe56343847056f8573b2b14329de24795ec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>114c3903a2de7f66a9f72b7a0680e9d221bf84d3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>cbd51fa579274dd4621708286ac8a2289aabfc41</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>fdd3a7518be1d4d11475355b7deab77c054ed246</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>fc147fe56343847056f8573b2b14329de24795ec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>e990d78e66b644163a5192514d696ce2550629ca</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-python-saharaclient">
+<span id="id73"></span><h3>python-saharaclient<a class="headerlink" href="#team-mitaka-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-saharaclient/mitaka.html">python-saharaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.14.1.tar.gz">0.14.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>9ad355705e4d9deb89cd6f399c71761b3ce1149d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.14.0.tar.gz">0.14.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ac9868e1da321aea7caf5e7c2b459bc6e056ae92</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.13.0.tar.gz">0.13.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>3ce994a63e75118a38a99b5b6e4ec4bb6a7da98c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.12.0.tar.gz">0.12.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>08ea638f56804168d58d5b16d87192b655df5b61</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-sahara">
+<span id="id74"></span><h3>sahara<a class="headerlink" href="#team-mitaka-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/mitaka.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-4.1.2.tar.gz">4.1.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>45e0e5ac660580eaf5481a24dd3601b7ccc94dad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-4.1.2.tar.gz">4.1.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>849cbe80780419136ea4f398a1d1f2c65b55ca64</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-4.1.2.tar.gz">4.1.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>2e873ab754a15e105921376441643d967bb51c34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-4.1.2.tar.gz">4.1.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>dda715c8f21469cec51fcd2d693f0adf715a9ef1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-4.1.1.tar.gz">4.1.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>7fa80fb5efe269f181e23710551b777ebc3646a0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-4.1.1.tar.gz">4.1.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>849cbe80780419136ea4f398a1d1f2c65b55ca64</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-4.1.1.tar.gz">4.1.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>2e873ab754a15e105921376441643d967bb51c34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-4.1.1.tar.gz">4.1.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>dda715c8f21469cec51fcd2d693f0adf715a9ef1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>9e58aef5e0a7b742d09ede04fa18163f2630c281</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>849cbe80780419136ea4f398a1d1f2c65b55ca64</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>2e873ab754a15e105921376441643d967bb51c34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>b1a6e1e3dabe4202b3928372e9a8b0f58ffe3217</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-4.0.1.tar.gz">4.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>0084842a92a287e1c65a911512a99bccdf806884</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-4.0.1.tar.gz">4.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>b3ffe4dbbe1eee58b3186be1bccfa231bfe69e32</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-4.0.1.tar.gz">4.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>2e873ab754a15e105921376441643d967bb51c34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-4.0.1.tar.gz">4.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>9ac70dceafbc8f5b6899da54af7c3406bb7f20e9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>65330b880eb312f488a5e0305d2a01b5c6ff4e9f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-dashboard/sahara-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-dashboard</p></td>
+<td><p>8109bab39800019037fea0e7c8fb60595adcae9b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>2e873ab754a15e105921376441643d967bb51c34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>9ac70dceafbc8f5b6899da54af7c3406bb7f20e9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-python-saharaclient">
+<span id="id75"></span><h3>python-saharaclient<a class="headerlink" href="#team-liberty-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.11.2.tar.gz">0.11.2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>6d50185c2ab3a37787d151b49b972351ea3719f3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.11.1.tar.gz">0.11.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ec678dbacd7ecf33997ca5b736fa2ac1c393f1c2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.11.0.tar.gz">0.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>d7dae5eb954f1b659a1e1d5613efdbe1e7b096fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.10.1.tar.gz">0.10.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>1ad3f214c75ed3b445f66a5502e63696d9f479b1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.10.0.tar.gz">0.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>5e8b68ad48b20ecd3454ec26f2c8d8addaa31730</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.9.1.tar.gz">0.9.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>3260c2f66eb01c9519b3b8710b1a98ac40006bcf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>eede2e1f715a3cda9df9d70f6aec1c06de568109</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-sahara">
+<span id="id76"></span><h3>sahara<a class="headerlink" href="#team-liberty-sahara" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/sahara/liberty.html">sahara</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>6c61605eb7972d8d50518a2ccfd5b1e0398d6916</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>6e7d61566211aa0342109d50b34a8fe85b6cb9db</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>f79c2c61ae57f3716873c82ab9967d0bb85bb685</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>3d621b956f546c6e1b231260263ca9a231002b90</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>6e7d61566211aa0342109d50b34a8fe85b6cb9db</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>a4af7cdd5cbb4c6f68aceb52588b74f290ff103d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>c1f2483f62d03d292b5abea8d67a0c76c9aa3db3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>6e7d61566211aa0342109d50b34a8fe85b6cb9db</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>a4af7cdd5cbb4c6f68aceb52588b74f290ff103d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>d20cc12feac3ea29894d249d528ebbfd433adc50</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>1a284a05fbf3cc0b0ca065460b2826c227ad8023</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>8e9f0ef254fe0c4bad8a3002b564e7f63f9b4d17</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-python-saharaclient">
+<span id="id77"></span><h3>python-saharaclient<a class="headerlink" href="#team-kilo-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>319ceb6acf55382218dcd971367613aecb3e4afc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.7.tar.gz">0.7.7</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>319ceb6acf55382218dcd971367613aecb3e4afc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.6.tar.gz">0.7.6</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>eadb40ccb62566f02cb93ec03aa232e48835dec3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.5.tar.gz">0.7.5</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>8cfc1d6a1fd7eda77ae3ab0407188ed28fce3210</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-sahara">
+<span id="id78"></span><h3>sahara<a class="headerlink" href="#team-kilo-sahara" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>f80daad635f2273103a601c7427f731f74bb41d6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>f4e6bd5e0cd40e2f50c7fce010756e93e92b651f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>51397f3992313587846603cd33229abe20687342</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>7f2fc4eb17d5f9f883717f8b61efadb4d10057d6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>67165c96eceb1ce3b087870934d394602f5dd959</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>ccf3e5c6faef5c2e6929a138d65f8b6425e5c84e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>cea2cb1850fd17566c3bef0805179bffec6e7e91</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-python-saharaclient">
+<span id="id79"></span><h3>python-saharaclient<a class="headerlink" href="#team-juno-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.4.tar.gz">0.7.4</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ccec5b71edefe27b91ea461804767b2b17bd22a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.3.tar.gz">0.7.3</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>7db47c1151b93c9f8b90de5b6b2b32465c0ec336</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.2.tar.gz">0.7.2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>5be2179d8c5c1e806537849559bea52a1145028f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.1.tar.gz">0.7.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>1625d6851efbb3545b5915b4a87ef4948e405534</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-sahara">
+<span id="id80"></span><h3>sahara<a class="headerlink" href="#team-juno-sahara" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>bf4edbad4128ed238b929eed7471a06770c3da93</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>0d7e25d48a233e44a18244258294c1ab89f7019b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>945fa72ed01ecabf5a260a676c9d98e8377b45af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>2b5f1e6b528b8676e83114cb1db723fc893ffb0f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>3630ccffb25f66e2efc9297b0ecb852f8d932363</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>6706e1998f9c7b60091f92bbc1f1c1d5e5e0f5f1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>51c33744acf87bbedc68fecf7f44d96e15bf90bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-python-saharaclient">
+<span id="id81"></span><h3>python-saharaclient<a class="headerlink" href="#team-icehouse-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>95e5cd807b2259d087c9ccf4acbeb594e8bc8433</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>184917ba795cd72726b45473ef7e951889ca370b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>c391001047813e0599d0810e17539b56b7f3c252</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>8b705687019f4c438500057ac2627ab532f084c2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>f51b3028f4e91ba145f5c989f4edac5c60f154a6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-python-saharaclient">
+<span id="id82"></span><h3>python-saharaclient<a class="headerlink" href="#team-havana-python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3.tar.gz">0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>6781f002c546c14d1c754f6da69b4235a10b48af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3.rc4.tar.gz">0.3.rc4</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>8dbf5b85ce8b701ef57c3dd9b5b668bd99d78e7a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3.rc3.tar.gz">0.3.rc3</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>0ced8f06fd3d4267b323a6ed756710eb1af0edfa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3.rc2.tar.gz">0.3.rc2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>98e6cf05a19866dd76858c4d24a5feb55d7b8a8a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3.rc1.tar.gz">0.3.rc1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>c5f519ef0e4f6a41b34f61a43104f2cae6dbfae7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3a3.tar.gz">0.3a3</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>5d4f7d1a3d456353e44caea8462f841f0154d97e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3a2.tar.gz">0.3a2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>188ab8e66d01fbaa0c4c3739ca3a61b7ef848b8b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.3a1.tar.gz">0.3a1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>2554d3da7fcfdd725b379f3822212b708ac67501</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.2.2.tar.gz">0.2.2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>702bf8583b5c10180eb50ce623a0e132b12ba4d4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="requirements.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Requirements"></i></a>
+          
+          
+            <a href="searchlight.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Searchlight"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Sahara</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-sahara">sahara</a></li>
+<li><a class="reference internal" href="#sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#sahara-plugin-ambari">sahara-plugin-ambari</a></li>
+<li><a class="reference internal" href="#sahara-plugin-cdh">sahara-plugin-cdh</a></li>
+<li><a class="reference internal" href="#sahara-plugin-mapr">sahara-plugin-mapr</a></li>
+<li><a class="reference internal" href="#sahara-plugin-spark">sahara-plugin-spark</a></li>
+<li><a class="reference internal" href="#sahara-plugin-storm">sahara-plugin-storm</a></li>
+<li><a class="reference internal" href="#sahara-plugin-vanilla">sahara-plugin-vanilla</a></li>
+<li><a class="reference internal" href="#sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-ambari">sahara-plugin-ambari</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-cdh">sahara-plugin-cdh</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-mapr">sahara-plugin-mapr</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-spark">sahara-plugin-spark</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-storm">sahara-plugin-storm</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-plugin-vanilla">sahara-plugin-vanilla</a></li>
+<li><a class="reference internal" href="#team-victoria-sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-ambari">sahara-plugin-ambari</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-cdh">sahara-plugin-cdh</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-mapr">sahara-plugin-mapr</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-spark">sahara-plugin-spark</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-storm">sahara-plugin-storm</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-plugin-vanilla">sahara-plugin-vanilla</a></li>
+<li><a class="reference internal" href="#team-ussuri-sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-train-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-train-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-train-sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-ambari">sahara-plugin-ambari</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-cdh">sahara-plugin-cdh</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-mapr">sahara-plugin-mapr</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-spark">sahara-plugin-spark</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-storm">sahara-plugin-storm</a></li>
+<li><a class="reference internal" href="#team-train-sahara-plugin-vanilla">sahara-plugin-vanilla</a></li>
+<li><a class="reference internal" href="#team-train-sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-stein-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-ambari">sahara-plugin-ambari</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-cdh">sahara-plugin-cdh</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-mapr">sahara-plugin-mapr</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-spark">sahara-plugin-spark</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-storm">sahara-plugin-storm</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-plugin-vanilla">sahara-plugin-vanilla</a></li>
+<li><a class="reference internal" href="#team-stein-sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-rocky-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-rocky-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-rocky-sahara-image-elements">sahara-image-elements</a></li>
+<li><a class="reference internal" href="#team-rocky-sahara-tests">sahara-tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-queens-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-queens-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-queens-sahara-image-elements">sahara-image-elements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-pike-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-pike-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-pike-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-pike-sahara-image-elements">sahara-image-elements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-ocata-sahara">sahara</a></li>
+<li><a class="reference internal" href="#team-ocata-sahara-dashboard">sahara-dashboard</a></li>
+<li><a class="reference internal" href="#team-ocata-sahara-extra">sahara-extra</a></li>
+<li><a class="reference internal" href="#team-ocata-sahara-image-elements">sahara-image-elements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-newton-sahara">sahara</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-mitaka-sahara">sahara</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-liberty-sahara">sahara</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-kilo-sahara">sahara</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#team-juno-sahara">sahara</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-python-saharaclient">python-saharaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-python-saharaclient">python-saharaclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/sahara.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+</html>

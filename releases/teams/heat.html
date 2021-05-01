@@ -1,0 +1,3067 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/heat.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Heat</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Heat</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="heat">
+<h1>Heat<a class="headerlink" href="#heat" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-heat">
+<span id="id1"></span><h3>heat<a class="headerlink" href="#team-wallaby-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/wallaby.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>af0dd44dabf56fd0095714c957afe562c83f20fb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heat-agents">
+<span id="team-wallaby-heat-agents"></span><h3>heat-agents<a class="headerlink" href="#heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/wallaby.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>fcb3c614461c654e747af23570963dacdffa38ce</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heat-dashboard">
+<span id="team-wallaby-heat-dashboard"></span><h3>heat-dashboard<a class="headerlink" href="#heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/wallaby.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>8e7914fce24d2c9d94a83795983aaa0fb05f020c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>15b787ec6abfd7c861ac302e7b1f674aac236177</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heat-tempest-plugin">
+<span id="team-wallaby-heat-tempest-plugin"></span><h3>heat-tempest-plugin<a class="headerlink" href="#heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>c5e1603fb62a8e2e18706c6c084d0fa2a908dad8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heat-translator">
+<span id="team-wallaby-heat-translator"></span><h3>heat-translator<a class="headerlink" href="#heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>a241c9c48f8105d071d7da7c620fc3afe6fd0f7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>7109d4cd52784ad110a202b54540417510bc0e91</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-heatclient">
+<span id="team-wallaby-python-heatclient"></span><h3>python-heatclient<a class="headerlink" href="#python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/wallaby.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>b2a601c7e83bf08a6216478298c484c89f590c32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tosca-parser">
+<span id="team-wallaby-tosca-parser"></span><h3>tosca-parser<a class="headerlink" href="#tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>a1c2cbe960766629c74f3d26a46219b52f5f1bb3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>b598d9cfe40b384d2d3b77555be8c6eda23efc16</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-heat">
+<span id="id2"></span><h3>heat<a class="headerlink" href="#team-victoria-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/victoria.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>8e1e3d6011ba28f8a0e6ca7c09d1e61660a75f3f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-heat-agents">
+<span id="id3"></span><h3>heat-agents<a class="headerlink" href="#team-victoria-heat-agents" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>6725696d1ba87bc4ab112eb203a270d3c81476fc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>41167c4ae5ae12c914a9bfadbe0e6ea330ae6123</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-heat-dashboard">
+<span id="id4"></span><h3>heat-dashboard<a class="headerlink" href="#team-victoria-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/victoria.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>7d4ef2057fff075771e5ba24f7bff25e411b9102</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-heat-tempest-plugin">
+<span id="id5"></span><h3>heat-tempest-plugin<a class="headerlink" href="#team-victoria-heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>fa9f6ccd34c106bcaa50cb2f13caea2c387a6b5f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-heat-translator">
+<span id="id6"></span><h3>heat-translator<a class="headerlink" href="#team-victoria-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>92efac641321d548090eecaf0cff1c75bcd01068</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-heatclient">
+<span id="id7"></span><h3>python-heatclient<a class="headerlink" href="#team-victoria-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/victoria.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>bb22add60c5d7a206ed8023d78fd155e256253a0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>670fe7ce2a31f3111bc3fb80dd80a43500daab87</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-tosca-parser">
+<span id="id8"></span><h3>tosca-parser<a class="headerlink" href="#team-victoria-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>9b42fa3d32725fc1f2538878bb9b0fa8c84b9d9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>b43f595fd378a2e7f207f7b7b0cb811c58b1969a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-heat">
+<span id="id9"></span><h3>heat<a class="headerlink" href="#team-ussuri-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/ussuri.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-14.1.0.tar.gz">14.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-14.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>cdfb5df5597fb258169b4245e81f2bfcd01f192f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>084c9b3ea19c522d9741f5ba32ef951d3f3a6aa0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-heat-agents">
+<span id="id10"></span><h3>heat-agents<a class="headerlink" href="#team-ussuri-heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/ussuri.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>4da113bb471965ee475f8f7baa2c3bc255235f69</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-heat-dashboard">
+<span id="id11"></span><h3>heat-dashboard<a class="headerlink" href="#team-ussuri-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/ussuri.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>389a3ce2c7bae51b7f75261529a2d5f45ed5fb69</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>78421908513eec5366fda3081e47c085ad2f89d0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-heat-tempest-plugin">
+<span id="id12"></span><h3>heat-tempest-plugin<a class="headerlink" href="#team-ussuri-heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>37a8df97277b42693ead3f5709f23544788f5a9f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-heat-translator">
+<span id="id13"></span><h3>heat-translator<a class="headerlink" href="#team-ussuri-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>2a57298dced28b913aaf6af0d1222d71b32df3b6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>85e2ad02e5c89378721348c55f2eab7906eac7c7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-heatclient">
+<span id="id14"></span><h3>python-heatclient<a class="headerlink" href="#team-ussuri-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/ussuri.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>9dede4eb2b824b21c0031507bd986796f535810c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>2a8eb6a74c782ef76233179e9c32df5eb80d7233</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-tosca-parser">
+<span id="id15"></span><h3>tosca-parser<a class="headerlink" href="#team-ussuri-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>1abd37695c34ef26e7021705ce81aee7cbaa1537</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>bce42e979ffa2a96a0ffb617d7adf447e0cd544d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-heat">
+<span id="id16"></span><h3>heat<a class="headerlink" href="#team-train-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/train.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.1.0.tar.gz">13.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>48b730a31c4bf9d438c66a1161648f602f8ac9ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.2.tar.gz">13.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>33972cce5768011809b6231fb5ac865869c11f7f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.1.tar.gz">13.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>8fc8034c0981de9b6b34af619d272dbd1bbf02c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>36b72241226a86eb3f597c71bfb68bf0e8345daf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-heat-agents">
+<span id="id17"></span><h3>heat-agents<a class="headerlink" href="#team-train-heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/train.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>805e130369efc4137a62979140d8671cdf3ee063</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>a6b19847116cf6f799a418ba6a5fece44ee6eda6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-heat-dashboard">
+<span id="id18"></span><h3>heat-dashboard<a class="headerlink" href="#team-train-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/train.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>7d643abfdb8afe11fa6ced8f72e79eb8b3577787</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>27194986f0321ad1fe6feed4b2138f1cb9547e70</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>21584e8adcd0de616187fb039c5d36aaac9bbd1c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-heat-tempest-plugin">
+<span id="id19"></span><h3>heat-tempest-plugin<a class="headerlink" href="#team-train-heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>e4d6583aa6ccb51fab9d9b89d9393843ae2bf199</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-heat-translator">
+<span id="id20"></span><h3>heat-translator<a class="headerlink" href="#team-train-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>57ff1f98ca11857e7acb432551f392114eb37ded</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>33ac9fd9b75408e12d3ddd7a3cd942dea106038c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-heatclient">
+<span id="id21"></span><h3>python-heatclient<a class="headerlink" href="#team-train-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/train.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.18.1.tar.gz">1.18.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.18.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>ed9edc6b36ebc8c1ddbfbd4a35ea5793910176db</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.18.0.tar.gz">1.18.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.18.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>eca16376563c2b0249d5b2aba1f6283a5aebbe98</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-tosca-parser">
+<span id="id22"></span><h3>tosca-parser<a class="headerlink" href="#team-train-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.6.1.tar.gz">1.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>6ddfdc6eaa82659ad26a7b363b31b6bbb3a0939e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>8a18ca8c73e8e43d54c4c89c01053d7c9159885e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>328cec62b29dfca599f530e653d1eaa78c7a36ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-heat">
+<span id="id23"></span><h3>heat<a class="headerlink" href="#team-stein-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/stein.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.2.0.tar.gz">12.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>65a93b121e2161591b679f688c1f6dfa43d39c3d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.1.0.tar.gz">12.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>8f1bcbaf840297430a95637449598e7de405289e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>8fa8cc35b140327d402af91fd4605d826e3c5cae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-heat-agents">
+<span id="id24"></span><h3>heat-agents<a class="headerlink" href="#team-stein-heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/stein.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>6139799be23d6421e768dd068949982eab5f2cb3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-heat-dashboard">
+<span id="id25"></span><h3>heat-dashboard<a class="headerlink" href="#team-stein-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/stein.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.5.1.tar.gz">1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>7269ad11d7905c4a7a955c7ad2b03e0cc389561d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>d3bee9e453c285c102d988bc5dc49f87085462a7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-heat-tempest-plugin">
+<span id="id26"></span><h3>heat-tempest-plugin<a class="headerlink" href="#team-stein-heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>c5e1603fb62a8e2e18706c6c084d0fa2a908dad8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>f543d390e187975ff8002f1817de8509466b80aa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-heat-translator">
+<span id="id27"></span><h3>heat-translator<a class="headerlink" href="#team-stein-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>0f79e355af44d213725cc32544b3c30e6e38822f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>66ce5cf926bea86a174e8bb9600a6fa5f25e4a8d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>c1c09eef75020a07d538efff57ffeefd0b2c42bb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-heatclient">
+<span id="id28"></span><h3>python-heatclient<a class="headerlink" href="#team-stein-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/stein.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.17.1.tar.gz">1.17.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.17.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>39cda16fb0ccdc8f919f99cbc92593c7535d9142</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.17.0.tar.gz">1.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>8af5deb458d51f4ec16e769d7fd6c94655f82f5f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-tosca-parser">
+<span id="id29"></span><h3>tosca-parser<a class="headerlink" href="#team-stein-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>e0c67af3bda09b7b59321b9c9b2b5bfa7b0b151e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>0c77377d51fe63694509211be05e1c9d3e14776f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>47e04a184cfbdaeb6a85c57457c570fc20b4b0a6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>3eb67e755d886dd6701e9c1fd3ade294b72c5201</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-heat">
+<span id="id30"></span><h3>heat<a class="headerlink" href="#team-rocky-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/rocky.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.3.tar.gz">11.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>82f63c992f5382e412acd7929dee31f1c4fa9943</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.2.tar.gz">11.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>9fed6925c4a2cefde73686ca426eb96b1eb5bcfc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>12dd1004ef4cb218cdfc5205e1e002297d8db838</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/openstack-heat-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>207498dea1e9ca23485511cadbbdda85079e391f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-heat-agents">
+<span id="id31"></span><h3>heat-agents<a class="headerlink" href="#team-rocky-heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/rocky.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.7.1.tar.gz">1.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>41c7faf0c9f9fadaff137a9d9957b5163da56cd0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>fdd6a5f537ad39e092f69bc05307ae7640384430</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>10f28e8491edb2cd8b28b40c9ed36d6102a60cc7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-heat-dashboard">
+<span id="id32"></span><h3>heat-dashboard<a class="headerlink" href="#team-rocky-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/rocky.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>083270b2cb17631e5cdd85020c7e6a741d2f6b9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>0b301df5042f14bd4414307baf08404ab1af47b5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>6b64d8572987808416ae1236279fdafd3f7dca98</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>3812cc2667d082af6625b0a6052ef54ffc1d4f71</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>71f627702a769b947e881984e255a030595601df</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>c88445abb191118e6e8cd35ed169f547b08e8118</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-heat-tempest-plugin">
+<span id="id33"></span><h3>heat-tempest-plugin<a class="headerlink" href="#team-rocky-heat-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-tempest-plugin/heat-tempest-plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-tempest-plugin</p></td>
+<td><p>ce14ccaaccc5921b28f8be16472a6b8d7a3e8c3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-heat-translator">
+<span id="id34"></span><h3>heat-translator<a class="headerlink" href="#team-rocky-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>2a04796a83cbfff9aceec988d8a3ba30c5019e41</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>74f6c5bbef26f0aafc78aff499ff428ba6a3d5be</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-heatclient">
+<span id="id35"></span><h3>python-heatclient<a class="headerlink" href="#team-rocky-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/rocky.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.3.tar.gz">1.16.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>3587b56872b401cf8cc85b4a263d97e8ac947185</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.2.tar.gz">1.16.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>951b50fdc951f748b613fe0cf216a66676266de9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.1.tar.gz">1.16.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>b5f3d34cd009445de9a6489828faad7ec624a1a6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.0.tar.gz">1.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>f095a0fd133a831ffeb04f9cb7f9d81a4f31a04a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.15.0.tar.gz">1.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>aab5b85811c4a23dc0b66e27c771a59a91a2bec0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-tosca-parser">
+<span id="id36"></span><h3>tosca-parser<a class="headerlink" href="#team-rocky-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>553798b49907e2730ec8334eb7602e03385f9d1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>e17c2a8060434a27293cd4719647cf735216f3c0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-heat">
+<span id="id37"></span><h3>heat<a class="headerlink" href="#team-queens-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/queens.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.3.tar.gz">10.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>01e6439281bdf04e2baea5fb51bfc082da7087c1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>1f08105fbd17f8f51999689f8b0113201870475c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>825731d81b6cba5d79cbab22a731965ff4f9c6a0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>43f122be13736f15fbc38cb6e6ce29545f784c86</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-heat-agents">
+<span id="id38"></span><h3>heat-agents<a class="headerlink" href="#team-queens-heat-agents" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-agents/queens.html">heat-agents</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.4.tar.gz">1.5.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>961bb358b00a56da9d6bec0757382bc748e66985</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.3.tar.gz">1.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>ad804626c464d176c350f5e9232da22ca900dff1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.2.tar.gz">1.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>9f9ae41d451cbf1dcf4d0951517a700b8d5db6b8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.1.tar.gz">1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>756fcafdf025351ea862ae57f29b8eff9beee362</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>9dad9eefd75954cd21460d54da99452cd2dd578f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-heat-dashboard">
+<span id="id39"></span><h3>heat-dashboard<a class="headerlink" href="#team-queens-heat-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat-dashboard/queens.html">heat-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.3.tar.gz">1.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>d8b3a94930250d09f0db49662c99c3ff5c88ce8d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>56e3c1f76acce4530cb5e37b263d10a3a4913ab4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>cf178ef7a254ae17bb16e76baf1cd641cf553d97</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-dashboard/heat-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-dashboard</p></td>
+<td><p>be97728d33cc6a26c098f9a6a4c6afc7c094491c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-heat-translator">
+<span id="id40"></span><h3>heat-translator<a class="headerlink" href="#team-queens-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>db60b7e8312c8051b8814aa10318b97e48a69e6a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-heatclient">
+<span id="id41"></span><h3>python-heatclient<a class="headerlink" href="#team-queens-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-heatclient/queens.html">python-heatclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.14.1.tar.gz">1.14.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.14.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>034e6dd56ca5b92bb09e2330ab2a3e9d95650383</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.14.0.tar.gz">1.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>2ce6aa19a3a8936bc7c9737efadacbb4ae737dab</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.13.1.tar.gz">1.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>c821f148d876ff42d5c7ca5a9a7d8666a43795c8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.13.0.tar.gz">1.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>fbff3c60b78b5cbfea682f8a9206a83db46ee2a3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>868f3b80b7c701607b644afd19e320a9f35e0cfc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-tosca-parser">
+<span id="id42"></span><h3>tosca-parser<a class="headerlink" href="#team-queens-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>23cd991e884b67d41378a69ee30ef38b5d760e68</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-heat">
+<span id="id43"></span><h3>heat<a class="headerlink" href="#team-pike-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/pike.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.7.tar.gz">9.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>b780b3219f8974a81b17db39707d9717c72e411d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.6.tar.gz">9.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>f3b6666d214f70cac4f93cac37e2ed96b82a6044</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.5.tar.gz">9.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>e4312ec9b1cc9d5e47d56f7d3f4560f9dcf5986a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.4.tar.gz">9.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>882c201809f7d21967d97653db357f4115105d5f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.3.tar.gz">9.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>cda1cf15f4a20355c58bd26e2f4ce00007a15266</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>ed3eb9fe823e193e850e170405eecbc1411667f6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>be1e2e9fa5b44fb186d1705e0fefff4b8eec2233</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>6b7b13250adbfaedca206be0ab59f730bd28a014</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-heat-agents">
+<span id="id44"></span><h3>heat-agents<a class="headerlink" href="#team-pike-heat-agents" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>9751edd17098bb6d40bf8a214496f8607d7a2bd6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>6e8e631d3458259ef0d8b87ddd7b558b0f1f6116</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>bd91db747d4597eb86e6b58483624f660e465bf5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>887f06ab4c6248b0ce1a4873ce9b1319943c6e3b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>251d7ab69591e444e7329c114f81bccfaed764d0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-heat-translator">
+<span id="id45"></span><h3>heat-translator<a class="headerlink" href="#team-pike-heat-translator" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.9.1.tar.gz">0.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>2f927cefcd39e1ac1ee49c45f3a0f0749b7aebf3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>4973b0ccc5a236f43f436b5765a1cb301fb5f9fb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-translator/heat-translator-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-translator</p></td>
+<td><p>eddcaad0775521a19721964f745bf3e003072279</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-heatclient">
+<span id="id46"></span><h3>python-heatclient<a class="headerlink" href="#team-pike-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.2.tar.gz">1.11.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>5619c0f7894718c2d6a15b80565c91d624726468</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.1.tar.gz">1.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>d558d6173970736fde63526da6824d391ada6042</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>804ab3e552771a50bbef3dfacdec0d1fa0573406</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>847f9023377b93fc0636309d44ff636fb111d66c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>b80166d848dd26718cfe0627bfec22774213616b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-tosca-parser">
+<span id="id47"></span><h3>tosca-parser<a class="headerlink" href="#team-pike-tosca-parser" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.2.tar.gz">0.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>2aa81311ae93678bfa2e865f5297f3ee5ff2bbd9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.1.tar.gz">0.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>0b000ae4e81b28a09fc32c4f669c00c558611671</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tosca-parser/tosca-parser-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tosca-parser</p></td>
+<td><p>35849fcf693ed7dad6d989a57f45a12c9f93a8b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-heat">
+<span id="id48"></span><h3>heat<a class="headerlink" href="#team-ocata-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/ocata.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.7.tar.gz">8.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>21a4740a885184a95b37758d2b816443633db953</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.6.tar.gz">8.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>76da5a4a2fb0f7315d1d8a3d003f6ab0e4de0c07</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.5.tar.gz">8.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>e671d93b1508650d1da3587f96a2f8561825e24c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.4.tar.gz">8.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>1e57d98611b661795d2977d00405385dec609dba</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.3.tar.gz">8.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>a91585396be57b0a9b0a3e4eae1be1ea08588f3f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>b98af9d4646ecae2269ec9459a824d2c733a1e75</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>e2a317a6ab48ab500b645266afcb57c6319e37b4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat</p></td>
+<td><p>2dd83353c086a8ee3ee8aefb99b06832782d8cab</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-heat-agents">
+<span id="id49"></span><h3>heat-agents<a class="headerlink" href="#team-ocata-heat-agents" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>769d0de4d9acb07563202a2ef3d3a0aa1b9542d1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-agents/heat-agents-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-agents</p></td>
+<td><p>8e6dbb11b0486c60d3d9caf20df63299d99f60d7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-heatclient">
+<span id="id50"></span><h3>python-heatclient<a class="headerlink" href="#team-ocata-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.2.tar.gz">1.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>082f728d179dc2bba64e9821eaec18f429aa15fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.1.tar.gz">1.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>56b497539877ca9e0e83ce6dad5a7f862efc7a63</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>17dd3068e4d6fc10236290cc082908c439bcfead</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>5fe6a8bb1aa26ff2e9554eee278021686b0b9c8a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.6.1.tar.gz">1.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>725dbf764fa876977a5ca19a2a1e082a25494eb8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>57f9c0490bf6a8af92ab0f7f15547a6e9af035bb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-heat">
+<span id="id51"></span><h3>heat<a class="headerlink" href="#team-newton-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/newton.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.6.tar.gz">7.0.6</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>54aa019720f9a03292cdff722eadb494276f13f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.5.tar.gz">7.0.5</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>c4508361c89d8ebae6ecffa2e0191c5df54d23a8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.4.tar.gz">7.0.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>65339f57ca56113b9b17a57119aac1804269333d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.3.tar.gz">7.0.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>d9979236d9082a64d6afa6b868467173f1bc7c28</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.2.tar.gz">7.0.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>b883783627b80abbeeebfd9b53b661927938c1c6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.1.tar.gz">7.0.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>4e095b37f887f150573e9baa1b6e952ed7c861b9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-7.0.0.tar.gz">7.0.0</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>dd707bc997715365dc76a3decea7b4f8d658375f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-heatclient">
+<span id="id52"></span><h3>python-heatclient<a class="headerlink" href="#team-newton-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.5.2.tar.gz">1.5.2</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6c4e27782c5768fef4365d4b0fcfae7eb1da39f2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.5.1.tar.gz">1.5.1</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>144e5a883d1f9f867e4174df3f35661c83ce4da7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>3c3f8ee2c6c988c95c949cb20fa7969a7e4a9c1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>fb7802e591bd51527d58a6c9f35e7cb8f6590a03</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>44dfe535ccb763f346ac17a156e6d138547a38d7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>4c12fb4bd66a2a718861d184267ddfd7168f63e2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-heat">
+<span id="id53"></span><h3>heat<a class="headerlink" href="#team-mitaka-heat" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/heat/mitaka.html">heat</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-6.1.2.tar.gz">6.1.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>4da6f1a8f3f2c597031685e46f7eb7ada3c0a7ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-6.1.1.tar.gz">6.1.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>32fefb75ffc175053aef0d65bc41ae9f978639b2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-6.1.0.tar.gz">6.1.0</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>ed46562157d2f9983f5665394ec47d2e27aad0df</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-6.0.0.tar.gz">6.0.0</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>05dde21891a76bebf92a29df7aa6fe8852fcbafe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-heatclient">
+<span id="id54"></span><h3>python-heatclient<a class="headerlink" href="#team-mitaka-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>acdb66843c4c643b0599d3d65139ece44dcdfb70</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>9f7b9a582335460b7f431ced25dc6d71168c620e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>4ce8335fa1c75955f8cb5c61948af040aba82072</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>ae4a7615d1d0c06ddb9dd9b4497fa209dbdf7fef</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-heat">
+<span id="id55"></span><h3>heat<a class="headerlink" href="#team-liberty-heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-5.0.3.tar.gz">5.0.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>75d5895bf58b81806797f4886dcd35b368839c83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>ad2d7a31c3f903c3e79f9d8a3e327853190cbc6e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>dc8ccd8ee15bb336c4704ac1ff628bfb245a5593</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>4348b7ababd1048e17ec354ca38c903c908cd74e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-heatclient">
+<span id="id56"></span><h3>python-heatclient<a class="headerlink" href="#team-liberty-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.8.1.tar.gz">0.8.1</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>98b45c35913ab96f161ef695ff99f69a968130b5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>16951ccb2ebf866339c0c79e758b1f0abdea8a19</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>a1f8fb035eb1ad85bf28e30e9fb9f34e04930cd3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>7cca8394b8ab2f4dccb982ae789b1b2985627115</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>7c70bcf30be4a473c0e04f8dda42d60e58dcaef7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-heat">
+<span id="id57"></span><h3>heat<a class="headerlink" href="#team-kilo-heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>6dde95a0b3d2468e916a834fdc2ecf332d048c2a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>f32bddcd12cd0c9e56f1daeb4519f610f729d2f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>a4aafba0c2b387df888dfd805594b78b39b5f495</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>9ca4a533d5b3426d63991a34125f27eb189a6f4e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>6db88597dba0b79b2501f43b704c93b2728a5ec6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-heatclient">
+<span id="id58"></span><h3>python-heatclient<a class="headerlink" href="#team-kilo-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6d528f005742263837d05250662bf6214a703da8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>a47351cc834c81cc3b8668da3f86ec6739b34b9a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-heat">
+<span id="id59"></span><h3>heat<a class="headerlink" href="#team-juno-heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>79147fc305f7955f330ad5494eb3e98b9b6ecc9e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>fc4c82996a7a694c6f8802226033d5f1920654cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>b52c916da0759fb5b310ecbcce5db2608b67fdb1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>f2c73c650b16f26eece1841552e0c276b9d954df</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>c06772571a81383aa37336a78d72d455067b75e8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-python-heatclient">
+<span id="id60"></span><h3>python-heatclient<a class="headerlink" href="#team-juno-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.12.tar.gz">0.2.12</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6089d31e302d80910cc15132f99a1bf358bbb64f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.11.tar.gz">0.2.11</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>87bef60d09736d1b83d87723ba4826dc14d09f69</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.10.tar.gz">0.2.10</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6630554476e12bfff427016aab6aedb4eaa2f2c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-heat">
+<span id="id61"></span><h3>heat<a class="headerlink" href="#team-icehouse-heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>eb22b015f5491e03e4a96bfa8c3b3d2d7f011ba0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>8e40d64890ad1c3d5e4abad0e88e09e97a144c74</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>830534149aea02a0435bf86565e91b4652032bcd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>70c4c297661327301a0c3b247a31aa62653d2bbd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>aed6a0401e172e28b99a287a88942616ae43009c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>ec3a0c61393ee4b1ad33f79da256e0a510281ded</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-python-heatclient">
+<span id="id62"></span><h3>python-heatclient<a class="headerlink" href="#team-icehouse-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.9.tar.gz">0.2.9</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>2efd2e5837ea39949a1de5b6ef5060930304953d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.8.tar.gz">0.2.8</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>b048b1a5bd7508e35e955dff8bd176b76bbb7354</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.7.tar.gz">0.2.7</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>1dabd8c6de1caa473ff62baa57e9057dbbb39edc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.6.tar.gz">0.2.6</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>fd6e99793088aadbae86d4a5c17249f81b6806bb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-heat">
+<span id="id63"></span><h3>heat<a class="headerlink" href="#team-havana-heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>278f01354a1558d67ff29a91af4a3001e2a793f5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>527009d0e4a73481459a5246e898390fb432d612</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>ab5d961efd062662544218f36ae64277d39763fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>8283db76a441e25ae00315e1ebdbbeda90e08bf9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>fa85221f9e470410aa6c4b5fff8cef6c5b186afd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-python-heatclient">
+<span id="id64"></span><h3>python-heatclient<a class="headerlink" href="#team-havana-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.5.tar.gz">0.2.5</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>96dbb0911c8d139a5b3fe64af82783cf81790ff8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.4.tar.gz">0.2.4</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>2c05c73a6b7137a428111bb52b97087aac1c43a0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.3.tar.gz">0.2.3</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>3f1b15cdce172e3d66720b4503eaae0d11a563f6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-python-heatclient">
+<span id="id65"></span><h3>python-heatclient<a class="headerlink" href="#team-grizzly-python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.2.tar.gz">0.2.2</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>9354f84e59440e6a6eade085e964a7374c73509f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>ec0a708c998656c1500897436cdcf3bb2a42f2b4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>f1baa757c38c21dfb4f6ac43670257729f958200</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>e1ce4162e48c9de2e1b4edee2d66467e6c3793e6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="heat-cfntools">
+<span id="team-independent-heat-cfntools"></span><h3>heat-cfntools<a class="headerlink" href="#heat-cfntools" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>43c79ad94ca9c564c406b772819fa3adf145c0dd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>5d5a2c1f221002586212299e3ba8799759d36af6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>e424af2236ed1d6e6d0e11768f873ffe4e696221</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>02acffbe2a271118f17639035b40c1a92848686f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.8.tar.gz">1.2.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>8ef88a6e864fa49cdc6dda9b1c701a29e0557253</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.7.tar.gz">1.2.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>cd39c89a80eed1bbb2515cca5b088ca686daab3e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.6.tar.gz">1.2.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>e8d2522397ea6b4384607017c9cafb6f3130f5a2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.5.tar.gz">1.2.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>01705b8b33ce944276e85969e769fa293c8689e3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.4.tar.gz">1.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>026146ae4e76f1884681278ec6db336f972e7219</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.3.tar.gz">1.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>dfd24046c8d1cccd22b3095009d8fc4e23a1a4f0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.2.tar.gz">1.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>97f016304e397dee7fa2ca10c5b37f72d799f078</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/heat-cfntools/heat-cfntools-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/heat-cfntools</p></td>
+<td><p>1cbd58fc00974033fad96c8da2adf3959fd8a1ea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="glance.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Glance"></i></a>
+          
+          
+            <a href="horizon.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Horizon"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Heat</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-heat">heat</a></li>
+<li><a class="reference internal" href="#heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-heat">heat</a></li>
+<li><a class="reference internal" href="#team-victoria-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-victoria-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-victoria-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-victoria-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-heat">heat</a></li>
+<li><a class="reference internal" href="#team-ussuri-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-ussuri-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-heat">heat</a></li>
+<li><a class="reference internal" href="#team-train-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-train-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-train-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-train-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-heat">heat</a></li>
+<li><a class="reference internal" href="#team-stein-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-stein-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-stein-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-stein-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-heat">heat</a></li>
+<li><a class="reference internal" href="#team-rocky-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-rocky-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-heat-tempest-plugin">heat-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-rocky-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-rocky-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-heat">heat</a></li>
+<li><a class="reference internal" href="#team-queens-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-queens-heat-dashboard">heat-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-queens-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-queens-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-heat">heat</a></li>
+<li><a class="reference internal" href="#team-pike-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-pike-heat-translator">heat-translator</a></li>
+<li><a class="reference internal" href="#team-pike-python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#team-pike-tosca-parser">tosca-parser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-heat">heat</a></li>
+<li><a class="reference internal" href="#team-ocata-heat-agents">heat-agents</a></li>
+<li><a class="reference internal" href="#team-ocata-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-heat">heat</a></li>
+<li><a class="reference internal" href="#team-newton-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-heat">heat</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-heat">heat</a></li>
+<li><a class="reference internal" href="#team-liberty-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-heat">heat</a></li>
+<li><a class="reference internal" href="#team-kilo-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-heat">heat</a></li>
+<li><a class="reference internal" href="#team-juno-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-heat">heat</a></li>
+<li><a class="reference internal" href="#team-icehouse-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-heat">heat</a></li>
+<li><a class="reference internal" href="#team-havana-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-python-heatclient">python-heatclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#heat-cfntools">heat-cfntools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/heat.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

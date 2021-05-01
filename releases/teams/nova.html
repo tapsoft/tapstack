@@ -1,0 +1,3635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/nova.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:04 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Nova</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Nova</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="nova">
+<h1>Nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-nova">
+<span id="id1"></span><h3>nova<a class="headerlink" href="#team-wallaby-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/wallaby.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-23.0.0.tar.gz">23.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-23.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>68af588d5c7b5c9472cbc2731fee2956c86206ea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-vif">
+<span id="team-wallaby-os-vif"></span><h3>os-vif<a class="headerlink" href="#os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/wallaby.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>6167658e5b61b5408c4a631cc41b7bfc6f16f164</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>0aa1ac38596d1790885dfb82bb939981c1b9e1cd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="osc-placement">
+<span id="team-wallaby-osc-placement"></span><h3>osc-placement<a class="headerlink" href="#osc-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/osc-placement/wallaby.html">osc-placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>f7640c9efad0715c4cd36f88897b1732aa689488</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="placement">
+<span id="team-wallaby-placement"></span><h3>placement<a class="headerlink" href="#placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/placement/wallaby.html">placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>f41599e1ada2dfc7900817b09b623422d9d1dbe9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-novaclient">
+<span id="team-wallaby-python-novaclient"></span><h3>python-novaclient<a class="headerlink" href="#python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/wallaby.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.4.0.tar.gz">17.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>54d4da112a6e84db5bda497364a49b9debfc2904</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.3.0.tar.gz">17.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>9b474afdb2e15d058babe82e50efe6c93c2e94a2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-nova">
+<span id="id2"></span><h3>nova<a class="headerlink" href="#team-victoria-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/victoria.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.2.0.tar.gz">22.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>35112d7667cee9fc33db660ee241164b38468c31</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.1.0.tar.gz">22.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>cf1db74731198b573cc3693c7923c665b43fcf9c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.0.1.tar.gz">22.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a806b1dc4c578f4a53a6c13317b04eb028861301</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.0.0.tar.gz">22.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-22.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>2931516b75ab1eda8deefec6910efee82a0a7ae2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-os-vif">
+<span id="id3"></span><h3>os-vif<a class="headerlink" href="#team-victoria-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/victoria.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>d7928102d69dadf653c9f734e5cf8fd504335849</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>989f5a7d92b2459444e6956facb332f19e7c6537</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-osc-placement">
+<span id="id4"></span><h3>osc-placement<a class="headerlink" href="#team-victoria-osc-placement" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>25ef9ede49172a47c305e28f6a02d0c0b472920b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-placement">
+<span id="id5"></span><h3>placement<a class="headerlink" href="#team-victoria-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/placement/victoria.html">placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>471e4cc8b78d4382820bbb5245e15d648e7cc136</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-novaclient">
+<span id="id6"></span><h3>python-novaclient<a class="headerlink" href="#team-victoria-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/victoria.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.1.tar.gz">17.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>553257d1b74493b7a9b30ffa2a960485d3588adf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.0.tar.gz">17.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>1322199845a095bafd0a16900f4899283fd0fabe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-nova">
+<span id="id7"></span><h3>nova<a class="headerlink" href="#team-ussuri-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/ussuri.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.2.0.tar.gz">21.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8cbb35521aa374bd424bb4ec29cc67cefa8ab646</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.2.tar.gz">21.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>911066fe3c061f7bb4e3fc1991467ff5c143679e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.1.tar.gz">21.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>29425d6fb64fa52a897c8d6c5aa8860877437d94</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.0.tar.gz">21.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>1afed301746dad2bf51d01a4bdaef0101ffb0186</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.0.0.tar.gz">21.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-21.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>dd3cc59ccf8c963e078359d4b27dacf7d54a14ee</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-os-vif">
+<span id="id8"></span><h3>os-vif<a class="headerlink" href="#team-ussuri-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/ussuri.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>d5b61d10655b3b7a9d32378b5f7bcdb06479e15d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-osc-placement">
+<span id="id9"></span><h3>osc-placement<a class="headerlink" href="#team-ussuri-osc-placement" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>1d6cb4cf0c49728b28191527ded74709128939bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>37f521e53cb83d22121804a940aedd97114e82e3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-placement">
+<span id="id10"></span><h3>placement<a class="headerlink" href="#team-ussuri-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/placement/ussuri.html">placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>0f90d197e11d7aa605c0e1d338db1d146a00d8eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-novaclient">
+<span id="id11"></span><h3>python-novaclient<a class="headerlink" href="#team-ussuri-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/ussuri.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>3ef5b695ca600748d5c78bff6fd4eb9d6dac8599</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>380fc0851387bd4c875afaebc0858646d061beb5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-nova">
+<span id="id12"></span><h3>nova<a class="headerlink" href="#team-train-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/train.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.6.0.tar.gz">20.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>ff570d1b4e9b9777405ae75cc09eae2ce255bf19</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.5.0.tar.gz">20.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8378785f995dd4bec2a5a20f7bf5946b3075120d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.4.1.tar.gz">20.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>5016a36d25de30c78dce3f3a9a247335de286039</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.4.0.tar.gz">20.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>6f24f0f5d87447ed6b6fd6b95a5eb969a82880ee</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.3.0.tar.gz">20.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>1e9502549672628055a53506c81866085ecda23b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.2.0.tar.gz">20.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>0421968f4a2ef2df43f21c739206c38fa047115b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.1.1.tar.gz">20.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8363905a6a6d5c8b2488619bdf807c5dc17b2842</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.1.0.tar.gz">20.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>27bfd0bc6233c25114504bb363402807752a7ece</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.0.1.tar.gz">20.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>c9f2e603d754660e5122992a1bcc28376ce699dc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.0.0.tar.gz">20.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-20.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>5d7e4c52ff0b8d71881c209de03a6856fbdcb2fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-os-vif">
+<span id="id13"></span><h3>os-vif<a class="headerlink" href="#team-train-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/train.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.17.0.tar.gz">1.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>3a08cc4528c183ecf03d1795ca500bb9b745f12d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.16.0.tar.gz">1.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>983bfdee5024afc9fb3e7979b1219a58669bd401</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-osc-placement">
+<span id="id14"></span><h3>osc-placement<a class="headerlink" href="#team-train-osc-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/osc-placement/train.html">osc-placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>8bbca01dbddb1eb374d708553ccaddb4f130116e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>bb001133b277e85afba1827f75927ec6d04df683</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-placement">
+<span id="id15"></span><h3>placement<a class="headerlink" href="#team-train-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/placement/train.html">placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>ff55034f10ab0b45ebcc455434fa491efcd3eb7b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>36beddbaf5e3cc4dce8e3abda5471fe95704feae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-novaclient">
+<span id="id16"></span><h3>python-novaclient<a class="headerlink" href="#team-train-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/train.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.1.tar.gz">15.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>79959abc90bc615687e3a940951ad9ec548178ec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.0.tar.gz">15.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>cd396b8b61ed7496f4166a2237b27aa0a138f6e5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e43596ca5ce076ecbb53a6788349b46f2b3f5c39</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.2.0.tar.gz">14.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ca1a3895f24d430daf8f9566cf6f743885ff2bff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.1.0.tar.gz">14.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>f6ef23f806a68eaa3f5618ba9e672a942634447c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>8c3311eefe0ff94a3184d3a7caca89ae1310e934</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-nova">
+<span id="id17"></span><h3>nova<a class="headerlink" href="#team-stein-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/stein.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.2.tar.gz">19.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>cde42879a497cd2b91f0cf926e0417fda07b3c31</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.1.tar.gz">19.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a50fb46df8b328e7585b6eb5c1589e9ea1e41e80</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.0.tar.gz">19.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>e91540f96538c7ba568617db7c03cf3a195b87ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.2.0.tar.gz">19.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>fb5c97492c390db7ac511e32f2b215c7d19e94dc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.1.0.tar.gz">19.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>bf9d9e55e652012d16b9d052a37efc18abbf1a01</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.3.tar.gz">19.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>73150f135d37d1cf38d030c555a3d65bd1965d4f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.2.tar.gz">19.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>11fde850e6163b68e006e746406e6c5e6ac980e0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.1.tar.gz">19.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>105e6238dd536ac869276c38b5c76fefeb729b40</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.0.tar.gz">19.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-19.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>d1f37ff8040d28ce14a39f58b899aaeac9fa0918</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-resource-classes">
+<span id="team-stein-os-resource-classes"></span><h3>os-resource-classes<a class="headerlink" href="#os-resource-classes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-resource-classes/stein.html">os-resource-classes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>2d4672e5f342a4a5aec4ceca885cd7d966134ebb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>b0c27a7d62d6a1e7331de0e8d2a7c708b5f8a3ba</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>1ae04e7d41a1f5d65708b89787f45ec0bbb32d9c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-traits">
+<span id="team-stein-os-traits"></span><h3>os-traits<a class="headerlink" href="#os-traits" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-traits/stein.html">os-traits</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>7f43b7e9a91ef56d3442a67a9f6a169779bbffe6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>25ea3e4a679677183e88bcf1ad7200a2e9988cdd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-os-vif">
+<span id="id18"></span><h3>os-vif<a class="headerlink" href="#team-stein-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/stein.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.2.tar.gz">1.15.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>ec9d5430300c908ea9a1c64151eee7af522a44e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.1.tar.gz">1.15.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>4d95199728f152a29b2cf2081183398dd419bb31</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.0.tar.gz">1.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>1546d349b1656bc98286af47f1e2748b76743abc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.14.0.tar.gz">1.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>192d6fd1149e56bd14f9e0f9fab54c056ab02373</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.13.1.tar.gz">1.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>db5216357b1be93d91aa48b2878599f2dfef02a8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.13.0.tar.gz">1.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>5fa14f8372c129629f889c30732eef8da9e59e6f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>c5fda08d4010f91487d1336852ec94b275fdbd8d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-osc-placement">
+<span id="id19"></span><h3>osc-placement<a class="headerlink" href="#team-stein-osc-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/osc-placement/stein.html">osc-placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>53b32590ad9de5aa74a60960b804493837b9a713</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>bffd59ea53bad60dd2b1f4c37ff0c40d11c30f99</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-placement">
+<span id="id20"></span><h3>placement<a class="headerlink" href="#team-stein-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/placement/stein.html">placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>bdcbb2604bcbb195fa6e3a1b504ec2c31531308b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/placement/openstack-placement-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/placement</p></td>
+<td><p>b4ac3f7fa0396cd3e67ad6c127ebf5ef575581b3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-novaclient">
+<span id="id21"></span><h3>python-novaclient<a class="headerlink" href="#team-stein-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/stein.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.2.tar.gz">13.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>c7e793c22e72d4d426a6d10e9c2cfa426fedd365</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.1.tar.gz">13.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ef842ca0d834a52b1dfb1ae5155cbd4993a599a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>62bf8809c660ed0675f301c235b1d434caeaf580</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>8eb7d1c5cc0d30c9e68aeb62dd7c73e4377e9fb0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz">11.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>578b37f99419293f7c9eb38d3f71ab164e774b79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-nova">
+<span id="id22"></span><h3>nova<a class="headerlink" href="#team-rocky-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/rocky.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.3.0.tar.gz">18.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>fd50cfacd2eb1da507e226be0f9b3c04e747685b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.3.tar.gz">18.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>95f60c0cdc4dfb16f523a1a61d4149512724b785</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.2.tar.gz">18.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>72f9aa720f9137a35d55b9f96e2220d2d0e5588d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.1.tar.gz">18.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>d8f1bef63ab4357af2105431d3ea367100518aa2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.0.tar.gz">18.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>9bb78d5765dab01e38327f57312583c189a352d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.1.0.tar.gz">18.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>f5984400373716ee5473266ab2a15bcd74f604fc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.3.tar.gz">18.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>16d5bb74d7f74fa44637d89292012092202e8e36</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.2.tar.gz">18.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>55b63c4d608c0cf779d6a72af52254fe5efb7466</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.1.tar.gz">18.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>1f1482eb7d1d386d44b72269efbc2d4e320f73a2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.0.tar.gz">18.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-18.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>5bff489231c16e62f081267a5b433745dba12ded</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-os-traits">
+<span id="id23"></span><h3>os-traits<a class="headerlink" href="#team-rocky-os-traits" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-traits/rocky.html">os-traits</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>91ab5ff372ccefccb2f3260eb3bcd5bad51d6daf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>88960e17fbaea0301882dc1251a6cdab3bfc1bcb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>8888c528776f27c632d34bec52de09991385bb54</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>16e87f2ea00e7a9410884b4ab4c1e5df2e66a6d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-os-vif">
+<span id="id24"></span><h3>os-vif<a class="headerlink" href="#team-rocky-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/rocky.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.2.tar.gz">1.11.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>ca9963c2944ebfd93757471f99e9185bf34f61d4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.1.tar.gz">1.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>538f9de75650407271ac14e8b9ce8ac735fb7eba</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>96b5a11d35d74faf7c9866dceef66984dbcddae6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>761b3c42790a2c1a084f05075aafa35826e2f416</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-osc-placement">
+<span id="id25"></span><h3>osc-placement<a class="headerlink" href="#team-rocky-osc-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/osc-placement/rocky.html">osc-placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>9577cd899541b4c2a5b9fa74a59f4c346bd5addf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>06b5738a3acf1f4fad850c88abf3415457dc73ee</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>844414861a90e251cc4f61ee6908009130284353</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-novaclient">
+<span id="id26"></span><h3>python-novaclient<a class="headerlink" href="#team-rocky-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/rocky.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>6a38838a412f7b4f7820eb98c82a7ced5299ee44</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>f1005ce76b0b4927569efdb99e15e04e5d402dc3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.3.0.tar.gz">10.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0cb0ffa32de475059003f7ee973925caf4bb14e8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.2.0.tar.gz">10.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>6049be67c0f66bd2d15c7b52f77dd89ac4ec2e94</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-nova">
+<span id="id27"></span><h3>nova<a class="headerlink" href="#team-queens-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/queens.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.13.tar.gz">17.0.13</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.13.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>0f0693f0d8659c3374fb2a5c8e4d0c824d254bb3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.12.tar.gz">17.0.12</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.12.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>6212da3f57e3405e4a034e35e6cd6f17e555d5f2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.11.tar.gz">17.0.11</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.11.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>de7a8f9e443b7cf20c18e8637b43e0f2bfada31c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.10.tar.gz">17.0.10</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.10.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>946c26e077b70ff874234bd3b5f505bc075135bf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.9.tar.gz">17.0.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>33dc9f7bbd4ceecf2a590a30e6df034a32a31597</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.8.tar.gz">17.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a48c1123cd0dedf0c0a8978b76bacb1987766255</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.7.tar.gz">17.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a48c1123cd0dedf0c0a8978b76bacb1987766255</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.6.tar.gz">17.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>ddb90b8a2d402f8f2ab5598978294c3179bbf30a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.5.tar.gz">17.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8ea98c56b647526aae7a786531e934eeee7a90a2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.4.tar.gz">17.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>ac085524caa12e337092337c61bbc705b1bd9325</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.3.tar.gz">17.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>bf0a0697734b204e9c64df834895d46382a2cc3c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.2.tar.gz">17.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>307382f58d38778b480d2d030e427759a44c204b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.1.tar.gz">17.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>9d8de62a07b3db7f0913a587156424074cf761c1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a4a53bfa31e22bf1c377dca539ee1c7c7c05847c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-os-traits">
+<span id="id28"></span><h3>os-traits<a class="headerlink" href="#team-queens-os-traits" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-traits/queens.html">os-traits</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>e0a3a6ef1e36fb8a62970050959d33676cf41bc1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>7d771c5b9106b04e92d8061b94c76e5dc774de08</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-os-vif">
+<span id="id29"></span><h3>os-vif<a class="headerlink" href="#team-queens-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/queens.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.2.tar.gz">1.9.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>7b84b527ec84f7649df8f20d743b1f7ea9e8e113</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.1.tar.gz">1.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>3be52b9e650db643827b8b97b28799407f30926f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>87e0edde4d190549867e4a0be0c544c5f080213d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>dff9093ab682d798e6165840cfae234f2a5372f5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-osc-placement">
+<span id="id30"></span><h3>osc-placement<a class="headerlink" href="#team-queens-osc-placement" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/osc-placement/queens.html">osc-placement</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>c486b1fea99ece5d3f7c7b2da469102d81b24186</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/osc-placement/osc-placement-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/osc-placement</p></td>
+<td><p>2c538f3ea00928f8248b8b59dbdbd806caa43b06</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-novaclient">
+<span id="id31"></span><h3>python-novaclient<a class="headerlink" href="#team-queens-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/queens.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.1.1.tar.gz">10.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>af961861819a503d5ccc9b97c42c50154c779172</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.1.0.tar.gz">10.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ed73aadf19feb1279b653721ef42c65016edae52</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>fefc3ba723865307f4cc2ca287eb59faa4e8a5b1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-nova">
+<span id="id32"></span><h3>nova<a class="headerlink" href="#team-pike-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/pike.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.8.tar.gz">16.1.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>c8359d087147919532617877d0fdc2792b500f23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.7.tar.gz">16.1.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>44e2ecd8e1b5b11e3ff06344a97032b7da510624</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.6.tar.gz">16.1.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>3e07bcb327aec6cf2ee83b4981cf89539f5a588d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.5.tar.gz">16.1.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>d9ad26d61999f47adfecc5dcdc89c67bf9e95f4e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.4.tar.gz">16.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>43cac615f6a0a4399c7bf3dda6c2595749f27ace</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.3.tar.gz">16.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>57c28a379ff6b998953d92983d3be53db3618b69</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.2.tar.gz">16.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>09593628fda7a6cb947fff34c725e3ef29889dc7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.1.tar.gz">16.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>708342fe8d6e930d7fe942fb5f2043c2907cd5e9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.0.tar.gz">16.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>806eda3da84d6f9b47c036ff138415458b837536</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.4.tar.gz">16.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>4d4930c59af32d717088b3af28047ee1fcf09d4a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.3.tar.gz">16.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>3f63d057a64b688b66ff1903c1afc4d97ba6df6d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.2.tar.gz">16.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>cb3abbdb768013e4d7182a91c8a2b26c6d725f35</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.1.tar.gz">16.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>edd59ae12d11db770cf7e1b0c306be34aacd3d2b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8b162ba21f06272f915070473640d493dd70beec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-os-traits">
+<span id="id33"></span><h3>os-traits<a class="headerlink" href="#team-pike-os-traits" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-traits/pike.html">os-traits</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.4.tar.gz">0.3.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>98aa3e5a0515cf148ee8b2c1a3ff22c5d9d78084</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.3.tar.gz">0.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>3e8b4a77aaf2d8b64f89ba3b479113d0b44bbe2f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.2.tar.gz">0.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>c091deb9b5540e02d72488883228ef426fb737e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>789ce955eac04adb71ec5f2bc4890dd8c86c7ceb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>b169eb4a8e13c74673b54512d0577088aa3cc81d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>536c9c712aadefb2d3d4167510ebf792f46d8524</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-os-vif">
+<span id="id34"></span><h3>os-vif<a class="headerlink" href="#team-pike-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/pike.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.2.tar.gz">1.7.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>5b4db2087a0f44fc5d5a951663f620cc24940df3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.1.tar.gz">1.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>3bb2331488569e30cf8619e17a3d9f79569da8e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>f4329ffe1805452a790f6116d10164c3658562fa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>2a09ede8fb15df6c3ef520d1107437df1d16aa89</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>19af4386dec2eca06592c433210232cbab479633</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-novaclient">
+<span id="id35"></span><h3>python-novaclient<a class="headerlink" href="#team-pike-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/pike.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.3.tar.gz">9.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>4936392c6415c163b371c187fe3037e3374a8a9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.2.tar.gz">9.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e573b6f11ea370fd96654d9a97df1b5495c5e842</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.1.tar.gz">9.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>a1c00740c5b709a7d2bc4289fa6e28eac7909b8f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0a53d19a7feadc329534cf04d74411fc51c29e86</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ddb386b2dffaf06077c2a0768c56ed5642d216dc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>758570397821136561bdf425b0a8ed5ab1bbd96f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e1b9e76abe6731d7d3192566db2f9068a71eaad9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-nova">
+<span id="id36"></span><h3>nova<a class="headerlink" href="#team-ocata-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/ocata.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.5.tar.gz">15.1.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8c663dbd25a0dab1c2d903efc7cf7fc3d9d07b00</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.4.tar.gz">15.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>72ab303ef493b29b70654b681749269eb4bbe2c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.3.tar.gz">15.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>7af016cd02d2268b55ebd125678a01b7ef4f883f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.2.tar.gz">15.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>a0bcc6bda09c5dff4bf0ba57b80ebb94f01567f0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.1.tar.gz">15.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>cec7a9bc91aae9a2e074802cc4443b6db44efa6d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.0.tar.gz">15.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>4f0ff43c79c02689a118dc8100187c19b5c21238</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.8.tar.gz">15.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>ffd4f72d16dacd6ca1e703f9bab37b8917d253e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.7.tar.gz">15.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>6c67eee6f4a40c5e84beb2950c45e9fe5dcf9fd1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.6.tar.gz">15.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>fe329029265e10296a550fc9153b7977da4aefe2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.5.tar.gz">15.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>8b2f7d38ccdbbc6533930b8d4eeff4e2ff79176c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.4.tar.gz">15.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>506465a027dd1ba1c90949dc58297edae32da7e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.3.tar.gz">15.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>6d4f9f4f6cfd3e256c68addfed0c3a033b3bf957</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.2.tar.gz">15.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>acb19160d4d348e29a21ad57c61c7369352c4d1c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.1.tar.gz">15.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>7ccf8d2e358623b3536c9f3e2850a75414969134</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/nova</p></td>
+<td><p>ff369899749ac3e21ed0174b40e948c78c2dc1fa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-os-vif">
+<span id="id37"></span><h3>os-vif<a class="headerlink" href="#team-ocata-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/ocata.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>f5f2071fe551c127e9ecafb8a44baf44b9b92d9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>9a14c18c2163f8f90c797150d12e11b2aad8c1ee</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>88c21d7d69905308f021c7546609b9c30b761806</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-novaclient">
+<span id="id38"></span><h3>python-novaclient<a class="headerlink" href="#team-ocata-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/ocata.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.2.tar.gz">7.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>2e2317bfca941e59899edda181241f320e2033f8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.1.tar.gz">7.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0063ebce2fd8d6259c128f5d161370d40296d510</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>f6e0128f9a66b48a24c10d532a9e4e8d7d7e94a5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>69d05c6774b9244ee1c6b7f8283f87422bb51b34</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-nova">
+<span id="id39"></span><h3>nova<a class="headerlink" href="#team-newton-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/newton.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.1.0.tar.gz">14.1.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>808d36475103e373f1deb3344b6829ce68d6cdd5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.10.tar.gz">14.0.10</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>db6e1dd0a0fde9846114f02811087640fc84f58c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.9.tar.gz">14.0.9</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>ca03fe87371d8c13fc2895f8ff3e7e1ca88cfe79</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.8.tar.gz">14.0.8</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>bcc88d4cad3d2a86e9e1c841a4afdb5a9d87c0f1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.7.tar.gz">14.0.7</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>d756b78e303753e1b88e0691aa0fd13d2edaf1f0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.6.tar.gz">14.0.6</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>0c56c62878138c3c3d2dfc6827e4cf8f34953bea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.5.tar.gz">14.0.5</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c2c91ce44592fc5dc2aacee1cf7f5b5cfd2e9a0a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.4.tar.gz">14.0.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>642caf0c58ed0a0e0c06103d2e3ef001c1ae142f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.3.tar.gz">14.0.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c80c8e6dbfb59c117cca53250fdc97f9a171db03</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.2.tar.gz">14.0.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>867661d51bdb0cf2a6f326cb18f26bbc1f04eb15</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.1.tar.gz">14.0.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>e08cc356b0fb78163657f7a6e99572039fd58543</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-14.0.0.tar.gz">14.0.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>59653c6f4623a231c777985b9c5202376ea68aa5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-os-vif">
+<span id="id40"></span><h3>os-vif<a class="headerlink" href="#team-newton-os-vif" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-vif/newton.html">os-vif</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.2.1.tar.gz">1.2.1</a></p></td>
+<td></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>ac8c8376249fde6a226f57c49c370d197602fb6a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>b088d21b91dbfda0f18b1e4886f6aa01f2c72cbe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>c16a74b96223cfb7bf3b6277b8c0b46c18f671fe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-vif/os_vif-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/os-vif</p></td>
+<td><p>e5227ecbc02f4090bbb96bb766d89b6ad107c51b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-novaclient">
+<span id="id41"></span><h3>python-novaclient<a class="headerlink" href="#team-newton-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/newton.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.2.tar.gz">6.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>41aeb89cae68a0e2ce03a248226488d4ba2ea8af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.1.tar.gz">6.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>9c731d51e3d7417cd9ff006d884ba5e57d8bdea6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-6.0.0.tar.gz">6.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>25117fa866b5b80f81fcb559b21525d2b107b2f7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-5.1.0.tar.gz">5.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>38073cab51821e4c29a47bcc7cb33d45b112d1c3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5eb7b65f0d1aca4f62b5d5f451a99a43fd4265fc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>19ff19e1b8e632e03aff50621d200a258b2014b2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>f6efc861b7b40c8a78743fed661053506fb1301a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.4.0.tar.gz">3.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>8c204ac1a27f7b645e151d67ee38a4c18dd2201b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-nova">
+<span id="id42"></span><h3>nova<a class="headerlink" href="#team-mitaka-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/mitaka.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.1.4.tar.gz">13.1.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>e193201fa1de5b08b29adefd8c149935c5529598</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.1.3.tar.gz">13.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>2e05c82b807624b8420df4c94d68b75563b230d2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.1.2.tar.gz">13.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>63f3d99819137315b9cb8475614b86314733b1d7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.1.1.tar.gz">13.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>f094cb99e13848e09a9b09e089dbfb56eef4dfb6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.1.0.tar.gz">13.1.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c8ec9ebf379c61d73c5671a75dd2a4e4ae1403fb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-13.0.0.tar.gz">13.0.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>7105f888ee1f52d2a462fc0ece3130dc0d3d49f5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-novaclient">
+<span id="id43"></span><h3>python-novaclient<a class="headerlink" href="#team-mitaka-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-novaclient/mitaka.html">python-novaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.3.3.tar.gz">3.3.3</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>fd45db19b6faf11443b893f941f936bd4652e76b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.3.2.tar.gz">3.3.2</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5744ac130fac2634529b9a0088f4f093341ae1a4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.3.1.tar.gz">3.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0e9c46a21a2b8579794612c269cecd2c05a819ef</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>f9360ae6d44a656171602823d91f83d80fa67dce</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>7d05f540eac29a6e899212b00595888cc06e73ed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>36e125a61e1f047ab9f3a2ab533050ae54232fe9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>6b0fe2a424630f6ebcb1cf0c42d5ac8590705875</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.35.0.tar.gz">2.35.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e88df234dabcdf747fe2f514b11bfc46c12f357f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.34.0.tar.gz">2.34.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>bba1d6ece49f235197216e031bb156901c11e744</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.33.0.tar.gz">2.33.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>a5363ae0d60d41feff23f6cca44fcd7aa9fc5b8b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.32.0.tar.gz">2.32.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>03f1f67ccde6f495e264da08f0bb7d707cf3ff66</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.31.0.tar.gz">2.31.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>abd0630badaff18ca998db2feccb058e8ee75f23</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-nova">
+<span id="id44"></span><h3>nova<a class="headerlink" href="#team-liberty-nova" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/nova/liberty.html">nova</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.6.tar.gz">12.0.6</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>a967cfe37a3bc26ee8a8517d5f5dac33b35e377e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.5.tar.gz">12.0.5</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>f680157175706563c34afc3cd8c998de97c4347a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.4.tar.gz">12.0.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>ebbbcc6b110be9599f7c4ffbefc1ff8f1945c874</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.3.tar.gz">12.0.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>6fdf1c87b1149e8b395eaa9f4cbf27263cf96ac6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.2.tar.gz">12.0.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>aa4edd349dde73739527ab793ff6209fe1907e2c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.1.tar.gz">12.0.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>cc0bc4be85b2f51fdc30dd99fa231c7e6af61485</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-12.0.0.tar.gz">12.0.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>6df6ad3ff32f2b1fe2978df1032002548ad8eb66</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-novaclient">
+<span id="id45"></span><h3>python-novaclient<a class="headerlink" href="#team-liberty-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.3.tar.gz">2.30.3</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>48a8e73b86c5d14b153e1246672a4520ea45ccaf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.2.tar.gz">2.30.2</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>dc4970728bae71f9745506190cc87b2edb36b0b8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.1.tar.gz">2.30.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>3636685ede1e841ddfed73a1dfb90851f0003980</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.30.0.tar.gz">2.30.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0f950a69e79b17172e1de853708be982f9191cf8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.29.0.tar.gz">2.29.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>31d4e026b447bfac43fa943176b353fcfd2800d8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.28.1.tar.gz">2.28.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>9e15b3d7c07d605947b8e712e36d982a0e14fb90</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.28.0.tar.gz">2.28.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e4b0d46c4b5b99973a7f65c294a9b73c8adfefb7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.27.0.tar.gz">2.27.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>fa0c063d53e90c9dadd19958ead0f7612eb38ff2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.26.0.tar.gz">2.26.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>072ab6cd5aa129bb052def9a1ae3e3480227ccf5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.25.0.tar.gz">2.25.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0e35f2a2fabe5beae065cc92c44f653ff76e6558</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.24.1.tar.gz">2.24.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>31f97a011b6a563e1cec16c16422a288e4a6ea80</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.24.0.tar.gz">2.24.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5eab1430f2a7a91e2df22405913f328c9870b2e3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-nova">
+<span id="id46"></span><h3>nova<a class="headerlink" href="#team-kilo-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>cd81512f87476b0bad29db379d3b92b22723cd2e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>b974c6d1d5753f333d1d71f8190ddf3b4f8fbbf1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>24c6b904f75b6a544edc9d34ca0163df7d164a1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>31a6eb00d4a1b4a7119b37fedc02c4b880a4247b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>8397b6464af520903f546ce4c6d51a2eb5b4c8a8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-novaclient">
+<span id="id47"></span><h3>python-novaclient<a class="headerlink" href="#team-kilo-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.23.3.tar.gz">2.23.3</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>a87cbd9128c1a2adba3af087e2b04fe17ffaa59d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.23.2.tar.gz">2.23.2</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>4ab9db648653f7ea6b9f8b1c78bff672b20b913f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.23.1.tar.gz">2.23.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>13463268dbc4bb93a6d606a52e89ff3e23af1de7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.23.0.tar.gz">2.23.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>e0f5072907a00d48a183dd8fc91a6cf6038ca279</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.22.0.tar.gz">2.22.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>7e7764ced5f5b7c9be5504dda94c4f1286fd4c08</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.21.0.tar.gz">2.21.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>bfd029c8ef500af705159a5f3d5fa74e39c43096</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-nova">
+<span id="id48"></span><h3>nova<a class="headerlink" href="#team-juno-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>044154de11ddd0d250e3486718843642ddaf579a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>e6452b995023e89bf6f1a1fb14f39216f83c760b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>78dbed87b53ad3e60dc00f6c077a23506d228b6c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>ba25e9ea6d0d42dd3b78cc6440710fd9362ae1b5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c5ac21f3dbb4ad59efcb631d91e4e64f77fba43f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-python-novaclient">
+<span id="id49"></span><h3>python-novaclient<a class="headerlink" href="#team-juno-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.20.0.tar.gz">2.20.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5ecfdac6b34769e200ff5c4c7429c20518c5b24f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.19.0.tar.gz">2.19.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ce115063bbde435156132eb4a590e4593541e40e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.18.1.tar.gz">2.18.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ecb3320df1fcbea5522a5c147ca8308114d59955</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.18.0.tar.gz">2.18.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>580c0aa61128b20aad77e2d43119463fc4d9f99e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-nova">
+<span id="id50"></span><h3>nova<a class="headerlink" href="#team-icehouse-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>58ae4a6e3a3585e3ace914c695e537707c75673e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>ecac4bf998b329dd70619f3ecff2abf9c5ca1e8f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c04b6ea0ef1770dc1b257d3018739cba1e7eadfb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>14080812961e5a2f6a7054a45d2afa013e4f3899</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>867341ff27cf91503e6919a2702298ce39f679ad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>87f57c0a2cc00a70edc87c5dc10bdefb6c01587b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-python-novaclient">
+<span id="id51"></span><h3>python-novaclient<a class="headerlink" href="#team-icehouse-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.17.0.tar.gz">2.17.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>3393cb9ff828bf49722617f60f437b1941acd2c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.16.0.tar.gz">2.16.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5461af9c6ca0a56267b28b83930503a9d60214a9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-nova">
+<span id="id52"></span><h3>nova<a class="headerlink" href="#team-havana-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>312ccad26ea7156f125114179f0cb06191da8e99</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>feedcb240807cdfa354d27ebe3a4b7f416504a62</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>bcdc81319444474bef8c4140d58ec34ab45d8377</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>a4ffc064a8acb3a5a4b9e7d65233d3fc4055fd5f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>3c373acb008b2a9b1c422fa1bbd5755db6092378</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-python-novaclient">
+<span id="id53"></span><h3>python-novaclient<a class="headerlink" href="#team-havana-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.15.0.tar.gz">2.15.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>45fcd6f7bae0aa7b72d9d0da919ff253df98319e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.14.1.tar.gz">2.14.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>fe31607d1ba2596a5df7452b6c2227215e5397d3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.14.0.tar.gz">2.14.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ec5861644c3a7a77bcbbdd8cda7e33165fbb4601</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-nova">
+<span id="id54"></span><h3>nova<a class="headerlink" href="#team-grizzly-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>64f22b8059b218c06634c0b54f9b39f7a77493ed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>0409a098de02407e8229183ee55f11252c0a3cf4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>89c7ee409564d3909dbe8e1fb171ae7273508339</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>8c136a8ee4733d8d3af61406fc9eeccb4e9b7a68</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>be94dd25bf64df3151013c08ed925d68fcf85190</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>d91686ace3ae1bf22948b9a0a4bf62918585a029</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-grizzly-python-novaclient">
+<span id="id55"></span><h3>python-novaclient<a class="headerlink" href="#team-grizzly-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.13.0.tar.gz">2.13.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5073b8080ad28bc45c22acc748919cfb2695533b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.12.0.tar.gz">2.12.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>655765a5eac161be8209e62950ecde7b4da84d1a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.11.1.tar.gz">2.11.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>132465231a1517aa79c5fad0eb4949a7e02bd763</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.11.0.tar.gz">2.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0933c64251b24e1558676ef7f9d6ab446e386fea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.10.0.tar.gz">2.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>18deaf47918e5baa655fabb9776d294571363608</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="folsom">
+<h2>Folsom<a class="headerlink" href="#folsom" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-folsom-nova">
+<span id="id56"></span><h3>nova<a class="headerlink" href="#team-folsom-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.2.4.tar.gz">2012.2.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>49931ce2e24f14a497f8ada245df34cf95de5b98</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.2.3.tar.gz">2012.2.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c1170aaa94e7bfbf900220ac22a9df743ee97f4d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.2.2.tar.gz">2012.2.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>6c098d17426f723d15c078870dc0bb8f21c5c5f4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.2.1.tar.gz">2012.2.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c00f789a4fdf302b8feaed611b44aa581efd9074</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.2.tar.gz">2012.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c763ee3874a3e4bc7758e34c812899dbfae36cce</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-folsom-python-novaclient">
+<span id="id57"></span><h3>python-novaclient<a class="headerlink" href="#team-folsom-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>cdebf729b06d9465ab080fd5b15e433f70f8fe45</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>dfa1c71e910e624c3983e6db1aab0ec9b085a3cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>c41f5f643af136ccb9cdc40902a6cebfdebaa518</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.6.10.tar.gz">2.6.10</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>a11788515e800a95d5b83448c2a9403eed509bdf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.6.1.tar.gz">2.6.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>3dd0d3be63b4bf35aede852d096deff9be5b63e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.6.0.1.tar.gz">2.6.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>49e831a2dbc086035e1ca3a322a87e7decb397d0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="essex">
+<h2>Essex<a class="headerlink" href="#essex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-essex-nova">
+<span id="id58"></span><h3>nova<a class="headerlink" href="#team-essex-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.1.3.tar.gz">2012.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>b00f759b80a66d5faba212232bde2bcd4cc3cd6c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.1.2.tar.gz">2012.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>6227bc9a1b2534874aa19024ad7d660c2b75197d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.1.1.tar.gz">2012.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>feaeadab934e3d31fd3562014ffd2e44ae6dce34</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2012.1.tar.gz">2012.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>bbb021c8423c5662290c6a569e6352e2f67e2873</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-essex-python-novaclient">
+<span id="id59"></span><h3>python-novaclient<a class="headerlink" href="#team-essex-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2012.1.tar.gz">2012.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>45fb6b6de89eaec642ecbf755af45fd55f8224d4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="diablo">
+<h2>Diablo<a class="headerlink" href="#diablo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-diablo-nova">
+<span id="id60"></span><h3>nova<a class="headerlink" href="#team-diablo-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2011.3.1.tar.gz">2011.3.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>2210b0796bf0b905ee5956a0b526b07eaae86709</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2011.3.tar.gz">2011.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>a8e8d26393ac379f28db20a639d1711551106897</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-diablo-python-novaclient">
+<span id="id61"></span><h3>python-novaclient<a class="headerlink" href="#team-diablo-python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>d81b0d84c1aef8955c45a5117239baba1058dc85</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cactus">
+<h2>Cactus<a class="headerlink" href="#cactus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-cactus-nova">
+<span id="id62"></span><h3>nova<a class="headerlink" href="#team-cactus-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2011.2.tar.gz">2011.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>8d304410250ddb33d2b2140456096816e0d62410</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="bexar">
+<h2>Bexar<a class="headerlink" href="#bexar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-bexar-nova">
+<span id="id63"></span><h3>nova<a class="headerlink" href="#team-bexar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2011.1.tar.gz">2011.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>75e052e2c0bb7f470b959ea1a6168a6c5cddd8fd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="austin">
+<h2>Austin<a class="headerlink" href="#austin" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-austin-nova">
+<span id="id64"></span><h3>nova<a class="headerlink" href="#team-austin-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2010.1.tar.gz">2010.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>685e2a1b4b359c1f7e8ec72817c2c420f2b26a18</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-independent-os-resource-classes">
+<span id="id65"></span><h3>os-resource-classes<a class="headerlink" href="#team-independent-os-resource-classes" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>3dd3506d092d0360b16e131592974f7214b2e650</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>0dd643be96ebb51c7a120922cd164e64c8695cdd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-resource-classes/os-resource-classes-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-resource-classes</p></td>
+<td><p>cda818464ec4bfc7f34279501fb4a890e900ae53</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-independent-os-traits">
+<span id="id66"></span><h3>os-traits<a class="headerlink" href="#team-independent-os-traits" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>ac1b39eff3e61b0e95cffad4510f71b6b2745c4b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>454292dbd22edd2e9565bfe790b74b91c068f2e6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>bca5bace0717aac6b60b49ce928d7b35b0b3cb96</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>bdc942a27248eeb0ad9b674f099d671e88792d54</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>f6c8636bd81198261113af1289f43ba9bc69ce07</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>c7468b0bad407c7fdb293a49e9c6c9ec16274a96</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>308fef970233943703dec13970d6022b71c0c0a0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>fc685f9e3b3572574d2d80a5efb3f1648ea0b4eb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.16.0.tar.gz">0.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>5a477b8aed198fbece7cc508ee15ad46fd9e1437</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.15.0.tar.gz">0.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>74f8a3fe097bfde1cae3c58c2d8bf6f92ae192ba</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.14.0.tar.gz">0.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>af871d1ed5f41ad0bf61a0ae6a8e639af8fcaf32</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.13.0.tar.gz">0.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>08ba939ba575f61591b0b71022fa8dec62c02535</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>1b14058122aa62439fb23de6efb10cce4a3f0c84</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-traits/os-traits-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-traits</p></td>
+<td><p>e4bfa8c4e08766c20a2ed5f1b8f866d42157ef07</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="neutron.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Neutron"></i></a>
+          
+          
+            <a href="octavia.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Octavia"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Nova</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-nova">nova</a></li>
+<li><a class="reference internal" href="#os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#placement">placement</a></li>
+<li><a class="reference internal" href="#python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-nova">nova</a></li>
+<li><a class="reference internal" href="#team-victoria-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-victoria-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-victoria-placement">placement</a></li>
+<li><a class="reference internal" href="#team-victoria-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-nova">nova</a></li>
+<li><a class="reference internal" href="#team-ussuri-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-ussuri-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-ussuri-placement">placement</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-nova">nova</a></li>
+<li><a class="reference internal" href="#team-train-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-train-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-train-placement">placement</a></li>
+<li><a class="reference internal" href="#team-train-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-nova">nova</a></li>
+<li><a class="reference internal" href="#os-resource-classes">os-resource-classes</a></li>
+<li><a class="reference internal" href="#os-traits">os-traits</a></li>
+<li><a class="reference internal" href="#team-stein-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-stein-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-stein-placement">placement</a></li>
+<li><a class="reference internal" href="#team-stein-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-nova">nova</a></li>
+<li><a class="reference internal" href="#team-rocky-os-traits">os-traits</a></li>
+<li><a class="reference internal" href="#team-rocky-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-rocky-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-rocky-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-nova">nova</a></li>
+<li><a class="reference internal" href="#team-queens-os-traits">os-traits</a></li>
+<li><a class="reference internal" href="#team-queens-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-queens-osc-placement">osc-placement</a></li>
+<li><a class="reference internal" href="#team-queens-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-nova">nova</a></li>
+<li><a class="reference internal" href="#team-pike-os-traits">os-traits</a></li>
+<li><a class="reference internal" href="#team-pike-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-pike-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-nova">nova</a></li>
+<li><a class="reference internal" href="#team-ocata-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-ocata-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-nova">nova</a></li>
+<li><a class="reference internal" href="#team-newton-os-vif">os-vif</a></li>
+<li><a class="reference internal" href="#team-newton-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-nova">nova</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-nova">nova</a></li>
+<li><a class="reference internal" href="#team-liberty-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-nova">nova</a></li>
+<li><a class="reference internal" href="#team-kilo-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-nova">nova</a></li>
+<li><a class="reference internal" href="#team-juno-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-nova">nova</a></li>
+<li><a class="reference internal" href="#team-icehouse-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-nova">nova</a></li>
+<li><a class="reference internal" href="#team-havana-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-nova">nova</a></li>
+<li><a class="reference internal" href="#team-grizzly-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#folsom">Folsom</a><ul>
+<li><a class="reference internal" href="#team-folsom-nova">nova</a></li>
+<li><a class="reference internal" href="#team-folsom-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#essex">Essex</a><ul>
+<li><a class="reference internal" href="#team-essex-nova">nova</a></li>
+<li><a class="reference internal" href="#team-essex-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#diablo">Diablo</a><ul>
+<li><a class="reference internal" href="#team-diablo-nova">nova</a></li>
+<li><a class="reference internal" href="#team-diablo-python-novaclient">python-novaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cactus">Cactus</a><ul>
+<li><a class="reference internal" href="#team-cactus-nova">nova</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bexar">Bexar</a><ul>
+<li><a class="reference internal" href="#team-bexar-nova">nova</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#austin">Austin</a><ul>
+<li><a class="reference internal" href="#team-austin-nova">nova</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#team-independent-os-resource-classes">os-resource-classes</a></li>
+<li><a class="reference internal" href="#team-independent-os-traits">os-traits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/nova.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:04 GMT -->
+</html>

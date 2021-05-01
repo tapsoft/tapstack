@@ -1,0 +1,1969 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/octavia.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:04 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Octavia</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Octavia</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="octavia">
+<h1>Octavia<a class="headerlink" href="#octavia" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-octavia">
+<span id="id1"></span><h3>octavia<a class="headerlink" href="#team-wallaby-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/wallaby.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>d463897551017f6c4329e7109649af87e1ec88a9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="octavia-dashboard">
+<span id="team-wallaby-octavia-dashboard"></span><h3>octavia-dashboard<a class="headerlink" href="#octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/wallaby.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>08ba87ee6b367a09810781ca7de040372f905570</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="octavia-lib">
+<span id="team-wallaby-octavia-lib"></span><h3>octavia-lib<a class="headerlink" href="#octavia-lib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.3.1.tar.gz">2.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>3208f7fbcae31f84f0d8b0ff05ef63f5f7f2a075</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>0bc8c6a0b843ecd71ba3795ca7010ca42b3c417f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="octavia-tempest-plugin">
+<span id="team-wallaby-octavia-tempest-plugin"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>41b3aac6b0386dae202abe8cc03455ea710e468e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>efae4470eb91859b6957d9280f0c60de25da54e8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-octaviaclient">
+<span id="team-wallaby-python-octaviaclient"></span><h3>python-octaviaclient<a class="headerlink" href="#python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>e7922ac506541620b3b4f771cd312c81cf40f7f6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-octavia">
+<span id="id2"></span><h3>octavia<a class="headerlink" href="#team-victoria-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/victoria.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.1.1.tar.gz">7.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>857533b59cf1ef2b657ce74bc0de89798356ab93</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>b5c6c884a4a4de48eea7ea08ba865f08fbfcf972</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>afe9ac3cfc60c598e647a7b25f74ffeff1d1333b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-octavia-dashboard">
+<span id="id3"></span><h3>octavia-dashboard<a class="headerlink" href="#team-victoria-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/victoria.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>3b3f91738ebb6c471662e399cea7acdcf9661f5c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-octavia-lib">
+<span id="id4"></span><h3>octavia-lib<a class="headerlink" href="#team-victoria-octavia-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-lib/victoria.html">octavia-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>fe022cdf14604206af783c8a0887c008c48fd053</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>397653cb6de49d5f9733348231833a12da49531d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>ec7195d713d71370fa6a72d3839253b9789b3b4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-octavia-tempest-plugin">
+<span id="id5"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#team-victoria-octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>67249477d855d5be4470defcaa7a981fdb66ad49</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-octaviaclient">
+<span id="id6"></span><h3>python-octaviaclient<a class="headerlink" href="#team-victoria-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/victoria.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>78c08edf3dbf1fb0e8ba33761c555807e0ff3227</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>1633a5197e799238447fe4c449d5ec8b84f438d2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-octavia">
+<span id="id7"></span><h3>octavia<a class="headerlink" href="#team-ussuri-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/ussuri.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>198c7d9658e5852b910f61b1eaa753cf63f9e554</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>d653edde2d7827e6d5d21c6046b64df8f9bb346d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>fbbe316ef211ba49b8cbc94ca4ebb680e2299c6b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>0f0e594e179091e1632cb0f80849bb5f8a6b4158</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-octavia-dashboard">
+<span id="id8"></span><h3>octavia-dashboard<a class="headerlink" href="#team-ussuri-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/ussuri.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>57e9ea7ffd8867c3fc48e1d8f82390fe5e634e0c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-octavia-lib">
+<span id="id9"></span><h3>octavia-lib<a class="headerlink" href="#team-ussuri-octavia-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-lib/ussuri.html">octavia-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>99118d2e47f24fc9aeccb8da530cd8133e530cc9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>12d678a04943aea6c1987ce098c2ff4659109137</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-octavia-tempest-plugin">
+<span id="id10"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#team-ussuri-octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>49460e413bda5eaf1889686d3cfd4d10a8637232</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>0ae7f108b91eea0a363236cb12bcb03c098d321d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-octaviaclient">
+<span id="id11"></span><h3>python-octaviaclient<a class="headerlink" href="#team-ussuri-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/ussuri.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>17836502fa925d3bcef3d77426ae0e497561943b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>ee1d0e6871c99d692fe15ab37a14338ff9c15818</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>a3a29cd5b2d1f641534d3f72bf4a8365fcbe4d79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-octavia">
+<span id="id12"></span><h3>octavia<a class="headerlink" href="#team-train-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/train.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.1.1.tar.gz">5.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>9b4a98aacd9bdc440c0bd778b9e68d57ef5a7416</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>fd622009e6641e8b9d04fc66f1e878ef452d8d9f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.3.tar.gz">5.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>8c32d2e6024d9cfa3e6ab8bff43f2a261aaee82d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>2a18b6cc996e4c64d650c516071c57358681af3b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>19202863e2e459a0c81a872df7dc745aad4d15ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>6f54167b05cab1ef2721d63ddee99f92d61ea14f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-octavia-dashboard">
+<span id="id13"></span><h3>octavia-dashboard<a class="headerlink" href="#team-train-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/train.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>74044687e0ef5b74853258a0f9ce2be7320e88f0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>d515a7450bf229222358045a57301c2778f18344</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-octavia-lib">
+<span id="id14"></span><h3>octavia-lib<a class="headerlink" href="#team-train-octavia-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-lib/train.html">octavia-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>cec8b194211b5f6dc6c927210b082e8a4282a9d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>43e957f9fe42505b421c882b6706d74132aebd7d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>54a9d2c6d46c4b3e7e78f0289596f4e8b6ea469b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>307b15e2a3755c70a0e6062bad3bdb79e687c3d7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-octavia-tempest-plugin">
+<span id="id15"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#team-train-octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>393d3c114a6ca4935a4d0e0bcf3e242e5cfcbf65</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>2261d112b2c5a9c25e3eceb701fe131a9782ddf5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-octaviaclient">
+<span id="id16"></span><h3>python-octaviaclient<a class="headerlink" href="#team-train-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/train.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.10.1.tar.gz">1.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>b5397ea3e45935246824eedf96727979e3323d0b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>0e00a90c607940b9bb7a40dee170ab4a62a362f9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>680efaac9a82863fc7deae229baa6c05aed831f9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="neutron-lbaas">
+<span id="team-stein-neutron-lbaas"></span><h3>neutron-lbaas<a class="headerlink" href="#neutron-lbaas" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/neutron-lbaas/stein.html">neutron-lbaas</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-14.0.1.tar.gz">14.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-14.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>7a4ef6704ba47f7f278121fdc1832ef91feb4be4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>a4c4944d568e4c01da0f7d1a7afdaf1b8ebbe45c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="neutron-lbaas-dashboard">
+<span id="team-stein-neutron-lbaas-dashboard"></span><h3>neutron-lbaas-dashboard<a class="headerlink" href="#neutron-lbaas-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>fdc34d2087c55bf59c8a20eb2dae13df04157773</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>8630dfe40e798ceaeb18f490612f979cdaab0361</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-octavia">
+<span id="id17"></span><h3>octavia<a class="headerlink" href="#team-stein-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/stein.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.4.tar.gz">4.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>7eb216605a61f16cfaca8e71384cd7b733bf99dd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.3.tar.gz">4.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>d2bef9a47c6497b479d91471fbaec60d993e86ac</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.2.tar.gz">4.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>77b42c6260a8bc1f8a6c38c948bb647256bd915b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.1.tar.gz">4.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>567a388b95e18eaeff0830259efceeb9b861b2e5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>1725517d1d209f26b2275306d83e49c099dcbe1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>3ac8f296953d5bf4951d3278428f51b29118aa91</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>feb640d99d392167ca37e1c7c02d895a03f32172</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-octavia-dashboard">
+<span id="id18"></span><h3>octavia-dashboard<a class="headerlink" href="#team-stein-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/stein.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>bea85726eb6c9cea8800f518bb45f53af06cf69d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>13c01348f5275c7afe4130dc0a3b072d89cae4af</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>d1b3ee280af4b43a982b1719fbbcf93f333f64af</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-octavia-lib">
+<span id="id19"></span><h3>octavia-lib<a class="headerlink" href="#team-stein-octavia-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-lib/stein.html">octavia-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>6b55d6219612472e23674bdb4fcbff394022f5fc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>679cfbb297d59fd27dc51772e1d90aed3f7c7079</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-lib/octavia-lib-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-lib</p></td>
+<td><p>d045062aad396bf0a7eb78b7105770d95349afd9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-octavia-tempest-plugin">
+<span id="id20"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#team-stein-octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>efae4470eb91859b6957d9280f0c60de25da54e8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>c9414e8419322815dc97a1919f19a44a0044c151</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-octaviaclient">
+<span id="id21"></span><h3>python-octaviaclient<a class="headerlink" href="#team-stein-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/stein.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.2.tar.gz">1.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>c9069d587228603db696496f88b6e686d380f022</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.1.tar.gz">1.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>f3bb18356000d475955e373fe8058015b68103a3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>9f0c348b0d261ceea1758b076a10cbe161ee1611</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>08f4a1fdd164a37da0313ab9f0c771c2da3051a9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-neutron-lbaas">
+<span id="id22"></span><h3>neutron-lbaas<a class="headerlink" href="#team-rocky-neutron-lbaas" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/neutron-lbaas/rocky.html">neutron-lbaas</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-13.0.1.tar.gz">13.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-13.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>e22276df0560f38d6527a56808764924d66b3f5d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>e4a9d3c1dfb06482f90699e60b98a94481af5f75</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-neutron-lbaas-dashboard">
+<span id="id23"></span><h3>neutron-lbaas-dashboard<a class="headerlink" href="#team-rocky-neutron-lbaas-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>32c9501d6b960c56237be889ddf611ff0f4d9bf5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>af254ca03c7b152b404811350cba54dade741ff0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-octavia">
+<span id="id24"></span><h3>octavia<a class="headerlink" href="#team-rocky-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/rocky.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.2.tar.gz">3.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>e7376be7afec98192da969dc9382ad860b1cbe01</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.1.tar.gz">3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>1fffeaaf44c677c4e8990193762d0b920566fe11</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>624ff08f27bcb73788663cbe6d35cbe29c537844</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>b12f0d9d6ce5e873b8e9b501e50c314ffb02e128</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>a28912b6728b3a4b8e5bfc93cf7008bc0d82fb3e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>ec4c88e23ebeb786491158682f9a7dd42928f97a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>c57ae8d3a75461c9d7d0a69cca0219f539539fca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>8d74497cf6fd22620d0881ad2549acd69a537776</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-octavia-dashboard">
+<span id="id25"></span><h3>octavia-dashboard<a class="headerlink" href="#team-rocky-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/rocky.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>0e14846f712fedfdc8b56686bde2114d26b241fe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>da110314aff384180e4a9abd9c69ca5eb0eabc54</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>7ebcf9936fb8d1cc472d0cf81979c49356098cb2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-octavia-tempest-plugin">
+<span id="id26"></span><h3>octavia-tempest-plugin<a class="headerlink" href="#team-rocky-octavia-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>70c06d8b646ac987736a6e8e281998af2548ae81</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-tempest-plugin/octavia-tempest-plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-tempest-plugin</p></td>
+<td><p>904a4481c9d44b8c784d11d3208cc6b8492124fb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-octaviaclient">
+<span id="id27"></span><h3>python-octaviaclient<a class="headerlink" href="#team-rocky-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/rocky.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.2.tar.gz">1.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>1c9fd5ba80dd2128a69f9cd24d10da4fa7b9312f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.1.tar.gz">1.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>24ba6fb607fc82d6b9b9402f99c0281c1e9675c7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>64d007fba460ae710ae03b355b31b9d02bc83be3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>a5c9e16a4f517bc964d57d6c2d02e3d5a809c637</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-neutron-lbaas">
+<span id="id28"></span><h3>neutron-lbaas<a class="headerlink" href="#team-queens-neutron-lbaas" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/neutron-lbaas/queens.html">neutron-lbaas</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>4cf67c4898ba104c430a6c0da4b5e13801e6722e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-neutron-lbaas-dashboard">
+<span id="id29"></span><h3>neutron-lbaas-dashboard<a class="headerlink" href="#team-queens-neutron-lbaas-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>c56d3f3e2254d752cae05dbc728ab354eae101fd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-octavia">
+<span id="id30"></span><h3>octavia<a class="headerlink" href="#team-queens-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/queens.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.2.tar.gz">2.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>89a2f6e0136ad49d928eb65b4cf555af2a2b8ab1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>c09da20054dc374714ef90ff72ad720daf8c01f3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>0e97f1802d73366698abace5174ffd21f4dd5a98</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.4.tar.gz">2.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>de64db8e7bcd32d6da550109798bba5cfe3dbe2f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.3.tar.gz">2.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>36e138cd1122d1a14959677e820451310627217a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>880a309ab319e586ad1b0dc057b730abb013d3c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>733e683c8606688b9b1f66283f1b35f3e3c1de57</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>08387c78c897c97aad72f3eb6ae0702fbc9a3058</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-octavia-dashboard">
+<span id="id31"></span><h3>octavia-dashboard<a class="headerlink" href="#team-queens-octavia-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia-dashboard/queens.html">octavia-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>51d1915049618edf56d76df9ef19ba4ecddce44b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>e68da46f599d1f8a76e7fd9ebec69548a5c49880</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia-dashboard/octavia-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia-dashboard</p></td>
+<td><p>03666efc505b931c3f0b7473dd18782548c13da8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-octaviaclient">
+<span id="id32"></span><h3>python-octaviaclient<a class="headerlink" href="#team-queens-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/queens.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>f87cb8f3f96262f7cd15478430d4aed63855de38</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>830e49fb0528718e8c6cea0e0828248849044133</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>922edce32a18a21ac48c00bcbea184b04e54749f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-neutron-lbaas">
+<span id="id33"></span><h3>neutron-lbaas<a class="headerlink" href="#team-pike-neutron-lbaas" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/neutron-lbaas/pike.html">neutron-lbaas</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.4.tar.gz">11.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>ecd495b7bfabcfe30f0b17a2510ac91b1d60b7b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.3.tar.gz">11.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>ee60a5440732611637946a139b3144e45e218ffd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.2.tar.gz">11.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>81cf553215c158f0fa8238f6cd2ff5655d0e79cd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>bdea6dded5565e106bbe28e2bb7ef0b06dce322b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>6d68e016c3c6116332bbba9ab072bb6dc8dc5f7f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-neutron-lbaas-dashboard">
+<span id="id34"></span><h3>neutron-lbaas-dashboard<a class="headerlink" href="#team-pike-neutron-lbaas-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.3.tar.gz">3.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>cea4e2c5904e3b2e32070afcec37db1f36668a67</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>b7ee60f71f5ceec67b886de6acf4a9321287cbe4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>55cd42f5d863664eb588626120296444c9f6fb44</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas-dashboard/neutron-lbaas-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas-dashboard</p></td>
+<td><p>af2e607338fb904f562b3c7ef3d2643d2f7526ba</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-octavia">
+<span id="id35"></span><h3>octavia<a class="headerlink" href="#team-pike-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/pike.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.5.tar.gz">1.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>d8707f9a74636995edb3eb9a5db3ce4adc265af9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.4.tar.gz">1.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>b3a25ee45ff780a0d5338f208def51f4a75c008c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.3.tar.gz">1.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>4871cd0ca658aeef93f14fcc5cc8fd972568fbb7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>5c2d2d2e5c665312f380061ddaead6d7d47d9737</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>cdac977f6347118eb709ad3c44a3a65247e67884</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>2c8cc57156dfec5329aa2f8410f396308b5dea5e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-octaviaclient">
+<span id="id36"></span><h3>python-octaviaclient<a class="headerlink" href="#team-pike-python-octaviaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-octaviaclient/pike.html">python-octaviaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>2b532d92be3dd0631283ebc6f3b7b401d0c557ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>40ba02434a4abc62f237d8756fa1ce53a9037b70</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>2d0dc10f484d2d861359d582763a811de0c914ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>f99e89247a26fe0a3a8292e4563f75dbc702ff8d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-octaviaclient/python-octaviaclient-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-octaviaclient</p></td>
+<td><p>970a232dc09e5142b5383bb3565b859568115e6c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-neutron-lbaas">
+<span id="id37"></span><h3>neutron-lbaas<a class="headerlink" href="#team-ocata-neutron-lbaas" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/neutron-lbaas/ocata.html">neutron-lbaas</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>674e3604a6285655f2dc7f2949629cc4de06bbf4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/neutron-lbaas/neutron-lbaas-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/neutron-lbaas</p></td>
+<td><p>4876dcccbf8571dda461edaca442f2ccc412cd3b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-octavia">
+<span id="id38"></span><h3>octavia<a class="headerlink" href="#team-ocata-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/ocata.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/octavia</p></td>
+<td><p>c3345e46573cb6c618cb9447fade2e255b6f5589</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-octavia">
+<span id="id39"></span><h3>octavia<a class="headerlink" href="#team-mitaka-octavia" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/octavia/mitaka.html">octavia</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-0.8.1.tar.gz">0.8.1</a></p></td>
+<td></td>
+<td><p>openstack/octavia</p></td>
+<td><p>0181f972082c56c449b22a1de0c00de891249e4c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/octavia/octavia-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/octavia</p></td>
+<td><p>ecfca348904560c341e84644137b9c0aa09b3949</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="nova.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Nova"></i></a>
+          
+          
+            <a href="openstackansible.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Openstackansible"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Octavia</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-octavia">octavia</a></li>
+<li><a class="reference internal" href="#octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#octavia-lib">octavia-lib</a></li>
+<li><a class="reference internal" href="#octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-victoria-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-octavia-lib">octavia-lib</a></li>
+<li><a class="reference internal" href="#team-victoria-octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-ussuri-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-octavia-lib">octavia-lib</a></li>
+<li><a class="reference internal" href="#team-ussuri-octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-train-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-octavia-lib">octavia-lib</a></li>
+<li><a class="reference internal" href="#team-train-octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#neutron-lbaas">neutron-lbaas</a></li>
+<li><a class="reference internal" href="#neutron-lbaas-dashboard">neutron-lbaas-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-stein-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-octavia-lib">octavia-lib</a></li>
+<li><a class="reference internal" href="#team-stein-octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-neutron-lbaas">neutron-lbaas</a></li>
+<li><a class="reference internal" href="#team-rocky-neutron-lbaas-dashboard">neutron-lbaas-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-rocky-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-octavia-tempest-plugin">octavia-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-neutron-lbaas">neutron-lbaas</a></li>
+<li><a class="reference internal" href="#team-queens-neutron-lbaas-dashboard">neutron-lbaas-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-queens-octavia-dashboard">octavia-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-neutron-lbaas">neutron-lbaas</a></li>
+<li><a class="reference internal" href="#team-pike-neutron-lbaas-dashboard">neutron-lbaas-dashboard</a></li>
+<li><a class="reference internal" href="#team-pike-octavia">octavia</a></li>
+<li><a class="reference internal" href="#team-pike-python-octaviaclient">python-octaviaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-neutron-lbaas">neutron-lbaas</a></li>
+<li><a class="reference internal" href="#team-ocata-octavia">octavia</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-octavia">octavia</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/octavia.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:04 GMT -->
+</html>

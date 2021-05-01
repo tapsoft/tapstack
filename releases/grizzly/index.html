@@ -1,0 +1,1131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/grizzly/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:56 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Grizzly</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Grizzly</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="grizzly">
+<h1>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h1>
+<p>Release Notes: <a class="reference external" href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly">https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly</a></p>
+<div class="contents local topic" id="deliverables">
+<p class="topic-title"><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#service-projects" id="id3">Service Projects</a></p></li>
+<li><p><a class="reference internal" href="#library-projects" id="id4">Library Projects</a></p></li>
+</ul>
+</div>
+<div class="section" id="service-projects">
+<h2>Service Projects<a class="headerlink" href="#service-projects" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Release Summary</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
+<th class="head"><p>Earliest Version</p></th>
+<th class="head"><p>Most Recent Version</p></th>
+<th class="head"><p>Stable Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-cinder"><span class="std std-ref">cinder</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-glance"><span class="std std-ref">glance</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-horizon"><span class="std std-ref">horizon</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-keystone"><span class="std std-ref">keystone</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-neutron"><span class="std std-ref">neutron</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-nova"><span class="std std-ref">nova</span></a></p></td>
+<td><p>2013.1</p></td>
+<td><p>2013.1.5</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-swift"><span class="std std-ref">swift</span></a></p></td>
+<td><p>1.7.5</p></td>
+<td><p>1.8.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="cinder">
+<span id="grizzly-cinder"></span><h3>cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>38885ffc7f9c686ba469b67fbdf4e8548c63a85d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>6e764cbf0fd90beb0e2f918903696a57ed198376</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>2023eecc4b1a35daf42a64fa01967ed12c7d017b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>890dc3fe8d270aed5af271bbbc49b9193db9460b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a4856c4e3a2a40150fad9257ce489125ca3458f4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>85b7453f68f76dcd6edd7043026e7a6676eadf23</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="glance">
+<span id="grizzly-glance"></span><h3>glance<a class="headerlink" href="#glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>10a6be70477ec67d3c453a939e82af0fdf786beb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>b72b2cb4e46050bbfdb7a9047d494894050f273c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a5dda27f3b797abe9acac4eceb091c3d48cfc0e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a799a98b73baa1d3d7901edf55e49118bfb8ba74</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>b225586a2a5910bfe33666927397edc3ca110ca3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="horizon">
+<span id="grizzly-horizon"></span><h3>horizon<a class="headerlink" href="#horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>37b208a1a8f0c180ba801e44bf36375fd0af065d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3f81d70d4b34ecd02576bd368740ee64f0333357</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>435d4c8fc2db8d83cb86409742dd58d7b0477fbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>7310ef2dae95a6128b7aec1c5ea18b0bb4d8d9ae</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>e68b7a8e9c3e124526f3572b24ea6fb08c8a52c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>14ac6a90f469097647b0e5425b0ecbe244432c06</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="keystone">
+<span id="grizzly-keystone"></span><h3>keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>a411c944af78c36f2fdb87d305ba452dc52d7ed3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>9666fc0e14d060afe05e2c2516f0c91aac3f4d15</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>f60f742a78f3e62017279e8f87353568a70cfc6c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>8dd57da1460134461c8cdf75e5cf653b7a84027f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>678b06a91f772d6be82eb54ed11f27e20f446b57</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>d5dcb3babf57c6393c15f0ffc911fc7a833d58bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="neutron">
+<span id="grizzly-neutron"></span><h3>neutron<a class="headerlink" href="#neutron" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>111a6af48763d8c56049cf0c666f3ddeeef3269e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>1ca02f6ae92461780b8e5f8a79117bbc35a3fbee</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>b606ee1da8b0af34fcadfe10d9ae939926383238</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>4bac39b2b87e69271e00f6ad3870c9fe59a8b5e2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>0602baca8b2b1ee0ee70475d3364afad6b8a1df8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>65393c2c3cbbb142685965ee1f4177e0c2f0893e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nova">
+<span id="grizzly-nova"></span><h3>nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>64f22b8059b218c06634c0b54f9b39f7a77493ed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>0409a098de02407e8229183ee55f11252c0a3cf4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>89c7ee409564d3909dbe8e1fb171ae7273508339</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>8c136a8ee4733d8d3af61406fc9eeccb4e9b7a68</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>be94dd25bf64df3151013c08ed925d68fcf85190</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>d91686ace3ae1bf22948b9a0a4bf62918585a029</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="swift">
+<span id="grizzly-swift"></span><h3>swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.8.0.tar.gz">1.8.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>99e2d6e47204b73f182005df1eb80bd4465c36c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.6.tar.gz">1.7.6</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>9515e30d3537b733b020abdc494106c9951835d5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.5.tar.gz">1.7.5</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>d9bf3438d8f143821fc207b7031c85a2028705ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="library-projects">
+<h2>Library Projects<a class="headerlink" href="#library-projects" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Release Summary</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
+<th class="head"><p>Earliest Version</p></th>
+<th class="head"><p>Most Recent Version</p></th>
+<th class="head"><p>Stable Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-python-ceilometerclient"><span class="std std-ref">python-ceilometerclient</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-python-cinderclient"><span class="std std-ref">python-cinderclient</span></a></p></td>
+<td><p>1.0.1</p></td>
+<td><p>1.0.3</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-python-cliff"><span class="std std-ref">python-cliff</span></a></p></td>
+<td><p>1.3</p></td>
+<td><p>1.3.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-python-designateclient"><span class="std std-ref">python-designateclient</span></a></p></td>
+<td><p>0.0.1</p></td>
+<td><p>0.0.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-python-glanceclient"><span class="std std-ref">python-glanceclient</span></a></p></td>
+<td><p>0.6.0</p></td>
+<td><p>0.9.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-python-heatclient"><span class="std std-ref">python-heatclient</span></a></p></td>
+<td><p>0.1.0</p></td>
+<td><p>0.2.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-python-keystoneclient"><span class="std std-ref">python-keystoneclient</span></a></p></td>
+<td><p>0.2.0</p></td>
+<td><p>0.2.3</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-python-neutronclient"><span class="std std-ref">python-neutronclient</span></a></p></td>
+<td><p>2.1.2</p></td>
+<td><p>2.2.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#grizzly-python-novaclient"><span class="std std-ref">python-novaclient</span></a></p></td>
+<td><p>2.10.0</p></td>
+<td><p>2.13.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#grizzly-python-swiftclient"><span class="std std-ref">python-swiftclient</span></a></p></td>
+<td><p>1.3.0</p></td>
+<td><p>1.3.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="python-ceilometerclient">
+<span id="grizzly-python-ceilometerclient"></span><h3>python-ceilometerclient<a class="headerlink" href="#python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>e30d70074f278f58457d9d2b278815b5ccb39a63</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cinderclient">
+<span id="grizzly-python-cinderclient"></span><h3>python-cinderclient<a class="headerlink" href="#python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>03a4806d972ac150e717451566e9c4c35a141d8f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>bf7b86748a49455ae1545f01fe5cfc9b801223aa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>a74dee000e682b5b227cd9032df6719aa22ffb00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cliff">
+<span id="grizzly-python-cliff"></span><h3>python-cliff<a class="headerlink" href="#python-cliff" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cliff/cliff-1.3.2.tar.gz">1.3.2</a></p></td>
+<td></td>
+<td><p>openstack/cliff</p></td>
+<td><p>df52cc387dbc446350af717ee5a6e83cba351d92</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cliff/cliff-1.3.1.tar.gz">1.3.1</a></p></td>
+<td></td>
+<td><p>openstack/cliff</p></td>
+<td><p>48077a3da6c0d7e16c227801c70d6ead8d71fb82</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cliff/cliff-1.3.tar.gz">1.3</a></p></td>
+<td></td>
+<td><p>openstack/cliff</p></td>
+<td><p>9e1488f0d6a8bbacb428a7606f3622cf5fdac112</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-designateclient">
+<span id="grizzly-python-designateclient"></span><h3>python-designateclient<a class="headerlink" href="#python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.2.tar.gz">0.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>fbf8714df61d38f2606609d78bab663b04f323ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.1.tar.gz">0.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>d9737b5b2aa25fa424aaa699c3335881ecb2aa4a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-glanceclient">
+<span id="grizzly-python-glanceclient"></span><h3>python-glanceclient<a class="headerlink" href="#python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>741c15f9633f642aa2e52de10b8eb65d6a8c9ecb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>51bbf74264b75a0b98bbb8de7611ccc935f49980</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>c057fe47d6889912b7675aa54102509cd464171a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>ae16750c48bc8d4b2b8d4de87913572a276f4f1e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-heatclient">
+<span id="grizzly-python-heatclient"></span><h3>python-heatclient<a class="headerlink" href="#python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.2.tar.gz">0.2.2</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>9354f84e59440e6a6eade085e964a7374c73509f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>ec0a708c998656c1500897436cdcf3bb2a42f2b4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>f1baa757c38c21dfb4f6ac43670257729f958200</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>e1ce4162e48c9de2e1b4edee2d66467e6c3793e6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-keystoneclient">
+<span id="grizzly-python-keystoneclient"></span><h3>python-keystoneclient<a class="headerlink" href="#python-keystoneclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.2.3.tar.gz">0.2.3</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>b445c19dc6758ff0cfb61780c5d11e95a11f289c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.2.2.tar.gz">0.2.2</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>a5e3638807730e6de9f5b243b13d9e513d93c69b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>e7fd4b9b5722d53c18837b44b41b25a323d9b44a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>27f0c721174b149c64cc67ff718d007d94fe79aa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-neutronclient">
+<span id="grizzly-python-neutronclient"></span><h3>python-neutronclient<a class="headerlink" href="#python-neutronclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>3277d38002ceea6ba0a6a09874b1f07ea01ae0b4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>f96219d67a56976e69a4b22d7efe7229d5e20345</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.1.2.tar.gz">2.1.2</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>94a60cfe5b0db53099bbcc39997c5656679333e4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-novaclient">
+<span id="grizzly-python-novaclient"></span><h3>python-novaclient<a class="headerlink" href="#python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.13.0.tar.gz">2.13.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5073b8080ad28bc45c22acc748919cfb2695533b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.12.0.tar.gz">2.12.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>655765a5eac161be8209e62950ecde7b4da84d1a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.11.1.tar.gz">2.11.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>132465231a1517aa79c5fad0eb4949a7e02bd763</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.11.0.tar.gz">2.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>0933c64251b24e1558676ef7f9d6ab446e386fea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.10.0.tar.gz">2.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>18deaf47918e5baa655fabb9776d294571363608</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-swiftclient">
+<span id="grizzly-python-swiftclient"></span><h3>python-swiftclient<a class="headerlink" href="#python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>bf09dd9573f396d703a0df60a5d5e0bc1d280d1f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="../havana/index.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Havana"></i></a>
+          
+          
+            <a href="../folsom/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Folsom"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Grizzly</a><ul>
+<li><a class="reference internal" href="#service-projects">Service Projects</a><ul>
+<li><a class="reference internal" href="#cinder">cinder</a></li>
+<li><a class="reference internal" href="#glance">glance</a></li>
+<li><a class="reference internal" href="#horizon">horizon</a></li>
+<li><a class="reference internal" href="#keystone">keystone</a></li>
+<li><a class="reference internal" href="#neutron">neutron</a></li>
+<li><a class="reference internal" href="#nova">nova</a></li>
+<li><a class="reference internal" href="#swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library-projects">Library Projects</a><ul>
+<li><a class="reference internal" href="#python-ceilometerclient">python-ceilometerclient</a></li>
+<li><a class="reference internal" href="#python-cinderclient">python-cinderclient</a></li>
+<li><a class="reference internal" href="#python-cliff">python-cliff</a></li>
+<li><a class="reference internal" href="#python-designateclient">python-designateclient</a></li>
+<li><a class="reference internal" href="#python-glanceclient">python-glanceclient</a></li>
+<li><a class="reference internal" href="#python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#python-keystoneclient">python-keystoneclient</a></li>
+<li><a class="reference internal" href="#python-neutronclient">python-neutronclient</a></li>
+<li><a class="reference internal" href="#python-novaclient">python-novaclient</a></li>
+<li><a class="reference internal" href="#python-swiftclient">python-swiftclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/grizzly/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:56 GMT -->
+</html>

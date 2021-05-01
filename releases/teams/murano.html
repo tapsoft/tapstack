@@ -1,0 +1,2289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/murano.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Murano</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Murano</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="murano">
+<h1>Murano<a class="headerlink" href="#murano" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-murano">
+<span id="id1"></span><h3>murano<a class="headerlink" href="#team-wallaby-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/wallaby.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>1c87ebf9a8a79d990e4a1ba44452b50efae77883</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="murano-agent">
+<span id="team-wallaby-murano-agent"></span><h3>murano-agent<a class="headerlink" href="#murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/wallaby.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>7d481ad60e90cfa1ccb967df473fcbe90d3fcc1c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="murano-dashboard">
+<span id="team-wallaby-murano-dashboard"></span><h3>murano-dashboard<a class="headerlink" href="#murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/wallaby.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>dd78672b3f45b802efc4af2569ceb11e4abdd1ba</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="murano-tempest-plugin">
+<span id="team-wallaby-murano-tempest-plugin"></span><h3>murano-tempest-plugin<a class="headerlink" href="#murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>730a7f1b5cd36660084e1f2ce7c86f40ba0abd3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-muranoclient">
+<span id="team-wallaby-python-muranoclient"></span><h3>python-muranoclient<a class="headerlink" href="#python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>8a6848e402a59929ce43051831933605926e72a6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-murano">
+<span id="id2"></span><h3>murano<a class="headerlink" href="#team-victoria-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/victoria.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>05c57f8933818fa14a291544dbcee35da548c868</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-murano-agent">
+<span id="id3"></span><h3>murano-agent<a class="headerlink" href="#team-victoria-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/victoria.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>306b131d2adb0535b194d5c3371cf17d9dd80c63</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-murano-dashboard">
+<span id="id4"></span><h3>murano-dashboard<a class="headerlink" href="#team-victoria-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/victoria.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>cf980359303c8de81f3e5f7358df39d9f9d7d3ef</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-murano-tempest-plugin">
+<span id="id5"></span><h3>murano-tempest-plugin<a class="headerlink" href="#team-victoria-murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>730a7f1b5cd36660084e1f2ce7c86f40ba0abd3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-muranoclient">
+<span id="id6"></span><h3>python-muranoclient<a class="headerlink" href="#team-victoria-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/victoria.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>d3ab74e495234ba38d3cbfd22006bfa2ae7da25c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>acc71afab36f11f42847878835396c4f907a8990</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-murano">
+<span id="id7"></span><h3>murano<a class="headerlink" href="#team-ussuri-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/ussuri.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>4cbbf56b3bf374459137bb0a3832f89820296082</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-murano-agent">
+<span id="id8"></span><h3>murano-agent<a class="headerlink" href="#team-ussuri-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/ussuri.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>97f53bb54a6209bc917e1a5a727ea8f6333bafc1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-murano-dashboard">
+<span id="id9"></span><h3>murano-dashboard<a class="headerlink" href="#team-ussuri-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/ussuri.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>22efa8fd7fb3f5838246b37501418a25158b4d01</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-murano-tempest-plugin">
+<span id="id10"></span><h3>murano-tempest-plugin<a class="headerlink" href="#team-ussuri-murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>b6d544c27f04dd961150c1e571e8a46b45af4166</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-muranoclient">
+<span id="id11"></span><h3>python-muranoclient<a class="headerlink" href="#team-ussuri-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/ussuri.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>59d867d409dc02b0d2e705c802ab2049f567bcc1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>242fead1acda6d84597b048caeafb90fe79769be</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-murano">
+<span id="id12"></span><h3>murano<a class="headerlink" href="#team-train-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/train.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.1.1.tar.gz">8.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>4f698865318df4e72b7521aaad34fc0d2ff22dac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>9718a527430101b6c07af056668dc34bcecf5ff9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>31c624716be0ac55e5a5a749fa0c94888f70adc8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-murano-agent">
+<span id="id13"></span><h3>murano-agent<a class="headerlink" href="#team-train-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/train.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>a026aa2e2f38bcfe072fb9cdfa6e9719f6fda5c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-murano-dashboard">
+<span id="id14"></span><h3>murano-dashboard<a class="headerlink" href="#team-train-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/train.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>bead4366d96a1e6e230e8f147b97a60e859f760b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-murano-tempest-plugin">
+<span id="id15"></span><h3>murano-tempest-plugin<a class="headerlink" href="#team-train-murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>27cb0c96b961ae68bdf5ca4cfa7cf6331249d48c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-muranoclient">
+<span id="id16"></span><h3>python-muranoclient<a class="headerlink" href="#team-train-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/train.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>2f501776a607db3862ce89dbaf22c9d48e7e7f87</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-murano">
+<span id="id17"></span><h3>murano<a class="headerlink" href="#team-stein-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/stein.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>75a85b0c0c8d810f4b3cc246cc5adf3ba52ec006</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>89fdcf7559f87086ef17e82b22839703253d9f54</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-murano-agent">
+<span id="id18"></span><h3>murano-agent<a class="headerlink" href="#team-stein-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/stein.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.6.0.tar.gz">3.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>ce41ef5b782704339ad54c97f129164c6b8e28e3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-murano-dashboard">
+<span id="id19"></span><h3>murano-dashboard<a class="headerlink" href="#team-stein-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/stein.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>005f36b347ac0fa590f4dc372d7ba842fa23f836</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-murano-tempest-plugin">
+<span id="id20"></span><h3>murano-tempest-plugin<a class="headerlink" href="#team-stein-murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>730a7f1b5cd36660084e1f2ce7c86f40ba0abd3d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>42f113e69eec1dcad82a75399eb7bbe697962b0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-muranoclient">
+<span id="id21"></span><h3>python-muranoclient<a class="headerlink" href="#team-stein-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/stein.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>ed7a0ee6823806e3b008b75247a273bc8b3d2981</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-murano">
+<span id="id22"></span><h3>murano<a class="headerlink" href="#team-rocky-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/rocky.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>ba9f53100efa6cb00d9ab3174af0ae984dc7c734</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-murano-agent">
+<span id="id23"></span><h3>murano-agent<a class="headerlink" href="#team-rocky-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/rocky.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.5.1.tar.gz">3.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>08fda6ea42bf355bc087bf99883b588e80952d37</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.5.0.tar.gz">3.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>d8cd0ceee7746b9fe5468b239784b3509b7c47bc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-murano-dashboard">
+<span id="id24"></span><h3>murano-dashboard<a class="headerlink" href="#team-rocky-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/rocky.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>7eaefa356eaac9459c0f3746f21116c32dced566</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-murano-tempest-plugin">
+<span id="id25"></span><h3>murano-tempest-plugin<a class="headerlink" href="#team-rocky-murano-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-tempest-plugin/murano-tempest-plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-tempest-plugin</p></td>
+<td><p>6a462b61e236ec4a176040dff2fe69552508ef1b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-muranoclient">
+<span id="id26"></span><h3>python-muranoclient<a class="headerlink" href="#team-rocky-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/rocky.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>70b4392c7f8524ac25dbf3ab0feb3ac4127c1ecf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>2d15d91bbb8fbd3e5a7eb01874ca244d672da03c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-murano">
+<span id="id27"></span><h3>murano<a class="headerlink" href="#team-queens-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/queens.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>de3b3e9d32539a0c29141da3a92e561852bf1656</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-murano-agent">
+<span id="id28"></span><h3>murano-agent<a class="headerlink" href="#team-queens-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/queens.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>4cce39afb58257f525cd355e0f413d64d68d05d6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-murano-dashboard">
+<span id="id29"></span><h3>murano-dashboard<a class="headerlink" href="#team-queens-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/queens.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>75b3caa722231a4a9b386e53145e260679cf5c78</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-muranoclient">
+<span id="id30"></span><h3>python-muranoclient<a class="headerlink" href="#team-queens-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/queens.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>294480075de1bde296953eaa54916d75cbfb40f5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>5ab3573a9c89fec6c9c128b04df25be76fb9224b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-murano">
+<span id="id31"></span><h3>murano<a class="headerlink" href="#team-pike-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/pike.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>0a833343e68ef9ef7ddca2c02eb57c2b9bb07d64</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>94ba1def6032fce03b6cc8028dffc65eb383de1d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-murano-agent">
+<span id="id32"></span><h3>murano-agent<a class="headerlink" href="#team-pike-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/pike.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.3.1.tar.gz">3.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>c4c304fd38b014231951773319fe260bec39c128</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>0430611c60cc21d8e93e0ac439cee39af8f13cae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-murano-dashboard">
+<span id="id33"></span><h3>murano-dashboard<a class="headerlink" href="#team-pike-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/pike.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>9115ca8d4d058c675b4956a05bb301fd6afb1846</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>c950e248c2dfdc7a040d6984d84ed19c82a04e7d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-muranoclient">
+<span id="id34"></span><h3>python-muranoclient<a class="headerlink" href="#team-pike-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/pike.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.14.1.tar.gz">0.14.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.14.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>76593c6a140771d19f2b0d87cc181db792097ffa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.14.0.tar.gz">0.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>5cc4d2c254e01d4dfb5e806965b5f88e05ba4736</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.13.0.tar.gz">0.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>cae67a4c1e16b84835fcdcba59bcac5344f98aa9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-murano">
+<span id="id35"></span><h3>murano<a class="headerlink" href="#team-ocata-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/ocata.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>fbee4043ee1c269d90c8ec2c1f275f02f43cd4fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano</p></td>
+<td><p>3d8559b4e6af364e623691d140fa662f704c0e74</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-murano-agent">
+<span id="id36"></span><h3>murano-agent<a class="headerlink" href="#team-ocata-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/ocata.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>3fc9cfb63de2e69cae2ca1a73e5fb59810459726</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>8739083d09ad459a5b2aa156705a9b8569303864</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-murano-dashboard">
+<span id="id37"></span><h3>murano-dashboard<a class="headerlink" href="#team-ocata-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/ocata.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>dcea9d96b290b86d0e7d724dc1336fe6819a89d4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>6b00791ffba02a98c55f1defd55adb177306edd2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-muranoclient">
+<span id="id38"></span><h3>python-muranoclient<a class="headerlink" href="#team-ocata-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/ocata.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>d0f0929bba5fcf0b8b89085d095034d9708be7aa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-murano">
+<span id="id39"></span><h3>murano<a class="headerlink" href="#team-newton-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/newton.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>76e7d9e3ad5d7586fac6d686609f83701eb81036</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-murano-agent">
+<span id="id40"></span><h3>murano-agent<a class="headerlink" href="#team-newton-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/newton.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>961fc5b07c3247fbb7ef75d3d25d0e2ef593acbb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-murano-dashboard">
+<span id="id41"></span><h3>murano-dashboard<a class="headerlink" href="#team-newton-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/newton.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>fba7641d77cbfe0e8cd71162ddca7de5784f3298</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-muranoclient">
+<span id="id42"></span><h3>python-muranoclient<a class="headerlink" href="#team-newton-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/newton.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.11.1.tar.gz">0.11.1</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>2600d963ff909578b796f4faa6d72382b4156261</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.11.0.tar.gz">0.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>d70b2d948de26b1c4f10718664c74afecb88a82e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.10.0.tar.gz">0.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>f7bafa1b8039583221bf58add417707b613b4934</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>f27cbe6d215d95d1b244f6642fbe08c4592ba9f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-murano">
+<span id="id43"></span><h3>murano<a class="headerlink" href="#team-mitaka-murano" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano/mitaka.html">murano</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-2.0.2.tar.gz">2.0.2</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>521f031490f07f109c33f9409f8370db96555873</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>b03c4759aa40d66bd4fcf62c96e352c117bdf4b9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>c9c8662d8253b40eaeb85cf93e9cb86247520efa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-murano-agent">
+<span id="id44"></span><h3>murano-agent<a class="headerlink" href="#team-mitaka-murano-agent" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-agent/mitaka.html">murano-agent</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>8738324d9c70675b874256e1f07ebb29e34688b8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-murano-dashboard">
+<span id="id45"></span><h3>murano-dashboard<a class="headerlink" href="#team-mitaka-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/murano-dashboard/mitaka.html">murano-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-2.0.2.tar.gz">2.0.2</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>3e943a6fbaafe1c7cc8e4402ab972463104e7458</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>338989020cfd2f4b16a71f7da9a788d668502c9e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>8489e43b09ebb50a89447ec1f37fb7e7e23bbd7b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-muranoclient">
+<span id="id46"></span><h3>python-muranoclient<a class="headerlink" href="#team-mitaka-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-muranoclient/mitaka.html">python-muranoclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.6.tar.gz">0.8.6</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>56605d2740a4088631117cd44276f2b13c2a2a07</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.5.tar.gz">0.8.5</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>5b05ef8a169872c22c6b9f92379a45fe5060e98d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.4.tar.gz">0.8.4</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>2c6debc170f5367444bb9d6a24a9c6c461a80be9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.3.tar.gz">0.8.3</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>4a84fcbf2d2d3351bc424f395fdd765053df5626</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.2.tar.gz">0.8.2</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>a9dd96e4c8a85bdcd75eab565bb5a2f6888dc493</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.1.tar.gz">0.8.1</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>89176536a18fa2bff6d410ca8f49486c7d4f51f8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>3b21a50c332a5a42a75f046ea2f47e333acc1122</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-murano">
+<span id="id47"></span><h3>murano<a class="headerlink" href="#team-liberty-murano" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>355513fe2e8c929f783de1109bee76c340cedced</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>dccf9ca767ff0d9112116adce25824063e08e581</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>27398464271766d8337a9dd351c62b66ebb88816</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>2aa9f52d3885b503cc84af9e7efa57356bf03e79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-murano-agent">
+<span id="id48"></span><h3>murano-agent<a class="headerlink" href="#team-liberty-murano-agent" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>68acd640efa5dffb3b1f4436e87ebda1b812394d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>270833733ce2dcfcedef1bd3ddaef3033366cf64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="murano-apps">
+<span id="team-liberty-murano-apps"></span><h3>murano-apps<a class="headerlink" href="#murano-apps" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-apps/murano-apps-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-apps</p></td>
+<td><p>bd51f268525a55c7800a32a3e3d3fd5e9ffc4fb0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-apps/murano-apps-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-apps</p></td>
+<td><p>dabb1ee6061858d456016511e1524af69ebc43db</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-murano-dashboard">
+<span id="id49"></span><h3>murano-dashboard<a class="headerlink" href="#team-liberty-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>0f3745415ab4f083cbf069a9cb574168e499a386</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>8fea820ab89daa520a1e737f2750d58c144d7976</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>a223f8c5ac586b79364684520129fa7c086d68f1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>23a792561d041b112fb87746cd3100a10a930252</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-muranoclient">
+<span id="id50"></span><h3>python-muranoclient<a class="headerlink" href="#team-liberty-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.7.3.tar.gz">0.7.3</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>369056a1f6021349f91dea1662c0bc36ccb2f155</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.7.2.tar.gz">0.7.2</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>15a5de4be50ebe638f8568da6b7d7c8c2febf579</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.7.1.tar.gz">0.7.1</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>393cc984fe9db8ad9e5ce5384cd2002e90a4e6af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>991b207f2d91046a6e581585063028eb9f5cae0e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.6.3.tar.gz">0.6.3</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>e59267f48ee50fd539b802df7ae559477ce32bf0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.6.2.tar.gz">0.6.2</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>c0c0a77c56f379ba6a08664e13643d38533468c0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>6029f64aa9e4acd0509e6531fc60c3652f3fc9de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-murano">
+<span id="id51"></span><h3>murano<a class="headerlink" href="#team-kilo-murano" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano/murano-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/murano</p></td>
+<td><p>cafdcb9d481c71e2d6abe512f2ff5ed19e797d50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-murano-agent">
+<span id="id52"></span><h3>murano-agent<a class="headerlink" href="#team-kilo-murano-agent" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-agent/murano-agent-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-agent</p></td>
+<td><p>75e7e046950464a9dfc1afafeb86fc0b1afe6ce2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-murano-dashboard">
+<span id="id53"></span><h3>murano-dashboard<a class="headerlink" href="#team-kilo-murano-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-dashboard/murano-dashboard-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/murano-dashboard</p></td>
+<td><p>b126c5e5c1b83e21bcbb1782cf0b1c3460abac7e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-muranoclient">
+<span id="id54"></span><h3>python-muranoclient<a class="headerlink" href="#team-kilo-python-muranoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-muranoclient/python-muranoclient-0.5.10.tar.gz">0.5.10</a></p></td>
+<td></td>
+<td><p>openstack/python-muranoclient</p></td>
+<td><p>5670a3838dfc67797c85612194f02be7ba86b5e4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="murano-pkg-check">
+<span id="team-independent-murano-pkg-check"></span><h3>murano-pkg-check<a class="headerlink" href="#murano-pkg-check" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-pkg-check</p></td>
+<td><p>47f7379e5e91eac2ba9ede6645cb56ff305d2c0c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-pkg-check</p></td>
+<td><p>27b384b052de12d38a9282904198206c99730024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.1.1.tar.gz">0.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-pkg-check</p></td>
+<td><p>5e6ae600d712a10b410311e9decd4da29218aa24</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/murano-pkg-check/murano-pkg-check-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/murano-pkg-check</p></td>
+<td><p>628b30fc2c8f5caefc2f1ab6282acb207bc791a2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="yaql">
+<span id="team-independent-yaql"></span><h3>yaql<a class="headerlink" href="#yaql" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.3.tar.gz">1.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>fe128f0672b5aac1787a8f54759fe44fd6f4aeb6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.2.tar.gz">1.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>e7a7f606317bded64b238b515bed92161a493fe4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>9d6866e694e33c6587f3de586dd795f0abd58ed5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>47957136c78033c9c5c67d5dfa3076f618bcde3d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.3.tar.gz">1.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>1f806b45706838abe8f564d189d95a37698f17e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>517f80e03cfcc7fabdd86558b9eab5cbe0ae10b7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>ec3f727866055830405ca0da90df129deadebffa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>ab32af08be685f73f16b06345c42721bc76d7dbd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.7.tar.gz">0.2.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>62321d9f31379cea2d7f509108eab034d1254d12</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.6.tar.gz">0.2.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>7d67d116ba11cf912f4367cebc959f85949d4fcc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.5.tar.gz">0.2.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>0ee93eb1b9f4dd8c7c4d9f6df7b23b42f5509381</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.4.tar.gz">0.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>c27ad80769770aacf3bcb0cb18eab3e9556e2f23</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.3.tar.gz">0.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>5f1e32b96443a494e50e0cc53e0d33e7aad91a3e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.tar.gz">0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/yaql/yaql-0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/yaql</p></td>
+<td><p>f6f81e3ed9fdf368ac9d4c2727bcd52ccd5e3684</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="monasca.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Monasca"></i></a>
+          
+          
+            <a href="neutron.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Neutron"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Murano</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-murano">murano</a></li>
+<li><a class="reference internal" href="#murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-murano">murano</a></li>
+<li><a class="reference internal" href="#team-victoria-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-victoria-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-murano">murano</a></li>
+<li><a class="reference internal" href="#team-ussuri-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-ussuri-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-murano">murano</a></li>
+<li><a class="reference internal" href="#team-train-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-train-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-murano">murano</a></li>
+<li><a class="reference internal" href="#team-stein-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-stein-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-murano">murano</a></li>
+<li><a class="reference internal" href="#team-rocky-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-rocky-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-murano-tempest-plugin">murano-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-murano">murano</a></li>
+<li><a class="reference internal" href="#team-queens-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-queens-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-murano">murano</a></li>
+<li><a class="reference internal" href="#team-pike-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-pike-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-pike-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-murano">murano</a></li>
+<li><a class="reference internal" href="#team-ocata-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-ocata-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-ocata-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-murano">murano</a></li>
+<li><a class="reference internal" href="#team-newton-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-newton-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-newton-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-murano">murano</a></li>
+<li><a class="reference internal" href="#team-mitaka-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-mitaka-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-murano">murano</a></li>
+<li><a class="reference internal" href="#team-liberty-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#murano-apps">murano-apps</a></li>
+<li><a class="reference internal" href="#team-liberty-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-liberty-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-murano">murano</a></li>
+<li><a class="reference internal" href="#team-kilo-murano-agent">murano-agent</a></li>
+<li><a class="reference internal" href="#team-kilo-murano-dashboard">murano-dashboard</a></li>
+<li><a class="reference internal" href="#team-kilo-python-muranoclient">python-muranoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#murano-pkg-check">murano-pkg-check</a></li>
+<li><a class="reference internal" href="#yaql">yaql</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/murano.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+</html>

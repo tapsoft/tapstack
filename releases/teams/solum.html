@@ -1,0 +1,1552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/solum.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Solum</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Solum</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="solum">
+<h1>Solum<a class="headerlink" href="#solum" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-solumclient">
+<span id="team-wallaby-python-solumclient"></span><h3>python-solumclient<a class="headerlink" href="#python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>00e7fdeeccb3b57890576a68cd949c2415806eb9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-solum">
+<span id="id1"></span><h3>solum<a class="headerlink" href="#team-wallaby-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/wallaby.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>86765728bbe9d6287845d10f8a0201e8b3f447b6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="solum-dashboard">
+<span id="team-wallaby-solum-dashboard"></span><h3>solum-dashboard<a class="headerlink" href="#solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>874e693c34c6e2fb4d9a9a9a9cdd7d44d41df626</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="solum-tempest-plugin">
+<span id="team-wallaby-solum-tempest-plugin"></span><h3>solum-tempest-plugin<a class="headerlink" href="#solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>80e23bb97926308505bc0ac206974468b38efe4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-solumclient">
+<span id="id2"></span><h3>python-solumclient<a class="headerlink" href="#team-victoria-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>7ce486b566444ab41476bad7622ed7b25138f3bc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-solum">
+<span id="id3"></span><h3>solum<a class="headerlink" href="#team-victoria-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/victoria.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>6d689be76c1b0c55206b46a190608e8336fb927f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-solum-dashboard">
+<span id="id4"></span><h3>solum-dashboard<a class="headerlink" href="#team-victoria-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>9f7ad91e05da4ae6285db05df8e5353e92e5e1ae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-solum-tempest-plugin">
+<span id="id5"></span><h3>solum-tempest-plugin<a class="headerlink" href="#team-victoria-solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>80e23bb97926308505bc0ac206974468b38efe4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-solumclient">
+<span id="id6"></span><h3>python-solumclient<a class="headerlink" href="#team-ussuri-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>18f7d3851c217916af2d9f167d272e192e67b1ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>fb399ee012bb5cec44171ad91c8b2ca7a23bea79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-solum">
+<span id="id7"></span><h3>solum<a class="headerlink" href="#team-ussuri-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/ussuri.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>f7c8d129e0bc19169f67d3073d2ab08194e66a12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-solum-dashboard">
+<span id="id8"></span><h3>solum-dashboard<a class="headerlink" href="#team-ussuri-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>0e9cc012ade5eb475780087ebf79cba5cfeb0572</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-solum-tempest-plugin">
+<span id="id9"></span><h3>solum-tempest-plugin<a class="headerlink" href="#team-ussuri-solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>2c1a6c2ca005948a6851f1b254d21e23d6463269</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-solumclient">
+<span id="id10"></span><h3>python-solumclient<a class="headerlink" href="#team-train-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>b3e7f9dd4edf032074b5f67a3a92a6c8cfafa8fa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-solum">
+<span id="id11"></span><h3>solum<a class="headerlink" href="#team-train-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/train.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>24fa3f5e3d05162599748dc86419dadc0c71f346</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-solum-dashboard">
+<span id="id12"></span><h3>solum-dashboard<a class="headerlink" href="#team-train-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>4f0d8b0d247a83a976c27b88ec8708dd99ac95bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>2356ef879e2c302a673cd244e056313ed02ad856</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-solum-tempest-plugin">
+<span id="id13"></span><h3>solum-tempest-plugin<a class="headerlink" href="#team-train-solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>5fb542a50b970b65d093a8056d45953d105ac526</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-solumclient">
+<span id="id14"></span><h3>python-solumclient<a class="headerlink" href="#team-stein-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>977717e756a6f4479480474777d2931c4860e7a6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-solum">
+<span id="id15"></span><h3>solum<a class="headerlink" href="#team-stein-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/stein.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>c9d7760774ed7a749831592e426e14c6b5fba033</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>9452aa669207092a12a703913694180cff4e7043</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-solum-dashboard">
+<span id="id16"></span><h3>solum-dashboard<a class="headerlink" href="#team-stein-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>77c4c65f093b104748f6b60768ad0eb7c1d84586</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-solum-tempest-plugin">
+<span id="id17"></span><h3>solum-tempest-plugin<a class="headerlink" href="#team-stein-solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>80e23bb97926308505bc0ac206974468b38efe4e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>900f4870a53bf28b42eaf44797202edd3740f9ae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-solumclient">
+<span id="id18"></span><h3>python-solumclient<a class="headerlink" href="#team-rocky-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.7.1.tar.gz">2.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>dd7ed0f4a5286209e3bd4c80e9df7b1cb772533c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>ea1587bceb45b0e3210f6ae213ceed05557c99f7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-solum">
+<span id="id19"></span><h3>solum<a class="headerlink" href="#team-rocky-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/rocky.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.7.0.tar.gz">5.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>82aa60445c37fff48928e9e40b41ba893abfb788</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.6.0.tar.gz">5.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>b163941ad5db5599e87144485ac0860272344d80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-solum-dashboard">
+<span id="id20"></span><h3>solum-dashboard<a class="headerlink" href="#team-rocky-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>1a1bd65089cb971d623cbbf14f0ea2aa8323b8af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>f1b8460ed0ef055afc7169e9864cbe31bdf809c8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-solum-tempest-plugin">
+<span id="id21"></span><h3>solum-tempest-plugin<a class="headerlink" href="#team-rocky-solum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-tempest-plugin/solum-tempest-plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-tempest-plugin</p></td>
+<td><p>900f4870a53bf28b42eaf44797202edd3740f9ae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-solumclient">
+<span id="id22"></span><h3>python-solumclient<a class="headerlink" href="#team-queens-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.6.1.tar.gz">2.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>ca6a55f31a804273cd7b676fd5773baf34299b50</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>686481bafc61e6c93e046d589ca57052ccf44e0b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-solum">
+<span id="id23"></span><h3>solum<a class="headerlink" href="#team-queens-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/queens.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.5.1.tar.gz">5.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>fb4878589b9bc27eeb4857deaa7ab12287236302</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.5.0.tar.gz">5.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>a0ee3a2a3635f66cd41b93599b8fe036ddb1e500</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-solum-dashboard">
+<span id="id24"></span><h3>solum-dashboard<a class="headerlink" href="#team-queens-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>fe30c1b1f4cf4fed18a0af8a29e8b45cec14cbdf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-solumclient">
+<span id="id25"></span><h3>python-solumclient<a class="headerlink" href="#team-pike-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.5.1.tar.gz">2.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>6f5d8cf8d870746edfd291f62809c3f725a41e5b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>a3b49877366da2d424328c4d15e8eafdaef976c7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>7880ffffa872f6e6a1d7629fc389e5eb15f45194</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>527768afdaebe63fb49dde95230ea9f9ab7f9909</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-solum">
+<span id="id26"></span><h3>solum<a class="headerlink" href="#team-pike-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/pike.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.4.1.tar.gz">5.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>da251dc710bc45d6c1f86f68f966c466890f5787</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.4.0.tar.gz">5.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>a327ef08a15e97a445ee895da627039d885d2c95</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.3.0.tar.gz">5.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>118aad77a340d2fb6a0fe569c1504636a7f67b28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-solum-dashboard">
+<span id="id27"></span><h3>solum-dashboard<a class="headerlink" href="#team-pike-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>ba5eb934c2a1fb029edd7774737831658e736188</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>ba9037d3310af3febd6fe256d376ac80123b4fa8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>0f1c3a3ac8d92ac7a34f9c69fc6ff78ecbcd534b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-solumclient">
+<span id="id28"></span><h3>python-solumclient<a class="headerlink" href="#team-ocata-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>a8fc1bc6fe6a33e8ab452d17418d901c08c9a3d9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-solum">
+<span id="id29"></span><h3>solum<a class="headerlink" href="#team-ocata-solum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/solum/ocata.html">solum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>6e88f9b39ce3088446c8b1f07cf0afe7997e5286</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum</p></td>
+<td><p>bf193b0582cd0fd0d915bcddf64401b5cc3b5d98</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-solum-dashboard">
+<span id="id30"></span><h3>solum-dashboard<a class="headerlink" href="#team-ocata-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>7d0dfc16af23883147ca9381268a07e1ab36d443</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-solumclient">
+<span id="id31"></span><h3>python-solumclient<a class="headerlink" href="#team-newton-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>e6919479603363d55fc88f8704367819ab344dc0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>58edd28f47cf45d98e3769e5647b8c2e3dc5e167</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>ea37d226a6ba55d7ad4024233b9d8001aab92ca5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>bde4a81dc9b259a484715fc298f84029ed0569e5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-solum">
+<span id="id32"></span><h3>solum<a class="headerlink" href="#team-newton-solum" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/solum</p></td>
+<td><p>726a78929943c1d1bdaf4fc115cb79694fd79a1c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/solum</p></td>
+<td><p>0276e3ce7bc4069121dc77f8a52fbb8d86705f95</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-solum-dashboard">
+<span id="id33"></span><h3>solum-dashboard<a class="headerlink" href="#team-newton-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>1da5a4f4a767f1240b2d689561f07a9d1f223f55</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>5d4e5e7e77cbc0d1a5448f09f93b7d96b33e1a41</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>03882e6cd4f5d35d84497921450d1225f2f0a74d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>c83ebfb170882a21fcb738050c48d0f033e2ee9c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="solum-infra-guestagent">
+<span id="team-newton-solum-infra-guestagent"></span><h3>solum-infra-guestagent<a class="headerlink" href="#solum-infra-guestagent" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-infra-guestagent/solum_guestagent-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/solum-infra-guestagent</p></td>
+<td><p>ac39be4f5032af8b3c80caec0a0933135e705528</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-python-solumclient">
+<span id="id34"></span><h3>python-solumclient<a class="headerlink" href="#team-mitaka-python-solumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>ea37d226a6ba55d7ad4024233b9d8001aab92ca5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-solumclient/python-solumclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-solumclient</p></td>
+<td><p>bde4a81dc9b259a484715fc298f84029ed0569e5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-solum">
+<span id="id35"></span><h3>solum<a class="headerlink" href="#team-mitaka-solum" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-4.1.1.tar.gz">4.1.1</a></p></td>
+<td></td>
+<td><p>openstack/solum</p></td>
+<td><p>5b667dd293420406b02bcd5b3cf3c7cecc2a4482</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum/solum-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/solum</p></td>
+<td><p>7bd689c5698da8d3eb23a5eff3c107a4c4da3bd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-solum-dashboard">
+<span id="id36"></span><h3>solum-dashboard<a class="headerlink" href="#team-mitaka-solum-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>03882e6cd4f5d35d84497921450d1225f2f0a74d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-dashboard/solum-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/solum-dashboard</p></td>
+<td><p>c83ebfb170882a21fcb738050c48d0f033e2ee9c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-solum-infra-guestagent">
+<span id="id37"></span><h3>solum-infra-guestagent<a class="headerlink" href="#team-mitaka-solum-infra-guestagent" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/solum-infra-guestagent/solum_guestagent-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/solum-infra-guestagent</p></td>
+<td><p>ac39be4f5032af8b3c80caec0a0933135e705528</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="senlin.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Senlin"></i></a>
+          
+          
+            <a href="storlets.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Storlets"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Solum</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-solum">solum</a></li>
+<li><a class="reference internal" href="#solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-victoria-solum">solum</a></li>
+<li><a class="reference internal" href="#team-victoria-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-solum">solum</a></li>
+<li><a class="reference internal" href="#team-ussuri-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-train-solum">solum</a></li>
+<li><a class="reference internal" href="#team-train-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-stein-solum">solum</a></li>
+<li><a class="reference internal" href="#team-stein-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-rocky-solum">solum</a></li>
+<li><a class="reference internal" href="#team-rocky-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-solum-tempest-plugin">solum-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-queens-solum">solum</a></li>
+<li><a class="reference internal" href="#team-queens-solum-dashboard">solum-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-pike-solum">solum</a></li>
+<li><a class="reference internal" href="#team-pike-solum-dashboard">solum-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-ocata-solum">solum</a></li>
+<li><a class="reference internal" href="#team-ocata-solum-dashboard">solum-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-newton-solum">solum</a></li>
+<li><a class="reference internal" href="#team-newton-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#solum-infra-guestagent">solum-infra-guestagent</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-python-solumclient">python-solumclient</a></li>
+<li><a class="reference internal" href="#team-mitaka-solum">solum</a></li>
+<li><a class="reference internal" href="#team-mitaka-solum-dashboard">solum-dashboard</a></li>
+<li><a class="reference internal" href="#team-mitaka-solum-infra-guestagent">solum-infra-guestagent</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/solum.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+</html>

@@ -1,0 +1,1249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/kuryr.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Kuryr</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Kuryr</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="kuryr">
+<h1>Kuryr<a class="headerlink" href="#kuryr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-kuryr">
+<span id="id1"></span><h3>kuryr<a class="headerlink" href="#team-wallaby-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/wallaby.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>f9737498168abe81b442649a296e85198d96e29a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>9de711070eeb3bf16c1cda12555d5ffc7013aad9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kuryr-kubernetes">
+<span id="team-wallaby-kuryr-kubernetes"></span><h3>kuryr-kubernetes<a class="headerlink" href="#kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/wallaby.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>5ccf238ec20320c5894b69a6568f4f62d468d716</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kuryr-libnetwork">
+<span id="team-wallaby-kuryr-libnetwork"></span><h3>kuryr-libnetwork<a class="headerlink" href="#kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/wallaby.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>8f7866809240acd52667f9e47a5df4a700d9290b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kuryr-tempest-plugin">
+<span id="team-wallaby-kuryr-tempest-plugin"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>36fd12e958572c8141cebe2640b25e354e3b0b90</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>fa37cdfbda7b52f37482b4f000d4e5b7af33fe1e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-kuryr">
+<span id="id2"></span><h3>kuryr<a class="headerlink" href="#team-victoria-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/victoria.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>178fae8b30b1118def6db61d3e3f928c813dedb7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-kuryr-kubernetes">
+<span id="id3"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-victoria-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/victoria.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>ff0299d5074c13fe87bd69948837ba1358ad1ea7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-kuryr-libnetwork">
+<span id="id4"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-victoria-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/victoria.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>c587fc063d8e1f9956daff6a864f5378238106f7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-kuryr-tempest-plugin">
+<span id="id5"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#team-victoria-kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>1020b0f9065cccc02165a5fa053662380c88ba29</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-kuryr">
+<span id="id6"></span><h3>kuryr<a class="headerlink" href="#team-ussuri-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/ussuri.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>7f06fade5b5a6053ba729937f7eb935a7e1a6404</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-kuryr-kubernetes">
+<span id="id7"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-ussuri-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/ussuri.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>256f3a65a3425d385a8e0afffa0b376e09347326</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-kuryr-libnetwork">
+<span id="id8"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-ussuri-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/ussuri.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>bf8a79a5e1924404126f3cdbc67c4121bbb63d17</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-kuryr-tempest-plugin">
+<span id="id9"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#team-ussuri-kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>f3e5484218fbf357f317a947625da97a51e46d65</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-kuryr">
+<span id="id10"></span><h3>kuryr<a class="headerlink" href="#team-train-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/train.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>41e696464b6ab827c455d8866dd81936f4c0ab0e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>50da6c1b30cb747a64602924d3d139185c92ff95</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>b10acd57eae5ba95fce4beef8ca155041691e8d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kuryr-kubernetes">
+<span id="id11"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-train-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/train.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.2.tar.gz">1.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>24a1c31b8ba1bc3419ee54f86323886538879355</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>95289fae6010f9796c284c74c6ade8da15a3df80</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>f009598f40f224cf59bb610d882534aa80ba3188</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kuryr-libnetwork">
+<span id="id12"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-train-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/train.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>3b3161c031c795da3ab5c4268419465e8e8aaf3c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>3e6bd49035040b32843642b945522a1bb79c692a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>622ded3e28c37616a667b2901a3fa2d2ce277de6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kuryr-tempest-plugin">
+<span id="id13"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#team-train-kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>2194649ab242a3e99fd2839d5bcf8ed0d081b3f1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-kuryr">
+<span id="id14"></span><h3>kuryr<a class="headerlink" href="#team-stein-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/stein.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>b3df2c6b5cfae0cfb692a2d9152b5ee84b5dd2b3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-kuryr-kubernetes">
+<span id="id15"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-stein-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/stein.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>cb0ff6c7ff7a850b623c4690da56af3257a53812</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>ac1510bd41406122c5ff1b6bd57b74fc08cbc3f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.6.1.tar.gz">0.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>d490b08cb7e0a0f4fa71d080226f8aa6ef0637c9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>5f2d33d4859dade30c561281baf274f80a3f17fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-kuryr-libnetwork">
+<span id="id16"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-stein-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/stein.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>f43ba07c783f291133b32dee0277d8e5035e3e8c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>5fb8275d1202d6ab8880e9fd021e22c59353ce4f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-kuryr-tempest-plugin">
+<span id="id17"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#team-stein-kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>fa37cdfbda7b52f37482b4f000d4e5b7af33fe1e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.4.1.tar.gz">0.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>0d51e9905bf9d9af62d6f536b7c2156956c59699</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>a82c55f7c002f33a5222ef3fbda5922b201859d6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-kuryr">
+<span id="id18"></span><h3>kuryr<a class="headerlink" href="#team-rocky-kuryr" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>2f38e07a38be59305c573311a04c8d4b6de5a912</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-kuryr-kubernetes">
+<span id="id19"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-rocky-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/rocky.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.4.tar.gz">0.5.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>ef4a312dea5292b1501b4414496bc9ca9a117ff4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.3.tar.gz">0.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>1d56b5b26dee769a55de3c677bde2ed63992c4ed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.2.tar.gz">0.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>0b25b5b1c7abfc28954a879162136c3a9b13ea4b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.1.tar.gz">0.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>84ad28ef65b3ad07c83795887df20282fcf7036f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>5b32ed07fceca24c63f96f39cc1dbc413632ba21</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-kuryr-libnetwork">
+<span id="id20"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-rocky-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/rocky.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>da2b3fd4ce18a907ad409794d34242fdf8200dad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>7a667d10fc4b96fecedca1363d2e0216faa3bc02</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-kuryr-tempest-plugin">
+<span id="id21"></span><h3>kuryr-tempest-plugin<a class="headerlink" href="#team-rocky-kuryr-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-tempest-plugin/kuryr-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-tempest-plugin</p></td>
+<td><p>2f12fdd664b89d4c4a048544c73680300c1d060a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-kuryr">
+<span id="id22"></span><h3>kuryr<a class="headerlink" href="#team-queens-kuryr" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr/queens.html">kuryr</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr/kuryr-lib-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr</p></td>
+<td><p>da736d115bfeb10c9adf8d019696203bba5cbf8d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-kuryr-kubernetes">
+<span id="id23"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-queens-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-kubernetes/queens.html">kuryr-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.7.tar.gz">0.4.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>c1b7b572e13b6c0456327d606eeed78d80c5ebbe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.6.tar.gz">0.4.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>06e88c90996d2b53d97900117fea4b53ea60cf59</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.5.tar.gz">0.4.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>eff54762d7295ae377ecc87df57d382106727fa3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.4.tar.gz">0.4.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>531ed16e5df7dc8928d22137b7d22ecac4c422cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.3.tar.gz">0.4.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>cef63d267cab5c08f1e1d17af8ea139835a8fd6d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.2.tar.gz">0.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>487267cca097bb7366c21ad49a8e5a36c4a88faf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.1.tar.gz">0.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>2aaffdf0a77c68ff9249dff82878480ebfbad9b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>e5f03218d60c36f150597316df107fc19f7b9448</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>04d46d016f8f583e48b6480a15feca38c63ae801</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-kuryr-libnetwork">
+<span id="id24"></span><h3>kuryr-libnetwork<a class="headerlink" href="#team-queens-kuryr-libnetwork" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kuryr-libnetwork/queens.html">kuryr-libnetwork</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>ed19c143f448414ff26f59b9bccea820aaf4e473</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-libnetwork/kuryr-libnetwork-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-libnetwork</p></td>
+<td><p>849adac0b1c3eab449714d3547c9705cc9365dbf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fuxi">
+<span id="team-pike-fuxi"></span><h3>fuxi<a class="headerlink" href="#fuxi" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/fuxi/pike.html">fuxi</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/fuxi/fuxi-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/fuxi/fuxi-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/fuxi</p></td>
+<td><p>53d7c9ff8bfa95121abfca193ab138df6aa50ad2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-kuryr-kubernetes">
+<span id="id25"></span><h3>kuryr-kubernetes<a class="headerlink" href="#team-pike-kuryr-kubernetes" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.2.1.tar.gz">0.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>a6e2009589beb73673a1d9d7ecfa8a246c613911</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>a2828664eb5f85f3d7effc7f0006066c17578d61</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kuryr-kubernetes/kuryr-kubernetes-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kuryr-kubernetes</p></td>
+<td><p>2ea1ea1a2f942d7a29e10903ac2f1ea502a5a52e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="kolla.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Kolla"></i></a>
+          
+          
+            <a href="magnum.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Magnum"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Kuryr</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-victoria-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-victoria-kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#team-victoria-kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-ussuri-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-ussuri-kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#team-ussuri-kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-train-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-train-kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#team-train-kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-stein-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-stein-kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#team-stein-kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-rocky-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-rocky-kuryr-libnetwork">kuryr-libnetwork</a></li>
+<li><a class="reference internal" href="#team-rocky-kuryr-tempest-plugin">kuryr-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-kuryr">kuryr</a></li>
+<li><a class="reference internal" href="#team-queens-kuryr-kubernetes">kuryr-kubernetes</a></li>
+<li><a class="reference internal" href="#team-queens-kuryr-libnetwork">kuryr-libnetwork</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#fuxi">fuxi</a></li>
+<li><a class="reference internal" href="#team-pike-kuryr-kubernetes">kuryr-kubernetes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/kuryr.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+</html>

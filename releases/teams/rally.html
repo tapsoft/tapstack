@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/rally.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Rally</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Rally</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="rally">
+<h1>Rally<a class="headerlink" href="#rally" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-independent-rally">
+<span id="id1"></span><h3>rally<a class="headerlink" href="#team-independent-rally" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://opendev.org/openstack/rally/src/branch/master/CHANGELOG.rst">rally</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>11cf577f14e69c235eeb175f0dc4c83185728965</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>47cb8cb3d1a54c1966a478b194d4664c9c92b7af</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>6b86848fc8517ca465cd0caf916168bd312f0a9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>cebecc512e37889d7e6fc7d89591f14bf6e8eda8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>02311d320b48e54eaf92793dc7926bd5826eed79</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>ee13ba4983c86bb21096a14a681593f958a416a2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.5.1.tar.gz">1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>14a8b0f931424d42543c100c9deb409eaded86d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>21630956e4ff5daa78218c4b4cf4457aefd24d34</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>a01a60bc0f773ae6160ed08e2f9d93465cc4d3ee</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>78f43cd992cea6bc449eb4c4b33e6c7fdc7188e0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>e22c247e1ed27ed143697e266e6adb7954ede1a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>4ddf0bdb7120dcbaf85c40ebd383c279db8e3fc6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>f58317fe8b3a517914ad0ea39b14f53ebb2e6477</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>b5ba6d5ea9f8de68f0772453e55dc7da4d98884a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>5dfda156e39693870dcf6c6af89b317a6d57a1d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.12.1.tar.gz">0.12.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.12.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>099183cbd0d6eeb4d0c08732e9dfdc94a71f82ff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>6dcaebdc40bf676f9e9e68033cdca3b3962152b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.2.tar.gz">0.11.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>9fc9876a9ef0fa669cd43cac976c86b2bafba6ce</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.1.tar.gz">0.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>7d30a6b9a16862b9a0352e918d7186e3da507a9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>0ba733e5c45d545e12fbc98f2f442fab810b7c52</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.10.1.tar.gz">0.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>0753973003b11fbd988206b2adbd971774509e8c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>7153e0cbc5b0e6433313a3bc6051b2c0775d3804</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.2.tar.gz">0.9.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>d51e44674e590dbd0437b7b1ed15e49da5e2b9a5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.1.tar.gz">0.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>ef2b6177c6a21ab28e9c24bbf18536bf076683b5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>797b1735f30368d3e2b7f7323d598b23efb95bd8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.8.1.tar.gz">0.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>2ff6423b6be2c4daf82c1021652ca2d4bbc72637</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>ed15d27b15e84e90e9b97d616ba15a56285d83d8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>edb093d9be82f1bd1cd853712c911ff20b2a02bf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>b6bedc5b7807f024a76e38f29318d1c140692b7f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>41b26f4ab5ac7b4f3b45308d5bb3645ace077468</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>b6a203d9ab646612e349906ed2016c538c5b3f89</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.3.tar.gz">0.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>b8d76c16eba5fcda8f66a7d62cd1326f74e13cba</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.2.tar.gz">0.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>17f71d20ea6da36aee0fff648d43aca39d03a611</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>1b6e9e9219b143c685a2af134ab025dddd72ed27</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>60b671c5adea8fc58dc1e45805fa23ccee48ed15</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>57efc5327530a34d139b5a1fd1f480195de0aadb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.2.tar.gz">0.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>2c34d1896a7a9f2955a2a09531a9c3eb3f88517b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.1.tar.gz">0.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>3011fa6ee2de2f373afe9d17d181ad7026cd8c20</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>785c05ea064c0cf4e747c359f0804afa99545b89</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.0.4.tar.gz">0.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally/rally-0.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally</p></td>
+<td><p>95713192e0e98d42bbb3225f6ada1a87cb35aa5c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rally-openstack">
+<span id="team-independent-rally-openstack"></span><h3>rally-openstack<a class="headerlink" href="#rally-openstack" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://opendev.org/openstack/rally-openstack/src/branch/master/CHANGELOG.rst">rally-openstack</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>e7d8cb33a4c156517a895e8a69ba9e94ca5f45c0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>15faca7ffba42b42ab21e00432e4ea515afda1e3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>9a96ae218a67a00939b164eeb6f668fee9c7176c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>da5385f10f812d8cd3d405dbdd0dd8524a0a7da6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>902359a11d1f4d1852327453280bd0938829b70a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>992419828496abe48a6dedc71416ea8bebb87e77</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>3855100cc2db45a872b7717f062a890fb7ca487e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>79c8d39468e8d41acc1406cf39568d59db4ba308</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>0c8bde161787ed4b7c899446a18c9327bcea51de</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/rally-openstack/rally-openstack-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/rally-openstack</p></td>
+<td><p>935cd73368330a512f16ca2a48f86d089ecf1323</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="quality_assurance.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Quality Assurance"></i></a>
+          
+          
+            <a href="release_management.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Release Management"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Rally</a><ul>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#team-independent-rally">rally</a></li>
+<li><a class="reference internal" href="#rally-openstack">rally-openstack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/rally.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+</html>

@@ -1,0 +1,2190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/mistral.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Mistral</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Mistral</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="mistral">
+<h1>Mistral<a class="headerlink" href="#mistral" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-mistral">
+<span id="id1"></span><h3>mistral<a class="headerlink" href="#team-wallaby-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/wallaby.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>3c83837f6ce1e4ab74fb519a63e82eaae70f9d2d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mistral-dashboard">
+<span id="team-wallaby-mistral-dashboard"></span><h3>mistral-dashboard<a class="headerlink" href="#mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>63fa310920bec67084aab32a6691c9df97ba997d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mistral-extra">
+<span id="team-wallaby-mistral-extra"></span><h3>mistral-extra<a class="headerlink" href="#mistral-extra" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-extra/wallaby.html">mistral-extra</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>dfc6c56490eb358018f79822ae9847e2be89d8b3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mistral-lib">
+<span id="team-wallaby-mistral-lib"></span><h3>mistral-lib<a class="headerlink" href="#mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/wallaby.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>95724c5ad0d249e8774d12c306c89dba000e2d33</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mistral-tempest-plugin">
+<span id="team-wallaby-mistral-tempest-plugin"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>776b590bd6af2517238336a114a2b68332228fb2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-mistralclient">
+<span id="team-wallaby-python-mistralclient"></span><h3>python-mistralclient<a class="headerlink" href="#python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/wallaby.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>20a10f0fb54e98368afc92639f6a15ed4a0aa218</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-mistral">
+<span id="id2"></span><h3>mistral<a class="headerlink" href="#team-victoria-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/victoria.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>068e5cc0e9ab73a3046a6b8de251079a784b9139</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-mistral-dashboard">
+<span id="id3"></span><h3>mistral-dashboard<a class="headerlink" href="#team-victoria-mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>4a80f083521e88ef5cdeaa31bffa4d5c4c6b1d59</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-mistral-extra">
+<span id="id4"></span><h3>mistral-extra<a class="headerlink" href="#team-victoria-mistral-extra" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-extra/victoria.html">mistral-extra</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.1.0.tar.gz">10.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>b5e08f227699b4f459336ee098b5b8576e5c0e50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-mistral-lib">
+<span id="id5"></span><h3>mistral-lib<a class="headerlink" href="#team-victoria-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/victoria.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>245c1272f2219991194cfead55d03277e68cccd7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>301c17e7eabeb0d60b2216cd4e1919b095a5d410</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-mistral-tempest-plugin">
+<span id="id6"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#team-victoria-mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>776b590bd6af2517238336a114a2b68332228fb2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-mistralclient">
+<span id="id7"></span><h3>python-mistralclient<a class="headerlink" href="#team-victoria-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/victoria.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.1.1.tar.gz">4.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>471e37df0218844d7693f31848037e768460f244</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>f77c1d23fb68b24d7406647b489f3f960026c46b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-mistral">
+<span id="id8"></span><h3>mistral<a class="headerlink" href="#team-ussuri-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/ussuri.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>545a34c7511b6e6b5f1b59ca99891684303b4480</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-mistral-dashboard">
+<span id="id9"></span><h3>mistral-dashboard<a class="headerlink" href="#team-ussuri-mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>9c19e28c218f50682a735772f4ad3ee616f65368</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-mistral-extra">
+<span id="id10"></span><h3>mistral-extra<a class="headerlink" href="#team-ussuri-mistral-extra" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-extra/ussuri.html">mistral-extra</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>b615bd4b48a97e8f90dc64cd89e890cc2e688a43</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>5a641a9166d4cb8caf1811c2fe64bc18ae5ddf27</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-mistral-lib">
+<span id="id11"></span><h3>mistral-lib<a class="headerlink" href="#team-ussuri-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/ussuri.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>44a27384601113cdc5068940d07b85a003ed2211</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>237a10d22e4dc4965c553489fe3d24e8c75d308d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>77e640fe76f0158d95df023a1166c4cf755e50cf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>fb1e34de6806033f8aee72fc7c4cf973c915574d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-mistral-tempest-plugin">
+<span id="id12"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#team-ussuri-mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>3ff9a7efc4d1127634389eb0e5bdabe3ec63570b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-mistralclient">
+<span id="id13"></span><h3>python-mistralclient<a class="headerlink" href="#team-ussuri-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/ussuri.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>0f09c1e8cb090a7aa4f08f76dabaf3fb79f608bf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>dc827496ad71a0f0f3412187b8ee5dbb6cb12a8a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-mistral">
+<span id="id14"></span><h3>mistral<a class="headerlink" href="#team-train-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/train.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>30039178714ea776df2b60a0f49427c239eb6d22</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>c40fc775f4912cad335120a565f85d4260c965f4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>82df9c6400eb1c5e74c14df16439fcfb5491ddfd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>016509eb5ea673dd66cff04bb457645be1618653</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>559c7ef5a977583dd4f1b931880d4154ebf565b5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-mistral-dashboard">
+<span id="id15"></span><h3>mistral-dashboard<a class="headerlink" href="#team-train-mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>82df9c6400eb1c5e74c14df16439fcfb5491ddfd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-mistral-lib">
+<span id="id16"></span><h3>mistral-lib<a class="headerlink" href="#team-train-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/train.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>4bac2b282e3a01e7a9a035d8b8c921024ecb6261</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>070080bd1bc4c4742f6a98370b7ce1616084eded</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-mistral-tempest-plugin">
+<span id="id17"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#team-train-mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>3c3a6cc2a13952d763164cced53074482d3f5b8e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-mistralclient">
+<span id="id18"></span><h3>python-mistralclient<a class="headerlink" href="#team-train-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/train.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.10.0.tar.gz">3.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>dc246bf808d3a0823f77ffcd42f4d32d0587c161</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.9.0.tar.gz">3.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>de9d2de1bbfcacc3182bb5bf2a56100cedf42c21</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-mistral">
+<span id="id19"></span><h3>mistral<a class="headerlink" href="#team-stein-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/stein.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>6399f9b7e0133202f2d63896b44628668cdc212f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>52d025aa12f917a307e2a903cdd1f260b2341e40</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>9c2586f8d583ec884cf5a87b2baad491467e9c2e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>1f146bfb34912548cbd77b2d085403f275a8d0b9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>29fa2cd15c87f46369417928bdc573725df24d45</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>96b33bd7d391893a8150d5337e55d4f3337a7d52</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-mistral-lib">
+<span id="id20"></span><h3>mistral-lib<a class="headerlink" href="#team-stein-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/stein.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>bb41d4d6852db966f24ecf38e4750baa870a422a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>bac92db60bb3f6f971a31b53f5bd113447c2787b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-mistral-tempest-plugin">
+<span id="id21"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#team-stein-mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>776b590bd6af2517238336a114a2b68332228fb2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>d724aaeafeefc0ae72206018932c3a2b9f7af66a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-mistralclient">
+<span id="id22"></span><h3>python-mistralclient<a class="headerlink" href="#team-stein-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/stein.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.1.tar.gz">3.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>1712bd4b6c698f5eff783e07c5f69b475c12c24d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.0.tar.gz">3.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>6ffd1f3aa7921844c462e999a5ce0c14f29df0c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-mistral">
+<span id="id23"></span><h3>mistral<a class="headerlink" href="#team-rocky-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/rocky.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>4d3ef8887fb765c9edd36f62cc66904aff4c1b0e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.4.tar.gz">7.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>8306fa17eb7ae7e4a0f33f5f362be46daff4f0a9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.3.tar.gz">7.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>24f8ef65d04e4acfb6df15d3544d08041b0a422b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>e50fbfbdd903340402716dc306f5c5354b9060ab</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>2309e5265a1d5f28480ae872817b5de05f66e83c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>ca84455a92e228cd93d878f46488fcc479273817</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-mistral-dashboard">
+<span id="id24"></span><h3>mistral-dashboard<a class="headerlink" href="#team-rocky-mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/rocky.html">mistral-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>0c9b734e427f90253c41b7850ad1436d814bc938</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>55e9a7ac2908f41b5f1b2258a0913372a1a3fbcd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>04c32537f7925aaeb54d8d7aa6da34ce85479c2c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-mistral-extra">
+<span id="id25"></span><h3>mistral-extra<a class="headerlink" href="#team-rocky-mistral-extra" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-extra/rocky.html">mistral-extra</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>1cfaedd55b49b68e391b81aa02b20365864286eb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>ab11582d10aaf6b9e731896c0a8705fc8a361272</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>0d193dab2b4e13b06fd8822308c3aee202e370c4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-mistral-lib">
+<span id="id26"></span><h3>mistral-lib<a class="headerlink" href="#team-rocky-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral-lib/rocky.html">mistral-lib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>1265d9d53aa01117e337fa1799d005113041a169</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>d1ccfd05555d6b3dc51fe567544691d741c6630c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>ef3482eace42f6914c0c37941d4626784c3715ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-mistral-tempest-plugin">
+<span id="id27"></span><h3>mistral-tempest-plugin<a class="headerlink" href="#team-rocky-mistral-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-tempest-plugin/mistral_tempest_tests-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-tempest-plugin</p></td>
+<td><p>0646dcc78543d876e92e8079c8146a3c4b9b4bb5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-mistralclient">
+<span id="id28"></span><h3>python-mistralclient<a class="headerlink" href="#team-rocky-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/rocky.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.7.0.tar.gz">3.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>f0ee48fa72bbbb29b06028f3c2a2600a1636fbe3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.6.1.tar.gz">3.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>0059b271a600af6391e73d76a6c21b172d08f890</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.6.0.tar.gz">3.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>7451abb848f3f8b20c1f24575f427c4fbf5c0231</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.5.0.tar.gz">3.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>8cc76487fd84bfaa3b4ff74248e2b138d21a504e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>72a6cd9b91ad1544f040052131a3b116e2dee8c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-mistral">
+<span id="id29"></span><h3>mistral<a class="headerlink" href="#team-queens-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/queens.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.6.tar.gz">6.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>241d0b4d4e5f7aa203adf1dcacb3794c5dff4522</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.5.tar.gz">6.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>824c1033633da184bec0e31c4ee17327028a93eb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.4.tar.gz">6.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>24cb2daea626b66f06b5899ccaeefacd3d68928f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.3.tar.gz">6.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>72f1ddebb4bec021bc0551a01d885444b4139be0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>3e4cabce393bfe759ead6975dc29d581654ee676</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>eb59183a7965fffba0367a04f25a895fc8577792</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>82d5d10f8995b42104f4d5cd55a622d230207b03</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-mistral-dashboard">
+<span id="id30"></span><h3>mistral-dashboard<a class="headerlink" href="#team-queens-mistral-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.4.tar.gz">6.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>1734cdf479b70643155e421635e3e7d443cffcaa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>5f78ec5f73257d80fd8d6dd343a1e422e1d5b986</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>e221ba4dfb55e0535688bf8dffa44d8a9c24be0d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-mistral-extra">
+<span id="id31"></span><h3>mistral-extra<a class="headerlink" href="#team-queens-mistral-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.4.tar.gz">6.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>e761742f652a981eddf8ea3b50e2eabea3ca6b97</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>8173e8d1b886fd58ec9ddae7ad03f76c812ac1f4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>566dc85cca11512537b786a8a8ffc35a2331871c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-mistral-lib">
+<span id="id32"></span><h3>mistral-lib<a class="headerlink" href="#team-queens-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>d61073add0c978c234c3b6f7d674b9d95d0b7e13</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-mistralclient">
+<span id="id33"></span><h3>python-mistralclient<a class="headerlink" href="#team-queens-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/queens.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>1008e4e4cbd58465226a54c261b1d73021fcd2ed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>69e8925b20ecf08647c1091d8928479c72533422</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-mistral">
+<span id="id34"></span><h3>mistral<a class="headerlink" href="#team-pike-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/pike.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.8.tar.gz">5.2.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>caed955c442da4f7ac16fccb0d886e5860a8f98b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.7.tar.gz">5.2.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>4a7065c6a35da837b575318f996d48b7c86033c0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.6.tar.gz">5.2.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>45c9d4ece0070e4c937b546852dfc0123c03fde4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.5.tar.gz">5.2.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>df944dfb6299baef62710ee321f0b1c21c319d1d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.5.tar.gz">5.2.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>2d3ad3bed37a711d122912230e6baa8d145a83ee</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.5.tar.gz">5.2.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>58a816da3b810ae8b31c91a0829bdca3e0e5903e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.4.tar.gz">5.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>ea4951a59757af72fb815a53d174083b9e0f5e46</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.4.tar.gz">5.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>8667df40a9a0894652ba7bafec048df11256310f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.3.tar.gz">5.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>24896820c129699995d32ad30bdb8bea17f8c9c6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.2.tar.gz">5.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>13497ae3e1ec94e47faa16fa781aa96c2e411fe9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.2.tar.gz">5.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>f3b819d9d484c728284f788693559a0f4b51b3f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.2.tar.gz">5.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>ca7fce0394c5c36ad873318850a95dce6d50cc88</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.1.tar.gz">5.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>13497ae3e1ec94e47faa16fa781aa96c2e411fe9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.1.tar.gz">5.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>f3b819d9d484c728284f788693559a0f4b51b3f9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.1.tar.gz">5.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>ab93854e49ea225dd5e35eeb12adb08f774c9543</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>b7d133dd4abfdb9898dc4b839ea0499925148e76</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>f3b819d9d484c728284f788693559a0f4b51b3f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>ab93854e49ea225dd5e35eeb12adb08f774c9543</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>6e720669598be09acdae72e54a891a068fd64c5e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>f3b819d9d484c728284f788693559a0f4b51b3f9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>ab93854e49ea225dd5e35eeb12adb08f774c9543</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>e7bbe4cd75f8034d578bb5929c282be44108a3cb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>20ab5b624fca9defa221cf5a09c9197fe54afcd8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>b542d7fcd5235edb282c82f894a273ecb827785d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-mistral-lib">
+<span id="id35"></span><h3>mistral-lib<a class="headerlink" href="#team-pike-mistral-lib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.4.tar.gz">0.3.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>d01ab6f50754594d20bd7a05a807e5fc6661f08e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.3.tar.gz">0.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>8986ce9529f90ed5cdb52fd54a54ccc21378b320</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.2.tar.gz">0.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>90457d594a091a0f8dfa0f25f2308cb22c9842b8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>b5e6b22ba9d1b77bf35babc39c6a49db80761117</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>9c2d6d922a771449002b4ad76cbccd56c0aada86</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>bb1b87b37b5791bc4403bc57e1c79bb6a497f624</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-lib/mistral-lib-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-lib</p></td>
+<td><p>2533ecb478d0ae8819438c054baeb4d6078d82ee</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-mistralclient">
+<span id="id36"></span><h3>python-mistralclient<a class="headerlink" href="#team-pike-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/pike.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.5.tar.gz">3.1.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>27ed79076f7d70bca8e968c70571d9f1f645eacf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.4.tar.gz">3.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>291501ae6dc16f20ed53af975840d6c3ef3acc7b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.3.tar.gz">3.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>c33d39c152bdd48b68467d1ab2f63cbe5e337a72</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.2.tar.gz">3.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>e328a0570f9c485622d71bbad3a887903b83aaac</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>0f2837237b11b29bee45c8724c6c9ada5f3df79b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>9e6ff999c16e9f6de8acf6f7d270e36cda932168</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-mistral">
+<span id="id37"></span><h3>mistral<a class="headerlink" href="#team-ocata-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/ocata.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>ce3bec77804c491cc560d77b2c3227fc806952d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>3d8ebf1bf343ae188b01f70bc5b833e14eccae77</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral</p></td>
+<td><p>b8927d8a94a565663ff1ee6f1cb696f56b2ede75</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>72a0ef38e325ea831cfbe38de82368cdf4247918</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-mistralclient">
+<span id="id38"></span><h3>python-mistralclient<a class="headerlink" href="#team-ocata-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-mistralclient/ocata.html">python-mistralclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>615b6dc207cbd913850a34eea39fa0e2d0bdb503</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>1a3094d2245db9a848a8184817000b3c6cbacbe4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>a7bf138e71adbfca5aeae0684e0342bada8185eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-mistral">
+<span id="id39"></span><h3>mistral<a class="headerlink" href="#team-newton-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/newton.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>6356bce81417102accb3619aa05129ab35a35dad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>2c959e0341da8e939d7c35da524722e55673e7cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>6356bce81417102accb3619aa05129ab35a35dad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>2c959e0341da8e939d7c35da524722e55673e7cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>c0a450128e7fea3f984fabbbccb6e3473232f495</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>2c959e0341da8e939d7c35da524722e55673e7cd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-mistral-extra">
+<span id="id40"></span><h3>mistral-extra<a class="headerlink" href="#team-newton-mistral-extra" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3.0.0</p></td>
+<td></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>23f28c8474e56770d7ae4a3b97a8da26fdc64531</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-mistralclient">
+<span id="id41"></span><h3>python-mistralclient<a class="headerlink" href="#team-newton-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.1.2.tar.gz">2.1.2</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>1dcfc2c096a4610d63611bfd7d98687f3e5e2da4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>a37b5fe562a85787b74edc48c923aa6343490ec1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>5352695e901ba749d23a855b83167975cb201491</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-mistral">
+<span id="id42"></span><h3>mistral<a class="headerlink" href="#team-mitaka-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/mitaka.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>1293ea5f8602e3a470f66764118273899599d8be</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-dashboard/mistral-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral-dashboard</p></td>
+<td><p>f49b147f78703e33bff73a5309261910c104b2b8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral-extra/mistral-extra-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral-extra</p></td>
+<td><p>450013afbda19e2560018fbd474d83b97e776eb9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-mistralclient">
+<span id="id43"></span><h3>python-mistralclient<a class="headerlink" href="#team-mitaka-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>9e5f946797369ee411f93a37f64ff9542dcee4fa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>d20b36b55444dc87cad3e1247ad95f3ed12bd21e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-mistral">
+<span id="id44"></span><h3>mistral<a class="headerlink" href="#team-liberty-mistral" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/mistral/liberty.html">mistral</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>0e67e8474ff0fb870bceb074f3e5715501fa720b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/mistral/mistral-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/mistral</p></td>
+<td><p>f74ac7aa17703f5e5295042f5f4a5a785410e121</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-mistralclient">
+<span id="id45"></span><h3>python-mistralclient<a class="headerlink" href="#team-liberty-python-mistralclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>48e2780ee0148efc186c8972ca22e572fa2433c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>b42c7c569627466fce13f7836ee3fe366caea85e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>71b5d2c23032a45046c2f38e479fd64108d331b3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>27d35b103ea7cd2b3e0ec77a4fe6967c6366c4e8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-0.3.1.tar.gz">0.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>27d35b103ea7cd2b3e0ec77a4fe6967c6366c4e8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-mistralclient/python-mistralclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-mistralclient</p></td>
+<td><p>27d35b103ea7cd2b3e0ec77a4fe6967c6366c4e8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="masakari.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Masakari"></i></a>
+          
+          
+            <a href="monasca.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Monasca"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Mistral</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-mistral">mistral</a></li>
+<li><a class="reference internal" href="#mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-victoria-mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#team-victoria-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-victoria-mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-ussuri-mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#team-ussuri-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-ussuri-mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-train-mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-train-mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-stein-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-stein-mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-rocky-mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#team-rocky-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-rocky-mistral-tempest-plugin">mistral-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-queens-mistral-dashboard">mistral-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#team-queens-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-queens-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-pike-mistral-lib">mistral-lib</a></li>
+<li><a class="reference internal" href="#team-pike-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-ocata-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-newton-mistral-extra">mistral-extra</a></li>
+<li><a class="reference internal" href="#team-newton-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-mistral">mistral</a></li>
+<li><a class="reference internal" href="#team-liberty-python-mistralclient">python-mistralclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/mistral.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+</html>

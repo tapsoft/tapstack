@@ -1,0 +1,1538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/barbican.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:58 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Barbican</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Barbican</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="barbican">
+<h1>Barbican<a class="headerlink" href="#barbican" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ansible-role-atos-hsm">
+<span id="team-wallaby-ansible-role-atos-hsm"></span><h3>ansible-role-atos-hsm<a class="headerlink" href="#ansible-role-atos-hsm" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-atos-hsm/ansible-role-atos-hsm-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-atos-hsm/ansible-role-atos-hsm-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ansible-role-atos-hsm</p></td>
+<td><p>c5e5b2427bdbf59bb4bfd875f4c26d6e12224747</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ansible-role-lunasa-hsm">
+<span id="team-wallaby-ansible-role-lunasa-hsm"></span><h3>ansible-role-lunasa-hsm<a class="headerlink" href="#ansible-role-lunasa-hsm" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-lunasa-hsm/ansible-role-lunasa-hsm-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-lunasa-hsm/ansible-role-lunasa-hsm-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ansible-role-lunasa-hsm</p></td>
+<td><p>b3981c6f8b013affa484fac1270ef57b8b292261</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ansible-role-thales-hsm">
+<span id="team-wallaby-ansible-role-thales-hsm"></span><h3>ansible-role-thales-hsm<a class="headerlink" href="#ansible-role-thales-hsm" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-thales-hsm/ansible-role-thales-hsm-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-thales-hsm/ansible-role-thales-hsm-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ansible-role-thales-hsm</p></td>
+<td><p>e82db3b3fc5088c393eb810bf52329444a91b4eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-barbican">
+<span id="id1"></span><h3>barbican<a class="headerlink" href="#team-wallaby-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/wallaby.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>c8d3c580143282935de36e4a5a1708ee9242f7be</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="barbican-tempest-plugin">
+<span id="team-wallaby-barbican-tempest-plugin"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>d013596f3dd03ed11ee9b7e0367dbbbd1df60e4b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>ad7f742ea9edd5508123b321d46ec2f4e1af8271</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>53dcab70f26f8e990fce425ee1005ef3f775d174</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-barbicanclient">
+<span id="team-wallaby-python-barbicanclient"></span><h3>python-barbicanclient<a class="headerlink" href="#python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>ad49c406fe67459a4a667c78ad37782fb14bdbb7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-ansible-role-lunasa-hsm">
+<span id="id2"></span><h3>ansible-role-lunasa-hsm<a class="headerlink" href="#team-victoria-ansible-role-lunasa-hsm" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-lunasa-hsm/ansible-role-lunasa-hsm-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ansible-role-lunasa-hsm/ansible-role-lunasa-hsm-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ansible-role-lunasa-hsm</p></td>
+<td><p>1f79d940a6c843ffe893725fa4f908cfc885b3c5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-barbican">
+<span id="id3"></span><h3>barbican<a class="headerlink" href="#team-victoria-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/victoria.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>c168c8fad745721c42b8fbaef8d8cce615d09ee4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-barbican-tempest-plugin">
+<span id="id4"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#team-victoria-barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>826e26fb593398635c317df40161e15c54ec567f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-barbicanclient">
+<span id="id5"></span><h3>python-barbicanclient<a class="headerlink" href="#team-victoria-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>1f0feb30ccd3b19bc23453d85d3266c85fcf04d6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>df7dbabb7dd63bc8066d9cc89955a510bf63b04d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-barbican">
+<span id="id6"></span><h3>barbican<a class="headerlink" href="#team-ussuri-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/ussuri.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>7b14d983e0dce6dcffe9781b05c52335b8203fc7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-barbican-tempest-plugin">
+<span id="id7"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#team-ussuri-barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>57565a5104739e1c84ba0b3523e8f998e344d279</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-barbicanclient">
+<span id="id8"></span><h3>python-barbicanclient<a class="headerlink" href="#team-ussuri-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.10.0.tar.gz">4.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>e5fdd10f04488d6f6e252a63c57bf2be92a06c8f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-barbican">
+<span id="id9"></span><h3>barbican<a class="headerlink" href="#team-train-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/train.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>07be1986b44191600de8b9bf919bef395c3a8613</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>2a6fc155d232763a44ebe886f70fdde2a0030a62</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-barbican-tempest-plugin">
+<span id="id10"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#team-train-barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>a226433e778d4996b8c4f4e8fee9c3c3b8ea3ad4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-barbicanclient">
+<span id="id11"></span><h3>python-barbicanclient<a class="headerlink" href="#team-train-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.9.0.tar.gz">4.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>9c0e02d367b86eb5bdebda4e0ff1434d70db5f61</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-barbican">
+<span id="id12"></span><h3>barbican<a class="headerlink" href="#team-stein-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/stein.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>3d23804a6f78f881ac5526bc31e2a7c61b174516</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>4c0ddda941289fba8e5ec4341b5d02d155d46162</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-barbican-tempest-plugin">
+<span id="id13"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#team-stein-barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>53dcab70f26f8e990fce425ee1005ef3f775d174</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>123dd7d4162c39a1cb4b4c1b09a5dceaee127eb6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-barbicanclient">
+<span id="id14"></span><h3>python-barbicanclient<a class="headerlink" href="#team-stein-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.8.1.tar.gz">4.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>1b282358166fe4c1d4dea896bd336b2850584f56</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.8.0.tar.gz">4.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>2956fbacc2b1fded1f0856755f0d05ab337d402c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-barbican">
+<span id="id15"></span><h3>barbican<a class="headerlink" href="#team-rocky-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/rocky.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>3f6cccae4982e5a8fe1ca5a3fb198e1481a5891c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-barbican-tempest-plugin">
+<span id="id16"></span><h3>barbican-tempest-plugin<a class="headerlink" href="#team-rocky-barbican-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican-tempest-plugin/barbican_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican-tempest-plugin</p></td>
+<td><p>b8bf147bdcdd33f3ad276ca8815fd253ec9b24af</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-barbicanclient">
+<span id="id17"></span><h3>python-barbicanclient<a class="headerlink" href="#team-rocky-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.2.tar.gz">4.7.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>f14511dd9d8806d777f81f33f34ef522245af6a0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.1.tar.gz">4.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>c8b10fdb657f144258df871383fa61cead8a0b61</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.0.tar.gz">4.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>985c46edd50595ba9e1c528c1893fc77a727078e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-barbican">
+<span id="id18"></span><h3>barbican<a class="headerlink" href="#team-queens-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/queens.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>f83cfcafd49a12983d25653fd2bb86a11a74b247</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>5b525f6b0a7cf5342a9ffa3ca3618028d6d53649</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-barbicanclient">
+<span id="id19"></span><h3>python-barbicanclient<a class="headerlink" href="#team-queens-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.6.1.tar.gz">4.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>e12aa561572d32e643c6dc46a1fa7576370e2f00</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.6.0.tar.gz">4.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>262025bd2ea60aa668d0981b50e2d62071ed8d60</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-barbican">
+<span id="id20"></span><h3>barbican<a class="headerlink" href="#team-pike-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/pike.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>5e756a70861e66ee52b7b20d00fc9607ad21d133</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>e6c4f8cd7363f6662c30b276140fb2b8c9132326</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-barbicanclient">
+<span id="id21"></span><h3>python-barbicanclient<a class="headerlink" href="#team-pike-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.3.tar.gz">4.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>9f6dcb0617217241ea4260bd421b19dde35160b5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.2.tar.gz">4.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>714fce222816ad3348d4ba4c3baaa721308158e2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.1.tar.gz">4.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>49505b9aec05ec42e0a809ec51935c2324d5f3a6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.0.tar.gz">4.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>adce2c1a6070fc3c381cb3da9e9f31821fe4b52d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.4.0.tar.gz">4.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>439ee25dc6c998e5571022ce0094a10c2611d717</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>82b7d64547d6142e6e3746800aaa8c740d79ccd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-barbican">
+<span id="id22"></span><h3>barbican<a class="headerlink" href="#team-ocata-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/ocata.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/barbican</p></td>
+<td><p>d0ebc6c321a840c2d3c8ae5a682d721da7b4a239</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-barbicanclient">
+<span id="id23"></span><h3>python-barbicanclient<a class="headerlink" href="#team-ocata-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>585e9c92922018345fa10a7ef93f9c09ae0413ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-barbican">
+<span id="id24"></span><h3>barbican<a class="headerlink" href="#team-newton-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/newton.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/barbican</p></td>
+<td><p>d29569882f74542595451bebab66b22be7b5dcde</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-barbicanclient">
+<span id="id25"></span><h3>python-barbicanclient<a class="headerlink" href="#team-newton-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>06066e77845641fcb193a321d7f10c0387073dff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-barbican">
+<span id="id26"></span><h3>barbican<a class="headerlink" href="#team-mitaka-barbican" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/barbican/mitaka.html">barbican</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/barbican</p></td>
+<td><p>acbdb030430df2af7d0e884ea7a2851e99b42944</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-barbicanclient">
+<span id="id27"></span><h3>python-barbicanclient<a class="headerlink" href="#team-mitaka-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.0.1.tar.gz">4.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>085522cca2783d44e807197a9d967f838edc7a23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>8eab42dc79c48140ed114a9251afa0a210a159f9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-barbican">
+<span id="id28"></span><h3>barbican<a class="headerlink" href="#team-liberty-barbican" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/barbican/barbican-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/barbican</p></td>
+<td><p>7a324b4d03e917f1c990282b39cacb9d543383c9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-barbicanclient">
+<span id="id29"></span><h3>python-barbicanclient<a class="headerlink" href="#team-liberty-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>a5f7531a0f37542be70d0cfbd0fd7f86a38b0539</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>b1eb91a31abcdcde177c13723e35b2d3bc2a207c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>3fad931af068e797ae7a26fcc3f4b40e733fd437</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>e24ed33e1579b6bf0e9ec44320c639323fe21c33</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-python-barbicanclient">
+<span id="id30"></span><h3>python-barbicanclient<a class="headerlink" href="#team-kilo-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>2919366867af335d59913764a55ca8e95569947d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>98c91a27c750aa4d7caffa15355ea1a6e1f72b28</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>f5f4f90e5170a2c67ff0b5198b2e8b57b5d42341</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>5ee3142abfda0eb8c4cdc572651accf829915990</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-python-barbicanclient">
+<span id="id31"></span><h3>python-barbicanclient<a class="headerlink" href="#team-juno-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>ac30643631b6bc1c40116061f8eb280a7881e422</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>fd01494d56bd84d1562d24459aa443e27153e227</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-python-barbicanclient">
+<span id="id32"></span><h3>python-barbicanclient<a class="headerlink" href="#team-icehouse-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>45ffca9951e3c53b3495eaf06a89fe609b057a77</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>8600419cdd83f96d4122c845cd1fc3e19fd978cb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-v1.0.0.tar.gz">v1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>d002858ffe52cde67da89c4bb8af2c0f47b0ade1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-python-barbicanclient">
+<span id="id33"></span><h3>python-barbicanclient<a class="headerlink" href="#team-havana-python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-v0.4.0.tar.gz">v0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>ac5078433f237f2be09cb995c8440f61c6052335</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="castellan-ui-eol">
+<span id="team-independent-castellan-ui"></span><h3>castellan-ui (EOL)<a class="headerlink" href="#castellan-ui-eol" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/castellan-ui/castellan-ui-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/castellan-ui/castellan-ui-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/castellan-ui</p></td>
+<td><p>bbcebe522f1366791aca78475770515c3eed4d39</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="adjutant.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Adjutant"></i></a>
+          
+          
+            <a href="blazar.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Blazar"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Barbican</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#ansible-role-atos-hsm">ansible-role-atos-hsm</a></li>
+<li><a class="reference internal" href="#ansible-role-lunasa-hsm">ansible-role-lunasa-hsm</a></li>
+<li><a class="reference internal" href="#ansible-role-thales-hsm">ansible-role-thales-hsm</a></li>
+<li><a class="reference internal" href="#team-wallaby-barbican">barbican</a></li>
+<li><a class="reference internal" href="#barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-ansible-role-lunasa-hsm">ansible-role-lunasa-hsm</a></li>
+<li><a class="reference internal" href="#team-victoria-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-victoria-barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-ussuri-barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-train-barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-stein-barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-rocky-barbican-tempest-plugin">barbican-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-queens-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-pike-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-ocata-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-newton-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-barbican">barbican</a></li>
+<li><a class="reference internal" href="#team-liberty-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-python-barbicanclient">python-barbicanclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#castellan-ui-eol">castellan-ui (EOL)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/barbican.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:58 GMT -->
+</html>

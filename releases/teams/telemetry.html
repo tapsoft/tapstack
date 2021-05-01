@@ -1,0 +1,3694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/telemetry.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Telemetry</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Telemetry</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="telemetry">
+<h1>Telemetry<a class="headerlink" href="#telemetry" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aodh">
+<span id="team-wallaby-aodh"></span><h3>aodh<a class="headerlink" href="#aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/wallaby.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>418d17c34baaf9081088ddb0ab5c97fba67ed156</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ceilometer">
+<span id="team-wallaby-ceilometer"></span><h3>ceilometer<a class="headerlink" href="#ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/wallaby.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f6c4287dbb64fbabd973c6ef101c592376fc2cf9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ceilometermiddleware">
+<span id="team-wallaby-ceilometermiddleware"></span><h3>ceilometermiddleware<a class="headerlink" href="#ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/wallaby.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>caeeb51c70c7417811f69b916c38d2f41cc2f384</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="panko">
+<span id="team-wallaby-panko"></span><h3>panko<a class="headerlink" href="#panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/wallaby.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>8bc176fdbdecb0ebce06c16a3999ab39dbd141b8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-aodhclient">
+<span id="team-wallaby-python-aodhclient"></span><h3>python-aodhclient<a class="headerlink" href="#python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>b747ae3161d75d45e08349aaa6bbfac3a32f78a7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-pankoclient">
+<span id="team-wallaby-python-pankoclient"></span><h3>python-pankoclient<a class="headerlink" href="#python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>a20549e143af685cdeb8152aca942844275e1d7c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="telemetry-tempest-plugin">
+<span id="team-wallaby-telemetry-tempest-plugin"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>6d8e8eb83f0d1b572b07cead6f8ef8e012a8ec5f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>959fc69e492ed1d2297cce624c1efbf79e9f1b66</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-aodh">
+<span id="id1"></span><h3>aodh<a class="headerlink" href="#team-victoria-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/victoria.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>8635b67777e3aa0c90eccdbcb5753e33a1750aeb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-ceilometer">
+<span id="id2"></span><h3>ceilometer<a class="headerlink" href="#team-victoria-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/victoria.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>76d373b1e6e08db23210516acee6480f4e6c7f35</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-ceilometermiddleware">
+<span id="id3"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-victoria-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/victoria.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>b3613ff708844f2b7cb30976e904af96ae3981ed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-panko">
+<span id="id4"></span><h3>panko<a class="headerlink" href="#team-victoria-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/victoria.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>046c9460c60808ebbbee1ac988160e09ce88a27d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-aodhclient">
+<span id="id5"></span><h3>python-aodhclient<a class="headerlink" href="#team-victoria-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>dff4f153d442e442276eea0d82f87a5d4cb692fe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>d8fb2d10306c95e973bc9d78d90b3925dd28f4a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-pankoclient">
+<span id="id6"></span><h3>python-pankoclient<a class="headerlink" href="#team-victoria-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>eba9ee7f8b31727c0bd6c5f642b4646eb14288c7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-telemetry-tempest-plugin">
+<span id="id7"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#team-victoria-telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>566783bbed6cde196c69a21412004bdcd38e2f6f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-aodh">
+<span id="id8"></span><h3>aodh<a class="headerlink" href="#team-ussuri-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/ussuri.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>20d03d2ebed673b00c821fc49c8888b7c969d68d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-ceilometer">
+<span id="id9"></span><h3>ceilometer<a class="headerlink" href="#team-ussuri-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/ussuri.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f42de0349a4aebdf6cf3c960183f591057005c24</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-ceilometermiddleware">
+<span id="id10"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-ussuri-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/ussuri.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>b50cc037655b3fade67811f0eff00e0352efbae0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-panko">
+<span id="id11"></span><h3>panko<a class="headerlink" href="#team-ussuri-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/ussuri.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>ada2bdd041b89b9ceb06c1839f8401e7d7f62e4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-aodhclient">
+<span id="id12"></span><h3>python-aodhclient<a class="headerlink" href="#team-ussuri-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>a6f331e48de2cb7be8efa6e8235b6f1fc7634e43</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>040498fdc4758c57cc6d1137c4829f023a8a2698</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>428e394e5a4c3d98fbe5f1dc3ab1273af86aaa79</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>ec0ee160cffccfda07609e44e0eb998238031204</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-pankoclient">
+<span id="id13"></span><h3>python-pankoclient<a class="headerlink" href="#team-ussuri-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>f6074779f786c80fd6be9bccbf2949a6c9a20caa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>8da5d0add84331f17def9984a16276498241152a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-telemetry-tempest-plugin">
+<span id="id14"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#team-ussuri-telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>97df0116460541bd76902d1d0de83ebb86fd2234</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-aodh">
+<span id="id15"></span><h3>aodh<a class="headerlink" href="#team-train-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/train.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>5415b96d1e58615fa80fee2eb74dc9cda90d8e2a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>670267b9603684b4019abdd8bc7fd2303a1e66a6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-ceilometer">
+<span id="id16"></span><h3>ceilometer<a class="headerlink" href="#team-train-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/train.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.2.tar.gz">13.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>527e58bb852d3ef3a42e72691dc4a16b0e8006f8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.1.tar.gz">13.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>cad356b2104392bee869fd7b6db8bb870a650b6f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.0.tar.gz">13.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>4e91fa56d12866f81b820244f9125c2da4fa762a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>7962947310d784fdfccf03512468ee2eec0c9ffa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-ceilometermiddleware">
+<span id="id17"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-train-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/train.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>fc21cde1c26bbb6c7abbc0890a88381aabed67fa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-panko">
+<span id="id18"></span><h3>panko<a class="headerlink" href="#team-train-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/train.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>d2ba20f241ec0fdc8f31462dbe3646117e91f736</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>92a0a825e5771a03c81069c5a19a6fc8adfbec15</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-aodhclient">
+<span id="id19"></span><h3>python-aodhclient<a class="headerlink" href="#team-train-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>a8651ec642058a17cd7a6b3648d8250450a73efb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-pankoclient">
+<span id="id20"></span><h3>python-pankoclient<a class="headerlink" href="#team-train-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>28b55860a2e71fe1fd015d868d64500d3b36470c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-telemetry-tempest-plugin">
+<span id="id21"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#team-train-telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>d60e6e2cd466bf2912f71b25b03939e953093f6c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-aodh">
+<span id="id22"></span><h3>aodh<a class="headerlink" href="#team-stein-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/stein.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>43e3b39a649897344ca863e6c8b4e85d5b32d4b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>1b552dd82565157c123925adecd12fc279cbbee0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-ceilometer">
+<span id="id23"></span><h3>ceilometer<a class="headerlink" href="#team-stein-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/stein.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.1.1.tar.gz">12.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>6787bfc00397b6d38f51fb890fd1c2199b719eb2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.1.0.tar.gz">12.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f63a65acc0b70699e366f2ffe9f449835020e107</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>062e02c612d1fdd8c40b9209319b32e04489c163</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-ceilometermiddleware">
+<span id="id24"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-stein-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/stein.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>0ef20fbe009460a492dbd56acb535280973b8c20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-panko">
+<span id="id25"></span><h3>panko<a class="headerlink" href="#team-stein-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/stein.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>91f809625560d770f39299f782eff2b56ec84874</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-aodhclient">
+<span id="id26"></span><h3>python-aodhclient<a class="headerlink" href="#team-stein-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>6d03e61986418a3a95635405ae65ae9f28a5c61e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-pankoclient">
+<span id="id27"></span><h3>python-pankoclient<a class="headerlink" href="#team-stein-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>0a27e534d8dde68b05b4e9a8a812622d58642b0a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-telemetry-tempest-plugin">
+<span id="id28"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#team-stein-telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>959fc69e492ed1d2297cce624c1efbf79e9f1b66</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>7f0e315a78df17d981ed86ebddf87759cd97eedf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-aodh">
+<span id="id29"></span><h3>aodh<a class="headerlink" href="#team-rocky-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/rocky.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>c723feffe0990892fc15774b2c817207b41006a8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-ceilometer">
+<span id="id30"></span><h3>ceilometer<a class="headerlink" href="#team-rocky-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/rocky.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.1.0.tar.gz">11.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>af40e1bf360dbadb6e064c116c8bd5e58e650878</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>018ff32fe0200a041297c386eb8b381f1bec0e71</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>994911d7bbd6f4cc63ea3fda7ca7354fd651ff6f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-ceilometermiddleware">
+<span id="id31"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-rocky-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>8332b9eaff3a59026e7af1a7339525440a960d51</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-panko">
+<span id="id32"></span><h3>panko<a class="headerlink" href="#team-rocky-panko" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>fb019f8414ff2dcdf52afeaaea9394d72395fb83</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-aodhclient">
+<span id="id33"></span><h3>python-aodhclient<a class="headerlink" href="#team-rocky-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>a5462e6623e5ff1e29d5ec39d9d6ac68e88eceae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>6d1ad0fba7fe4790a19eefc6b8f9d506674720ae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-pankoclient">
+<span id="id34"></span><h3>python-pankoclient<a class="headerlink" href="#team-rocky-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>572aee9cf6ac618eb5d1ea325f9e59414d387dbf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-telemetry-tempest-plugin">
+<span id="id35"></span><h3>telemetry-tempest-plugin<a class="headerlink" href="#team-rocky-telemetry-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>7f0e315a78df17d981ed86ebddf87759cd97eedf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/telemetry-tempest-plugin/telemetry_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/telemetry-tempest-plugin</p></td>
+<td><p>b35146e1a423e81b2bbdd8621d0310ffac9af517</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-aodh">
+<span id="id36"></span><h3>aodh<a class="headerlink" href="#team-queens-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/queens.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>149d3ad2193b4d17df801f82a0a6be62dba564db</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>dff1529d09fa8a1b79c4fd220a84c503f6263c2d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-ceilometer">
+<span id="id37"></span><h3>ceilometer<a class="headerlink" href="#team-queens-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/queens.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f8e7d5252deec7781e4a09fb7ef92561c14c4b1c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>46aee0a86424004290249a2d7c37157ab853f994</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ceilometer-powervm">
+<span id="team-queens-ceilometer-powervm"></span><h3>ceilometer-powervm<a class="headerlink" href="#ceilometer-powervm" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer-powervm/ceilometer-powervm-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer-powervm/ceilometer-powervm-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer-powervm</p></td>
+<td><p>a29ca2b75ed3a4cdd6e725f1f6a1d8e026e1771d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer-powervm/ceilometer-powervm-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer-powervm/ceilometer-powervm-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer-powervm</p></td>
+<td><p>a31d0fa44ac64e6168e86956c6ba17dcdae2dfd3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-ceilometermiddleware">
+<span id="id38"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-queens-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/queens.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>e3169206b7c3f4636e99ad0611c17e2ab1078c76</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-panko">
+<span id="id39"></span><h3>panko<a class="headerlink" href="#team-queens-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/queens.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>576f32a72d65c5b1cccc344e188f21544e4136d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>7d27099363cafc102f092a3511c3c7f37e3e664f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>849a579b3a8c88da722be2a7b46514b8c0115ee8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-aodhclient">
+<span id="id40"></span><h3>python-aodhclient<a class="headerlink" href="#team-queens-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>86ac8fd3d31f19a88443a15609a2642c98a6cf7f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-pankoclient">
+<span id="id41"></span><h3>python-pankoclient<a class="headerlink" href="#team-queens-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.4.1.tar.gz">0.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>0be95b1d9d64751525820d8bbe1b56be99740ac6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/pankoclient-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>e9a975fba6ad501f50280da671b9a2a8794474e7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-aodh">
+<span id="id42"></span><h3>aodh<a class="headerlink" href="#team-pike-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/pike.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.1.1.tar.gz">5.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>88102d1c000158bf74fa8287cefbe7b78e4846ce</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>f0ec11eef92d39bd3f07e026a404e2e7aa7fa6bc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>48468c3f525676f8ddae2dae1e7d19006d5c4342</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-ceilometer">
+<span id="id43"></span><h3>ceilometer<a class="headerlink" href="#team-pike-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/pike.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.7.tar.gz">9.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>8406c3c3958f6c839ba0c40e3a69e6f671b9937e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.6.tar.gz">9.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>51d4ea0a1544db06159a8d8037131428a42cc651</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.5.tar.gz">9.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>7a3770a6de1366886e947960023c963fc7efe68b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.4.tar.gz">9.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f1689396845f3e551cb94d4f8e14ff0a3be884aa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.3.tar.gz">9.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f5fed88724124a9f6c017d67fc0b7ac3c1ab139e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>7bee6ae2ef55712ae08cce57faf57061988282b6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>11be2c83145fc88bee657e9b14c9e5eca2410d6f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>04352f339db2eec1382b2f085651200774b56f29</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-ceilometermiddleware">
+<span id="id44"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-pike-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/pike.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>0cea730b10000f9e16af33d1cbbe9ca2004a3880</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>6ba005fa6b74577647ef1c6d939e0f6f8739093b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-panko">
+<span id="id45"></span><h3>panko<a class="headerlink" href="#team-pike-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/pike.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>e5cad2242bbae6e3828b42aff812c30ef6be9346</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>f335d59a3b2919e41594ff2499cf83e6d327ef3f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>7f811a3fa915f1d18cbc817e892957324183761a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-aodhclient">
+<span id="id46"></span><h3>python-aodhclient<a class="headerlink" href="#team-pike-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>eb827601af8929803285c09ead6996e6d60b14ef</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-ceilometerclient">
+<span id="team-pike-python-ceilometerclient"></span><h3>python-ceilometerclient<a class="headerlink" href="#python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.9.1.tar.gz">2.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>4ee321feeef39fa2a297ad8e58e931b8a03d8f14</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>3b4e35abada626ce052f20d55c71fe12ab77052a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-pankoclient">
+<span id="id47"></span><h3>python-pankoclient<a class="headerlink" href="#team-pike-python-pankoclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/aodhclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-pankoclient/aodhclient-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-pankoclient</p></td>
+<td><p>f29cdbdd2a8137f30d0866f0e080045ccdd40583</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-aodh">
+<span id="id48"></span><h3>aodh<a class="headerlink" href="#team-ocata-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/ocata.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.3.tar.gz">4.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>c77c0aac4db000dbd8bee2b68080773deaf90071</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>ab45afcfe9a531127ab6f06a128ec5db9cfe7a06</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>38ba0511e7ff75809c4e5ef05b783c56c34ad641</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/aodh</p></td>
+<td><p>2ad5fb78647f8017e9716292495609408e91b10c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-ceilometer">
+<span id="id49"></span><h3>ceilometer<a class="headerlink" href="#team-ocata-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/ocata.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.5.tar.gz">8.1.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>0e315fd30a12c7fd012d98c6ebfc2ce2fdfb9cb9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.4.tar.gz">8.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>0e315fd30a12c7fd012d98c6ebfc2ce2fdfb9cb9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.3.tar.gz">8.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>24e72132e76d38c93875757c7a56d6c651741391</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.2.tar.gz">8.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>b3725525a7e2cb8dba696f6335b0f442aff399d4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.1.tar.gz">8.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>d930f084ab9efe83f5ad870477178df99284fd22</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>c98aed68189167f0139ff041985b27e407ebddc6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>cd9673fcd73fa5f55f6c439be4bb00468d52ddb7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>9cfd46c2e4c6cda85d1de118a349b2a9f7440d0c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>2db686275f9bbc861c7c47ae89706d11360a0c78</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-ceilometermiddleware">
+<span id="id50"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-ocata-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometermiddleware/ocata.html">ceilometermiddleware</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.3.tar.gz">1.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>387c1797c54fae5d12cc3545475e6d3386d85b41</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>f311cd211e3bc36a4a57bb54bc41a07574d9e2af</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>87bd49b62e0e68d8be7c4f77d60eac19c14f9592</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-panko">
+<span id="id51"></span><h3>panko<a class="headerlink" href="#team-ocata-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/ocata.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.3.tar.gz">2.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>7ef01c41dc3b61f8658632535204f6b7233f7701</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>efacfce94c52c91b17677188af55cd1c97d0088d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>9a9ae04a86bf418a6f1eb196a737f45160769445</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/panko</p></td>
+<td><p>7f9694f84c35ec19bc2cede5438a5ac3389cce7f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-aodhclient">
+<span id="id52"></span><h3>python-aodhclient<a class="headerlink" href="#team-ocata-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>2f7a9c4dac8683c5c91455c3eb421592e6be2a37</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-ceilometerclient">
+<span id="id53"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-ocata-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.8.1.tar.gz">2.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>f5d596623cddef1534a66ae0971da76e5e66cbcb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>658d7e27ff8472f45cf8018df9f175da1bd4ec74</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>5328c3168a7ed011fc2c6ac16ba8f8e4f9c5e380</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-aodh">
+<span id="id54"></span><h3>aodh<a class="headerlink" href="#team-newton-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/newton.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-3.0.4.tar.gz">3.0.4</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>1f954b3b828d7aa25665787b36f4a14bb0c94c76</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>f87e0d05c4662c14c7a9f49a0a829cf9bf3edbdb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>2b50f978aa13374cc11195275f1b114d88d1327d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>8d00a9942759e3f62038af4181bdbad69fefa7a6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>caf9f2e1c252835bda8d2b17b7d1239fcaa9a9ba</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-ceilometer">
+<span id="id55"></span><h3>ceilometer<a class="headerlink" href="#team-newton-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/newton.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.1.1.tar.gz">7.1.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>a5e6a08aa7f7d058a179608b6f74462082507163</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.1.0.tar.gz">7.1.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>327648f0d24c9f8326057175db6f1634389a1775</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.5.tar.gz">7.0.5</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>ffc9e56c3c259c21578254d9f7656b9468dc5613</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.4.tar.gz">7.0.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>1276d4660d7a350d3855dfc75d88ccbeee2978b6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.3.tar.gz">7.0.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>a88269820e25580eee28f181260c6509ae74d4ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.2.tar.gz">7.0.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>6d1deb5c50d139fc5648bf20385df62defe32e37</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.1.tar.gz">7.0.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>c4b08affa7ed56489c95b3be46df8054ef8221ad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-7.0.0.tar.gz">7.0.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>8c1e5366d8ed1539acab681551469ec49e37dc68</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-ceilometermiddleware">
+<span id="id56"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-newton-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.5.2.tar.gz">0.5.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>4252674cbddd656389ef2d0a1a6c9d881660df96</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.5.1.tar.gz">0.5.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>a170716d3fc19dc0abf41ff69733ac503c71f757</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>7f502e2c0487273670b3817f1b3f79384e5b0d4d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-panko">
+<span id="id57"></span><h3>panko<a class="headerlink" href="#team-newton-panko" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/panko/newton.html">panko</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/panko/panko-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/panko</p></td>
+<td><p>b36774b5341a66884ec0db1782a51ecdf8bf0673</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-aodhclient">
+<span id="id58"></span><h3>python-aodhclient<a class="headerlink" href="#team-newton-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>9ea45584f214c1e4582c77911783fb3485bec88a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>65d2e625ee3b359bae154a5da3931f48b48fe720</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>e336b63edf9027d20509810cdde5d8830d260fae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>8e4a4e2a167c03020203674f73a59bde5b1b56ea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-ceilometerclient">
+<span id="id59"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-newton-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.6.2.tar.gz">2.6.2</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>9d9b477708fdce08db162a9bf3723cf7ee0df267</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.6.1.tar.gz">2.6.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>090e5ffc691c5d40e45ab0c20dc88032a0987b20</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7c6cc05ff0e9e95313384303deee69ef11929bc1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>cfea4aed4aed208358560f9d70b4cbd3d577fc50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-aodh">
+<span id="id60"></span><h3>aodh<a class="headerlink" href="#team-mitaka-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/mitaka.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.6.tar.gz">2.0.6</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>5dd569dd6178510c080e91e77ed3fedb8f48aef0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.5.tar.gz">2.0.5</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>aa2c31369bd32c7ac07ede0ac13785c18255e8be</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.4.tar.gz">2.0.4</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>8b46d8a703be68a9d365a2fb8e354c0a47f13757</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.3.tar.gz">2.0.3</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>0a0a02aa0032235e80109e53912016a96105a243</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.2.tar.gz">2.0.2</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>2c2b3f3b93e62dfaa292f9b18eefbe54162de1b2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>966f7692abda7896e1389ee6c8e030f0e37dce0f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>98874054870968b99f69dfd7a2b58f5a903931bc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-ceilometer">
+<span id="id61"></span><h3>ceilometer<a class="headerlink" href="#team-mitaka-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/mitaka.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.5.tar.gz">6.1.5</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>e18f2099449513b4493583116f946a4516416a6a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.4.tar.gz">6.1.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>1c5ad24f221f90310577b1de29acdd4f496ea705</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.3.tar.gz">6.1.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>fd9ee40216b445115f3d828df81c4163ad80cc75</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.2.tar.gz">6.1.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>30e315ddf7b304b686bcf9063b90df7fdd47e322</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.1.tar.gz">6.1.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>b75bb3f82132c886c498bc8bd0bdee500429647e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.1.0.tar.gz">6.1.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>f7e27a2cf6a8ad084f36575a05a856cdbd9e528c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-6.0.0.tar.gz">6.0.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>244439979fd28ecb0c76d132f0be784c988b54c8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-ceilometermiddleware">
+<span id="id62"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-mitaka-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>627125bf88adbeed7b9c079a5f7dc75b06480ee0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>db6dccbc6d0dc4cd3324ff2023b324fbe7b728b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-aodhclient">
+<span id="id63"></span><h3>python-aodhclient<a class="headerlink" href="#team-mitaka-python-aodhclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>cf4fa714ec43278515a42e7dd08f4d4cf7893fe7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>8ef682fa2af4ba72137af274f739ca3918330803</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-aodhclient/aodhclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-aodhclient</p></td>
+<td><p>58227342270f233e4de1a523932e251c41bae23e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-ceilometerclient">
+<span id="id64"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-mitaka-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>88f07e0154291d58c3f1237bebbbe53b18fb9daf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>cb3b7be7dff1b431b92c5e43f5f629325c3f10de</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>8677de9ec764f936a476de1885ee0e08b4ece20e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>25517d0226e69bbabf9679c80445746a5cab846d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>cdb47d9646236e19208b7e49ffc6c7d42000dd89</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>d01a8cbac73842066bb129fc807bea3bc3a7278f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7be79a22f151c35b86e747d3eb9af78f0fbea06b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-aodh">
+<span id="id65"></span><h3>aodh<a class="headerlink" href="#team-liberty-aodh" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/aodh/liberty.html">aodh</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-1.1.3.tar.gz">1.1.3</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>a5de051bcb1e994497d57c690677bb2da2924cb1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-1.1.2.tar.gz">1.1.2</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>791442495b5a2adcc2c346abbf484ed1cd53fd0d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>de554a31bd658733690bf6ca277b7bc5e6b68e19</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>1d38d75c79b63ee836786a1d6378c7a6182f934b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/aodh/aodh-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/aodh</p></td>
+<td><p>2bea49e495d19453759908399f8a0d7b9b33d66e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-ceilometer">
+<span id="id66"></span><h3>ceilometer<a class="headerlink" href="#team-liberty-ceilometer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/ceilometer/liberty.html">ceilometer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.5.tar.gz">5.0.5</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>09afee9a8fd665097f912defc844bb80e54fc23d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.4.tar.gz">5.0.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>5de88a1d58496ec7c933229d0f9dcd8e308c2693</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.3.tar.gz">5.0.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>3a1fcaf712a7cdcffafe2ae33bc4c2508bab8a49</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.2.tar.gz">5.0.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>5a51a3c21881d55ae2c53582f1e11218eaaeb668</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.1.tar.gz">5.0.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>d8391cfc13ec8791f9daa09b37b806d2c59b26b3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-5.0.0.tar.gz">5.0.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>026a5d475e1958bf761e41c2bb426b09e0f3d270</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-ceilometermiddleware">
+<span id="id67"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-liberty-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>7005d98f47be809243d627cee7ca594390cddec2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>a086aac03cd1948887ec1151a1b650c1ed94ead5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-ceilometerclient">
+<span id="id68"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-liberty-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.5.2.tar.gz">1.5.2</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7da82f4436a45336aef10b24c53f6f1e03eea42e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.5.1.tar.gz">1.5.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>d7b9708bd0bfad7e685574b916da477c522313c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>daed7e59c383f1ca74d75160cbc99fbd89675648</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>1fc68877ff8c6f31867a39dbb647688db6b069c3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7e4d2edc970a555b982d7081a95c6a1ada6d58de</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>29820247dd33270854689bb47080db1e183d9a72</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-ceilometer">
+<span id="id69"></span><h3>ceilometer<a class="headerlink" href="#team-kilo-ceilometer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>b4d95afe92834ca8148210272d32a6676f97298c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>e09a946ccfaf80a9bc4bbbbf327169c09974117c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>06b9b908406e078bdbff2aa7e18d19f55ef31037</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>7549b89395706168e8ac9c25baa441a6df779116</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>b0447ed8e7bee371bf7095c86e47d717abe89edc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-ceilometermiddleware">
+<span id="id70"></span><h3>ceilometermiddleware<a class="headerlink" href="#team-kilo-ceilometermiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometermiddleware/ceilometermiddleware-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/ceilometermiddleware</p></td>
+<td><p>55a829c1cda58a4ea280a0d88cfaa7ff207c0eab</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-ceilometerclient">
+<span id="id71"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-kilo-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.1.2.tar.gz">1.1.2</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>44c2a21adcfb3092d5e66706612fe14ec2282717</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>2861e81ea83363d2327f8d67e12531f45883e423</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>62e3573fceb6c6120d8c14a761927c2979d9c132</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.14.tar.gz">1.0.14</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>127aadfd2b2daf9884ad7003e23440048e2efbd8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.13.tar.gz">1.0.13</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>f8765ce532a45391c5366be8fa0f583f96a30d22</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-ceilometer">
+<span id="id72"></span><h3>ceilometer<a class="headerlink" href="#team-juno-ceilometer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>6b66124327f31688565d12152b0d47bf21c81737</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>720c2b4915caf5decd3da91ea2d6e6291316b940</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>e8380ba90f29189ffbcee35c8a069b4882a98a99</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>1129b7013359bf242a2ea53be9d4faeccfbfac5a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>94579bfc81b820380d03703e4e2311b3bd25c022</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-python-ceilometerclient">
+<span id="id73"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-juno-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.15.tar.gz">1.0.15</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>fb12aaea1782e8c1be2dd68b2d9b34015d64aa92</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.12.tar.gz">1.0.12</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7316dd16b8850270db27c1298dcf5a2223f2f1e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.11.tar.gz">1.0.11</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>ae69fb0f975c485d14fc039ff4389439aa78e7eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-ceilometer">
+<span id="id74"></span><h3>ceilometer<a class="headerlink" href="#team-icehouse-ceilometer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>737e89950b8acd7c517e526331c92514b4efc678</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>bc9013bcf441c1a6e92f62a2cb2379d931b005b1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>b2bf39a1930af15beae07db84b51961b93bb06e5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>ea457c6a306abf53b29bec3e1dd8b42d2c88cbf7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>e2fe034d65d1c93c856fc9692939a6b561e3ec74</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>1bbf17650f9d94a22256f356abf84cc71c831f1f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-python-ceilometerclient">
+<span id="id75"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-icehouse-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.10.tar.gz">1.0.10</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>defbb95855443047c3fb0a90ca4a9c9d1a51180b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.9.tar.gz">1.0.9</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>16f67c1f2eb963fe127721157abe5fa43c446065</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.8.tar.gz">1.0.8</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>35e20cbfb27b7df86a88ca6f106ee4d690fb2679</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.7.tar.gz">1.0.7</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>2950b30089ab7f38b70a9dd6b40cf0823d4ade3a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-ceilometer">
+<span id="id76"></span><h3>ceilometer<a class="headerlink" href="#team-havana-ceilometer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>292b4aa0571829184669a03e910249f5829a5f3e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>edfe25845dd3db9f0a07c3780d4160a20e62db3a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>9149861ea1b2a2abc200e79ab23d5e1fca5af752</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>fa5c8e22e50d34755244a63a23272dd58ec9c99e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>ec31468dae5339eb6f28900affc1a29ec6ac6371</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-python-ceilometerclient">
+<span id="id77"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-havana-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.6.tar.gz">1.0.6</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>c3283ec1e861f29a53c59c1a09f2a1bc21a713e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.5.tar.gz">1.0.5</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>2610d6c144e0d81cd94a6f18eb899443ce7d64fb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.4.tar.gz">1.0.4</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>b386b09defc0bb18686ac6762da1168a3668191a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>9e330726ce6409088f7cbf50f4c76622c2f1732f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>04cc271da208069e921da252554e839de46442ed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>52e3f6ffe188a82a67fdd573bb03ab1d9b0b95b4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-python-ceilometerclient">
+<span id="id78"></span><h3>python-ceilometerclient<a class="headerlink" href="#team-grizzly-python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>e30d70074f278f58457d9d2b278815b5ccb39a63</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gnocchi-eol">
+<span id="team-independent-gnocchi"></span><h3>gnocchi (EOL)<a class="headerlink" href="#gnocchi-eol" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.4.tar.gz">3.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>cb9ab4fe52792743e411accfb3a399d132463970</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.3.tar.gz">3.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>89c9170731de528015c10a3426ea53f188c99705</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.2.tar.gz">3.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>0f73c75a94ee077a098cab42caef4a7487db88c2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>ca27a17a7de6f168f478f150b56b1b8baecc10d0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>b3b49c87e866475c149343fd77408bef259c5534</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.7.tar.gz">3.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>0f831a8ee6bac7bc4a2bc2b7fdfe910d8192e85e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.6.tar.gz">3.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>44d2e7815a34933026ede849726682cb6b2aaeab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.5.tar.gz">3.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>44d2e7815a34933026ede849726682cb6b2aaeab</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.4.tar.gz">3.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>a9c1383992ed2039cf42beee988e81113a7d33e9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.3.tar.gz">3.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>bb687e17150bcf9ac8f8fa3b84043d4c58ae6181</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>2cf420db477335608602352957626de5bf79dceb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>a44d88f594e0661c7435e941c75795409c252d43</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>97a0bddc7b4bef3c64744b4e9e2d26b1283bda0a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>c92e98654dd2a11467b0b8d730ac2344db8be46b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>94d773b0d54295ae05c04910b4030b7856b855df</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.4.tar.gz">2.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>20c5886ef1c1654875356f81eacc66e349d437ff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.3.tar.gz">2.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>637bc7041d9ec56c8068d1bc77d70186bebf7e17</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.2.tar.gz">2.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>e9b873f86889b25b7e33eaac475a45c1cfe51133</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>6c49492db68e921b515c819463c58e4800ea0dc8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>314b110d93f613e4491b4d5aefc090d3e3fa02fd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>0c876c4eed8be8763478cb1ca494f91904ddabc8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>15bda4a9759300958f9f6fab3c80d337457b9943</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>ad78cee67d9268b39e3663b245b6183add91806d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.5.tar.gz">1.3.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>fe2beaef3c94c851ac0996f01faec774aa108ba0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.4.tar.gz">1.3.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>cffcc4d5082c29efc789f0cf4bc81100b82c2d33</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.3.tar.gz">1.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>7ac05b77692c4c080da16b75aaaef85453993b67</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.2.tar.gz">1.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>016fc8f31ffaf5da5919561ab918dbadbff4f0e8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>eec02bac51d5abcd2361dd3ae3f44ee62a3db8c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>fff9b487a20ef0a076f6f5ee6900c90b8423441a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>4b0f4ff547552fe78dad00e54160c3803bd8910c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>e1eb9231156208c6bb719c7716cddcf08775ade4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>3fb737740ea511b84db1db9bdd8223321cdff76b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/gnocchi/gnocchi-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/gnocchi</p></td>
+<td><p>cdfc4dd180495e59b433b8d984e754ee7999137d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-gnocchiclient-eol">
+<span id="team-independent-python-gnocchiclient"></span><h3>python-gnocchiclient (EOL)<a class="headerlink" href="#python-gnocchiclient-eol" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>2b2e08ea7b26aaacec66fa9490ae83f04924278b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>7282f8436c62460a1150ee07ad47c04b27d851e2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>32b62fbd120f6af7065939b26d392bbcee067072</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.2.tar.gz">2.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>f14fe0e03bb63b50cd7cea90f4f33fffcb4895b1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.1.tar.gz">2.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>069108306f1b3e30ca7582d9a177dbd54df30abd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>ed7c1acab959c8cc8249da9e170063fe681f32bf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>107b117a925252aa67a545e32468d2965f56af9f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.2.tar.gz">2.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>8957c54e28e769dff050f0b510f77368b3198408</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.1.tar.gz">2.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>8957c54e28e769dff050f0b510f77368b3198408</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>b7a88d83e13b67b74c551288ec27b2430749185b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>652d5b6f5c4b7e4d7126c4b5a2203b7db3dd129c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>6af87afa7d5b48d12a6df27956138fad44236298</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.3.1.tar.gz">2.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>98bfcb757f99dbf3798fcf90358d1ce273e9adb3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>496786d517e701d22b4c7856acad7e4fa84678ae</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>04c6ce5b4b9f1e80784ea021bdd57f958072aa47</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>6639e51e76c662c47793f686f356a1872d6ba300</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>bfd288874c9494d3bd30ed39c6dd840866174df0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-gnocchiclient/gnocchiclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-gnocchiclient</p></td>
+<td><p>0c4e0855be5c201b1744b772fc0aa9f4624b5421</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="technical_committee.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Technical Committee"></i></a>
+          
+          
+            <a href="tricircle.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Tricircle"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Telemetry</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#aodh">aodh</a></li>
+<li><a class="reference internal" href="#ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#panko">panko</a></li>
+<li><a class="reference internal" href="#python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-victoria-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-victoria-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-victoria-panko">panko</a></li>
+<li><a class="reference internal" href="#team-victoria-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-victoria-python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#team-victoria-telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-ussuri-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-ussuri-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-ussuri-panko">panko</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-train-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-train-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-train-panko">panko</a></li>
+<li><a class="reference internal" href="#team-train-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-train-python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#team-train-telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-stein-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-stein-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-stein-panko">panko</a></li>
+<li><a class="reference internal" href="#team-stein-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-stein-python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#team-stein-telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-rocky-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-rocky-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-rocky-panko">panko</a></li>
+<li><a class="reference internal" href="#team-rocky-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-rocky-python-pankoclient">python-pankoclient</a></li>
+<li><a class="reference internal" href="#team-rocky-telemetry-tempest-plugin">telemetry-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-queens-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#ceilometer-powervm">ceilometer-powervm</a></li>
+<li><a class="reference internal" href="#team-queens-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-queens-panko">panko</a></li>
+<li><a class="reference internal" href="#team-queens-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-queens-python-pankoclient">python-pankoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-pike-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-pike-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-pike-panko">panko</a></li>
+<li><a class="reference internal" href="#team-pike-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#python-ceilometerclient">python-ceilometerclient</a></li>
+<li><a class="reference internal" href="#team-pike-python-pankoclient">python-pankoclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-ocata-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-ocata-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-ocata-panko">panko</a></li>
+<li><a class="reference internal" href="#team-ocata-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-ocata-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-newton-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-newton-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-newton-panko">panko</a></li>
+<li><a class="reference internal" href="#team-newton-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-newton-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-mitaka-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-mitaka-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-aodhclient">python-aodhclient</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-aodh">aodh</a></li>
+<li><a class="reference internal" href="#team-liberty-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-liberty-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-liberty-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-kilo-ceilometermiddleware">ceilometermiddleware</a></li>
+<li><a class="reference internal" href="#team-kilo-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-juno-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-icehouse-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#team-havana-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-python-ceilometerclient">python-ceilometerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#gnocchi-eol">gnocchi (EOL)</a></li>
+<li><a class="reference internal" href="#python-gnocchiclient-eol">python-gnocchiclient (EOL)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/telemetry.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+</html>

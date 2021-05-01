@@ -1,0 +1,3426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/cinder.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:58 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Cinder</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Cinder</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="cinder">
+<h1>Cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-cinder">
+<span id="id1"></span><h3>cinder<a class="headerlink" href="#team-wallaby-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/wallaby.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-18.0.0.tar.gz">18.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-18.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>db4bca2959374379da7ba82a92d44adf4a3be4db</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cinder-tempest-plugin">
+<span id="team-wallaby-cinder-tempest-plugin"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>641d6a009ead01eaa056608067119ca3e8e12e2d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>3b255b76966a9c4bb5deadbc0d3d372a5288830c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-brick">
+<span id="team-wallaby-os-brick"></span><h3>os-brick<a class="headerlink" href="#os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/wallaby.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.3.1.tar.gz">4.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f86944b8972cd9947319db34c4b0b31447bc9a39</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>91a1ccaa843c94990bd9c229e7abfb086b796202</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f776ef24faeddd275fd39470e5eee60f17c6c066</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>4ac51ae15388a2333e21673389d19d75eaaded83</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-brick-cinderclient-ext">
+<span id="team-wallaby-python-brick-cinderclient-ext"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/wallaby.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>e008ceef79e9424357b2cf63f86a0783399687c2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cinderclient">
+<span id="team-wallaby-python-cinderclient"></span><h3>python-cinderclient<a class="headerlink" href="#python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/wallaby.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.4.0.tar.gz">7.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>f7eb39500bea4ed4a535bf1c85373639ab262db5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.3.0.tar.gz">7.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>1abc1b5d404c523a696f7186bc4c4b6fc7407cad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-cinder">
+<span id="id2"></span><h3>cinder<a class="headerlink" href="#team-victoria-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/victoria.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.1.0.tar.gz">17.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>deb31a0c4d35ea6c479bfe466b780ed07a489276</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.0.1.tar.gz">17.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>cdc586631586dc9782794a90f129ce3f34118193</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>d4d90f812e35ef836c2bd8b8a33caf37032b1ad4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-cinder-tempest-plugin">
+<span id="id3"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#team-victoria-cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>6336800cbd8426cf7639c38c0a6f34a7c61e95be</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>f1432e10e1b309ca676a216e5c50dde9e63c1f4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cinderlib">
+<span id="team-victoria-cinderlib"></span><h3>cinderlib<a class="headerlink" href="#cinderlib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>afd28b9875f15416a1340c4c95cdf46c8c6bfcae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>f9b2b76e39c40d6762a9ba16c94b565b791f2ec3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-os-brick">
+<span id="id4"></span><h3>os-brick<a class="headerlink" href="#team-victoria-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/victoria.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.3.tar.gz">4.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>9528ceab4f32cebb700a0b69f2ea58ec101700a1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a280d9f771dedd9dfb7770fadc965a46412b69ed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f0cf77672fed70f20896c23015cb50341f311f38</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>c5015cbd8a5397b2c639a6a74d6d2f6a95d5bf18</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.2.1.tar.gz">3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>58dff38e3bf4e28874a9d58c9a3b63c1fb2e5cc0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>26299257ceb092ab82fab17b707bc48963abecaf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>5414305a2b2c776be62b695c4144dd4ace7f5b30</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-brick-cinderclient-ext">
+<span id="id5"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-victoria-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/victoria.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>b2e33001c5cdd2ce28c89bdb14e7c169d016915d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>6aa47dfa7b1f637318d9dc2480631400fd74d4c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>3ae9a5dc1015419265fec8db45cf77cf35413513</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-cinderclient">
+<span id="id6"></span><h3>python-cinderclient<a class="headerlink" href="#team-victoria-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/victoria.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.2.1.tar.gz">7.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>c91b5172a108356c511d8149ba7b85b814ffc570</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>f605cca16320f7869bff0ce32aa0f70ab8a29a8b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>9268d3101b3c3464150e96fde0319c24d4d8856d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-cinder">
+<span id="id7"></span><h3>cinder<a class="headerlink" href="#team-ussuri-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/ussuri.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.3.0.tar.gz">16.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>17d3ac3f22e19960a08c036f0c40a72bab4b99dc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.2.1.tar.gz">16.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>2f0d236440b6816ae2e50ae10192777fcf4117dd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.2.0.tar.gz">16.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>53d4822751ece2a844a693562617eba857ca3aa6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.1.0.tar.gz">16.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>20a3cab7ddd9555eaa0406f539d491308f18e4e9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>cc9014ab4298a4509fd6139fe5b9ca4c7c69120d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-cinder-tempest-plugin">
+<span id="id8"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#team-ussuri-cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>efef4f5feceadb7f114e277c934ef3b3721fa331</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>6f0b4fcd9d6d86f9aba81af94bc492aee228ea9d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-cinderlib">
+<span id="id9"></span><h3>cinderlib<a class="headerlink" href="#team-ussuri-cinderlib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>7fdbadddaf300497f0fad52396d3e167322b91b1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>d810da70c89a7066376763c6aeb9317248d85473</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-os-brick">
+<span id="id10"></span><h3>os-brick<a class="headerlink" href="#team-ussuri-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/ussuri.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.6.tar.gz">3.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>4894b242cf97f6630ee21392443ddb3ce1be09ef</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.5.tar.gz">3.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>2611c32d7afc895b3bc80d399e2a0843d64f6447</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.4.tar.gz">3.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>6fb20cec384d24a1d2b4b54619fc3b7acbf2a097</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.3.tar.gz">3.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d3ee7a076be6d3397946f17f15bee4bda2968459</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a1c9f649448bc91325b0735c48e780cce44df2c1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>ebe6a0463d0adca0bd64287cfe783408e150d1db</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>2a6e8d405eb955caea15c85c157638533e486ba8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f34bf429ed09d7b8db05c9c5d104508258ea95b6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-brick-cinderclient-ext">
+<span id="id11"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-ussuri-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/ussuri.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>17dc36a20a9ccad7af6129e8171ee2c9c263a40f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>b99914f51f2d40b2f13bd676b81536295694a60e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>c43cadf1ca83de3277004f489271266cd34a8918</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-cinderclient">
+<span id="id12"></span><h3>python-cinderclient<a class="headerlink" href="#team-ussuri-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/ussuri.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>350121f8e0330880c3f6a72fcd2836b9f7b3e799</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4e1427a41870f15748155b1ad7339be4fd920e4c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>ed8e570e6302329f198dd832a0212b28131ce493</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-cinder">
+<span id="id13"></span><h3>cinder<a class="headerlink" href="#team-train-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/train.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.5.0.tar.gz">15.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a75f8633b4e8e4256f1309cb2fdc0699f8a3c3e0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.4.1.tar.gz">15.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>7ecd8a4af8eff96df7e864e96865c8ed86d0abdf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.4.0.tar.gz">15.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>58f0e737973f36cd759ee054bcdf8f4f644273b3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.3.0.tar.gz">15.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>3ecfe3754c41f82bfb18bb5aa497b8cf2a25f2fe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.2.0.tar.gz">15.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>aadf0950c9c62f68a107c89c5b7c7632a2c732db</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.1.0.tar.gz">15.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>e79b98367bd72f0323258dc0506de28b31c4aa48</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.0.1.tar.gz">15.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f2f3a1b528268dbeb93a68e834ef3bc5f8107026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>d879e76ff05f78aa042c4fe5f79a69699ccaa997</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-cinder-tempest-plugin">
+<span id="id14"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#team-train-cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>975953f794c65ab1124b7c42abdd5f9886b814f9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-cinderlib">
+<span id="id15"></span><h3>cinderlib<a class="headerlink" href="#team-train-cinderlib" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinderlib/train.html">cinderlib</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>199ebd4f5a1984573877f582a2655f4171916761</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinderlib/cinderlib-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinderlib</p></td>
+<td><p>b3ee3447e05ae89b3372219e5c4c4757f9762031</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-os-brick">
+<span id="id16"></span><h3>os-brick<a class="headerlink" href="#team-train-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/train.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.6.tar.gz">2.10.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f6531c0c81579c02fa046f3eaf7da8704ceebdd2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.5.tar.gz">2.10.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>634fb4a9aa9cb71106e69cd78ec18a0b849d077a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.4.tar.gz">2.10.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>12d252db9cb9deffea3c87b86ea71b3013d93892</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.3.tar.gz">2.10.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>55fc99852166f72b95d85dc917197f5544861e7c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.2.tar.gz">2.10.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a8190cd60b59dedb11a8ed27d236d81adee3255d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.1.tar.gz">2.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d8ed21e7d25f67c6d2bfe71515723f68ce15b887</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>cc22ac0ed5d0fa122e122bdd27ceb2a0d4d34cc1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.9.1.tar.gz">2.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>97b085f448e15269c28ed8adc60601894c470747</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>8cb5fe3623f2145dc49742211f69f1f773aa7d3a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-brick-cinderclient-ext">
+<span id="id17"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-train-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/train.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>8951feb3feed09ee687470e621adaac0dcd9e8e1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>087ea9241bf2fdb0ed01ca82f2a37c1b4dd994e1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-cinderclient">
+<span id="id18"></span><h3>python-cinderclient<a class="headerlink" href="#team-train-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/train.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>7e9e31ce085106638df5792de400c219e9fc5b66</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>8fa0882354c589b17d4502e04344ae00b75369d5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>a63d4d651ae2f7614224f716b3ef8ebf392a6b78</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>1b8d5c20fb94eb21a8611b045778f80256b0b4ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-cinder">
+<span id="id19"></span><h3>cinder<a class="headerlink" href="#team-stein-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/stein.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.3.1.tar.gz">14.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>13d48f8589d8981cebac6978f4b22d840f5c9132</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.3.0.tar.gz">14.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>8dbc04d276e816a506e1622b285f84d545e3b544</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.2.1.tar.gz">14.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>5edb3a0b2c5114c5a083997087e1ce2b393e75f6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.2.0.tar.gz">14.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a14fd58f5dc1e4027e4148dfb1c40253ebfda8a3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.1.0.tar.gz">14.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>25ed65f1fa1d50cf3d5f757736b6cfb506ce402f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.4.tar.gz">14.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>3518a7d8cd884b406b635e37bab4157b41becba7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.3.tar.gz">14.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>1d8efc54eb2be1bb134b10bfeaaa0706f21edfb7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz">14.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>47726fb3ad104698327e40efb94b088d311ce543</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz">14.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>0996f0ac76188c324831f19089bdd87b9c364cb6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>46363697d9a7ddc7880bf6071e5d035f3f9aa043</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-cinder-tempest-plugin">
+<span id="id20"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#team-stein-cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>3b255b76966a9c4bb5deadbc0d3d372a5288830c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>3cd73f60d8726170c7567338d9812f0e399ab7e7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-os-brick">
+<span id="id21"></span><h3>os-brick<a class="headerlink" href="#team-stein-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/stein.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.7.tar.gz">2.8.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>173601116eb5e00274b10898b56b37dc42d685ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.6.tar.gz">2.8.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>750999db0de0fcfc923cd453add808ca42a4e2b4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.5.tar.gz">2.8.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>b5891702cc24b0c9cedf6961d3223a37830341b9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.4.tar.gz">2.8.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>fd6425b2ee725f19aaf9bb4543cceed18ec95cc2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.3.tar.gz">2.8.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d1f84dfd897d35053d39c22ae484f6586d1268bd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.2.tar.gz">2.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>4c2b25391091b5ad4935e552f2be53c0cf3ee738</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.1.tar.gz">2.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>05b6c9f9fad15354f598bbd332a5d56230ece1e0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>c88071dc19fc1009e750f4f81b29d4b2e538fa79</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d7ebf977bb7aac9df7c715d01d4d334fedbc136f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.2.tar.gz">2.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>bc1917dfeec68ddddac43774257f3df1e728c912</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.1.tar.gz">2.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f29c669c8bf508cc41a82ea0a4052c8d75250459</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d398fa82334bbabbc4c7d5b8f1fe5a7a4465200e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-brick-cinderclient-ext">
+<span id="id22"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-stein-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/stein.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>94c1a461ec86531882c42c6359c8198a5b5e2db9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-cinderclient">
+<span id="id23"></span><h3>python-cinderclient<a class="headerlink" href="#team-stein-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/stein.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.2.tar.gz">4.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>511224425804621550bf30403f7768eebe6f34ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.1.tar.gz">4.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>0a2bab1d4d01df99bc9594f3f055ad99584949aa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>953243daa9034e2a37114864cf0ac0b273cd0fc0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4e17e1d1912f1902a37e4db543e38cdbe3961358</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-cinder">
+<span id="id24"></span><h3>cinder<a class="headerlink" href="#team-rocky-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/rocky.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.9.tar.gz">13.0.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>bcea359d54fcaa5a013204f7981f952e4329cf93</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.8.tar.gz">13.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>ce951a3b586bc51a77422c3079637198f14ecb44</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.7.tar.gz">13.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>6d1c2ce4f904c6e92013cbb72d7459db648417cb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.6.tar.gz">13.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>77a3cf22ea0603aa8c1dbd5a44f1e934167656de</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.5.tar.gz">13.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>2b00794ff42e06f81fad1bb0f4c7094ca208620f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz">13.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f44032ce43882e982029e32ee4d7cebfa9ba95c7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz">13.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>787aacb9095e77e2ad661a588baaba70be67e8ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz">13.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>73baefac2f42a59f66bedcdddbb9debb3f324dff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.1.tar.gz">13.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>c118e8f92c353b69201ccdf19b66b9057ae95005</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>41de06dcf6f1c84b6d4eb2f8d3b4f002d8c67f96</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-cinder-tempest-plugin">
+<span id="id25"></span><h3>cinder-tempest-plugin<a class="headerlink" href="#team-rocky-cinder-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder-tempest-plugin/cinder_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder-tempest-plugin</p></td>
+<td><p>08a38515de66cb09cb1c6c7c56bb90aeaa86c5c5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-os-brick">
+<span id="id26"></span><h3>os-brick<a class="headerlink" href="#team-rocky-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/rocky.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.10.tar.gz">2.5.10</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.10.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d640c73d9b68bdf200c3e71ddec65b166a571f4b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.9.tar.gz">2.5.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>1f811c412a172d5456d37cc748bc217fc4718cbf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.8.tar.gz">2.5.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>64cbaaea47822dff3ae5fbd104f9bff8fe79d08d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.7.tar.gz">2.5.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>00a4d96d2506bed5c5507282a774bc75df9f790f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.6.tar.gz">2.5.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>80ee8f846c85a48f12828fab0de5c4c866349283</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.5.tar.gz">2.5.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>ba147f406c7a34bd9bcc76b916a220f814d82c53</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.4.tar.gz">2.5.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>67cd70981c9521ae7f60daafa90cee165c495bef</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.3.tar.gz">2.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>641337bec28adddae742a86faf592e360afdd1d8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.2.tar.gz">2.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>9b729ef0e7461f5ca2d80b7f991aeacf547a1819</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.1.tar.gz">2.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>66362ae0f27769ecf272e421385c894de5166d7c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>6545454c7efa8df94900000ace4894eefb1e5488</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>296887a59ef7913a857d3142cc801b347f2e6584</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-brick-cinderclient-ext">
+<span id="id27"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-rocky-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/rocky.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>ca2a0e4db6e12c2ef861c5a7ed0c0c2498f50015</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-cinderclient">
+<span id="id28"></span><h3>python-cinderclient<a class="headerlink" href="#team-rocky-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/rocky.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.3.tar.gz">4.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>14547dfb1b9aced82d5d333ab329870461034565</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>44bcd69f5a34905a63c5fa849bcfbee7b73fd56d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>460229c6099719dec0d027f798f9c751b8ec7e44</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>e76c4958ea779a44f2d0351616c94b627aebe0fe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.6.1.tar.gz">3.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>a4fc1416ef43669aafd7dca6e95d68b4119fded5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.6.0.tar.gz">3.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>35b99baf6e0da5b13fa72b50d7a20ff1944776de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-cinder">
+<span id="id29"></span><h3>cinder<a class="headerlink" href="#team-queens-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/queens.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.10.tar.gz">12.0.10</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.10.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>772897cad777716e55216f59d0e11ec191b31c80</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.9.tar.gz">12.0.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>80e29d3ad5d7bb4d8692ed40be4c5aa104c51926</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.8.tar.gz">12.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f55d3a6f61b3be3df4597504d26385ddb72f6b6b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.7.tar.gz">12.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>96e093b8a39c40c3b9b8e633682b2b1b2b9877d1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.6.tar.gz">12.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>89134670c377cbb65d93cabe1b6d584c6bce2864</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.5.tar.gz">12.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>937af5be0e7c17b34860e25cc434a219d7143387</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.4.tar.gz">12.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>8b1aa5f99b94c6bf8119009d5d1ca122e274c43b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.3.tar.gz">12.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>24782fa855db8c7db6d8d672b13d53f1f06a8f73</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.2.tar.gz">12.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>d8d9e1cce7e0fc0170b7b195ecc4ee09e10b0774</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.1.tar.gz">12.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>bc76abef28b34723abdbd29881553a1af94b024b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>ca9bf2d1c56605a565ffc468bb91fb5d58ef5ce9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-os-brick">
+<span id="id30"></span><h3>os-brick<a class="headerlink" href="#team-queens-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/queens.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.9.tar.gz">2.3.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>8d3e40b7cd0ee73cc422afddc0ad37a23673ef73</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.8.tar.gz">2.3.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>bdd05d22328a61d9e284317614884d5bcb133863</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.7.tar.gz">2.3.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>ce72e77959a6834620793dc9d4006432781d09d7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.6.tar.gz">2.3.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>44a0486d053b946ae0123e6ebc22b3da68dd7510</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.5.tar.gz">2.3.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>30d7bc124e564d4a2c288f3666d8d14dc96fb9f5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.4.tar.gz">2.3.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d4a600748ba487d8ee0a843138c28c093ed3d07a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.3.tar.gz">2.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>e211056d650b9be9f7501b1497416c8fc14312d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.2.tar.gz">2.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>8fab1a01cb03155e05f8a9211b152a4938474575</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.1.tar.gz">2.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>773fad170f0841f52131e1a547c18c8c36591f65</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>7dd2076a98acaca2ef70bb0a8d231a368b30c644</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>effd16e33e593e94b653b47bf1045250a6bf8dfd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a5c60d94d86db6e9749ab1b4e462549a65dab31a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>5fb632f96a16cc42f78b69f451b521304a2dc79a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>c1f1786307d8acfdcae5c6ea3f38c98f627ec9e4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-brick-cinderclient-ext">
+<span id="id31"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-queens-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/queens.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>0dd07cfa1959b110425d60147d5f8b247a322bdf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>bf4d0ca25b0917dbe52c4a17e6603fa2f0b583e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>17e94f506b18ff1354ce8938467e31f6ae867c35</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-cinderclient">
+<span id="id32"></span><h3>python-cinderclient<a class="headerlink" href="#team-queens-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/queens.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.5.0.tar.gz">3.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>1de605cdd3c52795d3d6649515807239596f3054</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>36a2f4b4ebe8c46df2b7786ad9402ac7b12e700a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>76fe6fc01d5ded29c65b5fe486fd3c619c01017a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>b372fe69279117e23044367431e4eb136b323c20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-cinder">
+<span id="id33"></span><h3>cinder<a class="headerlink" href="#team-pike-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/pike.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.2.tar.gz">11.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>9e870c78eae4b491516d792f1883f79b09838cf8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.1.tar.gz">11.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>67c5f290ff8417aa47e442467644b73740708561</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.0.tar.gz">11.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>0e623cc42733bffe997a9bc2a771f16c800481ae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.1.1.tar.gz">11.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>74549cf7e0ecb4e56675d2ead5f98afb341321e7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.1.0.tar.gz">11.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>4fb3a702ba8c3de24c41a6f706597bfa81e60435</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.2.tar.gz">11.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>d810928406eb2a95bb5f15a6d8437b377abde733</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>7cc8d0ea63cc19aefcc0844ce455aead44297c21</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>7524a44ebb13b76cf42adee0bfff4d999f8dfbb5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-os-brick">
+<span id="id34"></span><h3>os-brick<a class="headerlink" href="#team-pike-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/pike.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.9.tar.gz">1.15.9</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.9.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>6e380488ea5a5e1205c01b41aa153a8848b4c019</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.8.tar.gz">1.15.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>e571cc603ee1eb0dc6fd2eb8a35508c969a13c50</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.7.tar.gz">1.15.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f821a87ef0fd59cb1b48a85eed16b1f3f16e7467</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.6.tar.gz">1.15.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>4bdd072de3216da20491d950c0ecb408d866442d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.5.tar.gz">1.15.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>4090db76673cadb3b8adfceb106069e03414de49</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.4.tar.gz">1.15.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>cad9fb07959e7b63208706e4970bd6171eda786b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.3.tar.gz">1.15.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>68106be749971b9b7aa8e4bbfe5aee6a56857741</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.2.tar.gz">1.15.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>6eee11fc46205897bcd8d1eed5bfe319b504a6fa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.1.tar.gz">1.15.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>8e4adda001a4935bfcdd0f81209894080f041b23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.0.tar.gz">1.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a1b0dda617c915441d5cdcb8c34933bb96b31bac</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.14.0.tar.gz">1.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>32ab0d1670e94c9d667207c72cfabe1d6554515f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.13.1.tar.gz">1.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>46daeb00586d368a05d178d84bf8e89d241be60d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.13.0.tar.gz">1.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>c68131decf5da1bd3aa5dc037eafc57d9d02554e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>962fce720c5322a9f9442b10b07853689ed6e190</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-brick-cinderclient-ext">
+<span id="id35"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-pike-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/pike.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.5.1.tar.gz">0.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>4dd6b351ba6448e6fbdc9654c12eca038f0f8cbb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>a03d5348b4b6855755223349e4054ed9d3146774</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>e8e7463ce4e62793706bc41b997c92882b0eb00f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-cinderclient">
+<span id="id36"></span><h3>python-cinderclient<a class="headerlink" href="#team-pike-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/pike.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>f3dcbd2f77d5f87c2dfa47cabf8aeb1047381031</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>99bb6f3ecb1f3c883c50bf715618e64b145257b2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>72671fffe51898446c8671e122cd6ef11171fdb1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>e3743623c31fbc4b3a0f2f9fd608d168fec79355</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>db51b78a3d042418e7a4159b2d92c368f069fb58</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>d0790e31816628eb11152a9fb3bdc6d0d5f1962b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>6c499cc6a5dcb663bdc6ba7246114afcc21aface</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-cinder">
+<span id="id37"></span><h3>cinder<a class="headerlink" href="#team-ocata-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/ocata.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.8.tar.gz">10.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>2dc52153215bb6a37532a959c5c98239be21bb56</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.7.tar.gz">10.0.7</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.7.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>921070a5fe6746ec10f7c1103d3ef47ac30a7ff8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.6.tar.gz">10.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>486c00794b1401077bd0c9a6071135c149382958</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.5.tar.gz">10.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>78d093b864e46dc847e507342c7b1f7d01233fea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.4.tar.gz">10.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>4c5a29a8638f0ddb03f595516788255680ae13bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.3.tar.gz">10.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>23ddc7cbc668ed9b2e38583ce84924ea09e70994</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>1ef2f700422df90d5ce3224bdbd759d16ffd635f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>5d20d4259738bd94bdc584974b77fe83069546cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cinder</p></td>
+<td><p>20fba8389185c166cd879b797ed3548898601c9a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-os-brick">
+<span id="id38"></span><h3>os-brick<a class="headerlink" href="#team-ocata-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/ocata.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.11.1.tar.gz">1.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>fc21f4f02026d2993bb7a7bb5f2324dbbece091b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>6a180265560d5e0bab80e47ac25c15906d1165fb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>1a9b90b02956e682f842c1105e5e5dd4f5a7fe7d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>871cd1a6f271fdd2f0037f0b88a45dad97301a05</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>e016afb78cfd44cdc1fb77012814ca4cf8a8b9d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>9bfb727565c343716f1f1f1f12a40c9493e84952</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-brick-cinderclient-ext">
+<span id="id39"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-ocata-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-brick-cinderclient-ext/ocata.html">python-brick-cinderclient-ext</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>63a3014dec7932437a579e8cb4ba4be79609c14c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-cinderclient">
+<span id="id40"></span><h3>python-cinderclient<a class="headerlink" href="#team-ocata-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/ocata.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>7d140d0896fe54c4fc03fa501544da4e67d666c6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4eb63b8ef278de2e82e3b4957b95ba6fd9032e4f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-cinder">
+<span id="id41"></span><h3>cinder<a class="headerlink" href="#team-newton-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/newton.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.1.4.tar.gz">9.1.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>908def6bb993798146cccc1621a9cee18950629d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.1.3.tar.gz">9.1.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>46799c4ff57e818fad770c5266f553a30fab6de2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.1.2.tar.gz">9.1.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>79ad4598aa0c949f8ec54359d41ddd94b7c90719</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.1.1.tar.gz">9.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f1144c98c39e84a7a17d4f44b7671b06d6c0adc6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.1.0.tar.gz">9.1.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>65dad554366f27cd7ae48936381dff2b20f27731</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-9.0.0.tar.gz">9.0.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>ab9518112137f3141739e873b19cdc0085963bc7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-os-brick">
+<span id="id42"></span><h3>os-brick<a class="headerlink" href="#team-newton-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/newton.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.6.2.tar.gz">1.6.2</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>b4b21f0a6deb6434f777d9ee4a58a04db8d0afd0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.6.1.tar.gz">1.6.1</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>49a89c8757aad70611a00ea9e1c78f38060bc114</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.6.0.tar.gz">1.6.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>0e2a40f7468c4f67c96ebb91c417c51bbcc8952e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>cc47d81feb63671a285c46d97f7dae5ccee58501</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>3f8c9e1c9849eb0172abc4498ed4926c7a11876e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>1d392b1fc9c68eb541896870d16e6f8ecbaf99c5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-brick-cinderclient-ext">
+<span id="id43"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-newton-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>de6a13f33f87415610526781b511c9dfec8f8ad7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-cinderclient">
+<span id="id44"></span><h3>python-cinderclient<a class="headerlink" href="#team-newton-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/newton.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>e15d8e7f0920cb7cd5719d2861dea886bd6f9cb0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>623cef2d5c5d9f375c60c991f5ab9f951e9253fa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.7.1.tar.gz">1.7.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>9e19357e4beff1131492888b7f2766afb227a767</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>0cdcfb5988f57da80551b1a11fcd3d96d0baf1d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-cinder">
+<span id="id45"></span><h3>cinder<a class="headerlink" href="#team-mitaka-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/mitaka.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-8.1.1.tar.gz">8.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>9aaaf7e2e9d0f607d85af383212b8de9dd1e5813</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-8.1.0.tar.gz">8.1.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f9a5424a47439ae251ce024a0627c3e156a30872</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-8.0.0.tar.gz">8.0.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>da90a31c601297205d61693b885820754d6699b8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-os-brick">
+<span id="id46"></span><h3>os-brick<a class="headerlink" href="#team-mitaka-os-brick" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-brick/mitaka.html">os-brick</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>01c7614e51eda2fb23d8aceb89693f62924a9bf9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f9b4e55db5a53b2f9356c9a11008e50c3900c141</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>44254e1e1401affd67628bbb280043ade3d460b0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>a3261e3fbd7f0230eba2a205ec99906505df1c7c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>7ca487a668813c5fc0491c39eb0449464847cd73</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>f4a9e15b18460061aaa442eee5a2d6a3c4cf9b48</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-brick-cinderclient-ext">
+<span id="id47"></span><h3>python-brick-cinderclient-ext<a class="headerlink" href="#team-mitaka-python-brick-cinderclient-ext" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-brick-cinderclient-ext/python-brick-cinderclient-ext-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-brick-cinderclient-ext</p></td>
+<td><p>a8c8d1b7fef1eb133a2468327d35ae8ed2db41f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-cinderclient">
+<span id="id48"></span><h3>python-cinderclient<a class="headerlink" href="#team-mitaka-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-cinderclient/mitaka.html">python-cinderclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>66f7a083851a6b6adebc4e8b1a5736e1191a409d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>7f9a81bb1bd1fe14345f66074272a5cfd86af736</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-cinder">
+<span id="id49"></span><h3>cinder<a class="headerlink" href="#team-liberty-cinder" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cinder/liberty.html">cinder</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-7.0.3.tar.gz">7.0.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>4295ff0a64f781c3546f6c6e0816dbb8100133cb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-7.0.2.tar.gz">7.0.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>c937656c138e995f6e41f96a02db7aed1dc74722</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-7.0.1.tar.gz">7.0.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f51ffea673de5395aee6c789b07fb44d9e801b88</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-7.0.0.tar.gz">7.0.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>61026d4e4f2a58dd84ffb2e4e40ab99860b9316a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-os-brick">
+<span id="id50"></span><h3>os-brick<a class="headerlink" href="#team-liberty-os-brick" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>5ac54d4e0c89daba1be80702ee4060a538c08754</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>891cf03109b3750ec05fb9b53cb48584a16114ae</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.3.2.tar.gz">0.3.2</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>1a7fe6c8148701d8dd2d477e2ba2f7d0e55b4a8f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.3.1.tar.gz">0.3.1</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>11355ac5836a569c7a6f550f3960b60d7798842c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>d191180bbf0f2cf61a7e1da88467ebb7a2a388a5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-brick/os-brick-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-brick</p></td>
+<td><p>13b842ca4a7c199624c35cda26539ba896d2ee1a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-cinderclient">
+<span id="id51"></span><h3>python-cinderclient<a class="headerlink" href="#team-liberty-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>c167dda40cc65fe437a12b815ef91bbde4efb6bb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.3.1.tar.gz">1.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>f860668d7146bc5cd1b9914ea15ad5d6f0dd9585</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>9e94d814c6ae07c3d5e8242754aebcce150265cc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.2.2.tar.gz">1.2.2</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>91bf760989a6c992918d6eadb038d7265ea18287</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.2.1.tar.gz">1.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>bb7443c6ceadf7f7463f719152fedc3059217862</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4994faf374e22a4487f6e44237cf10fea5f22599</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-cinder">
+<span id="id52"></span><h3>cinder<a class="headerlink" href="#team-kilo-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>15ecdf5814f3b5c2963e46ed9e499608b35e9166</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>7c05ae7d031827bbc069391e48dbdc6783481054</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>1ec74b88ac5438c5eba09d64759445574aa97e72</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>1cca93c2165e1e00d6e2e1b1c9dde85f09105234</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>5987bb2290f629e59b0bcced2f8fe22cdeb9cc6d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-cinderclient">
+<span id="id53"></span><h3>python-cinderclient<a class="headerlink" href="#team-kilo-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.3.tar.gz">1.1.3</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>ecbfb37ff80035f75c4508b152b0f0f803dfa600</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.2.tar.gz">1.1.2</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>b44d32d02b014748044b5b18d27a9d1f8312145c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>ac9b0913904c43f4bf12c8164324d6e6a55dc1ab</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-cinder">
+<span id="id54"></span><h3>cinder<a class="headerlink" href="#team-juno-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f7d2a64ac3562060b54b0d1e43a00a8892bafa52</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>48c792513fd342a5f82122b12e4ed2afd0de2ae7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>532b82059fe16678da7f7ed10d2f862ff1d2e9ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>b48aee211ad9b2571c8554dd162b37b8a8d80a42</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>be3d4604dc0566e0838959d998ff1d37755de6d3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-python-cinderclient">
+<span id="id55"></span><h3>python-cinderclient<a class="headerlink" href="#team-juno-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>ac9b0913904c43f4bf12c8164324d6e6a55dc1ab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4c8464114f5539706cffc6888ce007d0d3ceba16</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.9.tar.gz">1.0.9</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4163fa23a4888466a5a0f7471232546c2effd66f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-cinder">
+<span id="id56"></span><h3>cinder<a class="headerlink" href="#team-icehouse-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>bc0549e08b010edb863d409d80114aa78d317a61</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a69e72dc86e3f1a1f29a3ad4239b16109e1afa75</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>7eef59602206b529d7acdcbe8055d0d0d63d0d85</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>63f5798e8795f80f3612fb0699eb668e20ae321c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f8f612332a6966036170ed38a2892b055115dd22</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>d507b600927e230e71673fa9b4f7974d69668ee7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-python-cinderclient">
+<span id="id57"></span><h3>python-cinderclient<a class="headerlink" href="#team-icehouse-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.8.tar.gz">1.0.8</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>e31e057cccd4e79bcb989ddbfd1a47c5d801d51a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.7.tar.gz">1.0.7</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>d21ed05b4ed1a5b5321876c481e0286d3696afd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-cinder">
+<span id="id58"></span><h3>cinder<a class="headerlink" href="#team-havana-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>4e7f510235a79cf04a8a6ef5455d17267ea058d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>c5cdf8261d9f7fb42ca59a12554d1c0ed9cb0a7e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f9e1943174dd2dcbf7a64873a3038678d1a3fd69</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>eb78fee5b2f3e9ecf30fa69175000fbe1cc8c1d1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>bdb5d982d069ac6464c8ef857a0f95dde02005de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-python-cinderclient">
+<span id="id59"></span><h3>python-cinderclient<a class="headerlink" href="#team-havana-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.6.tar.gz">1.0.6</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4a507601d7dded2efb1bd2e885155ba38db9538c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.5.tar.gz">1.0.5</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>8a107396c242702de9a7df819eb82e5f55051722</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.4.tar.gz">1.0.4</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>f2835f4d428d3a6addba4312ada988345ed1ab89</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-cinder">
+<span id="id60"></span><h3>cinder<a class="headerlink" href="#team-grizzly-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>38885ffc7f9c686ba469b67fbdf4e8548c63a85d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>6e764cbf0fd90beb0e2f918903696a57ed198376</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>2023eecc4b1a35daf42a64fa01967ed12c7d017b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>890dc3fe8d270aed5af271bbbc49b9193db9460b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a4856c4e3a2a40150fad9257ce489125ca3458f4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>85b7453f68f76dcd6edd7043026e7a6676eadf23</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-grizzly-python-cinderclient">
+<span id="id61"></span><h3>python-cinderclient<a class="headerlink" href="#team-grizzly-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>03a4806d972ac150e717451566e9c4c35a141d8f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>bf7b86748a49455ae1545f01fe5cfc9b801223aa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>a74dee000e682b5b227cd9032df6719aa22ffb00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="folsom">
+<h2>Folsom<a class="headerlink" href="#folsom" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-folsom-cinder">
+<span id="id62"></span><h3>cinder<a class="headerlink" href="#team-folsom-cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2012.2.4.tar.gz">2012.2.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>4cde3ad6ecc094602bc884052afcde08243e55cd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2012.2.3.tar.gz">2012.2.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>a52ca0c0a03b3c15847445d8e4e9b52e9dab46c1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2012.2.1.tar.gz">2012.2.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>07e947e3bea12d90f303bb953346fff68950d638</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2012.2.tar.gz">2012.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>8bcfae7e2261812854cbd34ecfee960e109ac956</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-folsom-python-cinderclient">
+<span id="id63"></span><h3>python-cinderclient<a class="headerlink" href="#team-folsom-python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>2e6be694c17d505bf52e339bccf6848776493ffe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-0.2.tar.gz">0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>8e48619f96eb4d51c0f05b66ddf73b1338c99f3c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-0.1.tar.gz">0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>08e1714c57f8efa1404d2bca065742b909b37a33</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-0.0.tar.gz">0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>471704df644eced17026c280b0aab9e549718e14</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="blazar.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Blazar"></i></a>
+          
+          
+            <a href="cloudkitty.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Cloudkitty"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Cinder</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-cinder">cinder</a></li>
+<li><a class="reference internal" href="#cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-victoria-cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#cinderlib">cinderlib</a></li>
+<li><a class="reference internal" href="#team-victoria-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-victoria-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-victoria-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-ussuri-cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-cinderlib">cinderlib</a></li>
+<li><a class="reference internal" href="#team-ussuri-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-train-cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-cinderlib">cinderlib</a></li>
+<li><a class="reference internal" href="#team-train-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-train-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-train-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-stein-cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-stein-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-stein-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-rocky-cinder-tempest-plugin">cinder-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-rocky-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-rocky-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-queens-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-queens-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-queens-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-pike-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-pike-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-pike-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-ocata-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-ocata-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-ocata-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-newton-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-newton-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-newton-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-mitaka-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-brick-cinderclient-ext">python-brick-cinderclient-ext</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-liberty-os-brick">os-brick</a></li>
+<li><a class="reference internal" href="#team-liberty-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-kilo-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-juno-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-icehouse-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-havana-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-grizzly-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#folsom">Folsom</a><ul>
+<li><a class="reference internal" href="#team-folsom-cinder">cinder</a></li>
+<li><a class="reference internal" href="#team-folsom-python-cinderclient">python-cinderclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/cinder.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

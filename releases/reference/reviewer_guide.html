@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/reference/reviewer_guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Reviewer Guide</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Reviewer Guide</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="reviewer-guide">
+<h1>Reviewer Guide<a class="headerlink" href="#reviewer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review-inbox">
+<h2>Review Inbox<a class="headerlink" href="#review-inbox" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://review.opendev.org/#/dashboard/?title=Releases+Inbox&amp;foreach=is%3Aopen&amp;Xena=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2Fxena%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Wallaby=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2Fwallaby%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Victoria=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2Fvictoria%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Ussuri=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2Fussuri%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Train=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2Ftrain%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Independent=project%3Aopenstack%2Freleases+file%3A%5Edeliverables%2F_independent%2F.%2A+NOT+label%3AWorkflow%2D1&amp;Other=project%3Aopenstack%2Freleases+NOT+file%3A%5Edeliverables%2F.%2A&amp;Jobs=project%3Aopenstack%2Fproject%2Dconfig+file%3A%5Eroles%2Fcopy%2Drelease%2Dtools%2Dscripts%2Ffiles%2Frelease%2Dtools%2F.%2A&amp;Tools=%28%28+project%3Aopenstack%2Freleases+file%3A%5Etools%2F.%2A+%29+OR+project%3Aopenstack%2Frelease%2Dtest+OR+%28+project%3Aopenstack%2Freleases+file%3A%5Eopenstack_releases%2F.%2A+%29+OR+project%3Aopenstack%2Freno%29&amp;All+Releases=is%3Aopen+project%3Aopenstack%2Freleases">Gerrit Release Review Inbox</a></p>
+</div>
+<div class="section" id="general-review-considerations">
+<h2>General Review Considerations<a class="headerlink" href="#general-review-considerations" title="Permalink to this headline">¶</a></h2>
+<p>As you’re looking at any given review, you need to keep a few
+different things in mind:</p>
+<ul class="simple">
+<li><p>Where are we in the release cycle? Some rules change depending on
+the phase we’re in.</p></li>
+<li><p>What “release model” does the deliverable being released follow? The
+release model sets some general rules for version numbers and
+schedule.</p></li>
+<li><p>Which branch is the release on?</p></li>
+</ul>
+<p>Many of the rules tied to these questions are enforced by the
+validation job, so when you see an error understanding the rules helps
+you understand the error message.</p>
+</div>
+<div class="section" id="approval-policies">
+<h2>Approval Policies<a class="headerlink" href="#approval-policies" title="Permalink to this headline">¶</a></h2>
+<p>I prioritize the most current series, since that’s where most
+development work is going to happen.</p>
+<p>For the stable series we have an arrangement with the
+<a class="reference external" href="https://review.opendev.org/#/admin/groups/530,members">stable-maint-core</a> team that
+if a deliverable has the <code class="docutils literal notranslate"><span class="pre">stable:follows-policy</span></code> tag we don’t
+approve it until they have had a chance to review it (usually the
+Monday after the request is submitted). Releases for deliverables that
+do not have that governance tag can be approved at any time.</p>
+<p>Releases from master can be approved with a single reviewer.</p>
+<p>Code changes and doc changes and other things like that need 2
+reviewers.</p>
+<p>Releases from someone other than the PTL or release liaison must be
+acknowledged by one of them with a +1 vote in gerrit.</p>
+</div>
+<div class="section" id="review-checks">
+<h2>Review Checks<a class="headerlink" href="#review-checks" title="Permalink to this headline">¶</a></h2>
+<p>Does the commit message include the name of the deliverable and a
+version number? If the request includes multiple deliverables it is OK
+to include a team name and date.</p>
+</div>
+<div class="section" id="the-validation-report">
+<h2>The Validation Report<a class="headerlink" href="#the-validation-report" title="Permalink to this headline">¶</a></h2>
+<p>The validation job, <code class="docutils literal notranslate"><span class="pre">openstack-tox-validate</span></code>, applies the validation
+rules that can be automated.  It produces a text report in
+<code class="docutils literal notranslate"><span class="pre">tox/validate-request-results.log</span></code>. The file contains the output of
+what you would see if you ran <code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-e</span> <span class="pre">validate</span></code> for the patch.</p>
+<p>The output is organized based on the rule being enforced.</p>
+<p>We’ve tried to separate the “debug” output so it is easier to skim for
+real content, with the important output left justified.</p>
+<p>Warnings and errors are summarized at the bottom of the file.</p>
+</div>
+<div class="section" id="the-list-changes-report">
+<h2>The List Changes Report<a class="headerlink" href="#the-list-changes-report" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">releases-tox-list-changes</span></code> job produces a text report to
+support human reviewers. It writes the report to
+<code class="docutils literal notranslate"><span class="pre">tox/list-changes-results.log</span></code>. As with the validate job, it can be
+run as <code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-e</span> <span class="pre">list-changes</span></code> locally.</p>
+<p>Reviewers should read this log file for every review. It includes all
+of the information needed to evaluate a release. The List Changes
+Report has multiple sections you will need to review.</p>
+<div class="section" id="release-model">
+<h3>Release model<a class="headerlink" href="#release-model" title="Permalink to this headline">¶</a></h3>
+<p>At the top of the file we get the release model, which tells us things
+like when releases are allowed, what version numbers are allowed, etc.</p>
+</div>
+<div class="section" id="team-details">
+<h3>Team details<a class="headerlink" href="#team-details" title="Permalink to this headline">¶</a></h3>
+<p>The “team details” section tells us the PTL and Liaison, so we know
+who to make sure has acknowledged the request.  If one of those people
+proposed the patch, we can go ahead without any delay.  Otherwise we
+want to make sure one of them knows about the release and approves it
+so that teams know we aren’t going to release things they know are
+broken, for example.</p>
+</div>
+<div class="section" id="tags">
+<h3>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
+<p>Next the report shows the governance tags for the repository.  If the
+request is for a release on a stable branch and the project has that
+<code class="docutils literal notranslate"><span class="pre">stable:follows-policy</span></code> tag, there will be a large banner that says
+the release needs to be approved by the stable team. Releases from
+master will not include the banner, regardless of whether the
+deliverable has the tag.</p>
+</div>
+<div class="section" id="details-for-commit-receiving-new-tag-x-y-z">
+<h3>Details for commit receiving new tag X.Y.Z<a class="headerlink" href="#details-for-commit-receiving-new-tag-x-y-z" title="Permalink to this headline">¶</a></h3>
+<p>In the “Details for commit receiving new tag…” section (below the DEBUG
+lines) the report shows what git thinks the previous tag and number of
+added patches should be. That’s a quick way to verify that we aren’t tagging
+1.8.0 after 1.9.0 or something like that.</p>
+</div>
+<div class="section" id="check-existing-tags">
+<h3>Check existing tags<a class="headerlink" href="#check-existing-tags" title="Permalink to this headline">¶</a></h3>
+<p>The next section shows any other tags already on the commit being tagged.
+Sometimes a team will have a 3-part deliverable but only 1 part
+changes in a release. If they have defined the 3 parts as 1
+deliverable, they should tag all 3 anyway.</p>
+</div>
+<div class="section" id="all-branches-with-version-numbers">
+<h3>All branches with version numbers<a class="headerlink" href="#all-branches-with-version-numbers" title="Permalink to this headline">¶</a></h3>
+<p>The next section shows what versions are on all of the branches.  This
+is somewhat important, since for the first release off of master after
+creating a stable branch we want to make sure we are moving ahead in
+version numbers.  The validation job requires that least the Y value
+in a X.Y.Z version number is incremented.</p>
+</div>
+<div class="section" id="branches-containing-commit">
+<h3>Branches containing commit<a class="headerlink" href="#branches-containing-commit" title="Permalink to this headline">¶</a></h3>
+<p>The next step shows which branch(es) contain(s) the commit. That’s
+useful for ensuring that someone has not merged 2 branches together
+and we are not releasing off of the wrong branch.</p>
+<p>For the current cycle, releases should always come from the <code class="docutils literal notranslate"><span class="pre">master</span></code>
+branch. Stable releases should come from the appropriate stable
+branch.</p>
+</div>
+<div class="section" id="relationship-to-head">
+<h3>Relationship to HEAD<a class="headerlink" href="#relationship-to-head" title="Permalink to this headline">¶</a></h3>
+<p>The “Relationship to HEAD” section tells us if the release will
+skip any commits.  Sometimes someone uses a commit hash locally
+that is older than the most recent commit on the branch.  If this
+section does not say it is releasing HEAD (<code class="docutils literal notranslate"><span class="pre">Request</span> <span class="pre">releases</span> <span class="pre">from</span> <span class="pre">HEAD</span></code>),
+it is good ask the submitter to verify that they’re doing what they mean
+to be doing. Sometimes they don’t want to release the additional changes, and
+sometimes they don’t know about them.  It is not necessary to take
+this extra precaution for milestone tags, because those are date-based
+and it doesn’t really matter if they don’t include everything.  We
+expect a lot of churn and progress around the milestone deadlines.</p>
+</div>
+<div class="section" id="open-patches-documentation-patches-and-patches-with-release-notes">
+<h3>Open patches, Documentation patches and Patches with Release Notes<a class="headerlink" href="#open-patches-documentation-patches-and-patches-with-release-notes" title="Permalink to this headline">¶</a></h3>
+<p>The next couple of sections show open patches matching various
+criteria.  These are useful close to the release candidate phase of
+the cycle.  When we are close to a freeze date the release team might
+encourage teams to approve outstanding changes for requirements
+updates, release notes, and translations before releasing.</p>
+</div>
+<div class="section" id="requirements-changes">
+<h3>Requirements Changes<a class="headerlink" href="#requirements-changes" title="Permalink to this headline">¶</a></h3>
+<p>The next two sections, “Requirements Changes…” and “setup.cfg
+Changes…”, show the dependencies that have changed for the project
+since the last time it was tagged.  We use those to ensure that the
+exception to the SemVer rules is applied:</p>
+<ul class="simple">
+<li><p>Projects tagging a regular release (not a “pre-release” like an
+alpha, beta, or rc) need to increment at least the Y part of their
+version number when the minimum version of a dependency changes or
+when a new dependency is added.</p></li>
+</ul>
+<p>The report shows the changes to the test requirements as the second
+part of the “Requirements Changes” section. Those do not trigger Y
+version changes.</p>
+</div>
+<div class="section" id="release-x-y-z-will-include">
+<h3>Release X.Y.Z will include<a class="headerlink" href="#release-x-y-z-will-include" title="Permalink to this headline">¶</a></h3>
+<p>The “Release $version will include” section shows the actual changes
+being included in the new release – the difference since the last
+version was tagged.  This is where the subjective part of the review
+really comes in.  If a patch release is being tagged and something in
+this list looks like a new feature, we want them to tag a minor update
+instead.  If anything in the list appears to describe a
+backwards-incompatible change, we want them to tag a major version
+update.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> section gives a more detailed view of the log messages.
+Look for comments like “delete class X” or “add argument Y to method B” to
+indicate the release will not be backwards-compatible.  It is not
+necessary to <em>lower</em> a version number, say, if the release does not
+have new features and has only fixed a bug.  Sometimes if there is
+only one change and it is clearly a bug fix we may ask them to do
+that, but most of the time releases include a mix of fixes and
+features.</p>
+<p>Another thing to look for is if there are only CI configuration
+changes.  There is no reason to tag a release if the only change was
+to the zuul or tox configuration, because the end user won’t see those
+changes. That happens sometimes with the projects that have a script
+to prepare the release proposal.</p>
+<p>The next part of the output (below the <code class="docutils literal notranslate"><span class="pre">Release</span> <span class="pre">Notes</span></code>) shows the same
+text that will appear in the release announcement email.  It is included so
+that if building that text fails for some reason this job will fail and the
+reno input files can be fixed instead of having the announce job fail.</p>
+</div>
+<div class="section" id="users-of-project">
+<h3>Users of $PROJECT<a class="headerlink" href="#users-of-project" title="Permalink to this headline">¶</a></h3>
+<p>The final part of the output is a list of projects that have the
+current deliverable being released in one of their dependency
+lists.  That section is useful for evaluating the impact of a late
+release when we’re in the freeze period.</p>
+</div>
+</div>
+<div class="section" id="release-jobs">
+<h2>Release Jobs<a class="headerlink" href="#release-jobs" title="Permalink to this headline">¶</a></h2>
+<p>When a release request is submitted the <code class="docutils literal notranslate"><span class="pre">check-release-approval</span></code> job
+will be triggered to check that release requests were approved by PTL or
+release liaison.</p>
+<p>After a release request merges, the <code class="docutils literal notranslate"><span class="pre">tag-releases</span></code> job will start up
+in the <code class="docutils literal notranslate"><span class="pre">release-post</span></code> pipeline.</p>
+<p><code class="docutils literal notranslate"><span class="pre">tag-releases</span></code> reads the file from the releases repository and adds
+the tag to the repository mentioned in the deliverable file.</p>
+<p>Adding the tag triggers another job that actually builds the release
+and uploads it.</p>
+<p>After a Python package release is uploaded, the job
+<code class="docutils literal notranslate"><span class="pre">propose-update-constraints</span></code> submits a change to
+<code class="docutils literal notranslate"><span class="pre">openstack/requirements</span></code> to update the <code class="docutils literal notranslate"><span class="pre">upper-constraints.txt</span></code>
+list. The constraints list is used along with the actual requirements
+list to tell the jobs which versions of which packages to
+install. Since we maintain that list, every time we release something
+that is constrained we want to make sure the value is updated.  The
+job runs for all python packages, but not all of them are in the
+constraint list so sometimes it does not submit a patch.</p>
+</div>
+<div class="section" id="release-job-failures">
+<h2>Release Job Failures<a class="headerlink" href="#release-job-failures" title="Permalink to this headline">¶</a></h2>
+<p>When release jobs fail, messages are sent to release failure mailing
+list:
+<a class="reference external" href="http://lists.openstack.org/cgi-bin/mailman/listinfo/release-job-failures">http://lists.openstack.org/cgi-bin/mailman/listinfo/release-job-failures</a></p>
+</div>
+<div class="section" id="release-approval-status">
+<h2>Release Approval Status<a class="headerlink" href="#release-approval-status" title="Permalink to this headline">¶</a></h2>
+<p>Depending on the kind of job failures experienced it could be mandatory
+to stop all our release approvals.</p>
+<p>Indeed, sometimes job failures are systemic and should be fixed
+first to avoid repeated failures wich could lead inconsistent states in our
+coordinated releases.</p>
+<p>To answer that case we defined three statuses to indicate if we should/shouldn’t
+continue to validate patch:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RED</span></code>: no more approvals;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ORANGE</span></code>: a transient status where we think that the issue is solved but
+approvals must be carefully monitored first;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GREEN</span></code>: the issue have been fixed and everything works as expected.
+(approvals are reopen).</p></li>
+</ul>
+<p>To inform all the release managers that something went wrong and ask them to
+hold approvals then follow the following process:</p>
+<ol class="arabic simple">
+<li><p>open a new thread on the ML with for topic <code class="docutils literal notranslate"><span class="pre">[release]</span> <span class="pre">Status:</span> <span class="pre">RED</span> <span class="pre">-</span> <span class="pre">$subject</span></code>
+to indicate the issue</p></li>
+<li><p>notify directly the release managers on IRC (<code class="docutils literal notranslate"><span class="pre">#openstack-release</span></code>)</p></li>
+</ol>
+<p>When you think that the problem is solved but that it still need some tests
+you just have to reply on the thread by moving the topic from <code class="docutils literal notranslate"><span class="pre">RED</span></code>
+to <code class="docutils literal notranslate"><span class="pre">ORANGE</span></code>.</p>
+<p>When everything seems under control then you can reply on the thread by moving
+the topic from <code class="docutils literal notranslate"><span class="pre">ORANGE</span></code> to <code class="docutils literal notranslate"><span class="pre">GREEN</span></code>.</p>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="deliverable_types.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Deliverable Types"></i></a>
+          
+          
+            <a href="process.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Release Processes"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Reviewer Guide</a><ul>
+<li><a class="reference internal" href="#review-inbox">Review Inbox</a></li>
+<li><a class="reference internal" href="#general-review-considerations">General Review Considerations</a></li>
+<li><a class="reference internal" href="#approval-policies">Approval Policies</a></li>
+<li><a class="reference internal" href="#review-checks">Review Checks</a></li>
+<li><a class="reference internal" href="#the-validation-report">The Validation Report</a></li>
+<li><a class="reference internal" href="#the-list-changes-report">The List Changes Report</a><ul>
+<li><a class="reference internal" href="#release-model">Release model</a></li>
+<li><a class="reference internal" href="#team-details">Team details</a></li>
+<li><a class="reference internal" href="#tags">Tags</a></li>
+<li><a class="reference internal" href="#details-for-commit-receiving-new-tag-x-y-z">Details for commit receiving new tag X.Y.Z</a></li>
+<li><a class="reference internal" href="#check-existing-tags">Check existing tags</a></li>
+<li><a class="reference internal" href="#all-branches-with-version-numbers">All branches with version numbers</a></li>
+<li><a class="reference internal" href="#branches-containing-commit">Branches containing commit</a></li>
+<li><a class="reference internal" href="#relationship-to-head">Relationship to HEAD</a></li>
+<li><a class="reference internal" href="#open-patches-documentation-patches-and-patches-with-release-notes">Open patches, Documentation patches and Patches with Release Notes</a></li>
+<li><a class="reference internal" href="#requirements-changes">Requirements Changes</a></li>
+<li><a class="reference internal" href="#release-x-y-z-will-include">Release X.Y.Z will include</a></li>
+<li><a class="reference internal" href="#users-of-project">Users of $PROJECT</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#release-jobs">Release Jobs</a></li>
+<li><a class="reference internal" href="#release-job-failures">Release Job Failures</a></li>
+<li><a class="reference internal" href="#release-approval-status">Release Approval Status</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/reference/reviewer_guide.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+</html>

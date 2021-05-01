@@ -1,0 +1,1775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/vitrage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Vitrage</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Vitrage</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="vitrage">
+<h1>Vitrage<a class="headerlink" href="#vitrage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-vitrageclient">
+<span id="team-wallaby-python-vitrageclient"></span><h3>python-vitrageclient<a class="headerlink" href="#python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/wallaby.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>8293be5fed973d6e4a06a18e4aad16868412e021</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>3b976540d9ca5881003c3884bed12993d43b00cc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-vitrage">
+<span id="id1"></span><h3>vitrage<a class="headerlink" href="#team-wallaby-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/wallaby.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.4.0.tar.gz">7.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>fd833604d7ec06259a5e8b41eabeabd240a9cc2d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vitrage-dashboard">
+<span id="team-wallaby-vitrage-dashboard"></span><h3>vitrage-dashboard<a class="headerlink" href="#vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>227cf737817e7c8d6eb923bc3853d61d9fb6eaae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vitrage-tempest-plugin">
+<span id="team-wallaby-vitrage-tempest-plugin"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.3.0.tar.gz">5.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>09cb732532d1ebc0fbf4fb4f8bcd1e2f3ff0a7f6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>0ee1f9431ff3a407c73e9f8c04da41504a32b98b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-vitrageclient">
+<span id="id2"></span><h3>python-vitrageclient<a class="headerlink" href="#team-victoria-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/victoria.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.1.1.tar.gz">4.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>b8636808065da1202ed8fd606dda7e39268e629e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>ec052afe980b90a39a12a9471a6ec79a4c35d107</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-vitrage">
+<span id="id3"></span><h3>vitrage<a class="headerlink" href="#team-victoria-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/victoria.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.3.0.tar.gz">7.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>23d1dcd0092579e3ceeee3084084ca4c23d78251</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>870b53ee8ee66920fe0b68a31fadf1ee5431ab74</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-vitrage-dashboard">
+<span id="id4"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-victoria-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/victoria.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>53026b9867610b313c71128ef88b24d6102bccda</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-vitrage-tempest-plugin">
+<span id="id5"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#team-victoria-vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>02114b248597db4bcbc8de900c43e89c4cefbc73</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>161a59e2747fb41faaf226e1b0f451a59af3a2b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-vitrageclient">
+<span id="id6"></span><h3>python-vitrageclient<a class="headerlink" href="#team-ussuri-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/ussuri.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>218d0c52345a7dfb30c50de37209b54ea7a5e566</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>102acafefede5faa4e71b5af34b0b11a11aef58b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-vitrage">
+<span id="id7"></span><h3>vitrage<a class="headerlink" href="#team-ussuri-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/ussuri.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>46936dc052a41bff4dffca620b56c2cab2c22802</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>e3e49387f224aca01a4f111e5208519cdb6b3bea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>35fc976e5ff946d131096fd9e56a6ec799e857f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>785d8f0167c46e92c4ded96e006d117b43c0faae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-vitrage-dashboard">
+<span id="id8"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-ussuri-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/ussuri.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>80bf67779b84a1d839e8c0df2ec78e6991725182</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>c829088a91eaa6734eed3eb2a12817e615d1ee46</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-vitrage-tempest-plugin">
+<span id="id9"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#team-ussuri-vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>83eac6f6d9c95a711a90e0ce80306cf102107ebe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-vitrageclient">
+<span id="id10"></span><h3>python-vitrageclient<a class="headerlink" href="#team-train-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/train.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>e50c885f670bae722e1f2a9e86e60d6de80ce9c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-vitrage">
+<span id="id11"></span><h3>vitrage<a class="headerlink" href="#team-train-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/train.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>7a15a891049f50524b2faabec559f321d96931d8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>1e1c7d7b320715a65b199ee8548ddce68a25d7ad</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>f11565a317fb9976cb1370b001303c968f712686</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-vitrage-dashboard">
+<span id="id12"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-train-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/train.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>f66683c01c98b1575342784d1ab2143b3ac87b72</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-vitrage-tempest-plugin">
+<span id="id13"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#team-train-vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>d5f6909995f8fad5ff947f2aab32be45873b3ef4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-vitrageclient">
+<span id="id14"></span><h3>python-vitrageclient<a class="headerlink" href="#team-stein-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/stein.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>5d6673e343a47fc4cf90e53b2e6e9fa37d7f601c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>f9925f002eb8b2f7afbb297e6390409ad59261cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>27c198c20ba6e72c483da53ae6e6d3700a2bb4d9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>d04c6617efae4f87664c436a1d7858de3fb0b3f5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-vitrage">
+<span id="id15"></span><h3>vitrage<a class="headerlink" href="#team-stein-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/stein.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.2.tar.gz">4.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>c3aaf5042f3ea33ddc66d093f63c3fe826f167ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.1.tar.gz">4.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>0b17c22096120b0f67afa2b986aeec6e905f33b4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>bddd3bf69c69ff5dc9924b816d19c8cb379ebeef</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>c5459d4910acbcaa8918d37b81d4de99110cfb1c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>c4326fd394da4a29256c220551538a08a6eff89b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>30383d2deac9e490c505eed6a82b6480acb84732</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-vitrage-dashboard">
+<span id="id16"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-stein-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/stein.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.9.1.tar.gz">1.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>1413c948c58174dfe58c7f80b93c1126a1466812</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>e4c213503c583112defcc5632c19d2648cd43b55</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>19829bfdee90c363814a14d1b2f349dc3e49348f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>d40e47b452f81a2c4a634c06280abd29e4183115</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-vitrage-tempest-plugin">
+<span id="id17"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#team-stein-vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>0ee1f9431ff3a407c73e9f8c04da41504a32b98b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>cb433b7a3f8081f9f5e9a406bf5f99a2e7d1383e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>f91cdb51eb3824d05a468bbace73b573b445106c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>d424a7cb1c5913aedaa4c906de994fe19f9601df</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>39cb545f056d2261a9f8ddc957074a7dae34f44d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-vitrageclient">
+<span id="id18"></span><h3>python-vitrageclient<a class="headerlink" href="#team-rocky-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/rocky.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>76e7198fe9d9b7564fead345587aab9adfc043b6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>119addb8bfb532db63efd7e260bacddc6748a0bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-vitrage">
+<span id="id19"></span><h3>vitrage<a class="headerlink" href="#team-rocky-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/rocky.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>37a393c85bd689fbc689213d9c1b9d1462798104</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>f920653194270344e6cbd7db42e42a2d0548f1c1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>140b631e36bfa2dc75c9066fb5950159addbacbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>28716bc2d97b54c5307c96adb7dca42b0b235c97</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-vitrage-dashboard">
+<span id="id20"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-rocky-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/rocky.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.2.tar.gz">1.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>f265f1549bd00131c436d913571b515467b01f2d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.1.tar.gz">1.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>429c0761a8c14290dc55c5dd63d53509b04e9b44</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>598596ad6ca77e14fe04415e2ce960c3da23d8b8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>f529174252389695f9088477e272f4a436655bfa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-vitrage-tempest-plugin">
+<span id="id21"></span><h3>vitrage-tempest-plugin<a class="headerlink" href="#team-rocky-vitrage-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-tempest-plugin/vitrage-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-tempest-plugin</p></td>
+<td><p>1f78e663ad28df4d1a1261f384e170b911c5cc0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-vitrageclient">
+<span id="id22"></span><h3>python-vitrageclient<a class="headerlink" href="#team-queens-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/queens.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>d6bd2be30abccf02208e277bdb191701eeeb3dfe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>7fd3400c536cb4f245b389642fd82f962fbdb2bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-vitrage">
+<span id="id23"></span><h3>vitrage<a class="headerlink" href="#team-queens-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/queens.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>8c6c6e37c8b019ee069ed666dd63eac636f452e2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>1537886924cd6fe7c5bf9b4b82a0c287c6b08cfa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>f14977e8a28753917e48b98ac5d6ab5263e7aa96</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>728523a886ae5c5cdd912dff04f7f6eb35e2e624</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-vitrage-dashboard">
+<span id="id24"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-queens-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/queens.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>4bf37570524ecf128635e5a471fd992bcea35c71</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>3df18819d90ed3910b383493c8a0cc9c4b4ee7e6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>546014e7e4dda133e4277f2d6f2de716237e3a2a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-vitrageclient">
+<span id="id25"></span><h3>python-vitrageclient<a class="headerlink" href="#team-pike-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/pike.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>157ef21a5070d4dadb26977aff76a6b3dd9e32b1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>ecd7e47a8cc549713579125a4e0ab799ba95af62</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>8560fc5f5197964e17534d7bd08e9f9503dbb6f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>52995bbdfe77af42d95b54eb40361ac418c39d64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-vitrage">
+<span id="id26"></span><h3>vitrage<a class="headerlink" href="#team-pike-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/pike.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.3.tar.gz">1.8.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>c3e081d8861738e86279a8c3c872d343efe35dc5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.2.tar.gz">1.8.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>b0400e0322415df4402bae8092b9b2a1d2f79d11</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.1.tar.gz">1.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>a4d14d248dc32f1402939895fc25164a57066f2c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>0431b626f6779b91cc8087e14892d3534c7a9211</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>4be05a297c56766b41cf93f165715d99d9a48b3f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>92ce094eb12a0536dc47e2e9e529afe49e4395f9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-vitrage-dashboard">
+<span id="id27"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-pike-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/pike.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.2.tar.gz">1.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>ba55c2431e54a22bf4ce4fabc9cf9dede9ca861d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>3ab435fa6b76c16c552a6cf95b4e16cc29499c13</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>4d5727d72e61d6bd9f6ef24bbbf244480b8539f8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>fa18d223999d9807810b3fc34ec1ec9d21903152</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-vitrageclient">
+<span id="id28"></span><h3>python-vitrageclient<a class="headerlink" href="#team-ocata-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-vitrageclient/ocata.html">python-vitrageclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.2.tar.gz">1.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>41beaa35c237b41a7b10a9e044322fd6483d08be</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>11e97cc0c6bd709f6c7c5367c596c2a4d7ca2daf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>144d8e58534d72013862bc4ab27a7b6b8e70521b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-vitrage">
+<span id="id29"></span><h3>vitrage<a class="headerlink" href="#team-ocata-vitrage" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage/ocata.html">vitrage</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.2.tar.gz">1.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>14eb7057df335dbbf8d5ae723b634bfdd12345e9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.1.tar.gz">1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>3de26c8b3b995fa61ac4ef6d7c26dff78b2efa3e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>a0c00fa788ea4dcecdda95241ea85605c39794ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>0bc1e2bb4ed6530ecdbda4ec57b84b27ca3e7faf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-vitrage-dashboard">
+<span id="id30"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-ocata-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/vitrage-dashboard/ocata.html">vitrage-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>9a66296af5dd9ac4c17337b5db20894bc5886bdf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>b932a645a04be570a4714889f1b7ea0c6fdd8888</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-vitrageclient">
+<span id="id31"></span><h3>python-vitrageclient<a class="headerlink" href="#team-newton-python-vitrageclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>ccaf4d69bc0d2dcbf9ef900227d775a31302fe44</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-vitrageclient/python-vitrageclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-vitrageclient</p></td>
+<td><p>c560d3c70261d65c797fc4d2f76f2925958e50b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-vitrage">
+<span id="id32"></span><h3>vitrage<a class="headerlink" href="#team-newton-vitrage" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>a07c7b146d71d82e773fa1344e4df8ec22e654ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>d919b610e47fa838c12877ba1ce9ed3715d28c13</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>2ce96c7f9de045c5337769bbba326e832bf487f7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage/vitrage-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/vitrage</p></td>
+<td><p>49f012795dc6261173e86e835e8e8ebd8725558d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-vitrage-dashboard">
+<span id="id33"></span><h3>vitrage-dashboard<a class="headerlink" href="#team-newton-vitrage-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>5db0dde7c865b38f448ab74903ec1aaf096cc524</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>f74b1493f6ef632ab2791da32453d36c65f8b6ca</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/vitrage-dashboard/vitrage-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/vitrage-dashboard</p></td>
+<td><p>cb698a0cc46b2f43e905b0d3c3a828db2be631f3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="xstatic-dagre">
+<span id="team-independent-xstatic-dagre"></span><h3>xstatic-dagre<a class="headerlink" href="#xstatic-dagre" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-dagre/XStatic-Dagre-0.6.4.1.tar.gz">0.6.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-dagre/XStatic-Dagre-0.6.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-dagre</p></td>
+<td><p>f3fd721b7b7c4e06a729914b2bf47726efb811d6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-dagre-d3">
+<span id="team-independent-xstatic-dagre-d3"></span><h3>xstatic-dagre-d3<a class="headerlink" href="#xstatic-dagre-d3" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-dagre-d3/XStatic-Dagre-D3-0.4.17.1.tar.gz">0.4.17.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-dagre-d3/XStatic-Dagre-D3-0.4.17.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-dagre-d3</p></td>
+<td><p>fcd6e551f0a8ddf629c913cb78dc107a53e79ccd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-graphlib">
+<span id="team-independent-xstatic-graphlib"></span><h3>xstatic-graphlib<a class="headerlink" href="#xstatic-graphlib" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-graphlib/XStatic-Graphlib-2.1.7.0.tar.gz">2.1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-graphlib/XStatic-Graphlib-2.1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-graphlib</p></td>
+<td><p>32eecfeb243346f2ae5c3b2bff038e1d14bbaeb1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-lodash">
+<span id="team-independent-xstatic-lodash"></span><h3>xstatic-lodash<a class="headerlink" href="#xstatic-lodash" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-lodash/XStatic-lodash-4.16.4.2.tar.gz">4.16.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-lodash/XStatic-lodash-4.16.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-lodash</p></td>
+<td><p>3bbd3db102bf786b95dfd7cb62c7c9ba8deca6a0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-moment">
+<span id="team-independent-xstatic-moment"></span><h3>xstatic-moment<a class="headerlink" href="#xstatic-moment" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-moment/XStatic-moment-2.8.4.3.tar.gz">2.8.4.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-moment/XStatic-moment-2.8.4.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-moment</p></td>
+<td><p>7734ce759a6e6d92706e6d9b12111b2fbc6a7bbe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-moment-timezone">
+<span id="team-independent-xstatic-moment-timezone"></span><h3>xstatic-moment-timezone<a class="headerlink" href="#xstatic-moment-timezone" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-moment-timezone/XStatic-Moment-Timezone-0.5.22.1.tar.gz">0.5.22.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-moment-timezone/XStatic-Moment-Timezone-0.5.22.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-moment-timezone</p></td>
+<td><p>61313b7a415bd1bfa69316d6ffe5a4a41e555b6a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="trove.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Trove"></i></a>
+          
+          
+            <a href="watcher.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Watcher"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Vitrage</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-victoria-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-victoria-vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-ussuri-vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-train-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-train-vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-stein-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-stein-vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-rocky-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-rocky-vitrage-dashboard">vitrage-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-vitrage-tempest-plugin">vitrage-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-queens-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-queens-vitrage-dashboard">vitrage-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-pike-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-pike-vitrage-dashboard">vitrage-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-ocata-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-ocata-vitrage-dashboard">vitrage-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-vitrageclient">python-vitrageclient</a></li>
+<li><a class="reference internal" href="#team-newton-vitrage">vitrage</a></li>
+<li><a class="reference internal" href="#team-newton-vitrage-dashboard">vitrage-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#xstatic-dagre">xstatic-dagre</a></li>
+<li><a class="reference internal" href="#xstatic-dagre-d3">xstatic-dagre-d3</a></li>
+<li><a class="reference internal" href="#xstatic-graphlib">xstatic-graphlib</a></li>
+<li><a class="reference internal" href="#xstatic-lodash">xstatic-lodash</a></li>
+<li><a class="reference internal" href="#xstatic-moment">xstatic-moment</a></li>
+<li><a class="reference internal" href="#xstatic-moment-timezone">xstatic-moment-timezone</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/vitrage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+</html>

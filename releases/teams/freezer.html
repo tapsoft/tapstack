@@ -1,0 +1,1441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/freezer.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Freezer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Freezer</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="freezer">
+<h1>Freezer<a class="headerlink" href="#freezer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-freezer">
+<span id="id1"></span><h3>freezer<a class="headerlink" href="#team-wallaby-freezer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>9773f99febb853ca9fc44756428ce1874ffdf0f5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>e02a4928176cb3816074d7f8a76d6024ce3acf56</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>599c2bedb3952176aa0056fc47fd82bc64e411d2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="freezer-tempest-plugin">
+<span id="team-wallaby-freezer-tempest-plugin"></span><h3>freezer-tempest-plugin<a class="headerlink" href="#freezer-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>564b03758e0dcae8d41a1a3cc957efe0bce0e750</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="freezer-web-ui">
+<span id="team-wallaby-freezer-web-ui"></span><h3>freezer-web-ui<a class="headerlink" href="#freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>c1c0d57ede8f49dddf5a625db27a7ac387c3f0cb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-freezerclient">
+<span id="team-wallaby-python-freezerclient"></span><h3>python-freezerclient<a class="headerlink" href="#python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>2fe404f68f00f97ab8c5ac718f8fd026dfde28f3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>cf06e431518eaa0d65d9b0b4ea34a25f3e40b5bf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-freezer">
+<span id="id2"></span><h3>freezer<a class="headerlink" href="#team-victoria-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/victoria.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>663737694ff9129fae222dd6fe0b7253c29490f3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>db0c4dd3c717d2e2bf67ef7e50fa1e2fa7bef6d4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>7d4c5ad01c780ea9874575464bae4f33877ebc23</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-freezer-tempest-plugin">
+<span id="id3"></span><h3>freezer-tempest-plugin<a class="headerlink" href="#team-victoria-freezer-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>564b03758e0dcae8d41a1a3cc957efe0bce0e750</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-freezer-web-ui">
+<span id="id4"></span><h3>freezer-web-ui<a class="headerlink" href="#team-victoria-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>1f5004d5214e46064ba6f3444ff813715e7808ff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-freezerclient">
+<span id="id5"></span><h3>python-freezerclient<a class="headerlink" href="#team-victoria-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>2ccd96d73360d6ed78b28a31ec00eb9652679dbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>2a8a8dc3cd0fdb7bda58e77f463840b1c812f2dd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-freezer">
+<span id="id6"></span><h3>freezer<a class="headerlink" href="#team-ussuri-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/ussuri.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>851a17173b0e6f7f8d6d188406897b09c8b6b50e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>11a19f2ea803c54ba78d41c964bc748a29752b99</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>72de51b01c180fb18f062c7b47e25e8044aeb237</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-freezer-tempest-plugin">
+<span id="id7"></span><h3>freezer-tempest-plugin<a class="headerlink" href="#team-ussuri-freezer-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>f75709dda5281a1d95842cc1070d08a4127a67da</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-freezer-web-ui">
+<span id="id8"></span><h3>freezer-web-ui<a class="headerlink" href="#team-ussuri-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>e5992486617ea000a0999ae7fc40bd1cb626116a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-freezerclient">
+<span id="id9"></span><h3>python-freezerclient<a class="headerlink" href="#team-ussuri-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-freezerclient/ussuri.html">python-freezerclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>c2cb528d27841595344473ebd96fa6ef8af7de59</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>0e7546bda79904809b9976af027856e90f29cf89</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-freezer">
+<span id="id10"></span><h3>freezer<a class="headerlink" href="#team-train-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/train.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>65a985e8c38290303f963f9e5494fa2ee796d4c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>c57a206eb8347e0b3c02455e32ddf378e29e0bfe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>9bd3eab987255b43e600bdd2dae649678c755d69</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-freezer-tempest-plugin">
+<span id="id11"></span><h3>freezer-tempest-plugin<a class="headerlink" href="#team-train-freezer-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>79d9ad5ed11289ba588261b1e9992bfed1a9a254</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-freezer-web-ui">
+<span id="id12"></span><h3>freezer-web-ui<a class="headerlink" href="#team-train-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>1f06dacd90467b1dd84a5a277ca674febbd63f50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-freezerclient">
+<span id="id13"></span><h3>python-freezerclient<a class="headerlink" href="#team-train-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>db341f8d0ad37d0187dbfc3fe78b32487117228f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-freezer">
+<span id="id14"></span><h3>freezer<a class="headerlink" href="#team-stein-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/stein.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>3ca3e5689aa9d1a8a0bc8e8bb76b6b5c7e91ea18</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>b52291b7e6a1d468f479168f89396d9feaf95568</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>1e687a499363dd912c69e2628a6ccc523c74f39c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>d59b138182e8a929a599f2b95455d0656be5fbfa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>06dc898a3bdbe9cc5ba9132a016dcee13c069782</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>6af94a5610e9a678d891ea0420a2a61ceaacd6fd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-freezer-tempest-plugin">
+<span id="id15"></span><h3>freezer-tempest-plugin<a class="headerlink" href="#team-stein-freezer-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>564b03758e0dcae8d41a1a3cc957efe0bce0e750</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-tempest-plugin/freezer_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-tempest-plugin</p></td>
+<td><p>0f2b0e9a8424e50adca10fdfa64359f6df93c569</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-freezer-web-ui">
+<span id="id16"></span><h3>freezer-web-ui<a class="headerlink" href="#team-stein-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>3207b575a159fc6c21206eca91565c9372c9c622</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>6763ff9a59413dfe6ae9bcc5ee60877581d51425</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-freezerclient">
+<span id="id17"></span><h3>python-freezerclient<a class="headerlink" href="#team-stein-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-freezerclient/stein.html">python-freezerclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>cc92d7cc2cf35ed791d29879b2aed5b08e6bf4e0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>026ae218b6920238f3d2ed3abb6816f971c4cea5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-freezer">
+<span id="id18"></span><h3>freezer<a class="headerlink" href="#team-queens-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/queens.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>70e10d1051c7524bdd5d0126ae57ab49f54f2fca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>c24cd2be67848b2e7de08f311383c9ff39730f35</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>1bcc0b44b8a4b9fd5472cb058e3d572339ab87ce</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-freezer-web-ui">
+<span id="id19"></span><h3>freezer-web-ui<a class="headerlink" href="#team-queens-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>5c990707ea4aea9358d037e6989d7babb013501f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-freezerclient">
+<span id="id20"></span><h3>python-freezerclient<a class="headerlink" href="#team-queens-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-freezerclient/queens.html">python-freezerclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>b92f04af68b1ed96bb96256f820c99d3824b3eab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>1974aeadae1da9cff5420c7dba032045a75a9696</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-freezer">
+<span id="id21"></span><h3>freezer<a class="headerlink" href="#team-pike-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/pike.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>421033e4db3a29d695d071b4da18f2b7d9aef161</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>57a092f6d694d1ae63ac2ebc073cb30b24337d94</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>50f9c4cfe8fe07b8659fa2f1853d7c9f4c6621fb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>4ccbc5b43794062060a980ef6909bf0f1006e0b4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>4200c9aa5c1fe448c4d77a2ccce03246919f6cf8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>44e6f2be51db4edea96b77f3e622caee7f79e269</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-freezer-web-ui">
+<span id="id22"></span><h3>freezer-web-ui<a class="headerlink" href="#team-pike-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>a03b8a983f45c8097625b220231e1fd8c573b18c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>9ed92d49745190863f16ae032efbe454abac7749</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-freezerclient">
+<span id="id23"></span><h3>python-freezerclient<a class="headerlink" href="#team-pike-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-freezerclient/pike.html">python-freezerclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.1.tar.gz">1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>13f0b40881b73a587b2daaab2654f8bad5751743</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>1974aeadae1da9cff5420c7dba032045a75a9696</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>a22fbf5dde73074bb5c3ce67ec57600f9774df1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>4405255bee3bb78fa4082cbe4bc0913d3d3c29bc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-freezer">
+<span id="id24"></span><h3>freezer<a class="headerlink" href="#team-ocata-freezer" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/freezer/ocata.html">freezer</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>527dac7e66d8e87acdd58541a6a522e320339c0f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>7cfaeaf797846af707d13258335854c90b01bd2f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>3dacdc86dc5a54d340df0ed92c21789f22cef333</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer</p></td>
+<td><p>62e7174dbc33f0e23434ab336f2b8f45031a7259</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>52c683d51ee9ade373256135551057af41d09249</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>170d63ae764aa44845aec08013e7d7c6a2b08053</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-freezer-web-ui">
+<span id="id25"></span><h3>freezer-web-ui<a class="headerlink" href="#team-ocata-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>466d66ed313e572cc11d971d27cbbf2d45b449c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>308b8c4d6777cc48525be9f86b335be1da53863a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-freezerclient">
+<span id="id26"></span><h3>python-freezerclient<a class="headerlink" href="#team-ocata-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-freezerclient/ocata.html">python-freezerclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>24b3489a4f0926b190e2229c2eb00133ca3f1116</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>1e40320391507b985703e3ec3342918d9325bbb2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>454a30e77250819bd009a81714a2ddef9c06a71b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>1197ce06b4495d75e6aa55ec302b580f0dc41639</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-freezer">
+<span id="id27"></span><h3>freezer<a class="headerlink" href="#team-newton-freezer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/freezer</p></td>
+<td><p>f22014f2f2dcfcfd7c8391f9cb2ddc5de4c588a1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>9e3d6a516a097731579a29a970320baacc3a375c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>a8ba5850e8fe16d8244a1c314ebe074735352795</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer</p></td>
+<td><p>df4ff63675eb66b8181f9ac2b4b9228b14b10784</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>61f1b3704f341c86262afe8f9b61cc34b5af2085</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-dr/freezer-dr-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer-dr</p></td>
+<td><p>daa457c7966e648f7df583f914e2ba48ef6403cd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-freezer-web-ui">
+<span id="id28"></span><h3>freezer-web-ui<a class="headerlink" href="#team-newton-freezer-web-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>10fd008777fa80ac3e328e2219b015a61d15ec7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-web-ui/freezer-web-ui-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer-web-ui</p></td>
+<td><p>ddd786737070c305082eed3e1c88523aafefae9b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-freezerclient">
+<span id="id29"></span><h3>python-freezerclient<a class="headerlink" href="#team-newton-python-freezerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-freezerclient/python-freezerclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-freezerclient</p></td>
+<td><p>05da0f9fdbfc2265318c6f952f422088dc2fd191</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-freezer">
+<span id="id30"></span><h3>freezer<a class="headerlink" href="#team-mitaka-freezer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer/freezer-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer</p></td>
+<td><p>7a3b3bdc3c3b68ac3db22b3da1542c9cedecbcee</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/freezer-api/freezer-api-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/freezer-api</p></td>
+<td><p>72fe674b4667a3090065b2023714f57bd235a669</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="ec2_api.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Ec2-Api"></i></a>
+          
+          
+            <a href="glance.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Glance"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Freezer</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-freezer">freezer</a></li>
+<li><a class="reference internal" href="#freezer-tempest-plugin">freezer-tempest-plugin</a></li>
+<li><a class="reference internal" href="#freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-victoria-freezer-tempest-plugin">freezer-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-victoria-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-ussuri-freezer-tempest-plugin">freezer-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-train-freezer-tempest-plugin">freezer-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-train-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-stein-freezer-tempest-plugin">freezer-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-stein-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-queens-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-queens-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-pike-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-pike-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-ocata-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-ocata-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-freezer">freezer</a></li>
+<li><a class="reference internal" href="#team-newton-freezer-web-ui">freezer-web-ui</a></li>
+<li><a class="reference internal" href="#team-newton-python-freezerclient">python-freezerclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-freezer">freezer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/freezer.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

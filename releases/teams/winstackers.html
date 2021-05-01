@@ -1,0 +1,1358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/winstackers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Winstackers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Winstackers</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="winstackers">
+<h1>Winstackers<a class="headerlink" href="#winstackers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="compute-hyperv">
+<span id="team-wallaby-compute-hyperv"></span><h3>compute-hyperv<a class="headerlink" href="#compute-hyperv" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>1c35c12ed0c105f7b1e3d32904435cebde99a927</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="networking-hyperv">
+<span id="team-wallaby-networking-hyperv"></span><h3>networking-hyperv<a class="headerlink" href="#networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/wallaby.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>1f6462a76e7c3f8fc57bf7b1d7d0fc3d39910935</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-win">
+<span id="team-wallaby-os-win"></span><h3>os-win<a class="headerlink" href="#os-win" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.4.0.tar.gz">5.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>cce95b44a942ca0175886e84222294c5abaec67b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.3.0.tar.gz">5.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>78414e71606b37ff2147ee886ee1fd962ef3a911</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oswin-tempest-plugin">
+<span id="team-wallaby-oswin-tempest-plugin"></span><h3>oswin-tempest-plugin<a class="headerlink" href="#oswin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>4e2b705bc082997faed1df412b798a843ca4937d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-compute-hyperv">
+<span id="id1"></span><h3>compute-hyperv<a class="headerlink" href="#team-victoria-compute-hyperv" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>15c0e16c1d55d87f45a6bd4bbf8eea4c3597da32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-networking-hyperv">
+<span id="id2"></span><h3>networking-hyperv<a class="headerlink" href="#team-victoria-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/victoria.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>fca3366641786aabae43178154e3c60e3042c20c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-os-win">
+<span id="id3"></span><h3>os-win<a class="headerlink" href="#team-victoria-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/victoria.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>028770ce27ef94e3718f61fd15be1646174a81d9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>33036bcc3284e829a505ab19810f3453a4b16365</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-oswin-tempest-plugin">
+<span id="id4"></span><h3>oswin-tempest-plugin<a class="headerlink" href="#team-victoria-oswin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>4e2b705bc082997faed1df412b798a843ca4937d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-compute-hyperv">
+<span id="id5"></span><h3>compute-hyperv<a class="headerlink" href="#team-ussuri-compute-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/compute-hyperv/ussuri.html">compute-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>4ad05407b199fc844ba4716f6e5e62f453374343</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>d44995425f48cfcb85e0289d624d1ecddbd956d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-networking-hyperv">
+<span id="id6"></span><h3>networking-hyperv<a class="headerlink" href="#team-ussuri-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/ussuri.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>6da239c19d1098212e00110a11d0797836adebd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-os-win">
+<span id="id7"></span><h3>os-win<a class="headerlink" href="#team-ussuri-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/ussuri.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>18793de7eb16569bc99171f74259bc81239c9681</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>4ec8809541099f29a7427f9b534c5d52b56933df</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>9c9fd20fce0b581ef7c4969e19ca44384fd1ede3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-oswin-tempest-plugin">
+<span id="id8"></span><h3>oswin-tempest-plugin<a class="headerlink" href="#team-ussuri-oswin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>fc5ae5e7be4cc380d62c96f3bce539c7321bee77</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-compute-hyperv">
+<span id="id9"></span><h3>compute-hyperv<a class="headerlink" href="#team-train-compute-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/compute-hyperv/train.html">compute-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>2070a6c798a3eeea32de2751f4088e460f2e0f6a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/compute-hyperv/compute-hyperv-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/compute-hyperv</p></td>
+<td><p>0d9f5310941c6278e9416a7f8e25375565485108</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-networking-hyperv">
+<span id="id10"></span><h3>networking-hyperv<a class="headerlink" href="#team-train-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/train.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.3.1.tar.gz">7.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>537e9aeb7841f810e49cd157295468441ecda981</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.3.0.tar.gz">7.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>ec074fb528e0b4d0ed2931a47d816c3b8806efc9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-os-win">
+<span id="id11"></span><h3>os-win<a class="headerlink" href="#team-train-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/train.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.3.tar.gz">4.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>3bdedd9f38eab5e94b2d1761d35773d9b88fbd7d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.2.tar.gz">4.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>c5450ed0b5842b959ef0a42adf7a0d9d63db23dc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.1.tar.gz">4.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>a06fdaebfe40d03ba78ae388cabbf0d100800352</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.0.tar.gz">4.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>75ac0ac15a3f1d238c5ae233485dd4cbc481a76b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-oswin-tempest-plugin">
+<span id="id12"></span><h3>oswin-tempest-plugin<a class="headerlink" href="#team-train-oswin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>a291a1b4710e5632416d7db4c241dfe9228c6426</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-networking-hyperv">
+<span id="id13"></span><h3>networking-hyperv<a class="headerlink" href="#team-stein-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/stein.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.2.1.tar.gz">7.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>dd15b0e6c4b553b7120aa06054cfce5010e7c304</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>c668f9732d85a804e5aadf13b2ae0b8474989503</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>83daa422918cdbb15604f6ff0b751dcdb4ac63b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-os-win">
+<span id="id14"></span><h3>os-win<a class="headerlink" href="#team-stein-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/stein.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.2.1.tar.gz">4.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>027749c401a73f4561d8542cdcaf5672ac9f4ee2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>7fa5db4de9bd92e7b4e110168f91a6597430bf47</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.1.1.tar.gz">4.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>728ddeb4f4dabd8ef16f22a5ce25b53468e4d8ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>5d7c91e627575001f8cc8da69028e135c1e21f91</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-oswin-tempest-plugin">
+<span id="id15"></span><h3>oswin-tempest-plugin<a class="headerlink" href="#team-stein-oswin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>4e2b705bc082997faed1df412b798a843ca4937d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/oswin-tempest-plugin/oswin-tempest-plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/oswin-tempest-plugin</p></td>
+<td><p>df19edfc31f716ea21b4bde04f6661e81d603ff7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-networking-hyperv">
+<span id="id16"></span><h3>networking-hyperv<a class="headerlink" href="#team-rocky-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/rocky.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>4bc34c3178e31b78df186ff82dcc5c2bd602ec59</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>d49d70cc5420e8cc39b50e4950789ac6a11c65cb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-os-win">
+<span id="id17"></span><h3>os-win<a class="headerlink" href="#team-rocky-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/rocky.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>f6ccfb6ebb0c5b7bb206cadbc3882c6c5466e927</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>6a5325be766368a1523c4f66b371c06fbdd789ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-networking-hyperv">
+<span id="id18"></span><h3>networking-hyperv<a class="headerlink" href="#team-queens-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/queens.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>893048dd2e3ca3d3a57584e22f5d3de1d4884870</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-os-win">
+<span id="id19"></span><h3>os-win<a class="headerlink" href="#team-queens-os-win" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/os-win/queens.html">os-win</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>99f1150a9c617137dde39a824736b3a82fb63fbe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>204156f69d580e1ddbf3359b3995d2b9f9b76444</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>6ab9f17bfe90ee8dff4c8414e5ff5797f3e46778</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>c5ce9a6cf6c23af3d4fd33990ce3010244db2e32</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-networking-hyperv">
+<span id="id20"></span><h3>networking-hyperv<a class="headerlink" href="#team-pike-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/networking-hyperv/pike.html">networking-hyperv</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>e38a2356b43e06aee7cb9f19e2ff51273abee87d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>400c817c337d6571e47af77ae2f33961fb69e75c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-os-win">
+<span id="id21"></span><h3>os-win<a class="headerlink" href="#team-pike-os-win" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>22f35e9ce7b734d4f8f930147c9e257f3506f616</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>111fa2896cefac91639dd8ffd28dc1d6b72d86a5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>88db49ebf8a8be569892d2e59d8f3dc4cebf6bf0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>aa3fbc7512dadc9349697e8b121fc1131df03510</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>033bba1c52ebd7971ebea846670a86e2fc3cdcc2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-networking-hyperv">
+<span id="id22"></span><h3>networking-hyperv<a class="headerlink" href="#team-ocata-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>83f8a20c82434fb4b90c2e0c30779a361f2c7944</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-os-win">
+<span id="id23"></span><h3>os-win<a class="headerlink" href="#team-ocata-os-win" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>f66f4fac031f0c6e64a594b4c513bf028229606a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>3d4f3972cf2713ecd3b0912d6266f58eea01644f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>1c8f6ded8244d166a805ef4d3b9d8136c81c29c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/os-win</p></td>
+<td><p>af25ceea1b5a26498c11a3cae00cea4e3513d15f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-networking-hyperv">
+<span id="id24"></span><h3>networking-hyperv<a class="headerlink" href="#team-newton-networking-hyperv" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/networking-hyperv/networking-hyperv-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/networking-hyperv</p></td>
+<td><p>85a4b5cff06cc1e0b3b6395e588c0331113b42b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-os-win">
+<span id="id25"></span><h3>os-win<a class="headerlink" href="#team-newton-os-win" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.2.2.tar.gz">1.2.2</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>4eb64bc790236b05ca2c561d53e72a0ff4745f14</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.2.1.tar.gz">1.2.1</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>a8cfe2830c3d5b43aad4de1d668bbc2ac5c84a25</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>14cbaf2a1ab209e5b7f442f3e1649a4efb424531</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>5e78a0ba995517e833861bdef277be7a73bb7107</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>3d48e1de3fba61e48eb6513ef57dbb84dcd726c2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-os-win">
+<span id="id26"></span><h3>os-win<a class="headerlink" href="#team-mitaka-os-win" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>2ebbd4bd8a2417498f3aaaac258912a49716809a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.4.2.tar.gz">0.4.2</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>37ac7ffd4d5a106f020704ecc331868da1354505</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>f7665ee405584d65d44340f0d17dac83cd1f6792</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>3c725a97642c36bd95078ea07bf34198ea8ae284</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.3.2.tar.gz">0.3.2</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>370b3d5813a10f17a0f41a90126adf88dc39db83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.3.1.tar.gz">0.3.1</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>a72658fd6d02e51e8d4e5a354763037d1918519e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>09bba86fae031c3750c2a8923bc280e41ed839bb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.2.3.tar.gz">0.2.3</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>a9c625671acedb2a459e4544afa3fe8ee28675c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.2.2.tar.gz">0.2.2</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>647c8889e137d0e9e030be6365b5b166fa2c3d3b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>518ef3d06d746f5bed4b74fabaee89d3f151c4c8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>e47648f77f7043e639ec47ba442d8f127ef5e529</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-win/os-win-0.1.1.tar.gz">0.1.1</a></p></td>
+<td></td>
+<td><p>openstack/os-win</p></td>
+<td><p>0afac9d789de699d87e950955a9c5fd914ce3ae7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="watcher.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Watcher"></i></a>
+          
+          
+            <a href="zaqar.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Zaqar"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Winstackers</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#compute-hyperv">compute-hyperv</a></li>
+<li><a class="reference internal" href="#networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#os-win">os-win</a></li>
+<li><a class="reference internal" href="#oswin-tempest-plugin">oswin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-compute-hyperv">compute-hyperv</a></li>
+<li><a class="reference internal" href="#team-victoria-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-victoria-os-win">os-win</a></li>
+<li><a class="reference internal" href="#team-victoria-oswin-tempest-plugin">oswin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-compute-hyperv">compute-hyperv</a></li>
+<li><a class="reference internal" href="#team-ussuri-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-ussuri-os-win">os-win</a></li>
+<li><a class="reference internal" href="#team-ussuri-oswin-tempest-plugin">oswin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-compute-hyperv">compute-hyperv</a></li>
+<li><a class="reference internal" href="#team-train-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-train-os-win">os-win</a></li>
+<li><a class="reference internal" href="#team-train-oswin-tempest-plugin">oswin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-stein-os-win">os-win</a></li>
+<li><a class="reference internal" href="#team-stein-oswin-tempest-plugin">oswin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-rocky-os-win">os-win</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-queens-os-win">os-win</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-pike-os-win">os-win</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-ocata-os-win">os-win</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-networking-hyperv">networking-hyperv</a></li>
+<li><a class="reference internal" href="#team-newton-os-win">os-win</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-os-win">os-win</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/winstackers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+</html>

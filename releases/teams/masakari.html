@@ -1,0 +1,1074 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/masakari.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Masakari</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Masakari</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="masakari">
+<h1>Masakari<a class="headerlink" href="#masakari" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-masakari">
+<span id="id1"></span><h3>masakari<a class="headerlink" href="#team-wallaby-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/wallaby.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>571248f6da32070919f1f86a252970e9a464420e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="masakari-dashboard">
+<span id="team-wallaby-masakari-dashboard"></span><h3>masakari-dashboard<a class="headerlink" href="#masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-dashboard/wallaby.html">masakari-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>a44b5a4266505679cc4e32a6d650466d49596c7c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="masakari-monitors">
+<span id="team-wallaby-masakari-monitors"></span><h3>masakari-monitors<a class="headerlink" href="#masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/wallaby.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>12d67aede4849e03a7b2b2836083119247058d01</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-masakariclient">
+<span id="team-wallaby-python-masakariclient"></span><h3>python-masakariclient<a class="headerlink" href="#python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/wallaby.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>70e676100e442de33dde0115f57c0d22710e14a9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.2.1.tar.gz">6.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>334a792e70f86c5ed1cea9cf5949015ff32efaed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>cecef8bbb4c4afc29ae909d60686f346e256546f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-masakari">
+<span id="id2"></span><h3>masakari<a class="headerlink" href="#team-victoria-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/victoria.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>3fed871a6702d374bd824325e0c1106ae5f0f0ac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>da2a5f01534d228311f5d5fa7b31c9917870a563</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>3fcadf85c73bbd0ca1be6a359369ac3a18fc1d71</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-masakari-dashboard">
+<span id="id3"></span><h3>masakari-dashboard<a class="headerlink" href="#team-victoria-masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-dashboard/victoria.html">masakari-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>7e7cd03fb11ef2bdb27a83fe349c56bb163e16b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-masakari-monitors">
+<span id="id4"></span><h3>masakari-monitors<a class="headerlink" href="#team-victoria-masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/victoria.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>a34ddd216e623e35165ecd297f1f51afb89864c2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-masakariclient">
+<span id="id5"></span><h3>python-masakariclient<a class="headerlink" href="#team-victoria-python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/victoria.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.1.1.tar.gz">6.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>a1a85684c6406600666582566e412a74ce17d220</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>44880367d9d2779a7bf0fc78ff278b8644b2248e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-masakari">
+<span id="id6"></span><h3>masakari<a class="headerlink" href="#team-ussuri-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/ussuri.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.2.tar.gz">9.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>35519c0ce02092aaef6b802817b74d017a84b08b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.1.tar.gz">9.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>458698ff74205af29c22fd7f20f870916eaf1b16</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>b53155b314068a46cd097d3788add1b6d4fc0aff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>9a59610643805f121279519045ff29640fade749</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-masakari-dashboard">
+<span id="id7"></span><h3>masakari-dashboard<a class="headerlink" href="#team-ussuri-masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-dashboard/ussuri.html">masakari-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>d5c42e7e1a262ccb782d218a71214b9bbf238c3c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>7f5336cd0dec96927252ec353160febf26196749</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-masakari-monitors">
+<span id="id8"></span><h3>masakari-monitors<a class="headerlink" href="#team-ussuri-masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/ussuri.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>e23f06f865e08ab4c75c9cd6bc723a934ec85663</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>92c934a8e3c2f726e7f1b845f39c5436d870fd6c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-masakariclient">
+<span id="id9"></span><h3>python-masakariclient<a class="headerlink" href="#team-ussuri-python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/ussuri.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>621a392d3219726d970387e62f3bb9299e26aa7a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.6.0.tar.gz">5.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>6cf24b423c99e31340149bd4ced7ebfb55d0b076</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-masakari">
+<span id="id10"></span><h3>masakari<a class="headerlink" href="#team-train-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/train.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.2.tar.gz">8.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>9eff08c7a8041c28a5f9c5ecb2b9915e7f42ce8c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.1.tar.gz">8.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>e915ade85ad27a9de70d59377a9a255f21c6c8dd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>e0423906a7aabb4ea02b754e041f725c16535be5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>24f678cd29dc500ae85e52ccca6d26583cdc20f3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-masakari-dashboard">
+<span id="id11"></span><h3>masakari-dashboard<a class="headerlink" href="#team-train-masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-dashboard/train.html">masakari-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>13f14d1ec4984f8fd9559c7c05c1c3adfc690175</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>51c88683a4b68f8ce77de0000eafa4eedea560f6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-masakari-monitors">
+<span id="id12"></span><h3>masakari-monitors<a class="headerlink" href="#team-train-masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/train.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>4d13e712cbb4139c6e04fe4a3b00a4072d195eb1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>b02c6b6931c0256f4ce6d7167c97ebb849ff3453</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>b7cdcb0964f4c07533bf56751fad96e0f6251281</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-masakariclient">
+<span id="id13"></span><h3>python-masakariclient<a class="headerlink" href="#team-train-python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/train.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.5.0.tar.gz">5.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>17028809028cc854934cc2a3d2a3d8b934ee01ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-masakari">
+<span id="id14"></span><h3>masakari<a class="headerlink" href="#team-stein-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/stein.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>cd4c562eaf0bc5e5b8bc819aed5d35b11393e65e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>d7d785ba96a3de71a5dbe6c5f7186ccb199daf3e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-masakari-dashboard">
+<span id="id15"></span><h3>masakari-dashboard<a class="headerlink" href="#team-stein-masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>ff7206fa973e0b13f0d5165b76be3901bbf7c36f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>e05a1822db99178f79108b26625029cce477b441</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-masakari-monitors">
+<span id="id16"></span><h3>masakari-monitors<a class="headerlink" href="#team-stein-masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/stein.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>1b47056bb6b7f9d7a13dfe5f00c642652e39dfe2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>984b3deb92657d4b5ace29b20f86acac30b01f92</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-masakariclient">
+<span id="id17"></span><h3>python-masakariclient<a class="headerlink" href="#team-stein-python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/stein.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.4.0.tar.gz">5.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>96613b9b0560f6d5930c45f372deda5d8832bb49</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.3.0.tar.gz">5.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>44bb59f0e7d149cd61150a7ddbe91a1b33b917f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-masakari">
+<span id="id18"></span><h3>masakari<a class="headerlink" href="#team-rocky-masakari" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari/rocky.html">masakari</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari/masakari-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari</p></td>
+<td><p>c742bb4973626cac269ec05cafc56543f8d6d5e6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-masakari-dashboard">
+<span id="id19"></span><h3>masakari-dashboard<a class="headerlink" href="#team-rocky-masakari-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-dashboard/rocky.html">masakari-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>f53bdbb03131224206cd835f9b2621e297adc25f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-dashboard/masakari-dashboard-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-dashboard</p></td>
+<td><p>b18ad52f0e37705c946032bfd0cda20e50bdebdd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-masakari-monitors">
+<span id="id20"></span><h3>masakari-monitors<a class="headerlink" href="#team-rocky-masakari-monitors" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/masakari-monitors/rocky.html">masakari-monitors</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/masakari-monitors/masakari-monitors-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/masakari-monitors</p></td>
+<td><p>bedf75e102f02a349c715a5082142145d90273d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-masakariclient">
+<span id="id21"></span><h3>python-masakariclient<a class="headerlink" href="#team-rocky-python-masakariclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-masakariclient/rocky.html">python-masakariclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>319bfb3fb9153b15199816f6f997934cd78de585</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-masakariclient/python-masakariclient-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-masakariclient</p></td>
+<td><p>6d61f0a103576b36b1896caf19fb2d5f72ec6d9c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="manila.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Manila"></i></a>
+          
+          
+            <a href="mistral.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Mistral"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Masakari</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-masakari">masakari</a></li>
+<li><a class="reference internal" href="#masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-masakari">masakari</a></li>
+<li><a class="reference internal" href="#team-victoria-masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#team-victoria-python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-masakari">masakari</a></li>
+<li><a class="reference internal" href="#team-ussuri-masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-masakari">masakari</a></li>
+<li><a class="reference internal" href="#team-train-masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#team-train-python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-masakari">masakari</a></li>
+<li><a class="reference internal" href="#team-stein-masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#team-stein-python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-masakari">masakari</a></li>
+<li><a class="reference internal" href="#team-rocky-masakari-dashboard">masakari-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-masakari-monitors">masakari-monitors</a></li>
+<li><a class="reference internal" href="#team-rocky-python-masakariclient">python-masakariclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/masakari.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+</html>

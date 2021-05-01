@@ -1,0 +1,2431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/glance.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Glance</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Glance</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="glance">
+<h1>Glance<a class="headerlink" href="#glance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-glance">
+<span id="id1"></span><h3>glance<a class="headerlink" href="#team-wallaby-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/wallaby.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-22.0.0.tar.gz">22.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-22.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>922e544ca2556994450e6972403ba4313318c5e0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="glance-store">
+<span id="team-wallaby-glance-store"></span><h3>glance-store<a class="headerlink" href="#glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>bfbea18d8774cb99a9d0a8949b962190c74aa9ad</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>488d3e2fe31e4fc7a461e9de8b20df481d78daa2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-glanceclient">
+<span id="team-wallaby-python-glanceclient"></span><h3>python-glanceclient<a class="headerlink" href="#python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/wallaby.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>f802c710835e2e9ac42964c7282bbb4e539b38c5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-glance">
+<span id="id2"></span><h3>glance<a class="headerlink" href="#team-victoria-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-21.0.0.tar.gz">21.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-21.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>c4d8880794c20aad6772f6e9c2217f15f41c9c2c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-glance-store">
+<span id="id3"></span><h3>glance-store<a class="headerlink" href="#team-victoria-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>5aa2bc7af6f22776ea5751b7f9620845bb5f3a3a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>3b71ce2d476a9fc4fa86091711d0b8ca1dff8868</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>69eb2cc92a27222eaf028952072753c9d9f5f5f2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-glanceclient">
+<span id="id4"></span><h3>python-glanceclient<a class="headerlink" href="#team-victoria-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.2.tar.gz">3.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>8a63928e2ef1e50875db675105f910a511a0242e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.1.tar.gz">3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>77eab17cf9f3cf3f2578f73163cb816e425effa2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>de178ac4382716cc93022be06b93697936e816fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-glance">
+<span id="id5"></span><h3>glance<a class="headerlink" href="#team-ussuri-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/ussuri.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-20.0.1.tar.gz">20.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-20.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>d63d72799766801414500934e06db8c88807fe59</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-20.0.0.tar.gz">20.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-20.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>fc3e14b636f0076b3ff0c2442b7a5dda9deade78</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-glance-store">
+<span id="id6"></span><h3>glance-store<a class="headerlink" href="#team-ussuri-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>97bb16a757ab7dd7b880c56044fbc21b17cbfbb9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>b242a2fabf89dbefc9b52a578a2282f5b7615b52</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-glanceclient">
+<span id="id7"></span><h3>python-glanceclient<a class="headerlink" href="#team-ussuri-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/ussuri.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.2.tar.gz">3.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>4c63903403d7ef7801c8e274b67f9647ff329991</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>1d8fa3d8cc4841855209f8f73dbce6e65bff4741</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>3e91562b029711a6242e70f71fb623855ad56d86</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>2e0396c0c9576924703d79429f5c3f14619d8b8d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-glance">
+<span id="id8"></span><h3>glance<a class="headerlink" href="#team-train-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/train.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.4.tar.gz">19.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>5bbd35678485f4836b808c8fbd3157f3345e8660</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.3.tar.gz">19.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>3e16bc7d40922f4e6176486b5e7af42989a50774</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.2.tar.gz">19.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>521de9b6ed0c9c9fb0dcd4be43cfee4b56556e1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.1.tar.gz">19.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>8c2bc60820783f76c9421d615d3828a88008ca96</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.0.tar.gz">19.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-19.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>f87464e022046c9d61384c2593edf9753ed34749</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-glance-store">
+<span id="id9"></span><h3>glance-store<a class="headerlink" href="#team-train-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>9383fde396041758d767ce3f30b9a5669ad9ebf1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>5d86e1a5c25725dde288082ce45e7c2c55ae747f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.29.1.tar.gz">0.29.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.29.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>a11649d4df5655329b47c02accd35ed95c948633</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.29.0.tar.gz">0.29.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.29.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>6266ddf45f4d006cd7a8304224ec0ba0774489c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-glanceclient">
+<span id="id10"></span><h3>python-glanceclient<a class="headerlink" href="#team-train-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/train.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.17.1.tar.gz">2.17.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.17.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>1aba8f2d248040364e690dd8dc7f3a508baed631</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.17.0.tar.gz">2.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>40c19aa44361e13ac997d325d357d3e4748fa063</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-glance">
+<span id="id11"></span><h3>glance<a class="headerlink" href="#team-stein-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/stein.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-18.0.1.tar.gz">18.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-18.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>149ea050cc58f39eaf9b4660bb8f0271b99d03da</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-18.0.0.tar.gz">18.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-18.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>798c4ed44d2d4f99805665d9fce36dfb423c4c34</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-glance-store">
+<span id="id12"></span><h3>glance-store<a class="headerlink" href="#team-stein-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.28.1.tar.gz">0.28.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.28.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>27e421af26cd1bcc68746a0beadb541fb8d647be</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.28.0.tar.gz">0.28.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.28.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>5b68597400cea971aca9ed809551a69955e0cadc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.27.0.tar.gz">0.27.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.27.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>b8b873433e4dba9fae9cd8c51a0a7b0079875d0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-glanceclient">
+<span id="id13"></span><h3>python-glanceclient<a class="headerlink" href="#team-stein-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/stein.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.16.0.tar.gz">2.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>44a4dbd6ce2642daeaca9f45ac99e2d1b39e805a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.15.0.tar.gz">2.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>c4c92ecb51f4a7b93c1a84d5084006fed15c6945</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.14.0.tar.gz">2.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>93636d6e25938617c9b1a58c737540c62d7f27c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-glance">
+<span id="id14"></span><h3>glance<a class="headerlink" href="#team-rocky-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/rocky.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-17.0.1.tar.gz">17.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-17.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>ad39c12c64c8ff017918a8790d69d5278ac379da</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>488d2e4fccc399234fd62c127c8ece262111fe93</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-glance-store">
+<span id="id15"></span><h3>glance-store<a class="headerlink" href="#team-rocky-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.2.tar.gz">0.26.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>7cad6da6f1d4f7e8e47e6d1087d3905d3d806db6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.1.tar.gz">0.26.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>3e8f3d62be8366b624b0ea5b515d6f771289f686</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.0.tar.gz">0.26.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.26.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>7141c77f18b654f42329d5639aee9c8a694f7d97</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.25.0.tar.gz">0.25.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.25.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>baa663ec5c497aeab6f2cfa82946c2d70607d9dd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.24.0.tar.gz">0.24.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.24.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>cc97b949033f892d6675692cbc8a24df3ce0e15e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-glanceclient">
+<span id="id16"></span><h3>python-glanceclient<a class="headerlink" href="#team-rocky-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/rocky.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.2.tar.gz">2.13.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>535bc526ce0196232b7f1f2df8ba6343b77b55b5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.1.tar.gz">2.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>e0673a17fd684ca29ae6674f2df6303f99c79bce</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.0.tar.gz">2.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>395d0f157bed9dbc4e6e125f21e8b1879c26ccdb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.12.1.tar.gz">2.12.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.12.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>b79154c5fe68789389d54decc8dfc23c3e2021ef</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.12.0.tar.gz">2.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>2c26f2748f433fbb510715532b45973768bf7483</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.11.1.tar.gz">2.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>1cf00a5cc9c095071d18137c44f2722d0e20d84e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>314a29f6a6e64f69fd07fd5a0fdcf7aeb5574c1b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-glance">
+<span id="id17"></span><h3>glance<a class="headerlink" href="#team-queens-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/queens.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-16.0.1.tar.gz">16.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-16.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>42fe71f9d770c70211f8e83759c7232f5ff2b75e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>ceb8b9a67dd3d714ec5b876df56e03f001ad6ae6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-glance-store">
+<span id="id18"></span><h3>glance-store<a class="headerlink" href="#team-queens-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.23.0.tar.gz">0.23.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.23.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>38d9bcb2aa374690bb83806457258cb6d3883af9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-glanceclient">
+<span id="id19"></span><h3>python-glanceclient<a class="headerlink" href="#team-queens-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/queens.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.10.1.tar.gz">2.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>626f503e22e738347ab65f4a01af1698894e2f11</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>b5afe03ecd3cb25bf09232a803d91c4c5ff06f6c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.9.1.tar.gz">2.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>b982516fc14ad26ae1c9eb6124130b655d169527</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>cf62e1635d6ca6b025829e8bbf6294cb8a1fd982</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-glance">
+<span id="id20"></span><h3>glance<a class="headerlink" href="#team-pike-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/pike.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.2.tar.gz">15.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>16a04e64aff661bd98d9f605e7d0a7ef97ea83d6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.1.tar.gz">15.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>5c1f76d91012c9cc7b12f76e917af9e9a9bb7667</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>982016670fe908e5d7026714b115e63b7c31b46b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-glance-store">
+<span id="id21"></span><h3>glance-store<a class="headerlink" href="#team-pike-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.22.0.tar.gz">0.22.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.22.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>49c915f498fc8d91c98fcf4e07ceecdcf167fc5a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.21.0.tar.gz">0.21.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.21.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>599b9b8491ab22ea238b271c518011f45ead26c2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-glanceclient">
+<span id="id22"></span><h3>python-glanceclient<a class="headerlink" href="#team-pike-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/pike.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.8.1.tar.gz">2.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>2dfd7c7531724751116930accde87486fde03b01</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>52eb529b97533876d4c558784ee4d463814c2a0d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>d67b33b2e5fcee4545fe4ccb1e58c8d6ed12883c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-glance">
+<span id="id23"></span><h3>glance<a class="headerlink" href="#team-ocata-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/ocata.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-14.0.1.tar.gz">14.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-14.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>3b7c58003de9d6e9e67b2ccbcdc0addd77b17191</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance</p></td>
+<td><p>8997684aabe54d0a8ba43aff0be52f64153d8a1a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-glance-store">
+<span id="id24"></span><h3>glance-store<a class="headerlink" href="#team-ocata-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.20.0.tar.gz">0.20.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.20.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>ee6840c92e637384061b9c8d213a81352466995e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.19.0.tar.gz">0.19.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.19.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>6982b3c2e5f08d001b53413e6277a09013fd52df</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-glanceclient">
+<span id="id25"></span><h3>python-glanceclient<a class="headerlink" href="#team-ocata-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/ocata.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>9afb56c875c3fdc001f1b5e09c1126a008940e6c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-glance">
+<span id="id26"></span><h3>glance<a class="headerlink" href="#team-newton-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/newton.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-13.0.0.tar.gz">13.0.0</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>4404ae6a7e2b8d96db102ada8aaf07cbc92e256b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-glance-store">
+<span id="id27"></span><h3>glance-store<a class="headerlink" href="#team-newton-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.18.0.tar.gz">0.18.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>728b45d4a4573622d56bfb9ee45f6b152fce50a8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.17.0.tar.gz">0.17.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>2e712db2fce105145e13d35a44810c0770da8c80</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.16.0.tar.gz">0.16.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>ad2c5ef5c59262a5f599d6351385a805c4b4f702</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.15.0.tar.gz">0.15.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>10f50da5fcd9257090ab137f4d257940bb01b44a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.14.0.tar.gz">0.14.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>79532ea599cd0226e7176c6c7d59e04ee3b1a8ff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-glanceclient">
+<span id="id28"></span><h3>python-glanceclient<a class="headerlink" href="#team-newton-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-glanceclient/newton.html">python-glanceclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>d4196325eb05dadfaf62d8facbd8c6fe50f72166</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>5de07c339503c90634e27de342d23276a8833111</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>cc17ca32652af69cba268ef71286ca096b1e6207</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>13093e019416894a4bd940d569bab4c3c0b84485</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>46c3792feef6f36b31e9783724b914d6740b0f84</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-glance">
+<span id="id29"></span><h3>glance<a class="headerlink" href="#team-mitaka-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/mitaka.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-12.0.0.tar.gz">12.0.0</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>02ef2ab8e833df6f46b0a47b19c98b397687f73b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-glance-store">
+<span id="id30"></span><h3>glance-store<a class="headerlink" href="#team-mitaka-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.13.1.tar.gz">0.13.1</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>33c08d8dec495dca2d7a9a7c44d23670aacf29d9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.13.0.tar.gz">0.13.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>a6bf6a7f0e74ced35219732fbf72a63d4c6ab553</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.12.0.tar.gz">0.12.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>6c4ae678f57390ef845c446edbcce9a6f93e1927</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.11.0.tar.gz">0.11.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>881eeed5ad2d4613cf7a1818bc014fb888ec3df1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.10.0.tar.gz">0.10.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>f1f79b898dc9f37a4161a68574feff8364f73ab3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-glanceclient">
+<span id="id31"></span><h3>python-glanceclient<a class="headerlink" href="#team-mitaka-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>99ca367083459b698f052c56a1e73492dafcc383</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>22a03fd475d1807dee41b24291862f1bdc361273</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>d91210c806fe1f5bad39b18bf3ee38d3669fd8c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-glance">
+<span id="id32"></span><h3>glance<a class="headerlink" href="#team-liberty-glance" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/glance/liberty.html">glance</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-11.0.2.tar.gz">11.0.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>9496b9dd83a3eb9605f93e648498d837403aab44</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-11.0.1.tar.gz">11.0.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>7296a5302b00bd066ddf6b14c7d5a9afb3b88e70</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-11.0.0.tar.gz">11.0.0</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>69516fad5f651a085a047a337a05c58b39023c1b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-glance-store">
+<span id="id33"></span><h3>glance-store<a class="headerlink" href="#team-liberty-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.9.3.tar.gz">0.9.3</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>4cd5332604ae8973db45e519dd5a486e76617073</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.9.2.tar.gz">0.9.2</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>7b13ce62b46c327b90e6b8c0eb85a1f2c8dec217</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.9.1.tar.gz">0.9.1</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>c816b38d9f12be75d989409cbab6dfefa8f49dc3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>b7d7b8ae5ecddb1f47ec6da03501a5ad2f936f1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>425360035676d4bb88b8b5eea3d7ccabb65e850a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.7.1.tar.gz">0.7.1</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>cd04b9217f4581f9d1d6840bc6c3c4c916b330e8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>017064d295da672c7d08742f9ba8d67084914e4a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>b3f8092b7512b9e9e7993e3895fdde6092022f4f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>56c9486800a371e853056a3badd6eb11c2f88ad9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-glanceclient">
+<span id="id34"></span><h3>python-glanceclient<a class="headerlink" href="#team-liberty-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-1.1.2.tar.gz">1.1.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>1d88844bdc681cbe71dc06f55f08857acbe7bb9e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>26d2a0f4c29d15208b426443e7a5f8570abdc323</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>86635868c1eb3aec0c065c12cb9928c613940f36</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>54ae632f1b6dfba18a16ba934cd8052fe766693f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.19.0.tar.gz">0.19.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>db6420b44779411d6d1f238f6b887f83f1988986</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.18.0.tar.gz">0.18.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>825c4a5df2e32a2d7c1665f0924cc5b9fa675673</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-glance">
+<span id="id35"></span><h3>glance<a class="headerlink" href="#team-kilo-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>ca370edd28fe563b77c29123c940c7264897fc27</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>0bac2bf693f054894f2e1b8149de8ecc7772f065</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>0303c5c3e43da29501b8b26c82e5a0cc9b7a3ed7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>01fd597381561a172c464983cf8f056069bf4278</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>93b0d5fce3a41e4a3a549f98f78b6681cbc3ea95</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-glance-store">
+<span id="id36"></span><h3>glance-store<a class="headerlink" href="#team-kilo-glance-store" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance_store/glance_store-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/glance_store</p></td>
+<td><p>ea88e503b617a7ac9a0ae7e537d6517e9992a104</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-python-glanceclient">
+<span id="id37"></span><h3>python-glanceclient<a class="headerlink" href="#team-kilo-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.17.3.tar.gz">0.17.3</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>9333d0e4f2b47cf9a0dd52d71bb3a231422b84d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.17.2.tar.gz">0.17.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>da4f22a2b7a87f3bbb46df02f7f68568ea994e3e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.17.1.tar.gz">0.17.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>b176c28bbdae3eb5b3280c1981ad2b3b255e234e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.17.0.tar.gz">0.17.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>26280ed58b5d16feed4ab27be063d305ef48a252</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.16.1.tar.gz">0.16.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>d3814693a83ef4294e255414f7261cc5abd62349</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.16.0.tar.gz">0.16.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>519672f5d5251ea193f08f967a9216848d209916</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.15.0.tar.gz">0.15.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>385d97ef38fd7b976ea24653a2b4514dee62ffb8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.2.tar.gz">0.14.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>695dbc910d2068aff89a68d6f5aa088cc835766e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-glance">
+<span id="id38"></span><h3>glance<a class="headerlink" href="#team-juno-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>fdf65d26b4f2212d9db387921f8adad2af561acb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>1db07bd8c07bbcde4bd267985c4e3961c22b990e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>cd42a98b61c288b731b5a89fe2e4a8d2e59b93a9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>055adff1d95dca72074da898b541cb4a6b62406d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>742c898956d655affa7351505c8a3a5c72881eae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-python-glanceclient">
+<span id="id39"></span><h3>python-glanceclient<a class="headerlink" href="#team-juno-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.3.tar.gz">0.14.3</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>cfa75cec24b37acb42a851013d6689b2016754e2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.2.tar.gz">0.14.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>695dbc910d2068aff89a68d6f5aa088cc835766e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.1.tar.gz">0.14.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>8a877b2752162d6a2db43d7d61d6311c4f42285b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.0.tar.gz">0.14.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>33dcea81b2f2ac5f643c0153c5a70cfec2008555</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.13.1.tar.gz">0.13.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>caa1a54fd9e69bc2a3fe43157a9805a71c2ef1a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.13.0.tar.gz">0.13.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>caa1a54fd9e69bc2a3fe43157a9805a71c2ef1a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-glance">
+<span id="id40"></span><h3>glance<a class="headerlink" href="#team-icehouse-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>66aa3da3bd98015d0fba53afb8de5a542b92f96b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a111215d30806c6a4e5fd0e3310a8eef74ff11ec</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>70725be5057d96b3aab28695e918c3d64ef3cdb0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>7c5c7782c515690fec8a2b2821177dfeabdf74e8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>19de1156c7af684a22b0ecc558c5ea6ed24b7a78</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>abf2dd8ee8ea116205d661e57f8dda6627e2f5c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-python-glanceclient">
+<span id="id41"></span><h3>python-glanceclient<a class="headerlink" href="#team-icehouse-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.12.0.tar.gz">0.12.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>c22b88d9b1a7542d4ace31b792d3a24613e8d0f1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-glance">
+<span id="id42"></span><h3>glance<a class="headerlink" href="#team-havana-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>ab8ee36191eb5c8fe58420cca21380d3df752e2a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>3d17ba013a61d3d721d9591ff7d555d250c924c5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>edcbdf9fa1639ba437e94547edad91b2c8fb8bcf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>949cda02d33846ab7c8468fed7fd93e0d09d6017</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>42cfa8cc9dc3241103a6764ae1e3e58cfef2a763</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-python-glanceclient">
+<span id="id43"></span><h3>python-glanceclient<a class="headerlink" href="#team-havana-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.11.0.tar.gz">0.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>a1c5305c6264105794b70b248fb87f8ac89ecb41</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.10.0.tar.gz">0.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>eb47b55dbd078aea4eedcc70ad44d189510c6644</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-glance">
+<span id="id44"></span><h3>glance<a class="headerlink" href="#team-grizzly-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>10a6be70477ec67d3c453a939e82af0fdf786beb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>b72b2cb4e46050bbfdb7a9047d494894050f273c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a5dda27f3b797abe9acac4eceb091c3d48cfc0e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a799a98b73baa1d3d7901edf55e49118bfb8ba74</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>b225586a2a5910bfe33666927397edc3ca110ca3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-grizzly-python-glanceclient">
+<span id="id45"></span><h3>python-glanceclient<a class="headerlink" href="#team-grizzly-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>741c15f9633f642aa2e52de10b8eb65d6a8c9ecb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>51bbf74264b75a0b98bbb8de7611ccc935f49980</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.7.0.tar.gz">0.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>c057fe47d6889912b7675aa54102509cd464171a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>ae16750c48bc8d4b2b8d4de87913572a276f4f1e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="folsom">
+<h2>Folsom<a class="headerlink" href="#folsom" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-folsom-glance">
+<span id="id46"></span><h3>glance<a class="headerlink" href="#team-folsom-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.2.4.tar.gz">2012.2.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>3389f067d5a63ef21c5508645d789e6550515e73</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.2.3.tar.gz">2012.2.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a5b0f4eb81a1f5d8e89713ff7b3ccc6155762628</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.2.1.tar.gz">2012.2.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a4062940b804f524ada38df3c62c14b9c98f82bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.2.tar.gz">2012.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a9f0a4c4dbac0c92c431150161915bd5459a42d0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-folsom-python-glanceclient">
+<span id="id47"></span><h3>python-glanceclient<a class="headerlink" href="#team-folsom-python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.5.1.tar.gz">0.5.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>3f67c461da236bf603cf4812f81f51200573f51f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>e233f66ecd0f30523226246bec1c2e62223344ec</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.4.2.tar.gz">0.4.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>d64876424e87b3a7f76a9bf4d29fdacbc5ad4bc4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>a5b8165d7de5edd15a616e2ff97c1f8b72b53e8c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>a214d983c2ae115c5c4965808f2bd5912c71e4c3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>18543b1a46cad3e01613c4b5c933b7dfb68e048b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>5189d58d6363f2f73ef2bd43eb56fd34ea611e28</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.1.1.tar.gz">0.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>089d509f350b01c8345cfb7b9b33510a60043861</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>6e1157059efdaed3a0d638efc6b4a1e4db955832</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="essex">
+<h2>Essex<a class="headerlink" href="#essex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-essex-glance">
+<span id="id48"></span><h3>glance<a class="headerlink" href="#team-essex-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.1.2.tar.gz">2012.1.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>a9fa1838c8bdf072fc6a9a8c390970953aa3cb32</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.1.1.tar.gz">2012.1.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>11c7e948eedbca0ebc2d9b3b94ad89b20d341609</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2012.1.tar.gz">2012.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>f460a99baee6e37b624c070527f70d4a868b6223</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="diablo">
+<h2>Diablo<a class="headerlink" href="#diablo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-diablo-glance">
+<span id="id49"></span><h3>glance<a class="headerlink" href="#team-diablo-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2011.3.1.tar.gz">2011.3.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>ffcd0ca83b6793d7f4f3f5bcbd02c31ca71e6da7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2011.3.tar.gz">2011.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>84e5d7fa0d38e6831570384db3cb1d6bd35b42b4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cactus">
+<h2>Cactus<a class="headerlink" href="#cactus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-cactus-glance">
+<span id="id50"></span><h3>glance<a class="headerlink" href="#team-cactus-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2011.2.tar.gz">2011.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>1975f1693380bae370245fbbf1eb6dbd409dcc72</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="bexar">
+<h2>Bexar<a class="headerlink" href="#bexar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-bexar-glance">
+<span id="id51"></span><h3>glance<a class="headerlink" href="#team-bexar-glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-0.1.7.tar.gz">0.1.7</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>c9d3211caa2f7b0532300f6bcfafe736cf5b1481</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="freezer.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Freezer"></i></a>
+          
+          
+            <a href="heat.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Heat"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Glance</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-glance">glance</a></li>
+<li><a class="reference internal" href="#glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-glance">glance</a></li>
+<li><a class="reference internal" href="#team-victoria-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-victoria-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-glance">glance</a></li>
+<li><a class="reference internal" href="#team-ussuri-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-glance">glance</a></li>
+<li><a class="reference internal" href="#team-train-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-train-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-glance">glance</a></li>
+<li><a class="reference internal" href="#team-stein-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-stein-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-glance">glance</a></li>
+<li><a class="reference internal" href="#team-rocky-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-rocky-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-glance">glance</a></li>
+<li><a class="reference internal" href="#team-queens-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-queens-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-glance">glance</a></li>
+<li><a class="reference internal" href="#team-pike-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-pike-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-glance">glance</a></li>
+<li><a class="reference internal" href="#team-ocata-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-ocata-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-glance">glance</a></li>
+<li><a class="reference internal" href="#team-newton-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-newton-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-glance">glance</a></li>
+<li><a class="reference internal" href="#team-mitaka-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-glance">glance</a></li>
+<li><a class="reference internal" href="#team-liberty-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-liberty-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-glance">glance</a></li>
+<li><a class="reference internal" href="#team-kilo-glance-store">glance-store</a></li>
+<li><a class="reference internal" href="#team-kilo-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-glance">glance</a></li>
+<li><a class="reference internal" href="#team-juno-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-glance">glance</a></li>
+<li><a class="reference internal" href="#team-icehouse-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-glance">glance</a></li>
+<li><a class="reference internal" href="#team-havana-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-glance">glance</a></li>
+<li><a class="reference internal" href="#team-grizzly-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#folsom">Folsom</a><ul>
+<li><a class="reference internal" href="#team-folsom-glance">glance</a></li>
+<li><a class="reference internal" href="#team-folsom-python-glanceclient">python-glanceclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#essex">Essex</a><ul>
+<li><a class="reference internal" href="#team-essex-glance">glance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#diablo">Diablo</a><ul>
+<li><a class="reference internal" href="#team-diablo-glance">glance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cactus">Cactus</a><ul>
+<li><a class="reference internal" href="#team-cactus-glance">glance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bexar">Bexar</a><ul>
+<li><a class="reference internal" href="#team-bexar-glance">glance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/glance.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

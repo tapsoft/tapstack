@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:01:36 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: OpenStack Releases</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="_static/css/combined.css" rel="stylesheet">
+<link href="_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>OpenStack Releases</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="openstack-releases">
+<h1>OpenStack Releases<a class="headerlink" href="#openstack-releases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="release-series">
+<h2>Release Series<a class="headerlink" href="#release-series" title="Permalink to this headline">¶</a></h2>
+<p>OpenStack is developed and released around 6-month cycles. After the initial
+release, additional stable point releases will be released in each release
+series. You can find the detail of the various release series here on their
+series page. Subscribe to the <a class="reference external" href="schedule.ics">combined release calendar</a> for continual
+updates.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Series</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Initial Release Date</p></th>
+<th class="head"><p>Next Phase</p></th>
+<th class="head"><p>EOL Date</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="xena/index.html"><span class="doc">Xena</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Development</a></p></td>
+<td><p>2021-10-06 <em>estimated</em> <a class="reference internal" href="xena/schedule.html"><span class="doc">(schedule)</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Development</a> <em>estimated 2021-04-14</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="wallaby/index.html"><span class="doc">Wallaby</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Maintained</a></p></td>
+<td><p>2021-04-14</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> <em>estimated 2022-10-14</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="victoria/index.html"><span class="doc">Victoria</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Maintained</a></p></td>
+<td><p>2020-10-14</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> <em>estimated 2022-04-18</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ussuri/index.html"><span class="doc">Ussuri</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Maintained</a></p></td>
+<td><p>2020-05-13</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> <em>estimated 2021-11-12</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="train/index.html"><span class="doc">Train</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Maintained</a></p></td>
+<td><p>2019-10-16</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> <em>estimated 2021-05-12</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stein/index.html"><span class="doc">Stein</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> (see <a class="reference internal" href="#extended-maintenance-note"><span class="std std-ref">note</span></a> below)</p></td>
+<td><p>2019-04-10</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Unmaintained</a> <em>TBD</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="rocky/index.html"><span class="doc">Rocky</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> (see <a class="reference internal" href="#extended-maintenance-note"><span class="std std-ref">note</span></a> below)</p></td>
+<td><p>2018-08-30</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Unmaintained</a> <em>TBD</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="queens/index.html"><span class="doc">Queens</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> (see <a class="reference internal" href="#extended-maintenance-note"><span class="std std-ref">note</span></a> below)</p></td>
+<td><p>2018-02-28</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Unmaintained</a> <em>TBD</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pike/index.html"><span class="doc">Pike</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> (see <a class="reference internal" href="#extended-maintenance-note"><span class="std std-ref">note</span></a> below)</p></td>
+<td><p>2017-08-30</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Unmaintained</a> <em>TBD</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ocata/index.html"><span class="doc">Ocata</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Extended Maintenance</a> (see <a class="reference internal" href="#extended-maintenance-note"><span class="std std-ref">note</span></a> below)</p></td>
+<td><p>2017-02-22</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Unmaintained</a> <em>estimated 2020-06-04</em></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="newton/index.html"><span class="doc">Newton</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2016-10-06</p></td>
+<td></td>
+<td><p>2017-10-25</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="mitaka/index.html"><span class="doc">Mitaka</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2016-04-07</p></td>
+<td></td>
+<td><p>2017-04-10</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="liberty/index.html"><span class="doc">Liberty</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2015-10-15</p></td>
+<td></td>
+<td><p>2016-11-17</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="kilo/index.html"><span class="doc">Kilo</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2015-04-30</p></td>
+<td></td>
+<td><p>2016-05-02</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="juno/index.html"><span class="doc">Juno</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2014-10-16</p></td>
+<td></td>
+<td><p>2015-12-07</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="icehouse/index.html"><span class="doc">Icehouse</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2014-04-17</p></td>
+<td></td>
+<td><p>2015-07-02</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="havana/index.html"><span class="doc">Havana</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2013-10-17</p></td>
+<td></td>
+<td><p>2014-09-30</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="grizzly/index.html"><span class="doc">Grizzly</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2013-04-04</p></td>
+<td></td>
+<td><p>2014-03-29</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="folsom/index.html"><span class="doc">Folsom</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2012-09-27</p></td>
+<td></td>
+<td><p>2013-11-19</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="essex/index.html"><span class="doc">Essex</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2012-04-05</p></td>
+<td></td>
+<td><p>2013-05-06</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="diablo/index.html"><span class="doc">Diablo</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2011-09-22</p></td>
+<td></td>
+<td><p>2013-05-06</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="cactus/index.html"><span class="doc">Cactus</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2011-04-15</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="bexar/index.html"><span class="doc">Bexar</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2011-02-03</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="austin/index.html"><span class="doc">Austin</span></a></p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td><p>2010-10-21</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The schedule of <a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">Maintenance phases</a> changed during Ocata.
+The <a class="reference external" href="https://github.com/openstack/project-team-guide/blob/1c837bf0~/doc/source/stable-branches.rst">old phases</a> were used until Newton.</p>
+</div>
+<div class="admonition note" id="extended-maintenance-note">
+<p class="admonition-title">Note</p>
+<p>If a branch is marked as Extended Maintenance, that means individual
+projects can be in state <em>Maintained</em>, <em>Unmaintained</em>, <em>Last</em> or
+<em>End of Life</em> on that branch. Please check specific project about its
+actual status on the given branch.</p>
+</div>
+</div>
+<div class="section" id="series-independent-releases">
+<h2>Series-Independent Releases<a class="headerlink" href="#series-independent-releases" title="Permalink to this headline">¶</a></h2>
+<p>Some deliverables are released independently from the OpenStack release series.
+You can find their releases listed here:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="independent.html">Series-Independent Projects</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="teams">
+<h2>Teams<a class="headerlink" href="#teams" title="Permalink to this headline">¶</a></h2>
+<p>Deliverables are produced by <a class="reference external" href="https://governance.openstack.org/tc/reference/projects/index.html">project teams</a>. Here you can find all OpenStack
+deliverables, organized by the team that produces them:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="teams/adjutant.html">Adjutant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/barbican.html">Barbican</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/blazar.html">Blazar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/cinder.html">Cinder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/cloudkitty.html">Cloudkitty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/congress.html">Congress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/cyborg.html">Cyborg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/designate.html">Designate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/ec2_api.html">Ec2-Api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/freezer.html">Freezer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/glance.html">Glance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/heat.html">Heat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/horizon.html">Horizon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/ironic.html">Ironic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/karbor.html">Karbor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/keystone.html">Keystone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/kolla.html">Kolla</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/kuryr.html">Kuryr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/magnum.html">Magnum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/manila.html">Manila</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/masakari.html">Masakari</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/mistral.html">Mistral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/monasca.html">Monasca</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/murano.html">Murano</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/neutron.html">Neutron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/nova.html">Nova</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/octavia.html">Octavia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/openstackansible.html">Openstackansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/openstacksdk.html">Openstacksdk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/oslo.html">Oslo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/packaging_rpm.html">Packaging-Rpm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/powervmstackers.html">Powervmstackers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/puppet_openstack.html">Puppet Openstack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/qinling.html">Qinling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/quality_assurance.html">Quality Assurance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/rally.html">Rally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/release_management.html">Release Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/sahara.html">Sahara</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/searchlight.html">Searchlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/senlin.html">Senlin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/solum.html">Solum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/storlets.html">Storlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/swift.html">Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/tacker.html">Tacker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/technical_committee.html">Technical Committee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/telemetry.html">Telemetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/tricircle.html">Tricircle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/tripleo.html">Tripleo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/trove.html">Trove</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/vitrage.html">Vitrage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/watcher.html">Watcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/winstackers.html">Winstackers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/zaqar.html">Zaqar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/zun.html">Zun</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="cryptographic-signatures">
+<h2>Cryptographic Signatures<a class="headerlink" href="#cryptographic-signatures" title="Permalink to this headline">¶</a></h2>
+<p>Git tags created through our release automation are signed by
+<a class="reference external" href="https://docs.openstack.org/infra/system-config/signing.html">centrally-managed OpenPGP keys</a> maintained by the <a class="reference external" href="https://governance.openstack.org/tc/reference/projects/infrastructure.html">OpenStack
+Infrastructure team</a>. Detached signatures of many separate release
+artifacts are also provided using the same keys. A new key is
+created corresponding to each development cycle and rotated
+relatively early in the cycle. (Implementation completed late in the
+Newton cycle, so many early Newton artifacts have no corresponding
+signatures.)</p>
+<p>OpenStack Infrastructure root sysadmins and Release Managers publish
+their own signatures of these keys into the global keyserver
+network. Copies of the public keys can be found below along with the
+date ranges during which each key was in general use.</p>
+<ul class="simple">
+<li><p>2016-08-03..2016-11-22 (Newton Cycle key):
+<a class="reference external" href="_static/0x80fcce3dc49bd7836fc2464664dbb05acc5e7c28.txt">key 0x80fcce3dc49bd7836fc2464664dbb05acc5e7c28</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0x80fcce3dc49bd7836fc2464664dbb05acc5e7c28&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2016-11-22..2017-03-24 (Ocata Cycle key):
+<a class="reference external" href="_static/0xd47bab1b7dc2e262a4f6171e8b1b03fd54e2ac07.txt">key 0xd47bab1b7dc2e262a4f6171e8b1b03fd54e2ac07</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0xd47bab1b7dc2e262a4f6171e8b1b03fd54e2ac07&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2017-03-24..2017-09-15 (Pike Cycle key):
+<a class="reference external" href="_static/0xc96bfb160752606daa0de2fa05eb5792c876df9a.txt">key 0xc96bfb160752606daa0de2fa05eb5792c876df9a</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0xc96bfb160752606daa0de2fa05eb5792c876df9a&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2017-09-15..2018-03-19 (Queens Cycle key):
+<a class="reference external" href="_static/0x4c8b8b5a694f612544b3b4bac52f01a3fbdb9949.txt">key 0x4c8b8b5a694f612544b3b4bac52f01a3fbdb9949</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0x4c8b8b5a694f612544b3b4bac52f01a3fbdb9949&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2018-03-19..2018-09-05 (Rocky Cycle key):
+<a class="reference external" href="_static/0xc31292066be772022438222c184fd3e1edf21a78.txt">key 0xc31292066be772022438222c184fd3e1edf21a78</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0xc31292066be772022438222c184fd3e1edf21a78&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2018-09-05..2019-06-11 (Stein Cycle key):
+<a class="reference external" href="_static/0x27023b1ffccd8e3ae9a5ce95d943d5d270273ada.txt">key 0x27023b1ffccd8e3ae9a5ce95d943d5d270273ada</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0x27023b1ffccd8e3ae9a5ce95d943d5d270273ada&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2019-06-11..2019-10-29 (Train Cycle key):
+<a class="reference external" href="_static/0xcdc08088c3cb45a9be08332b2354069e5b504663.txt">key 0xcdc08088c3cb45a9be08332b2354069e5b504663</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0xcdc08088c3cb45a9be08332b2354069e5b504663&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2019-10-29..2020-05-21 (Ussuri Cycle key):
+<a class="reference external" href="_static/0xbba3b1e67a7303dd1769d34595bf2e4d09004514.txt">key 0xbba3b1e67a7303dd1769d34595bf2e4d09004514</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0xbba3b1e67a7303dd1769d34595bf2e4d09004514&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2020-05-21..2020-10-30 (Victoria Cycle key):
+<a class="reference external" href="_static/0x2426b928085a020d8a90d0d879ab7008d0896c8a.txt">key 0x2426b928085a020d8a90d0d879ab7008d0896c8a</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0x2426b928085a020d8a90d0d879ab7008d0896c8a&amp;fingerprint=on">details</a>)</p></li>
+<li><p>2020-10-30..present (Wallaby Cycle key):
+<a class="reference external" href="_static/0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da.txt">key 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da</a> (<a class="reference external" href="http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&amp;search=0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da&amp;fingerprint=on">details</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>Content for this site is automatically generated from the data submitted to
+the <a class="reference external" href="https://opendev.org/openstack/releases">openstack/releases</a> git repository. You can learn more about this
+repository and the release management team processes in the following
+documentation:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/using.html">Using This Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#defining-a-deliverable">Defining a Deliverable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#adding-deliverables">Adding Deliverables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#requesting-a-release">Requesting a Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#using-new-release-command">Using new-release command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#requesting-a-branch">Requesting a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#release-approval">Release Approval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#who-is-responsible-for-the-release">Who is Responsible for the Release?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#deliverable-files">Deliverable Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#deliverables-file-schema">Deliverables File Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/using.html#helpers">Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/release_models.html">Release Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#cycle-with-rc">cycle-with-rc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#cycle-with-intermediary">cycle-with-intermediary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#independent">independent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#abandoned">abandoned</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#untagged">untagged</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#transition-between-release-models">Transition between release models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/release_models.html#legacy-release-models">Legacy release models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/deliverable_types.html">Deliverable Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#service">service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#library">library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#client-library">client-library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#horizon-plugin">horizon-plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#trailing">trailing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#tempest-plugin">tempest-plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/deliverable_types.html#other">other</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/reviewer_guide.html">Reviewer Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#review-inbox">Review Inbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#general-review-considerations">General Review Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#approval-policies">Approval Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#review-checks">Review Checks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#the-validation-report">The Validation Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#the-list-changes-report">The List Changes Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#release-jobs">Release Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#release-job-failures">Release Job Failures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/reviewer_guide.html#release-approval-status">Release Approval Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/process.html">Release Processes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#week-after-previous-release">Week after previous release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#week-before-milestone-1">Week before milestone-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#milestone-1">Milestone-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#week-after-milestone-1">Week after milestone-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#between-milestone-1-and-milestone-2">Between Milestone-1 and Milestone-2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#week-before-milestone-2">Week before Milestone-2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#milestone-2">Milestone-2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#week-after-milestone-2">Week after Milestone-2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#between-milestone-2-and-milestone-3">Between Milestone-2 and Milestone-3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-8-week">R-8 week</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-7-week-extra-atc-deadline-week">R-7 week (Extra-ATC deadline week)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-6-week-final-library-release-deadline">R-6 week (Final Library Release deadline)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-5-week-milestone-3">R-5 week (Milestone-3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-4-week">R-4 week</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-3-week-rc1-deadline">R-3 week (RC1 deadline)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-2-week">R-2 week</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-1-week-final-rc-deadline">R-1 week (Final RC deadline)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/process.html#r-0-week-final-release">R+0 week (Final Release)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+          
+            <a href="xena/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Xena"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='#'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="#" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">OpenStack Releases</a><ul>
+<li><a class="reference internal" href="#release-series">Release Series</a></li>
+<li><a class="reference internal" href="#series-independent-releases">Series-Independent Releases</a></li>
+<li><a class="reference internal" href="#teams">Teams</a></li>
+<li><a class="reference internal" href="#cryptographic-signatures">Cryptographic Signatures</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:02:42 GMT -->
+</html>

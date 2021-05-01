@@ -1,0 +1,1897 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/swift.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Swift</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Swift</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="swift">
+<h1>Swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-swiftclient">
+<span id="team-wallaby-python-swiftclient"></span><h3>python-swiftclient<a class="headerlink" href="#python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/wallaby.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.11.1.tar.gz">3.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>06b36ae0e2ee6054162bfb1d9f3cdda39eacbad5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.11.0.tar.gz">3.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>903e0cb64a078c72dbadf7abc93be7e1a3b4747a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-swift">
+<span id="id1"></span><h3>swift<a class="headerlink" href="#team-wallaby-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/wallaby.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.27.0.tar.gz">2.27.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.27.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>c6a64036651e18f3d7d0715c5d4876257aaa0e6f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-swiftclient">
+<span id="id2"></span><h3>python-swiftclient<a class="headerlink" href="#team-victoria-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/victoria.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.10.1.tar.gz">3.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>9d8db8f6126542dc18ea1b14e078d64cc1a254e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.10.0.tar.gz">3.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>7852314b0bb591cdf5040b2d2466b959c222bb5a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-swift">
+<span id="id3"></span><h3>swift<a class="headerlink" href="#team-victoria-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/victoria.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.26.0.tar.gz">2.26.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.26.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>d6c6ab764e4c0e737b99f19b2495f1b9aab8c0d2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-swiftclient">
+<span id="id4"></span><h3>python-swiftclient<a class="headerlink" href="#team-ussuri-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/ussuri.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.9.1.tar.gz">3.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>3673cc0e88517f33e18655d9d861bb1366a0b19a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.9.0.tar.gz">3.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>259b98f69dd0b9929ee9e04ccb37183d2666d227</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-swift">
+<span id="id5"></span><h3>swift<a class="headerlink" href="#team-ussuri-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/ussuri.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.25.1.tar.gz">2.25.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.25.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>a465c464cb227682f0054258790b3e4978293204</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.25.0.tar.gz">2.25.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.25.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>f3543f5346a3d7ae31fe193f1336ef178da7db9b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.24.0.tar.gz">2.24.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.24.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>5cd854b783ce80356ec62e709f0817cbe699c8cd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-swiftclient">
+<span id="id6"></span><h3>python-swiftclient<a class="headerlink" href="#team-train-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/train.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.8.1.tar.gz">3.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>72b90fed4c62cf75497a7d66714f5fb0aa91f18b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.8.0.tar.gz">3.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>47d5f44c3dbb5b9172a6ac7e894bf2b940ad5707</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-swift">
+<span id="id7"></span><h3>swift<a class="headerlink" href="#team-train-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/train.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.2.tar.gz">2.23.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>ab921f22f628b40cd6efcc9dc77ccdaf9b3ec8f1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.1.tar.gz">2.23.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>4e05fa832a48db113386b40be7ccacfe73bfbcc6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.0.tar.gz">2.23.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.23.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>8a4becb12fbe3d4988ddee73536673d6f55682dd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.22.0.tar.gz">2.22.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.22.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>a48ac28efe5c133b439ab0e525d315271bf370da</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-swiftclient">
+<span id="id8"></span><h3>python-swiftclient<a class="headerlink" href="#team-stein-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/stein.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.7.1.tar.gz">3.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>c2ba4df5e229549447658469cded8f31e2822bf5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.7.0.tar.gz">3.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>991a6cebb900f9ece5279f1c3c2bf33bcbb74086</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-swift">
+<span id="id9"></span><h3>swift<a class="headerlink" href="#team-stein-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/stein.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.21.1.tar.gz">2.21.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.21.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>522823548a61745b95f079ed092ba80d57265b1c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.21.0.tar.gz">2.21.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.21.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>179fa7ccd4d6faeacc989715887b69f9422a17b2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.20.0.tar.gz">2.20.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.20.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>184fdf17ef7490038e89fe92a92de0fe4f2b36b7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-swiftclient">
+<span id="id10"></span><h3>python-swiftclient<a class="headerlink" href="#team-rocky-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/rocky.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.6.1.tar.gz">3.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>9279603765cd7099fd180f4e13b1e8e1344d6f52</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.6.0.tar.gz">3.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>1cf074f4da62b7a42f88aef3c8571e7b6e850823</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-swift">
+<span id="id11"></span><h3>swift<a class="headerlink" href="#team-rocky-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/rocky.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.2.tar.gz">2.19.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>5aa4c5d88fec98cf4ca0536c511c61759e865ec9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.1.tar.gz">2.19.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>3d2d954107d676e48acb81069639eed15ead5713</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.0.tar.gz">2.19.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.19.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>f0472f1f7975957fc31cb8c123aa82ee47848645</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.18.0.tar.gz">2.18.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.18.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>f270466de363499894317b7c671f65e8a912bd53</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-swiftclient">
+<span id="id12"></span><h3>python-swiftclient<a class="headerlink" href="#team-queens-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/queens.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.5.1.tar.gz">3.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>7d2acdb1b8ac1229b7a37b571c2953fe9580ced6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.5.0.tar.gz">3.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>b91651eba09ed43903c55f24e3a1a52aefeea75f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-swift">
+<span id="id13"></span><h3>swift<a class="headerlink" href="#team-queens-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/queens.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.17.1.tar.gz">2.17.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.17.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>ecbf74fbf83ae9d46fa3d6fa882f2d9e23406f86</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.17.0.tar.gz">2.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>32d1b3246f6e5fd6176d2af1c22a3ac6d0fe6a17</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.16.0.tar.gz">2.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>1ff3f1e3e877091f372a9109187a3ce4cf4414dd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-swiftclient">
+<span id="id14"></span><h3>python-swiftclient<a class="headerlink" href="#team-pike-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/pike.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.4.1.tar.gz">3.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>74a4a19b714a9496bf0967cb3482a59335803c82</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>e1945ea0fac3badd23013b5b559be1f8a79bf114</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-swift">
+<span id="id15"></span><h3>swift<a class="headerlink" href="#team-pike-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/pike.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.2.tar.gz">2.15.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>472ec6b70cddca0043823f5d3dcd135ed6082cd8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.1.tar.gz">2.15.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>1f751a797997e241d5cc9a32b9307e3b9f0df4c3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.0.tar.gz">2.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>340014ed224d506be5019fb4097eec9dedf3e5e1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.14.0.tar.gz">2.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>408500320be39f3ea38ba3255cf1d8ee87ba3ac8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-swiftclient">
+<span id="id16"></span><h3>python-swiftclient<a class="headerlink" href="#team-ocata-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/ocata.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>307d4c007afaccdcd70628d9fce44231115d62cd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>5a620f83e88d1b52e013cedff4bc266bcf3c292a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-swift">
+<span id="id17"></span><h3>swift<a class="headerlink" href="#team-ocata-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/ocata.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.13.1.tar.gz">2.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>72ed8f23a78f11e1ca1688ba086590bb7062a8c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.13.0.tar.gz">2.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>11bd6c82ecac8572cf9538a4d92a0361b382f1de</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.12.0.tar.gz">2.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>462f91b040ff47b51e5397eed930785590638d69</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift</p></td>
+<td><p>bf473ddc9d3fcb3a3fe516b5221a588c5b196a1d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-swiftclient">
+<span id="id18"></span><h3>python-swiftclient<a class="headerlink" href="#team-newton-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-swiftclient/newton.html">python-swiftclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>cbd71a8b5a7339f3ed297ae410a4836b2d56634a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-swift">
+<span id="id19"></span><h3>swift<a class="headerlink" href="#team-newton-swift" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/swift/newton.html">swift</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.10.2.tar.gz">2.10.2</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>f860faf774c7c2410fae8b9e56a7c6acd3129029</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.10.1.tar.gz">2.10.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>3129a55d4418e0dc4207c2026e7ef8c59704c6a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.10.0.tar.gz">2.10.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>6bf63d85a7c7c5e444a20176a6c51a7f3941c93f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.9.0.tar.gz">2.9.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>88238108f824e14fca8ca6adb3ec0e72df87fdf9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.8.0.tar.gz">2.8.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>88dbbe88bb8bc773171ebe1c94bfb821ca740e34</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-python-swiftclient">
+<span id="id20"></span><h3>python-swiftclient<a class="headerlink" href="#team-mitaka-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>343ecbcfa2c62896f35722cb478f1a60d633a3d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>bf07a69e0e124d4d19a844a8e35a2d5831f23109</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-swift">
+<span id="id21"></span><h3>swift<a class="headerlink" href="#team-mitaka-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.7.1.tar.gz">2.7.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>79b0e5bc7c54acf8d607f5010f1f68f295971acf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.7.0.tar.gz">2.7.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>e0bac5e9e874f0dbdda3ea94f34b1922fca9ba35</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.6.0.tar.gz">2.6.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>fcdb2fa2a15c9244c28175542fc14860b45c3a37</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-python-swiftclient">
+<span id="id22"></span><h3>python-swiftclient<a class="headerlink" href="#team-liberty-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>7cd2a01cda4ac592dee465d4acf8a0b246354328</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>a56eac13b123ecba07ab8ee95cc796c2e02cc529</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-swift">
+<span id="id23"></span><h3>swift<a class="headerlink" href="#team-liberty-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.5.0.tar.gz">2.5.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>47eb6a37f86f29c355297b556c2ff898c98da9b2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>51819f1179db246b3d2b9c6fd660e0f81a383db5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-python-swiftclient">
+<span id="id24"></span><h3>python-swiftclient<a class="headerlink" href="#team-kilo-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>c9f79e641c6906e95095f3e0e505f9bd3f715bc2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-swift">
+<span id="id25"></span><h3>swift<a class="headerlink" href="#team-kilo-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>f8dee761bd36f857aa1288c27e095907032fad68</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.2.2.tar.gz">2.2.2</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>df529a225fabe785cb4a65ca4f3f8c6c91b51878</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>c23a66f66d3a9bf64276607cd01ca9ab466077f1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-python-swiftclient">
+<span id="id26"></span><h3>python-swiftclient<a class="headerlink" href="#team-juno-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.2.tar.gz">2.3.2</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>0289a61f6271281f7af616faf6fbcf8ca47df0d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.1.tar.gz">2.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>bb4d2ab59c4de9389667eeed255642f51e276f1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>45465c70e31764167b43fe342c38231a3e0b825c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>394cb57f630b3dfdc1d5b2e172ef0f1c16b8211f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>258420f41049d92fc0b59b9263c8381bfe513432</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-juno-swift">
+<span id="id27"></span><h3>swift<a class="headerlink" href="#team-juno-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>2e8261a4dc0d0af0c4a46478b81e167bcf02220b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>8d02147d04a41477383de8e13bea6ac3fd2cade0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>bfa9139649c0ac7f75e8c9503cb04d06f7bae0b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-python-swiftclient">
+<span id="id28"></span><h3>python-swiftclient<a class="headerlink" href="#team-icehouse-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.0.3.tar.gz">2.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>52893e3ce548af98d6b5d30cdda37e7f3da7122f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.0.2.tar.gz">2.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>380e83087447b724458ba16e11f527babb39dd01</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>79f189a59352ee5b11a584924f5066b511b482b0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.0.tar.gz">2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>19d7e1812a99d73785146667ae2f3a7156f06898</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>0c7264c21d06d37de5db0beee677c4e026dc8f45</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-icehouse-swift">
+<span id="id29"></span><h3>swift<a class="headerlink" href="#team-icehouse-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.13.1.tar.gz">1.13.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>1f0058e61e9094cdf9484e982b7f662660bed87e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.13.0.tar.gz">1.13.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>58fda94736a5a1eb46a5661669afaee729c4b4ab</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.12.0.tar.gz">1.12.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>78704010cc4c3b5c2bd050ee846323506ad3ed5b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.11.0.tar.gz">1.11.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>ddd8c7358dc6ba285f2f330998f97655575a5676</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-python-swiftclient">
+<span id="id30"></span><h3>python-swiftclient<a class="headerlink" href="#team-havana-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>1aa85960fdbf6e570a55821c2361a0747e21a72a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>68dde8dd514e4eef89aafa6c1c93e065045c3cbd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>0278998398cbe0caeb5237b30e316c0a59669c87</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>94d7c2318100bfdcaf42ecb2fb7ecd82ebfbef69</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>2d97609a52bef2f437c15ff72dced29663c570ff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-havana-swift">
+<span id="id31"></span><h3>swift<a class="headerlink" href="#team-havana-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.10.0.tar.gz">1.10.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>7accddf1c3f54f67cf29d6eb69e416f798af6e23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.9.1.tar.gz">1.9.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>4bd9e4584d31eb37c7e30e555daeb6b90703ee3a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.9.0.tar.gz">1.9.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>e5ef2a9c5ef15a90a749f285eaf5b85db6fb0fc4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-python-swiftclient">
+<span id="id32"></span><h3>python-swiftclient<a class="headerlink" href="#team-grizzly-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>bf09dd9573f396d703a0df60a5d5e0bc1d280d1f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-grizzly-swift">
+<span id="id33"></span><h3>swift<a class="headerlink" href="#team-grizzly-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.8.0.tar.gz">1.8.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>99e2d6e47204b73f182005df1eb80bd4465c36c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.6.tar.gz">1.7.6</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>9515e30d3537b733b020abdc494106c9951835d5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.5.tar.gz">1.7.5</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>d9bf3438d8f143821fc207b7031c85a2028705ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="folsom">
+<h2>Folsom<a class="headerlink" href="#folsom" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-folsom-python-swiftclient">
+<span id="id34"></span><h3>python-swiftclient<a class="headerlink" href="#team-folsom-python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>68d1550f15a6ec6f51973af2e27f3a6943b6305f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>a325aad8a491a497272a7b165cbaa7577ce27654</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>c9dfd144d11b6371da95469e8fcff7315d1c0c4e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-1.0.tar.gz">1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>c9dfd144d11b6371da95469e8fcff7315d1c0c4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-folsom-swift">
+<span id="id35"></span><h3>swift<a class="headerlink" href="#team-folsom-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.4.tar.gz">1.7.4</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>7368af5475be3055b7942acddf8ec5d5696fe2c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.2.tar.gz">1.7.2</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>50d72a1a80712860328b9f9c898ba2e42aba6f88</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.7.0.tar.gz">1.7.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>51611e91a1413e4a4b901fe31e8c75cb976fc376</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.6.0.tar.gz">1.6.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>874d2ddbcca2ecebae6c878e91fe236cc84005fe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>b82ce89037b0414338ec4d3a9d29cae4bffe793f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="essex">
+<h2>Essex<a class="headerlink" href="#essex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-essex-swift">
+<span id="id36"></span><h3>swift<a class="headerlink" href="#team-essex-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.8.tar.gz">1.4.8</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>4a6fead4bc90459b4da8e7dc347acede275e87de</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.7.tar.gz">1.4.7</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>30b53fdca6819975dd519f1e75a169af17716ac0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.6.tar.gz">1.4.6</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>1021989b60082d5e402a01d32e97fe87737f283f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.5.tar.gz">1.4.5</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>4ad59c63350c3e0b0a575f34dfc01a9cfc6b3141</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.4.tar.gz">1.4.4</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>457b7441953687fc56977ce7664be94fab8fa4f3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="diablo">
+<h2>Diablo<a class="headerlink" href="#diablo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-diablo-swift">
+<span id="id37"></span><h3>swift<a class="headerlink" href="#team-diablo-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.3.tar.gz">1.4.3</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>d415db9af18749356123c43f1f9754d309a60505</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.2.tar.gz">1.4.2</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>a9c0a264b8189d37b2242a6a267913ab97ae3baa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.1.tar.gz">1.4.1</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>9ab33970b58b8219245bfd89e2ad9442c0e94f17</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>de49be3929d504974286c20b615522a202d607c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cactus">
+<h2>Cactus<a class="headerlink" href="#cactus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-cactus-swift">
+<span id="id38"></span><h3>swift<a class="headerlink" href="#team-cactus-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>8870fbc4f3f67ff3d9eb15ed8c69768c6dd419d5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="bexar">
+<h2>Bexar<a class="headerlink" href="#bexar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-bexar-swift">
+<span id="id39"></span><h3>swift<a class="headerlink" href="#team-bexar-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>c2931e157c4db364e4ce9d971920be2a83641431</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="austin">
+<h2>Austin<a class="headerlink" href="#austin" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-austin-swift">
+<span id="id40"></span><h3>swift<a class="headerlink" href="#team-austin-swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>f494fc37a6a7e502a49fe177de7a412d4063cd0b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="swift-bench">
+<span id="team-independent-swift-bench"></span><h3>swift-bench<a class="headerlink" href="#swift-bench" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift-bench/swift-bench-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/swift-bench/swift-bench-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/swift-bench</p></td>
+<td><p>24d87611906071fe3fe0914c64bb0fc7e468ce0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="storlets.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Storlets"></i></a>
+          
+          
+            <a href="tacker.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Tacker"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Swift</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-victoria-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-train-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-stein-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-rocky-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-queens-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-pike-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-ocata-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-newton-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-mitaka-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-liberty-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-kilo-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-juno-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-icehouse-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-havana-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-grizzly-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#folsom">Folsom</a><ul>
+<li><a class="reference internal" href="#team-folsom-python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#team-folsom-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#essex">Essex</a><ul>
+<li><a class="reference internal" href="#team-essex-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#diablo">Diablo</a><ul>
+<li><a class="reference internal" href="#team-diablo-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cactus">Cactus</a><ul>
+<li><a class="reference internal" href="#team-cactus-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bexar">Bexar</a><ul>
+<li><a class="reference internal" href="#team-bexar-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#austin">Austin</a><ul>
+<li><a class="reference internal" href="#team-austin-swift">swift</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#swift-bench">swift-bench</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/swift.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+</html>

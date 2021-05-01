@@ -1,0 +1,1349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/blazar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:58 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Blazar</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Blazar</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="blazar">
+<h1>Blazar<a class="headerlink" href="#blazar" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-blazar">
+<span id="id1"></span><h3>blazar<a class="headerlink" href="#team-wallaby-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/wallaby.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>d3f77fd0c5a3e09ff52c8563fd07172834372ee7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="blazar-dashboard">
+<span id="team-wallaby-blazar-dashboard"></span><h3>blazar-dashboard<a class="headerlink" href="#blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/wallaby.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>f90eac95dd90c5fd7c126e16cb9c1cdf9acd367c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="blazar-nova">
+<span id="team-wallaby-blazar-nova"></span><h3>blazar-nova<a class="headerlink" href="#blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>fb318e704f68c92cb7391d9e44d598c6101ebec4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="blazar-tempest-plugin">
+<span id="team-wallaby-blazar-tempest-plugin"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.6.1.tar.gz">0.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>93422b61f443cf75e7ee7f01cc14cee7d41de594</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>d952210ecd83d78a108baa596a256c429c521503</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-blazarclient">
+<span id="team-wallaby-python-blazarclient"></span><h3>python-blazarclient<a class="headerlink" href="#python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/wallaby.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>22cafd21a5dba5eafa7c70a1f6bde5e0005ec87c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-blazar">
+<span id="id2"></span><h3>blazar<a class="headerlink" href="#team-victoria-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/victoria.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>3167277843986efe50a03dc15e04acf2ef742fef</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-blazar-dashboard">
+<span id="id3"></span><h3>blazar-dashboard<a class="headerlink" href="#team-victoria-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/victoria.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>5c7608dfa24dc5a5a3f18af09d35e8ea8760aee5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-blazar-nova">
+<span id="id4"></span><h3>blazar-nova<a class="headerlink" href="#team-victoria-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>7aac164964c52c838592a6989322d5393c0bff7d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-blazar-tempest-plugin">
+<span id="id5"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#team-victoria-blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>85b54e1f6a02fb4bb295663eb33ed1d2bfa701ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-blazarclient">
+<span id="id6"></span><h3>python-blazarclient<a class="headerlink" href="#team-victoria-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/victoria.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>5473d5673688964f0da8d5c4ed3c5f17088c60b2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>2917320d31a1575c91e686ac0362544bc58982cf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-blazar">
+<span id="id7"></span><h3>blazar<a class="headerlink" href="#team-ussuri-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/ussuri.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>cfc631121857839ce72a54508d54bd0513d89961</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-blazar-dashboard">
+<span id="id8"></span><h3>blazar-dashboard<a class="headerlink" href="#team-ussuri-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/ussuri.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>168b4ae052480912fa6fdd2c77e16cd871528303</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>26fda6b6976edef785b5a9f2e1ca6565e761d866</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-blazar-nova">
+<span id="id9"></span><h3>blazar-nova<a class="headerlink" href="#team-ussuri-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>9f030ebc27572909b9315f1a6dd88f36c00ae72c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-blazar-tempest-plugin">
+<span id="id10"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#team-ussuri-blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>bcdfdf25b310dbd8c86c5615751e4622ab9a9a08</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-blazarclient">
+<span id="id11"></span><h3>python-blazarclient<a class="headerlink" href="#team-ussuri-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/ussuri.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>e7685d5df62af027034697fe90dc9fca25cde4c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>3f30c49c6b2cd76ef85a9d29c10d79f7bc3317b6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-blazar">
+<span id="id12"></span><h3>blazar<a class="headerlink" href="#team-train-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/train.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>f4a6f3db56149eea9bba5c5806ab14cfeebd6668</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>a2bcedbb9c923868f0f15f70a2395cbfacba5a74</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-blazar-dashboard">
+<span id="id13"></span><h3>blazar-dashboard<a class="headerlink" href="#team-train-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/train.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>63e9c5d25617467016eea1dff0a34803c86b0953</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>e7b1b3f717e5216a41212d80b6c575c9fea47c0a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-blazar-nova">
+<span id="id14"></span><h3>blazar-nova<a class="headerlink" href="#team-train-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>32350eb304768a59ce597f498eff92783cb575ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-blazar-tempest-plugin">
+<span id="id15"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#team-train-blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>5e3f2736fea67a96316315ad0ed2d2730fb47432</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-blazarclient">
+<span id="id16"></span><h3>python-blazarclient<a class="headerlink" href="#team-train-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/train.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>e98421c9197873d0b3c2c9a9601b7dc0655da72e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>c464858149221a32050b46bc0581f9ae9432bc4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-blazar">
+<span id="id17"></span><h3>blazar<a class="headerlink" href="#team-stein-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/stein.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>6bbad1bc79eb2f9535e58f0c9ff19669eaac1373</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>27c3aea4fe649bc0dd7f0caaf0384c35096619d3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-blazar-dashboard">
+<span id="id18"></span><h3>blazar-dashboard<a class="headerlink" href="#team-stein-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/stein.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>ee10b2c5c195088ec14725b790c17289ad20ed63</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>fc2cd325600040bf0d82cf51fafd8b6a9f217aa5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-blazar-nova">
+<span id="id19"></span><h3>blazar-nova<a class="headerlink" href="#team-stein-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>1fdb0eabdae270cda12c35a829867d52a7250d28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-blazar-tempest-plugin">
+<span id="id20"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#team-stein-blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>d952210ecd83d78a108baa596a256c429c521503</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>c91065e36281490658b73d9aa1f202d3d6804326</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-blazarclient">
+<span id="id21"></span><h3>python-blazarclient<a class="headerlink" href="#team-stein-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/stein.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>7a7461cf0265b8280df26574cd2ecfceb7cb346d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-blazar">
+<span id="id22"></span><h3>blazar<a class="headerlink" href="#team-rocky-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/rocky.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>06b7e527840128db437cd8af538a7b2ce761bc11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-blazar-dashboard">
+<span id="id23"></span><h3>blazar-dashboard<a class="headerlink" href="#team-rocky-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/rocky.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>e8e3798f4126afb8633e5485b8c29cfa635d9cec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>b27860f6fcefdd5d98ad96d2c87b95de7fbab533</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-blazar-nova">
+<span id="id24"></span><h3>blazar-nova<a class="headerlink" href="#team-rocky-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>67f04e32cc7d701ee60132645cf5cd1258fe1722</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>14ba5b4f28d0b6a56db858285971fc2c966d2602</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-blazar-tempest-plugin">
+<span id="id25"></span><h3>blazar-tempest-plugin<a class="headerlink" href="#team-rocky-blazar-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-tempest-plugin/blazar_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-tempest-plugin</p></td>
+<td><p>ef61d6fa07a0e95b3a504b5f9bd9ba135ca1229b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-blazarclient">
+<span id="id26"></span><h3>python-blazarclient<a class="headerlink" href="#team-rocky-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-blazarclient/rocky.html">python-blazarclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>ef481e8d9a99a0d2bb7b3f43370dc7a96583b8f6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>f017a924d301bed939f8811923c83b9a41740560</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>b51395f392e0a875660c431bd457259b4b0d2865</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>122ca0844c51e693f294279a40a454a3e61b995e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-blazar">
+<span id="id27"></span><h3>blazar<a class="headerlink" href="#team-queens-blazar" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar/queens.html">blazar</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar/blazar-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar</p></td>
+<td><p>a72e60dc3417f7c486eb2af04a0f0b66d03eebb4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-blazar-dashboard">
+<span id="id28"></span><h3>blazar-dashboard<a class="headerlink" href="#team-queens-blazar-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/blazar-dashboard/queens.html">blazar-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>44fb789958ed7c2019d0b9b3749bd9c1837e3e3a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-dashboard/blazar-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-dashboard</p></td>
+<td><p>edbd5aad834727c838325f39d798deecaac9b24c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-blazar-nova">
+<span id="id29"></span><h3>blazar-nova<a class="headerlink" href="#team-queens-blazar-nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>ce1adf582508aea7d24bbd08720307d4b97d5e02</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/blazar-nova/blazar-nova-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/blazar-nova</p></td>
+<td><p>43a031921d8fb84da43a6642ed290bdfd52f65b5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-blazarclient">
+<span id="id30"></span><h3>python-blazarclient<a class="headerlink" href="#team-queens-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>2563e6b90501ca465ef506dee0b92f033b3f1c92</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>037f74de1f48b90dc25c5812b16543a6fccedfc1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-blazarclient">
+<span id="id31"></span><h3>python-blazarclient<a class="headerlink" href="#team-pike-python-blazarclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-0.3.1.tar.gz">0.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-0.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>bd842add76784d6adb62283c6f8168d30946cd87</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-blazarclient/python-blazarclient-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-blazarclient</p></td>
+<td><p>57e0e5bd5c187dd2130655110cedd36e5ece9765</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="barbican.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Barbican"></i></a>
+          
+          
+            <a href="cinder.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Cinder"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Blazar</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-blazar">blazar</a></li>
+<li><a class="reference internal" href="#blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-victoria-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-victoria-blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-ussuri-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-ussuri-blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-train-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-train-blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-stein-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-stein-blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-rocky-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-rocky-blazar-tempest-plugin">blazar-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-blazar">blazar</a></li>
+<li><a class="reference internal" href="#team-queens-blazar-dashboard">blazar-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-blazar-nova">blazar-nova</a></li>
+<li><a class="reference internal" href="#team-queens-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-blazarclient">python-blazarclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/blazar.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:58 GMT -->
+</html>

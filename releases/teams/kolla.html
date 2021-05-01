@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/kolla.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Kolla</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Kolla</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="kolla">
+<h1>Kolla<a class="headerlink" href="#kolla" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-kolla">
+<span id="id1"></span><h3>kolla<a class="headerlink" href="#team-wallaby-kolla" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-12.0.0.0rc1.tar.gz">12.0.0.0rc1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-12.0.0.0rc1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>940baeff65b8e75fed8a77e56cb385920d72ed01</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kolla-ansible">
+<span id="team-wallaby-kolla-ansible"></span><h3>kolla-ansible<a class="headerlink" href="#kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-12.0.0.0rc1.tar.gz">12.0.0.0rc1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-12.0.0.0rc1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>058dd6828d788b60b6803f24f53f1dfca0876e6b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kayobe">
+<span id="team-victoria-kayobe"></span><h3>kayobe<a class="headerlink" href="#kayobe" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>f26cd52325c9a4ae259f4c1cdacb9d24517aa413</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>44fcb163025c95560a14221136b45072bd73b764</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config-dev</p></td>
+<td><p>4fb1f2aae2bf184bebecfa6c8a6b44567ca4c420</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-kolla">
+<span id="id2"></span><h3>kolla<a class="headerlink" href="#team-victoria-kolla" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>fee9edb2a371a5ea75371ea28ab0979afca70444</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-kolla-ansible">
+<span id="id3"></span><h3>kolla-ansible<a class="headerlink" href="#team-victoria-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>f4bd8b40337ce72c45b1615f88d881e776e5e268</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-kayobe">
+<span id="id4"></span><h3>kayobe<a class="headerlink" href="#team-ussuri-kayobe" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kayobe/ussuri.html">kayobe</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>ea073b8cb4960356cd3318f89f0ea7476b21aa03</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>dacd0b92dd3fa98be1d00a47a6e5d9495131b421</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config-dev</p></td>
+<td><p>f5c45888538861d97102c6806b731e329b887d57</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>9b75761a5f041b837cad42aafb4cb2cbeeb68045</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>c8a1640fb7aed22e8846b55cbde626b1ab2f6a48</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config-dev</p></td>
+<td><p>43e9dda65bc9dcbdb6547e2410638815ae3bb4bf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-kolla">
+<span id="id5"></span><h3>kolla<a class="headerlink" href="#team-ussuri-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/ussuri.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.2.0.tar.gz">10.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>e0d8772efa25b478467afcd3e2ecf2643ea471ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.1.0.tar.gz">10.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>fbea3bf26d93e6fd784dbd9967659f549df3ec2d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>4103b0b151af100493c7242b088b42f051bf5485</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-kolla-ansible">
+<span id="id6"></span><h3>kolla-ansible<a class="headerlink" href="#team-ussuri-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/ussuri.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.2.0.tar.gz">10.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>e1380e259a1e62d9cac5dab546cfe49acb6c4fac</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.1.0.tar.gz">10.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>6bba8cc52af3a26678da48129856f80c21eb8e38</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>55eac5947d091e24d59fa434cf54a89b232633d9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="kolla-cli">
+<span id="team-ussuri-kolla-cli"></span><h3>kolla-cli<a class="headerlink" href="#kolla-cli" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-cli/kolla-cli-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-cli/kolla-cli-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-cli</p></td>
+<td><p>e99835c308291bb589a7b24c6848df927608b517</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-kayobe">
+<span id="id7"></span><h3>kayobe<a class="headerlink" href="#team-train-kayobe" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kayobe/train.html">kayobe</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.2.1.tar.gz">7.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>e0e0db459d3c99fbc1cb266739fa7e6e17f0c00e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>cf0146097249fc211131732f858399c8ea1e30de</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>2e700ae2729ca4ebd019d5bc32677ddd8d1819b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>3c32015baa54c6575d1d09e9bfc63679e00a2fb2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>6b0e952742bc50d45433464a3b1a0bf7201ec623</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config-dev</p></td>
+<td><p>d87b3ebf7c31abfe4824214657e96883be6b5307</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe/kayobe-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe</p></td>
+<td><p>98d70aac676fe50585e9962fd2ebce1d0b2b4160</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config/kayobe-config-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config</p></td>
+<td><p>1c5fa6329344c8c25951f9d56897196c3327b27b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kayobe-config-dev/kayobe-config-dev-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kayobe-config-dev</p></td>
+<td><p>9ad705ff57828da832047a0174a33bff4aef16e7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kolla">
+<span id="id8"></span><h3>kolla<a class="headerlink" href="#team-train-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/train.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.3.1.tar.gz">9.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>fc0ebe07c2e88ee000caf43d7ba67ceed7d7a842</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.3.0.tar.gz">9.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>3e020fdf2a26ad640a56134c25a5060c48bb190b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.2.0.tar.gz">9.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>0e6465543e4ae91c9b791944444e72905a716a6d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.1.1.tar.gz">9.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>47df05074204b87805986c7e9ae6743e3dce28db</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>e6f30e87020383f27c17560d0bf544c87520af84</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>9b8dbab77f2990036a09ff6146042b4c18dba3a8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>19c38d9c9d6416b7859037396484fff2e587ec4b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kolla-ansible">
+<span id="id9"></span><h3>kolla-ansible<a class="headerlink" href="#team-train-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/train.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.3.1.tar.gz">9.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>3be1493ce818e03c93df3087d1b5cea5c07e07a5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.3.0.tar.gz">9.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>9932da3e8267a54328a0401615509b5c379900ce</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.2.0.tar.gz">9.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>1629f5fe082d2a592d2b3bcf18fe98139cadce46</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>e224a45d4004c9d7e98af73b2576c5a0ff2b26f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>727b6b07bf79f509c5171776246fa9634f4e7074</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>4b21e938079589653437c6f857e4d400acd326e6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-kolla-cli">
+<span id="id10"></span><h3>kolla-cli<a class="headerlink" href="#team-train-kolla-cli" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-cli/kolla-cli-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-cli/kolla-cli-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-cli</p></td>
+<td><p>2fdd3889442d1f0e78199ecf7be3cd36bff645af</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-kolla">
+<span id="id11"></span><h3>kolla<a class="headerlink" href="#team-stein-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/stein.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.5.tar.gz">8.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>7bd72afbb4ad269f78a04279d8f59b5701c6f871</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.4.tar.gz">8.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>7038e3ff03c6d08e7b794f9087675964ddbbed0a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.3.tar.gz">8.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>0cf37e0091bf51f169436cfb1c4290de892042aa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.2.tar.gz">8.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>edc878574d9c6ef31d204607954869c6ccfd9da6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>a6329f721ee95a858b8552fc74d64de383a7b59d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>c14e4b3f1330be1fd861647175cce57a7f4f3eac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-kolla-ansible">
+<span id="id12"></span><h3>kolla-ansible<a class="headerlink" href="#team-stein-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/stein.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.3.0.tar.gz">8.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>7467b7db959b160a2a404f61a318a2d9740dc2e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.2.0.tar.gz">8.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>a96ca60658b597ac0b2a04f05bb87f0ed6fd2c55</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.1.1.tar.gz">8.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>5cbbea90bac35fd1ce72ec7a1203c51d4bf04ddf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>de2f40e680cf060bf7b3edc6e398ef69a47f9412</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>36b291c84bf88b86195ac4161add7de8af9e23d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>9e5159fc49af9915deddb54d96c0c5fde4fcabcb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-kolla">
+<span id="id13"></span><h3>kolla<a class="headerlink" href="#team-rocky-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/rocky.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.1.1.tar.gz">7.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>703dedbb7f34c2b7923847943ba88e08b6b69809</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>e1c0cb16e9e6a6522587a65c093c20d1f3e41b54</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.4.tar.gz">7.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>4e63ecc9abec139f429c003ff8f0c72c10399caf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.3.tar.gz">7.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>31f0ef285ac127a569c17d340dcf4cc1f6c285b8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>5878f01984d3d38f965d84b97f0c1e0a9cfcea23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>0f5ced8abea09dc6436c50ff31de016819c02551</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>7b3edfce94fc47501dd0b27f7435f461be1860d7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-kolla-ansible">
+<span id="id14"></span><h3>kolla-ansible<a class="headerlink" href="#team-rocky-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/rocky.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.2.1.tar.gz">7.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>8e33f72dbe80b21652bbdbb184be673c26c4ae99</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>5477464c2140c2233b9e49c0ba99e2d761ad1337</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.2.tar.gz">7.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>a17d5e54b2e696074c9520b69b3b9ff6ed640428</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.1.tar.gz">7.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>687250a989b395f9450cbfbeaa21c9086c277228</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>c54b0c20d5f52498439a2df2b18722aa135ad7cf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>668da3c332fcd58fa2b023e8bb74ca8225e222bc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>6b372d3b751c8dff9e806d77e858b9224118753a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-kolla">
+<span id="id15"></span><h3>kolla<a class="headerlink" href="#team-queens-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/queens.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.4.tar.gz">6.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>26ec009bfd386040c0f2ff2aa067c7a25772b37e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.3.tar.gz">6.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>c717c5872db2e73c8243bc2a3b8974c91fe11464</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.2.tar.gz">6.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>6f7c18c15dc19a4736110a1b86ffd809b7ab255e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.1.tar.gz">6.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>ca1c768085652af0d7968a1a66e5317ddc5e39a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>4c2c322b76f1d11a58f38be2b6cbcac67713e474</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.1.1.tar.gz">6.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>3a4374394d7ec64b2c69e789e7a5f636b688fea6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>ee9ddb6c57ff521932528d83c2ffd8a5136a1970</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>01c6dfef2ab9ec3056b015627767ced7f1936aff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-kolla-ansible">
+<span id="id16"></span><h3>kolla-ansible<a class="headerlink" href="#team-queens-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/queens.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.3.tar.gz">6.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>422682006cb98adf1028ed8f29429f0b647960c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.2.tar.gz">6.2.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>403cc371cfdc852c52abf44cb82bf1b0e15bcb53</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.1.tar.gz">6.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>e1a74baedcd2a4baeee29f273435718b8a42981e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>1dddf1c086d9efa5921c43261e326852a6ef0f76</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.1.1.tar.gz">6.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>1ae90d4b55d8b1336ed8acbb60716dca172482d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>ddd9d6ae6d1ab0d6fed100343b090d023878a19b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>3962af71de9b64ee8fae77b2b243f0ac2954caae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-kolla">
+<span id="id17"></span><h3>kolla<a class="headerlink" href="#team-pike-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/pike.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.5.tar.gz">5.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>35aa36054231c14968ebe4c7a521fa33de27ead8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.4.tar.gz">5.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>38748f2481979ab0d7e14447d223e599282b9788</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.3.tar.gz">5.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>cde8b659045426ff708a1288436df0e176053939</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>04f7b6126c13f5211b2939f88599316b18ce5f55</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>5bae59ba945d20b1a75b086379d1f40f08b44196</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>b229f8ef9ad0799f9823475f0864a9a47ccc7a62</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-kolla-ansible">
+<span id="id18"></span><h3>kolla-ansible<a class="headerlink" href="#team-pike-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/pike.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.6.tar.gz">5.0.6</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.6.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>858790a358d052344536395bec18571e7dcd9a23</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.5.tar.gz">5.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>b568bbed84bfb7b34b20e27861b93abc3e5f1923</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.4.tar.gz">5.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>a5ed74b7f6c0a3963baa74786f145854825eaed7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.3.tar.gz">5.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>41b46ee15ed031cf3f27cc59a4c38a9259869ec0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>7a5cfbba2b01792a4e762a98d46e201bc7041798</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>a097d59a5ec5b637eb4a61307e58a5e04f3cb43e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>e98d0863638779dba683da1e0e1cf623fb773c19</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-kolla">
+<span id="id19"></span><h3>kolla<a class="headerlink" href="#team-ocata-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/ocata.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.5.tar.gz">4.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>683ee4511a5071e74073c84477f04057a1d0a5d8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.4.tar.gz">4.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>32fc5cb2f0303f18a73aa0b52fd805d5778a1397</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.3.tar.gz">4.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>4de11cec37bd2001c607b78e62b8ac7dfb952b73</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>d33ff04e032dc1b17139194a4409d455cf899c8b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>5174429805de1d1e2901b3d3c34778bc58089e63</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla</p></td>
+<td><p>a1e099bc0befdd707f0cf7aa14cd8e40f4e0a467</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-kolla-ansible">
+<span id="id20"></span><h3>kolla-ansible<a class="headerlink" href="#team-ocata-kolla-ansible" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-ansible/ocata.html">kolla-ansible</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.5.tar.gz">4.0.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>5bc45ebd8154107dab0db04b382ba6ece4ff843d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.4.tar.gz">4.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>2bc2890d243d031dc6120e80a90c8f4bc013d181</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.3.tar.gz">4.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>972b89359b2c378c0e1b531cff03b90073b052bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>f61d731a48887110592b63baf8c27bd3ac0bac2f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>8da9d3c2c545f14f3f5696218f5bdbd2e8e7600c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-ansible/kolla-ansible-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-ansible</p></td>
+<td><p>9555a4f39e2cca8d590af25d1ceb96f011a077d9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-kolla">
+<span id="id21"></span><h3>kolla<a class="headerlink" href="#team-newton-kolla" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla/newton.html">kolla</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-3.0.3.tar.gz">3.0.3</a></p></td>
+<td></td>
+<td><p>openstack/kolla</p></td>
+<td><p>5460ec1e9b50f2ec0abb132b3e093e783ad9fee6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-3.0.2.tar.gz">3.0.2</a></p></td>
+<td></td>
+<td><p>openstack/kolla</p></td>
+<td><p>58db3c5efb885c626c50d4ef43ddf62d1a635be1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/kolla</p></td>
+<td><p>65d2a653e27ac8d266d9177bc8c7e9ce12fcc319</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla/kolla-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/kolla</p></td>
+<td><p>03d86d5f242e3acda754524f864df717f8a3332a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kolla-kubernetes-eol">
+<span id="team-independent-kolla-kubernetes"></span><h3>kolla-kubernetes (EOL)<a class="headerlink" href="#kolla-kubernetes-eol" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/kolla-kubernetes/">kolla-kubernetes</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>c1ae26719e2ebcffcf2f3e2493e888658fefa252</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>06d09b4cd5af7ddad3ce3b736e55fc6e5f8c07e5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>8e1233c6563f633ac731ef5c58399965f6237d3a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>7e25ecd0a8356d4a9a14389e87180fcbde201cfd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>150ec195bd49bc0e1cc1e821a896272f610c4033</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.1.1.tar.gz">0.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>59c20e2997ce1a3e2401b5df4772a29176e0b8b3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/kolla-kubernetes/kolla-kubernetes-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/kolla-kubernetes</p></td>
+<td><p>b24d7f0e93e9d25a8812a4942292f5a9a54ca3f1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="keystone.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Keystone"></i></a>
+          
+          
+            <a href="kuryr.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Kuryr"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Kolla</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-kolla">kolla</a></li>
+<li><a class="reference internal" href="#kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#kayobe">kayobe</a></li>
+<li><a class="reference internal" href="#team-victoria-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-victoria-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-kayobe">kayobe</a></li>
+<li><a class="reference internal" href="#team-ussuri-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-ussuri-kolla-ansible">kolla-ansible</a></li>
+<li><a class="reference internal" href="#kolla-cli">kolla-cli</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-kayobe">kayobe</a></li>
+<li><a class="reference internal" href="#team-train-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-train-kolla-ansible">kolla-ansible</a></li>
+<li><a class="reference internal" href="#team-train-kolla-cli">kolla-cli</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-stein-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-rocky-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-queens-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-pike-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-kolla">kolla</a></li>
+<li><a class="reference internal" href="#team-ocata-kolla-ansible">kolla-ansible</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-kolla">kolla</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#kolla-kubernetes-eol">kolla-kubernetes (EOL)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/kolla.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+</html>

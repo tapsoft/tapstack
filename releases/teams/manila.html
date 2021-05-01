@@ -1,0 +1,1976 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/manila.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Manila</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Manila</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="manila">
+<h1>Manila<a class="headerlink" href="#manila" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-manila">
+<span id="id1"></span><h3>manila<a class="headerlink" href="#team-wallaby-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/wallaby.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>4c7d4ba7262aa4e6adc7c76d7067cfd36762a286</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="manila-tempest-plugin">
+<span id="team-wallaby-manila-tempest-plugin"></span><h3>manila-tempest-plugin<a class="headerlink" href="#manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>f083c71a9396a5a6f3300d3150b7fc1bee2c57c5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>a5c2b7d467d03afba8a90dfd99fcc647e198ba0f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="manila-ui">
+<span id="team-wallaby-manila-ui"></span><h3>manila-ui<a class="headerlink" href="#manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/wallaby.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>1f48e83eae979cb6bca78a024d7023ae70102c1b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-manilaclient">
+<span id="team-wallaby-python-manilaclient"></span><h3>python-manilaclient<a class="headerlink" href="#python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/wallaby.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>1075210b959da0daa613aaaf4f60f4b7810071f2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>8d71f1ee03b9562ed436a2f09bf768cf7a8c1614</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3cc12ce444feaf069f3953788a3d9f9c425bd768</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-manila">
+<span id="id2"></span><h3>manila<a class="headerlink" href="#team-victoria-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/victoria.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>a5bd828cbf4545872c0fef596929134b488d5241</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>22823526c5889f6b64fc52b22bf6e60308613884</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-manila-tempest-plugin">
+<span id="id3"></span><h3>manila-tempest-plugin<a class="headerlink" href="#team-victoria-manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>9ff6b341370b10a80fddc6d1fd70c6375542b846</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>eba8fa9fc22390051c929f358b98f6d048eddeec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-manila-ui">
+<span id="id4"></span><h3>manila-ui<a class="headerlink" href="#team-victoria-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/victoria.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>db826c3fbb28b7732d1b54707ccf752ede5c59b8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-manilaclient">
+<span id="id5"></span><h3>python-manilaclient<a class="headerlink" href="#team-victoria-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/victoria.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>c267433c2dfd266181b8ccf5fb99e8dd5bd8cf87</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>9613c7fd2652dc3c7b8793c9af2b6357f42a4757</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-manila">
+<span id="id6"></span><h3>manila<a class="headerlink" href="#team-ussuri-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/ussuri.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.2.tar.gz">10.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>9828e16968c77892cf5ecf31016ffcb09a6b32f1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.1.tar.gz">10.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>2088ac90327b9d1cc04610383da07098ddc9e53b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>653092e5831b799b686ed2ea82c559969face629</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-manila-tempest-plugin">
+<span id="id7"></span><h3>manila-tempest-plugin<a class="headerlink" href="#team-ussuri-manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>ce66f004c89e5f04e85f8eec96170d1460d701fe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-manila-ui">
+<span id="id8"></span><h3>manila-ui<a class="headerlink" href="#team-ussuri-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/ussuri.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>3382ce81f6932964dd175dd3aed2dd1d3ca23b76</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-manilaclient">
+<span id="id9"></span><h3>python-manilaclient<a class="headerlink" href="#team-ussuri-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/ussuri.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3371c543036a0f9f7b485489c490de4bd8cb52d1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>6bccfc0d6eb24abe228f58767818d54d9717850b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-manila">
+<span id="id10"></span><h3>manila<a class="headerlink" href="#team-train-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/train.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.5.tar.gz">9.1.5</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.5.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>960e45bd255dafacef7c6f895aca9477fcd12d9b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.4.tar.gz">9.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>690c9ac250bdd82df63646c4258f3c2964e46785</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.3.tar.gz">9.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>4cbfb04502c749a3b66bec02e03255b37ab83d52</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.2.tar.gz">9.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>21b85ab1ada2d9fe74344b03a1867a0ec903e5a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.1.tar.gz">9.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>02fd716bf83849873f0bccb78b851196e6acf2b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>9da5594fbd943099995a86948de1f72c2d78fb26</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>dd86685cd962dad6b99be27444422d80dc7bf8a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-manila-tempest-plugin">
+<span id="id11"></span><h3>manila-tempest-plugin<a class="headerlink" href="#team-train-manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.4.1.tar.gz">0.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>4d7b4949906a8935f2fe5a404c234e392b6e4cde</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.4.0.tar.gz">0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>171241eb94787293d8711a2284ccd7684b2f45bf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-manila-ui">
+<span id="id12"></span><h3>manila-ui<a class="headerlink" href="#team-train-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/train.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.2.tar.gz">2.19.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>b1f62a005c61555205931985f6a871e57b2adcab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.1.tar.gz">2.19.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>7f0c6ad276d42289c61761e9cdcaa3720f7be764</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.0.tar.gz">2.19.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.19.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>78815b46ab3b5a4e23ddad95f953831ddd6477bb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-manilaclient">
+<span id="id13"></span><h3>python-manilaclient<a class="headerlink" href="#team-train-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/train.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.29.0.tar.gz">1.29.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.29.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>1b2cafb008bee70242b68a03212bcc575df683b9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.28.0.tar.gz">1.28.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.28.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3e3dfb1d5a401fb0e0003c6fab0a41bd3479b7c8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-manila">
+<span id="id14"></span><h3>manila<a class="headerlink" href="#team-stein-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/stein.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.4.tar.gz">8.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>ef8d704c3b08d7de64926549a2f8f14cec3bfd0b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.3.tar.gz">8.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>ef79a1df75850e2bf0e8c7e9ac95ceab93cd3232</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.2.tar.gz">8.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>0f27c9e4da594d869143c99fc0c294c5ac0f5c7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.1.tar.gz">8.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>7943ac4fb062a8e86bd63a01f90be5bb67523a46</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>e7834172a378273dc3840d56102e55217108f589</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>1f68a8ffc55520272235b8165cd32abf6e6b3689</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>54bce0a9ca07952cd97cd2bc8641f81ab2c49af5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-manila-tempest-plugin">
+<span id="id15"></span><h3>manila-tempest-plugin<a class="headerlink" href="#team-stein-manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>a5c2b7d467d03afba8a90dfd99fcc647e198ba0f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>0ac95412b1b0555775b4d45f51c27af2fa84724a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>53927a9459462abb002791ffab3411041ca7d664</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-manila-ui">
+<span id="id16"></span><h3>manila-ui<a class="headerlink" href="#team-stein-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/stein.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.18.1.tar.gz">2.18.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.18.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>cc52163a36cd4863ebe96bfef0a163b4190d01b2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.18.0.tar.gz">2.18.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.18.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>069003fc03d015a2fc0063ccad98a640e7f2cabb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.17.0.tar.gz">2.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>13d0c11966972c484e739a84885e8ad95221b62b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-manilaclient">
+<span id="id17"></span><h3>python-manilaclient<a class="headerlink" href="#team-stein-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/stein.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.27.0.tar.gz">1.27.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.27.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>07564879ae4bdcb73e856b3aedcb79e4420fa7eb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.26.0.tar.gz">1.26.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.26.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>e476fc94e07642a9b4243f05ba911ecaf4732ef6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.25.0.tar.gz">1.25.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.25.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>cc6fadbc96d0dddf3565d4e4b6e3a412c4f0d318</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-manila">
+<span id="id18"></span><h3>manila<a class="headerlink" href="#team-rocky-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/rocky.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.4.1.tar.gz">7.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>d16b5f0ea41419bdf4eb4e66ce4551571ee6acec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.4.0.tar.gz">7.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>7543bd8bdeb42315b2cc61401e4c7ae4410c8fec</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.3.0.tar.gz">7.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>705ad2dada23ab22aa076fabe8c0744f19588e2f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>5180e545417465c883f693c1f8c993bd303e966f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>89ecc48698e0d13a3ba631caffa2dba307d456fa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>a17c89ff0875305e4e90ccc45a696aae9d3864dd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-manila-tempest-plugin">
+<span id="id19"></span><h3>manila-tempest-plugin<a class="headerlink" href="#team-rocky-manila-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-tempest-plugin/manila-tempest-plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-tempest-plugin</p></td>
+<td><p>f6bc6fa7bc0e46857aba2b141f31b516a7d30a41</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-manila-ui">
+<span id="id20"></span><h3>manila-ui<a class="headerlink" href="#team-rocky-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/rocky.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.2.tar.gz">2.16.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>bfc45c381aebe6aaf83f0098a21a473a60134bf0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.1.tar.gz">2.16.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>d772496ece81a422df365a3f3f793643db50ee04</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.0.tar.gz">2.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>3764cc3fc540f0436723815844a8a56d98975b4a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.15.0.tar.gz">2.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>0f2a2a20ed630bd934366a252c9f361452881485</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.14.0.tar.gz">2.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>2203bf41348e314b71abf5efdcd1374a329a17a4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-manilaclient">
+<span id="id21"></span><h3>python-manilaclient<a class="headerlink" href="#team-rocky-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/rocky.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.2.tar.gz">1.24.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>816bfc82e7a1835cdbfccf0e023beb4c11eb2a30</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.1.tar.gz">1.24.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>316bd218f15c22a1a2ea70681f8105aeb9366fe2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.0.tar.gz">1.24.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.24.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>ecbe1f961caae0283f3114c68271173804a785d6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.23.0.tar.gz">1.23.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.23.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>b0b08cc65007180a750fe1bc38e1bc26d4e899f9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.22.0.tar.gz">1.22.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.22.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>a0a833fb56aac00dd322f1113adc728424c8ed43</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-manila">
+<span id="id22"></span><h3>manila<a class="headerlink" href="#team-queens-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/queens.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.2.tar.gz">6.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>f4bc383de1ab81a642496d7bb9373fd45f2c26c3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.1.tar.gz">6.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>e80d03885453000710d525bd3ce1e781dd4ef2b7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.0.tar.gz">6.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>625fce5bb0e0792550cbae4f526159d4677bf072</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>28b43ebcafba97d881a27a7fcfae5b5a3ed2fb1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>2049332391a44e5ccafef8253cd44679b22ff218</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.2.tar.gz">6.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>57d981b12a4a390af2ed184adedc64b8e210de85</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>b1682a7902f81ea55e621dd8cce849d945315959</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>be8580b350c34c91494cb553eb15e6b61ef250b7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-manila-ui">
+<span id="id23"></span><h3>manila-ui<a class="headerlink" href="#team-queens-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/queens.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.13.1.tar.gz">2.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>49a45133c24fb5a9f00bf3ad5f58f69a0d05f3d6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.13.0.tar.gz">2.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>da1ac1ec03352332616849de8d947d2f9de20ce5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.12.0.tar.gz">2.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>0102041340e83ad71ac02ae367e3d130a06cca86</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>b844e49872ec48ac862d0efcc00ae6b5f4b5aff3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-manilaclient">
+<span id="id24"></span><h3>python-manilaclient<a class="headerlink" href="#team-queens-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/queens.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.2.tar.gz">1.21.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>f9384b1005f780c25501232c82686d668608d1f0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.1.tar.gz">1.21.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>21631ace9d33cbbf80a06d0f05b567170ae7bc2c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.0.tar.gz">1.21.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.21.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>27c189f0f3e61590490380d6640628c11b5f7324</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.20.0.tar.gz">1.20.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.20.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>4d3652868b4ffd82cecb540cac01f64728afcd67</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.19.0.tar.gz">1.19.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.19.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>d4c581de4f6e9768b05600ec57991d9abbda7fa7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.18.0.tar.gz">1.18.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.18.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>63b5a4dedfde0a64c75fd4dad4a1da6a775effdf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-manila">
+<span id="id25"></span><h3>manila<a class="headerlink" href="#team-pike-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/pike.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>d3bcc465b23a32359a9efad2a2d9085f413e5414</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.3.tar.gz">5.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>2eb8268da9e073a5febe9f21bc3432138dff43b6</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>efbc62d9b29e94dd45339fa78da93a6a85532271</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>7bcd528e71551e2fb19c55404134905caf166ac9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>80fe5f1fe4eb2f9d63c36fbfed3dcc388e4a931b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-manila-ui">
+<span id="id26"></span><h3>manila-ui<a class="headerlink" href="#team-pike-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/pike.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.3.tar.gz">2.10.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>089062685aee1946599336946b69d3a0d456b1b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.2.tar.gz">2.10.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>e5e86282337ecf4c34c6bcd8d2569a4f9c8ed42f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.1.tar.gz">2.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>019f6b4e630232d398a595990d29524d8295028f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>087948ae1a1e47c97d75437259c8b3577bfdf7ad</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>eabfe06f116f574a9aa36e9a218d8df3fd322f98</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>fe08a0f4942fe015f1ad559e36b0b3474439c6a1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-manilaclient">
+<span id="id27"></span><h3>python-manilaclient<a class="headerlink" href="#team-pike-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/pike.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.4.tar.gz">1.17.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>a1096c97de4b60212cea403f9e18c2eb81ccd55a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.3.tar.gz">1.17.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>de2fd1daa850e6cc728251e286392f8c20b0d50c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.2.tar.gz">1.17.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>52e3cb17290747e110798e3185ade79e4c11344f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.1.tar.gz">1.17.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>502eb756cc724442c17e553bc4ee3f6c629ea4d1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.0.tar.gz">1.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>73c31c667dc4949f6bc4668bbb9105df866762ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.16.0.tar.gz">1.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>652d31cb6c5a1f42f0bddb9a5b71597f9ba74354</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.15.0.tar.gz">1.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>b4f71709dc4644b069c3395260c8e318907cfb7c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-manila">
+<span id="id28"></span><h3>manila<a class="headerlink" href="#team-ocata-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/ocata.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.2.tar.gz">4.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>2ae3ae7f9f54d2ac9a2ec039842228ec1afeafe7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>48b5c91ad73e74a8e35b3649b0433ba86d6bdf06</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila</p></td>
+<td><p>7b60653007e13c8ece27fc2fdaba94e8ecc6c4d3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-manila-ui">
+<span id="id29"></span><h3>manila-ui<a class="headerlink" href="#team-ocata-manila-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila-ui/ocata.html">manila-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.7.1.tar.gz">2.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>4c77fd9818e58e74c39d36c8dbac135bccb6b3f3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>863e927b3cce31afbb5b2d313d648bd7e2b3fcf9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>5be13b0c1bb54eab565d9a44b6f51ea5d91d8160</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-manilaclient">
+<span id="id30"></span><h3>python-manilaclient<a class="headerlink" href="#team-ocata-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/ocata.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.14.0.tar.gz">1.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>58933a6848715bbc9beb26c018a5d8e89f94371a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.13.0.tar.gz">1.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>c0fdf827b98c7fc39531af29bcca8096d7280cb0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>ff9963a712b66d71425a0d7e2f9392c785acd918</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-manila">
+<span id="id31"></span><h3>manila<a class="headerlink" href="#team-newton-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/newton.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/manila</p></td>
+<td><p>8f2fa31d8a47e52b01bcf48771da83c23da464b1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-manila-ui">
+<span id="id32"></span><h3>manila-ui<a class="headerlink" href="#team-newton-manila-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.5.1.tar.gz">2.5.1</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>37ee394305846522be5fd38e71ea10f56e0bd276</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.5.0.tar.gz">2.5.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>1f11f787c40d4609319938149c52d93626bd04dd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>12eab95a6a613afaf0df75447069a06b6af31184</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>aae086aed6381a02674b3464f2d0ffe00665120a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>92907bc41bd49feecd3794b3c77592f1bc3f7478</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-manilaclient">
+<span id="id33"></span><h3>python-manilaclient<a class="headerlink" href="#team-newton-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-manilaclient/newton.html">python-manilaclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.11.0.tar.gz">1.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>b5b1ebed6244548f07c1e8c1a6923deaf2192445</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.10.0.tar.gz">1.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>22172b65f88acc848ad090f44947da65cf9622bb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>0468689b2a516a389d54e0a17c384f3bb573796a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-manila">
+<span id="id34"></span><h3>manila<a class="headerlink" href="#team-mitaka-manila" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/manila/mitaka.html">manila</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/manila</p></td>
+<td><p>296c9955edae4f25b5b120ff5df7ccd1569984d6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-manilaclient">
+<span id="id35"></span><h3>python-manilaclient<a class="headerlink" href="#team-mitaka-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.8.1.tar.gz">1.8.1</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>8fc8bd9eb24c664c87d57b6d5aefc6f1caa043f0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>eb1fde50582cd7be464d575bd1ea35efe5b33fc8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>08681b4529da849650e6b6a3b2a88e9300ffb7b9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>4737bd6b17e3d37f5cefa1e90b66275c2dc3244a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>997cc43433238616b18e6282cc45a0051932a14a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-manila">
+<span id="id36"></span><h3>manila<a class="headerlink" href="#team-liberty-manila" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/manila</p></td>
+<td><p>0f1b68231ad33c3e300e03adf0f1801db9afab97</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/manila</p></td>
+<td><p>bef43561b303a36d99849952ba8c408b19bafd02</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila/manila-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/manila</p></td>
+<td><p>f1eded1fbcaf309e1c9a4be3f8a14bd25daa3e46</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-manilaclient">
+<span id="id37"></span><h3>python-manilaclient<a class="headerlink" href="#team-liberty-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>0bbd2144f701df3408b1435b16611c2ba3c22221</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3cd57eb32e805b7256eb5ad5779ff03d24bbd82c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>13429c8d0d891ba932db8b1489154b4c15618077</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-python-manilaclient">
+<span id="id38"></span><h3>python-manilaclient<a class="headerlink" href="#team-kilo-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>163c34f66945dbee07d1ca21c32523466dc16088</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.4.tar.gz">1.0.4</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>8f48dd05112d5e37890267e9b5f4f9e55c2c317e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>476fa0244f81c9fab72b5ef85fcdcc7511813432</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>12dc40e1128f1fa312071addc6c144135afb349e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-python-manilaclient">
+<span id="id39"></span><h3>python-manilaclient<a class="headerlink" href="#team-juno-python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3b7ff6b2b2b7dfc77ceea88443227613f82d2365</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>fc2cd23a7d5a2beb94bc1043f7db0936b28bb563</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="magnum.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Magnum"></i></a>
+          
+          
+            <a href="masakari.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Masakari"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Manila</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-manila">manila</a></li>
+<li><a class="reference internal" href="#manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-manila">manila</a></li>
+<li><a class="reference internal" href="#team-victoria-manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-victoria-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-manila">manila</a></li>
+<li><a class="reference internal" href="#team-ussuri-manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-manila">manila</a></li>
+<li><a class="reference internal" href="#team-train-manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-train-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-manila">manila</a></li>
+<li><a class="reference internal" href="#team-stein-manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-stein-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-manila">manila</a></li>
+<li><a class="reference internal" href="#team-rocky-manila-tempest-plugin">manila-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-rocky-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-manila">manila</a></li>
+<li><a class="reference internal" href="#team-queens-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-queens-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-manila">manila</a></li>
+<li><a class="reference internal" href="#team-pike-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-pike-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-manila">manila</a></li>
+<li><a class="reference internal" href="#team-ocata-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-ocata-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-manila">manila</a></li>
+<li><a class="reference internal" href="#team-newton-manila-ui">manila-ui</a></li>
+<li><a class="reference internal" href="#team-newton-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-manila">manila</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-manila">manila</a></li>
+<li><a class="reference internal" href="#team-liberty-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-python-manilaclient">python-manilaclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/manila.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:02 GMT -->
+</html>

@@ -1,0 +1,1478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/cloudkitty.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Cloudkitty</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Cloudkitty</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="cloudkitty">
+<h1>Cloudkitty<a class="headerlink" href="#cloudkitty" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-cloudkitty">
+<span id="id1"></span><h3>cloudkitty<a class="headerlink" href="#team-wallaby-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/wallaby.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>208e78aaa85da30d68e59ed17914bd1cd000f52f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloudkitty-dashboard">
+<span id="team-wallaby-cloudkitty-dashboard"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/wallaby.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>7eb3241cc22a6700f6973553ab2468adb825eefd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloudkitty-tempest-plugin">
+<span id="team-wallaby-cloudkitty-tempest-plugin"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>0044403c8a90bbb2386bd3b00c07a3aa5cd53c46</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>6668426a73393c3f6918742e725043c62a6946ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cloudkittyclient">
+<span id="team-wallaby-python-cloudkittyclient"></span><h3>python-cloudkittyclient<a class="headerlink" href="#python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>1e8b06243e4d0131c4b053bd67ff94478d6fb673</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-cloudkitty">
+<span id="id2"></span><h3>cloudkitty<a class="headerlink" href="#team-victoria-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/victoria.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>19f88a2929d438c035e2992122f974dedfe560e7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-cloudkitty-dashboard">
+<span id="id3"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-victoria-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/victoria.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>01ac499997b7c90d5ef3f235431814e50bc00efc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-cloudkitty-tempest-plugin">
+<span id="id4"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#team-victoria-cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>6668426a73393c3f6918742e725043c62a6946ec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-cloudkittyclient">
+<span id="id5"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-victoria-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>2a3dd279dc4e29e25b57c139ed554fab8e56fa00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-cloudkitty">
+<span id="id6"></span><h3>cloudkitty<a class="headerlink" href="#team-ussuri-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-12.1.0.tar.gz">12.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-12.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>9ad8be46f1ad3702f8d493087d30d9b648dd39ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>56609c46f96e38ddc13c7830d6b32479ddaaa1ac</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-cloudkitty-dashboard">
+<span id="id7"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-ussuri-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/ussuri.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>dcc33690b70d8a4cf75444f09d7872860da7e56f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-cloudkitty-tempest-plugin">
+<span id="id8"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#team-ussuri-cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>44b8c4ed91f875e54ab3e4f9591196710f17ef3b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-cloudkittyclient">
+<span id="id9"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-ussuri-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>f4b1a3f224f919e3193a5662f380de9ea1bdf341</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-cloudkitty">
+<span id="id10"></span><h3>cloudkitty<a class="headerlink" href="#team-train-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/train.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.1.0.tar.gz">11.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>9e79c7ed91e446fe064619978d2c90126da1bb7e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>b4408cf08592911f34c7e14d50d9dd2ab21b79c3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>c8c7965878e6a5c818db0ed0d05a719d7d2ae779</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>043c793ccca47cfabff18eebb5be28da634427c4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-cloudkitty-dashboard">
+<span id="id11"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-train-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/train.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>45c962d72bdccdc2181afe3e49a42c4e980d5da5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-cloudkitty-tempest-plugin">
+<span id="id12"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#team-train-cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>eebbf698a19b5e3c8f23b4de19ec0d3da64c3bd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-cloudkittyclient">
+<span id="id13"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-train-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>c5d1526dec78acf525114c532502acdfe00caebf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>d660bef8378e918cb36c7eb10588db3edaafb06e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-cloudkitty">
+<span id="id14"></span><h3>cloudkitty<a class="headerlink" href="#team-stein-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/stein.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>9b53864dac0351f2b3869decca342d4bde521818</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>bae398db2fab9feedbf46d68405a1c51114c2377</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-cloudkitty-dashboard">
+<span id="id15"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-stein-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/stein.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>5a5ff16f275b7875c9a251f90e6f22497b134852</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-cloudkitty-tempest-plugin">
+<span id="id16"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#team-stein-cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>6668426a73393c3f6918742e725043c62a6946ec</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>ea0b694d899a6b6cf4e54dae5f8bacff863db4ce</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-cloudkittyclient">
+<span id="id17"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-stein-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>57d45638173f322b73876d4017e236ab7fc79e09</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>3b49fbd4d0f8bc549b355bfb63844a4147cb0b4e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-cloudkitty">
+<span id="id18"></span><h3>cloudkitty<a class="headerlink" href="#team-rocky-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/rocky.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>df869e4588c937dc0e78680a3b9fe9d0fc937e57</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>3ab4774f66b84324adc8823a049aa4cf13689fb9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-cloudkitty-dashboard">
+<span id="id19"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-rocky-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/rocky.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>6e7db6c425c00cec907cd1cd88e5af78bfaa8898</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>071392642480fb700399340ba6b4eb13b31a05fa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-cloudkitty-tempest-plugin">
+<span id="id20"></span><h3>cloudkitty-tempest-plugin<a class="headerlink" href="#team-rocky-cloudkitty-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-tempest-plugin/cloudkitty_tempest_plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-tempest-plugin</p></td>
+<td><p>e14309c3b8e441b6aacd0038322be94afd70e59b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-cloudkittyclient">
+<span id="id21"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-rocky-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>37c6bb0c8b2fd9a67a8d15830f545949657e74eb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>7bf6f139cd0f8495c9c49ea7eee579c4db4028dd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-cloudkitty">
+<span id="id22"></span><h3>cloudkitty<a class="headerlink" href="#team-queens-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/queens.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>15d0a7dd0543f00fa3886d287b980e65b346d949</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-cloudkitty-dashboard">
+<span id="id23"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-queens-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/queens.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>91b85be715a9a56f07087feb967885118bc949d9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-cloudkittyclient">
+<span id="id24"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-queens-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>075cb4993d7dcd51a9e8928571e27d88e213b0fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-cloudkitty">
+<span id="id25"></span><h3>cloudkitty<a class="headerlink" href="#team-pike-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/pike.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>e99543c7b85ac2dcb4cde22f7ff64eda4b9f4133</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>069ea4ea237a1abbb1a0fe5d81263b69c733ff11</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-cloudkitty-dashboard">
+<span id="id26"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-pike-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/pike.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>7468d434634e608eba10e098ada4fdaa856d54fb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>ccb1c3831b9a66c98b2577d65ac0990b8e7551eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-cloudkittyclient">
+<span id="id27"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-pike-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>4c1629769f57f24c87e45d5f45c36b264da262d1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>cf2b4f31c77d0590e1034cb9327d5eda832baa08</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-cloudkitty">
+<span id="id28"></span><h3>cloudkitty<a class="headerlink" href="#team-ocata-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty/ocata.html">cloudkitty</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>d3604cba7093b7ba5a61529635e1cc8d8318b232</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>31845a888f7adf992667e5753ca45149ba5f13eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-cloudkitty-dashboard">
+<span id="id29"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-ocata-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/cloudkitty-dashboard/ocata.html">cloudkitty-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>9fb1813e21af118ce49e9db433783d5ac538b2ab</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-cloudkittyclient">
+<span id="id30"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-ocata-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>2fe71f729ad689e54ebaf00c575387f0ef4d73ed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-cloudkitty">
+<span id="id31"></span><h3>cloudkitty<a class="headerlink" href="#team-newton-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-0.6.1.tar.gz">0.6.1</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>772ba65266708fb0945842f68a39bc2ebcc9ef67</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>7f608c264e7127306d5487f545b28256ad80adc5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-cloudkitty-dashboard">
+<span id="id32"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-newton-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-0.6.1.tar.gz">0.6.1</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>6b2ea6e3e52eb778c04a68f0169d4831a0285823</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>fd06863e6312fbdd3d9a7cbf5e972fc107795d1d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-cloudkittyclient">
+<span id="id33"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-newton-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>b24e261143401516b8342169b6f681c8f2afec8d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-cloudkitty">
+<span id="id34"></span><h3>cloudkitty<a class="headerlink" href="#team-mitaka-cloudkitty" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-0.5.2.tar.gz">0.5.2</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>094056c3fc78cde3210c99ec7ea13fc2c10d67ff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-0.5.1.tar.gz">0.5.1</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>669a316d8102746e9848bdeb9cf0ce21fa72e541</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty/cloudkitty-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty</p></td>
+<td><p>56cdfe9a9e039a0cab7ca250fccb0d035e6de9da</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-cloudkitty-dashboard">
+<span id="id35"></span><h3>cloudkitty-dashboard<a class="headerlink" href="#team-mitaka-cloudkitty-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-0.5.1.tar.gz">0.5.1</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>29e6269b250748b09b6a6526c42e88406a607e47</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cloudkitty-dashboard/cloudkitty-dashboard-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/cloudkitty-dashboard</p></td>
+<td><p>9224f2c10237c3d83fc9eaec1b5f37f8934bee45</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-cloudkittyclient">
+<span id="id36"></span><h3>python-cloudkittyclient<a class="headerlink" href="#team-mitaka-python-cloudkittyclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cloudkittyclient/python-cloudkittyclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cloudkittyclient</p></td>
+<td><p>55f3a3fa7568dec1d37db0a4960755f8460422a4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="cinder.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Cinder"></i></a>
+          
+          
+            <a href="congress.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Congress"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Cloudkitty</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-victoria-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-ussuri-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-train-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-stein-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-rocky-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-cloudkitty-tempest-plugin">cloudkitty-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-queens-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-pike-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-pike-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-ocata-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-ocata-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-newton-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-newton-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-cloudkitty">cloudkitty</a></li>
+<li><a class="reference internal" href="#team-mitaka-cloudkitty-dashboard">cloudkitty-dashboard</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-cloudkittyclient">python-cloudkittyclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/cloudkitty.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

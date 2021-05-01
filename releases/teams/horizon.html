@@ -1,0 +1,2604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/horizon.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Horizon</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Horizon</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="horizon">
+<h1>Horizon<a class="headerlink" href="#horizon" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-horizon">
+<span id="id1"></span><h3>horizon<a class="headerlink" href="#team-wallaby-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/wallaby.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.2.0.tar.gz">19.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>6f3a66ab361982dcc2dff654f7b7ab12326abddf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.1.0.tar.gz">19.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ade661e50d7cb7f4ed5f88226cf86560db05f478</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.0.0.tar.gz">19.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-19.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>7e682a2d528bcff992334d8792e33abbd57f5802</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-horizon">
+<span id="id2"></span><h3>horizon<a class="headerlink" href="#team-victoria-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/victoria.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.2.tar.gz">18.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>0c7d8b70d86064dbe0d80322e2267a45f338032b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.1.tar.gz">18.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>970969776a5e35a0a0494e3d24789a1804b35c74</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.0.tar.gz">18.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>c44e651589f8589452ab6e436d3428a8d56fa9cf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.5.0.tar.gz">18.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>79e505520fc307eeedc1f5c81fb516e9638ebd72</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.4.1.tar.gz">18.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>703f889771988803e7ccd5961607676bad4283c9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.4.0.tar.gz">18.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>dd62fd386e0899ff84cdf9418c63f98caf66cf33</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tempest-horizon">
+<span id="team-victoria-tempest-horizon"></span><h3>tempest-horizon<a class="headerlink" href="#tempest-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest-horizon</p></td>
+<td><p>aaf69e0adffb5d3dc918b388b6f88e4a4972399a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-horizon">
+<span id="id3"></span><h3>horizon<a class="headerlink" href="#team-ussuri-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/ussuri.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.3.tar.gz">18.3.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>664c6ec28ec56ffd7474fba7ebce43dbdcf65543</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.2.tar.gz">18.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>d3ba7f17cd675e12d087bde1adf995fcaace48d4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.1.tar.gz">18.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>8eb9b7d75f73cfbc2b5ff69cb0b8fc2fc956f3d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.0.tar.gz">18.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>b62c49acf5eba001937cff33a41d73a4f4caa292</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.2.0.tar.gz">18.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ddc52a7405f0be38629f665d24bcf75022ce0018</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.1.0.tar.gz">18.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>571eb23c79c8a231832cd6478447369320c2cac0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.0.0.tar.gz">18.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-18.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>79fc46a0642c2844c6da858176d54f16ea204d1f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-17.1.0.tar.gz">17.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-17.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>32f16711b1b2430eb0563fade531cc17f31c044b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-17.0.0.tar.gz">17.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-17.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>201b5380d5c10c55fb71ffea7d67a26b288817cf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-tempest-horizon">
+<span id="id4"></span><h3>tempest-horizon<a class="headerlink" href="#team-ussuri-tempest-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest-horizon</p></td>
+<td><p>785e7812796190f7ae69dcd039b540761f09a058</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-horizon">
+<span id="id5"></span><h3>horizon<a class="headerlink" href="#team-train-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/train.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.2.1.tar.gz">16.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3689817f3317b999b2f0a5074ef56a55d8921488</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.2.0.tar.gz">16.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>fa839516e52b6a2418f48489d106e9931640b2cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.1.0.tar.gz">16.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>e4269fb88bd8faaa09f55606da9a98d42e4f446c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.0.0.tar.gz">16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>26c97d910a135d1ab1bd8ecd47f5bd80355b5624</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-tempest-horizon">
+<span id="id6"></span><h3>tempest-horizon<a class="headerlink" href="#team-train-tempest-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest-horizon</p></td>
+<td><p>730608b8fb594c92a7beafba273f36091082422c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-horizon">
+<span id="id7"></span><h3>horizon<a class="headerlink" href="#team-stein-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/stein.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.2.tar.gz">15.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9e0e333ab5277b6c396f602862ff90398cb0242b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.1.tar.gz">15.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>8da0dcd21200cc851e57de4dfa46c3c838c73c3c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.0.tar.gz">15.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>6b32ff44ea88772a2b9b668e6efa9181058c2f02</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.2.0.tar.gz">15.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>fe61f2358a6e16ea462630747180b83337eb5b55</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.1.1.tar.gz">15.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>77b0242fa2ce64ab77ea7e4ee7a8530de044967e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.1.0.tar.gz">15.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>2d763b73c3947cc4287f1a8337c3a8309e948c9e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.0.0.tar.gz">15.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-15.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9042981cc2b935a1437381794ca13f556c2faec5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-tempest-horizon">
+<span id="id8"></span><h3>tempest-horizon<a class="headerlink" href="#team-stein-tempest-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/tempest-horizon/tempest-horizon-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/tempest-horizon</p></td>
+<td><p>e2ac2e03e42945b74e2d5362221db1056ac2c7df</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-horizon">
+<span id="id9"></span><h3>horizon<a class="headerlink" href="#team-rocky-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/rocky.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.1.0.tar.gz">14.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ed23eb60d4674e7d50f9f13cc926d3e3bb4f1121</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.4.tar.gz">14.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>93c4ded713c23832237f2c30974e0566574b8134</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.3.tar.gz">14.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>f03ac7a2fcfa97cfdd3f2e4857559b09e09e1bdb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.2.tar.gz">14.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>0ccfce882749998f3a6a7f9bfc6fa74ea346ca53</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.1.tar.gz">14.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>19865eec5bc4a5a0ee402a55295dda2e52c2422c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.0.tar.gz">14.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-14.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>0aa126ddd073c9c4774ec82308283dac4ad09460</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-horizon">
+<span id="id10"></span><h3>horizon<a class="headerlink" href="#team-queens-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/queens.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.3.tar.gz">13.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>919870a13b3dc51374604120cf2c9151add9a218</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.2.tar.gz">13.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>d9dc8340fbf4dbfcb771383a0e741d53e2d105bd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.1.tar.gz">13.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>d95775c524cf804333d2ae6c7619b0b485668f75</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.0.tar.gz">13.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-13.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>a6cdd290d0dbe6f6622179cefd4d2c05d60dc22d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="django-openstack-auth">
+<span id="team-pike-django-openstack-auth"></span><h3>django_openstack_auth<a class="headerlink" href="#django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.6.1.tar.gz">3.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>ddcfe7a6d4db1b476254b556057756eadd7b097d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.6.0.tar.gz">3.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>4973ee1f00d008e49c41d19fb4257c1e241f5826</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.5.0.tar.gz">3.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>2ca726c68e92b6aaec0e7b0d6a425063972b870b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>fb76589a26288a7d7966cee1702e414919706790</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>c15dfe5acd58efa0c5c27dd19de5d4ef2a880c36</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>525b76dc323db4c4e081eb5d42def6db14a84de9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-horizon">
+<span id="id11"></span><h3>horizon<a class="headerlink" href="#team-pike-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/pike.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.4.tar.gz">12.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>eba87483eaea45905b4f260130f319404aa17fa5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.3.tar.gz">12.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>45deda57493d78862b29bc253b972fac0e198a62</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.2.tar.gz">12.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>39d863ec239601ea6c57ef5273d6137d5930d80e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.1.tar.gz">12.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>2c3f58e56a848aeb8c75784e785050fa58248348</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>2fe66f444a35914009a275f7b8880ad12bc062d6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-django-openstack-auth">
+<span id="id12"></span><h3>django_openstack_auth<a class="headerlink" href="#team-ocata-django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>0c195604f6e0bc214309193eb0de0a46677626a5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>ea208c774f6707d50b72a72c14d76a5ed0177bc9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>a40234be311eae11ca22497a82a82ab404d09a7c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-horizon">
+<span id="id13"></span><h3>horizon<a class="headerlink" href="#team-ocata-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/ocata.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.4.tar.gz">11.0.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>4892f35575bde78c612088a388fbf50c7f19f9e7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.3.tar.gz">11.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>f87d87a2fa5836b11769ef5109767353200e01be</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.2.tar.gz">11.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3bc399f3ae34b5eb3b18544c55c65ff8a6dc7a71</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.1.tar.gz">11.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>d011d85926c21f7fa228dad0b2847db66928c422</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/horizon</p></td>
+<td><p>30d0a31d41340d0ad340d12db3455156b04e71fc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-django-openstack-auth">
+<span id="id14"></span><h3>django_openstack_auth<a class="headerlink" href="#team-newton-django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.4.2.tar.gz">2.4.2</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>08e96550a31b98b7ee3278b3b6a73e93e79ac343</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.4.1.tar.gz">2.4.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>55ebf6b792571709f292cdb0d3dac228680b1961</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.4.0.tar.gz">2.4.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>6c8a1d49a84ac82ffc98f105f24091cabce88984</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>dd56c4e8bdb646338a7f66c32233002c3f5228be</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-horizon">
+<span id="id15"></span><h3>horizon<a class="headerlink" href="#team-newton-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/newton.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.5.tar.gz">10.0.5</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>bd8b21b9661a27a2215ae24ce9c4aea308ae5e4a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.4.tar.gz">10.0.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>843b4754f6d83910b5463421659ccb3e3feaf75d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.3.tar.gz">10.0.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>94c47c251e6cfcffa47ec71f4e5179f7f4d4bff3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.2.tar.gz">10.0.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>72487730297c5182bb4478f980f23fdf58994341</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.1.tar.gz">10.0.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ce5604c40663447227cbdf458b503fb32746279b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-10.0.0.tar.gz">10.0.0</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>f9b676aba63a55e61301dd4e4a1f58667b399e35</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-django-openstack-auth">
+<span id="id16"></span><h3>django-openstack-auth<a class="headerlink" href="#team-mitaka-django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>9574d982199f1df8826fa907ff183266d71a6c51</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>9de5d87becab6117009b1e7327bc309f5e9a9042</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.1.1.tar.gz">2.1.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>e7814b2b8eb7e835a076d2b59ec106ce3bf3bd71</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>3715a5f445254520f951a5d791fb5eeeeb2b2b57</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-horizon">
+<span id="id17"></span><h3>horizon<a class="headerlink" href="#team-mitaka-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/mitaka.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-9.1.2.tar.gz">9.1.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ce80bb6fec3cb0262728e7ae8b9d695cf832e5bf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-9.1.1.tar.gz">9.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9a460aad76c05c411765af2b2d85b075a5f7004e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-9.1.0.tar.gz">9.1.0</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>8211d685afed20469b5bfd53c008e4bc98e7047a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-9.0.1.tar.gz">9.0.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>f4b9e17315c69749e6e84a518b385b3698d5ab0e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-9.0.0.tar.gz">9.0.0</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>2eb320bd31078e3728b91e4badc597624d0827f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="manila-ui">
+<span id="team-mitaka-manila-ui"></span><h3>manila-ui<a class="headerlink" href="#manila-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>d5fe23e4ba30846acdd09fa1dc61a415016a7e26</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>bf382083b281a77f77df9e0bd51376df49d53b2e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-django-openstack-auth">
+<span id="id18"></span><h3>django-openstack-auth<a class="headerlink" href="#team-liberty-django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.0.1.tar.gz">2.0.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>88fb89b5b787824d06b4c58337b7c960ccd0263b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>6e2cd8deffbd60074bf036c1cecdb280f281ccd4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>829cbee14e200fd127ec4f0e0f4d743102d8e9d1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.3.1.tar.gz">1.3.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>08713e4ca9eca7f30494fa3d9da34c84ace919e3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>3a8d34fd3dc858216e2ed0b34ce13986f6a37abb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-horizon">
+<span id="id19"></span><h3>horizon<a class="headerlink" href="#team-liberty-horizon" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/horizon/liberty.html">horizon</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-8.0.2.tar.gz">8.0.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>8bd58779dc3d3475722bf96ab157370dfb996914</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-8.0.1.tar.gz">8.0.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>fa47798f38b2a58514b93b6613129b0dfca18f36</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-8.0.0.tar.gz">8.0.0</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>593f0b78eea8efbb6d833d66acc7ab4dc852159b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-manila-ui">
+<span id="id20"></span><h3>manila-ui<a class="headerlink" href="#team-liberty-manila-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>973223f87335e522b46ddce9ff89981364efde0b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>d2efc90396e3fce485d5e3dedc1dedc2cf94e7d3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>ea3830a2f687fb8b7315f3efaf4d41e2c6988e11</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>96e89feb8c0691f46178c700a4cee658f3185fbd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-django-openstack-auth">
+<span id="id21"></span><h3>django-openstack-auth<a class="headerlink" href="#team-kilo-django-openstack-auth" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.2.2.tar.gz">1.2.2</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>9bf38c85e4850e8e35d0d3eb6e2e7a2490c7c177</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.2.1.tar.gz">1.2.1</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>05962b1c445c7b767380918c95d3ce5a2ff85657</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django_openstack_auth/django_openstack_auth-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/django_openstack_auth</p></td>
+<td><p>0e1f7b78277850634992a594132921efb83256e0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-horizon">
+<span id="id22"></span><h3>horizon<a class="headerlink" href="#team-kilo-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2015.1.4.tar.gz">2015.1.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ced6c32e0a331dbd32f73642d3a7d8dea7c3256f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2015.1.3.tar.gz">2015.1.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>e3848cf0aa7a0da53989736d5d058883cecab0b5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2015.1.2.tar.gz">2015.1.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>bccc3dcba65275e099137c8ca37f1077e87120d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2015.1.1.tar.gz">2015.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>0e4745faa8795d7750f45fce18c8c0bc0dd9523e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2015.1.0.tar.gz">2015.1.0</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>b99cf48ff346494198fb9740495eacc14fa406bf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-kilo-manila-ui">
+<span id="id23"></span><h3>manila-ui<a class="headerlink" href="#team-kilo-manila-ui" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/manila-ui/manila-ui-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/manila-ui</p></td>
+<td><p>1ae0609b4cb0fdc4497175b05c1370edff05a42c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-horizon">
+<span id="id24"></span><h3>horizon<a class="headerlink" href="#team-juno-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>25bf3ba84362702632fa56c423818189fe847ac8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>b37c1f3565e89a7fe3fef5ce76e9c26b22e3e7c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>889f9d9000f5e0512453e15de66aa08a845b451f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3d9a31e2a05288e9a48a51eb4fe693c42e92aac7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ce839aa58d32a9bd475c099f371d0e820d51f1a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-horizon">
+<span id="id25"></span><h3>horizon<a class="headerlink" href="#team-icehouse-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.5.tar.gz">2014.1.5</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3f6e9b577aa3253a3114ff0eb7c49f83e45154ae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.4.tar.gz">2014.1.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>cfa611bedf14c9b1ef0b5689b6942aa6431e6313</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.3.tar.gz">2014.1.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9ad9af4b8d9471eee8ea06aa520b70ace7b14617</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.2.tar.gz">2014.1.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>2b9c5669520ae7d4f8c0963e71b4df144d73b328</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.1.tar.gz">2014.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>e492c7e0fa2a9220b51e8f877449374fc76587bf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.1.tar.gz">2014.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>1b0106e2804a45e641433c4bd459e6bed85521c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-horizon">
+<span id="id26"></span><h3>horizon<a class="headerlink" href="#team-havana-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.2.4.tar.gz">2013.2.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>c3014a85dd758b6720749929e262549214be0217</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.2.3.tar.gz">2013.2.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3d04c3c6ac5fd4801215edb6c5241c7e151515df</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.2.2.tar.gz">2013.2.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>36e0ab56136a2063ce56e7579d13393637ea0e21</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.2.1.tar.gz">2013.2.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9668e80f0c902c8064b7021cd0e75c33dda5916c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.2.tar.gz">2013.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>d3e8e29f1e252e7bffc836056b52c8e4e5a0307c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-horizon">
+<span id="id27"></span><h3>horizon<a class="headerlink" href="#team-grizzly-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.5.tar.gz">2013.1.5</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>37b208a1a8f0c180ba801e44bf36375fd0af065d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.4.tar.gz">2013.1.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3f81d70d4b34ecd02576bd368740ee64f0333357</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.3.tar.gz">2013.1.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>435d4c8fc2db8d83cb86409742dd58d7b0477fbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.2.tar.gz">2013.1.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>7310ef2dae95a6128b7aec1c5ea18b0bb4d8d9ae</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.1.tar.gz">2013.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>e68b7a8e9c3e124526f3572b24ea6fb08c8a52c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2013.1.tar.gz">2013.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>14ac6a90f469097647b0e5425b0ecbe244432c06</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="folsom">
+<h2>Folsom<a class="headerlink" href="#folsom" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-folsom-horizon">
+<span id="id28"></span><h3>horizon<a class="headerlink" href="#team-folsom-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.2.4.tar.gz">2012.2.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>307a4924ff1277ce03094d7e280ed19322d6d5e8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.2.3.tar.gz">2012.2.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>675799742a8bd4e4ad9191b2f331dfc63066cc2c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.2.1.tar.gz">2012.2.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>9647138fdb2d1d6b2f2b303239d94ebc7407edc0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.2.tar.gz">2012.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>cee6b626d372c8d420b439038a3fe0580d8fcc89</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="essex">
+<h2>Essex<a class="headerlink" href="#essex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-essex-horizon">
+<span id="id29"></span><h3>horizon<a class="headerlink" href="#team-essex-horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.1.3.tar.gz">2012.1.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>b67f21f9b49316c32c716430540ce41688d7081d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.1.1.tar.gz">2012.1.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ae9034c9e9a837e40f161e8337a48c0abdcf90a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2012.1.tar.gz">2012.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>a58db8503b17ec8efc5e07658a5da0e66e2b0345</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="django-openstack-auth-kerberos-eol">
+<span id="team-independent-django-openstack-auth-kerberos"></span><h3>django-openstack-auth-kerberos (EOL)<a class="headerlink" href="#django-openstack-auth-kerberos-eol" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/django-openstack-auth-kerberos/django-openstack-auth-kerberos-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django-openstack-auth-kerberos/django-openstack-auth-kerberos-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django-openstack-auth-kerberos</p></td>
+<td><p>517d3ff3bb57fabd94838984a2a4ab1e28d64187</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/django-openstack-auth-kerberos/django-openstack-auth-kerberos-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/django-openstack-auth-kerberos/django-openstack-auth-kerberos-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/django-openstack-auth-kerberos</p></td>
+<td><p>f18a761378ae7537e5b6bbe66d016794e70f3561</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular">
+<span id="team-independent-xstatic-angular"></span><h3>xstatic-angular<a class="headerlink" href="#xstatic-angular" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular/XStatic-Angular-1.5.8.0.tar.gz">1.5.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular/XStatic-Angular-1.5.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular</p></td>
+<td><p>8d809659b75b616461877807c937cb5fa2173b31</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular/XStatic-Angular-1.4.10.1.tar.gz">1.4.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular/XStatic-Angular-1.4.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular</p></td>
+<td><p>5a30bee80d67c0f26ecbf05726f4838dbae3f276</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-bootstrap">
+<span id="team-independent-xstatic-angular-bootstrap"></span><h3>xstatic-angular-bootstrap<a class="headerlink" href="#xstatic-angular-bootstrap" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-2.5.0.0.tar.gz">2.5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-2.5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-bootstrap</p></td>
+<td><p>fa90c1da36e004132824ac5aab58f468245ff0d1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-2.2.0.0.tar.gz">2.2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-2.2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-bootstrap</p></td>
+<td><p>9d7f18344d4862f23a2b919d83914a6f4a3eec9e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-0.11.0.8.tar.gz">0.11.0.8</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-0.11.0.8.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-bootstrap</p></td>
+<td><p>7a2e73684634a979b43bd157301dd59bde967ec9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-0.11.0.3.tar.gz">0.11.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-bootstrap/XStatic-Angular-Bootstrap-0.11.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-bootstrap</p></td>
+<td><p>b581edb6975175a564fd02766aef2f9043702c80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-gettext">
+<span id="team-independent-xstatic-angular-gettext"></span><h3>xstatic-angular-gettext<a class="headerlink" href="#xstatic-angular-gettext" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-gettext/XStatic-Angular-Gettext-2.4.1.0.tar.gz">2.4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-gettext/XStatic-Angular-Gettext-2.4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-gettext</p></td>
+<td><p>6b7ba0f82bfe7b2094e7097e827d00b03f632c37</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-gettext/XStatic-Angular-Gettext-2.3.8.0.tar.gz">2.3.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-gettext/XStatic-Angular-Gettext-2.3.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-gettext</p></td>
+<td><p>6ec7c032b3a87159f14d6d2138e03d73fc8b57b0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-lrdragndrop">
+<span id="team-independent-xstatic-angular-lrdragndrop"></span><h3>xstatic-angular-lrdragndrop<a class="headerlink" href="#xstatic-angular-lrdragndrop" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-lrdragndrop/XStatic-Angular-lrdragndrop-1.0.2.4.tar.gz">1.0.2.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-lrdragndrop/XStatic-Angular-lrdragndrop-1.0.2.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-lrdragndrop</p></td>
+<td><p>2192eb008f92cec81af070cfa19fad8a9e69bbed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-lrdragndrop/XStatic-Angular-lrdragndrop-1.0.2.3.tar.gz">1.0.2.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-lrdragndrop/XStatic-Angular-lrdragndrop-1.0.2.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-lrdragndrop</p></td>
+<td><p>55c7494492e6da2a6664aa00941864dd64589396</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-material">
+<span id="team-independent-xstatic-angular-material"></span><h3>xstatic-angular-material<a class="headerlink" href="#xstatic-angular-material" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.2.tar.gz">1.1.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-material</p></td>
+<td><p>a866083297f00755ec5f84f539d8f6ec19b2b134</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.1.tar.gz">1.1.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-material</p></td>
+<td><p>32f969a32abf2ee50821ac00cbe4339ea6cce3d5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.0.tar.gz">1.1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-material/XStatic-Angular-Material-1.1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-material</p></td>
+<td><p>9f6499b08176383eb93a0e5c0917528e50eff65c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-notify">
+<span id="team-independent-xstatic-angular-notify"></span><h3>xstatic-angular-notify<a class="headerlink" href="#xstatic-angular-notify" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-notify/XStatic-Angular-Notify-2.5.1.0.tar.gz">2.5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-notify/XStatic-Angular-Notify-2.5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-notify</p></td>
+<td><p>59bdf1db3a2b301ade80701e5d5baccf36cbb209</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-smart-table">
+<span id="team-independent-xstatic-angular-smart-table"></span><h3>xstatic-angular-smart-table<a class="headerlink" href="#xstatic-angular-smart-table" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.2.tar.gz">1.4.13.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-smart-table</p></td>
+<td><p>3989e1f8e350c365c7bf1074ca9026b3a851b47f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.1.tar.gz">1.4.13.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-smart-table</p></td>
+<td><p>9a6a7764317d3a9db530f599d5958d3e14126551</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.0.tar.gz">1.4.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-smart-table/XStatic-smart-table-1.4.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-smart-table</p></td>
+<td><p>a5ace69bc0ed04b76addd5bbb6edd73f6be47662</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-uuid">
+<span id="team-independent-xstatic-angular-uuid"></span><h3>xstatic-angular-uuid<a class="headerlink" href="#xstatic-angular-uuid" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-uuid/XStatic-Angular-UUID-0.0.4.0.tar.gz">0.0.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-uuid/XStatic-Angular-UUID-0.0.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-uuid</p></td>
+<td><p>28ed4f2009bdb78730eef0eac2333ba4ee8c386a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-angular-vis">
+<span id="team-independent-xstatic-angular-vis"></span><h3>xstatic-angular-vis<a class="headerlink" href="#xstatic-angular-vis" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-vis/XStatic-Angular-Vis-4.16.0.0.tar.gz">4.16.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-angular-vis/XStatic-Angular-Vis-4.16.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-angular-vis</p></td>
+<td><p>cad0238596bbb452eb3841b4beb4111b97f62059</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-bootstrap-datepicker">
+<span id="team-independent-xstatic-bootstrap-datepicker"></span><h3>xstatic-bootstrap-datepicker<a class="headerlink" href="#xstatic-bootstrap-datepicker" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-datepicker/XStatic-Bootstrap-Datepicker-1.4.0.0.tar.gz">1.4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-datepicker/XStatic-Bootstrap-Datepicker-1.4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-bootstrap-datepicker</p></td>
+<td><p>f1fc9efd5e6618330fa14292c702ed65fc1715cc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-bootstrap-scss">
+<span id="team-independent-xstatic-bootstrap-scss"></span><h3>xstatic-bootstrap-scss<a class="headerlink" href="#xstatic-bootstrap-scss" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.4.1.0.tar.gz">3.4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-bootstrap-scss</p></td>
+<td><p>1ba0b953862e953a8af9fc8a0f1c9ff372b169cf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.3.7.1.tar.gz">3.3.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.3.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-bootstrap-scss</p></td>
+<td><p>4ca4a059f89287b40441566a4a6bf32785295504</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.3.7.0.tar.gz">3.3.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootstrap-scss/XStatic-Bootstrap-SCSS-3.3.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-bootstrap-scss</p></td>
+<td><p>577f0ce201e48aaf2d5fbf4d9799013eb108ffd3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-bootswatch">
+<span id="team-independent-xstatic-bootswatch"></span><h3>xstatic-bootswatch<a class="headerlink" href="#xstatic-bootswatch" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootswatch/XStatic-bootswatch-3.3.7.0.tar.gz">3.3.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-bootswatch/XStatic-bootswatch-3.3.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-bootswatch</p></td>
+<td><p>49c0d56698bc14ae5e5c18cc00c3f2e290d2e724</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-d3">
+<span id="team-independent-xstatic-d3"></span><h3>xstatic-d3<a class="headerlink" href="#xstatic-d3" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-d3/XStatic-D3-3.5.17.0.tar.gz">3.5.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-d3/XStatic-D3-3.5.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-d3</p></td>
+<td><p>d2c33c15a81574c5380c1825aaa4b2a2c584bd4f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-filesaver">
+<span id="team-independent-xstatic-filesaver"></span><h3>xstatic-filesaver<a class="headerlink" href="#xstatic-filesaver" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-filesaver/XStatic-FileSaver-1.3.2.0.tar.gz">1.3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-filesaver/XStatic-FileSaver-1.3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-filesaver</p></td>
+<td><p>d767a5148683dd9c8be9b1576d36c0b593054b3a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-font-awesome">
+<span id="team-independent-xstatic-font-awesome"></span><h3>xstatic-font-awesome<a class="headerlink" href="#xstatic-font-awesome" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-font-awesome/XStatic-Font-Awesome-4.7.0.0.tar.gz">4.7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-font-awesome/XStatic-Font-Awesome-4.7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-font-awesome</p></td>
+<td><p>8a671c3f6f5cf0248c8c0cb6080db7f11c80bd41</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-hogan">
+<span id="team-independent-xstatic-hogan"></span><h3>xstatic-hogan<a class="headerlink" href="#xstatic-hogan" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-hogan/XStatic-Hogan-2.0.0.3.tar.gz">2.0.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-hogan/XStatic-Hogan-2.0.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-hogan</p></td>
+<td><p>d9d52a3631b96128fc5a18933955fbb67fec4342</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-jasmine">
+<span id="team-independent-xstatic-jasmine"></span><h3>xstatic-jasmine<a class="headerlink" href="#xstatic-jasmine" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.4.1.2.tar.gz">2.4.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.4.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jasmine</p></td>
+<td><p>f8db790b6440f914968e7a6aa6b053a5d141c56c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.2.tar.gz">2.2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jasmine</p></td>
+<td><p>b309c06b51b039d90340212fc181d56c736183bb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.1.tar.gz">2.2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jasmine</p></td>
+<td><p>cf95a6556c18762df48a3c66c28ccf0fea14c049</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.0.tar.gz">2.2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jasmine</p></td>
+<td><p>cf95a6556c18762df48a3c66c28ccf0fea14c049</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.1.2.0.tar.gz">2.1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jasmine/XStatic-Jasmine-2.1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jasmine</p></td>
+<td><p>a55f5db1dbe59b23c7d6284250bf4eac1d0143c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-jquery-migrate">
+<span id="team-independent-xstatic-jquery-migrate"></span><h3>xstatic-jquery-migrate<a class="headerlink" href="#xstatic-jquery-migrate" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery-migrate/XStatic-JQuery-Migrate-3.3.2.1.tar.gz">3.3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery-migrate/XStatic-JQuery-Migrate-3.3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jquery-migrate</p></td>
+<td><p>2d1952a662abbc344bf6380d64988e2c8cba1b5b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery-migrate/XStatic-JQuery-Migrate-1.2.1.2.tar.gz">1.2.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery-migrate/XStatic-JQuery-Migrate-1.2.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jquery-migrate</p></td>
+<td><p>2ac50aad6ca99f61f5f39db12fce9bbdb31dad93</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-jquery-quicksearch">
+<span id="team-independent-xstatic-jquery-quicksearch"></span><h3>xstatic-jquery.quicksearch<a class="headerlink" href="#xstatic-jquery-quicksearch" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery.quicksearch/XStatic-JQuery.quicksearch-2.0.3.2.tar.gz">2.0.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery.quicksearch/XStatic-JQuery.quicksearch-2.0.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jquery.quicksearch</p></td>
+<td><p>6459ef2119c6792c12995fac68a08259f4517d98</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-jquery-tablesorter">
+<span id="team-independent-xstatic-jquery-tablesorter"></span><h3>xstatic-jquery.tablesorter<a class="headerlink" href="#xstatic-jquery-tablesorter" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery.tablesorter/XStatic-JQuery.TableSorter-2.14.5.2.tar.gz">2.14.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jquery.tablesorter/XStatic-JQuery.TableSorter-2.14.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jquery.tablesorter</p></td>
+<td><p>09a700b565e3fa8696d8bfd1fc9059e1979f9f79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-js-yaml">
+<span id="team-independent-xstatic-js-yaml"></span><h3>xstatic-js-yaml<a class="headerlink" href="#xstatic-js-yaml" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-js-yaml/XStatic-JS-Yaml-3.8.1.0.tar.gz">3.8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-js-yaml/XStatic-JS-Yaml-3.8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-js-yaml</p></td>
+<td><p>68e241627541fc196ff26245810eb58b8a4f6ce2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-jsencrypt">
+<span id="team-independent-xstatic-jsencrypt"></span><h3>xstatic-jsencrypt<a class="headerlink" href="#xstatic-jsencrypt" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jsencrypt/XStatic-JSEncrypt-2.3.1.1.tar.gz">2.3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jsencrypt/XStatic-JSEncrypt-2.3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jsencrypt</p></td>
+<td><p>27ddd977cb634604d8455a242a1b43ad72a3b0f9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jsencrypt/XStatic-JSEncrypt-2.3.1.0.tar.gz">2.3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-jsencrypt/XStatic-JSEncrypt-2.3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-jsencrypt</p></td>
+<td><p>5526c15f91b471fdc5efc48ddcdb85c585e57077</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-json2yaml">
+<span id="team-independent-xstatic-json2yaml"></span><h3>xstatic-json2yaml<a class="headerlink" href="#xstatic-json2yaml" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-json2yaml/XStatic-Json2yaml-0.1.1.0.tar.gz">0.1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-json2yaml/XStatic-Json2yaml-0.1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-json2yaml</p></td>
+<td><p>84f91b0bcf9621eba0abdbd4f2031a52616233b4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-magic-search">
+<span id="team-independent-xstatic-magic-search"></span><h3>xstatic-magic-search<a class="headerlink" href="#xstatic-magic-search" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-magic-search/XStatic-Magic-Search-0.2.5.2.tar.gz">0.2.5.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-magic-search/XStatic-Magic-Search-0.2.5.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-magic-search</p></td>
+<td><p>119f1348afe17a69e0ef0640d69ae6c4d4557751</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-magic-search/XStatic-Magic-Search-0.2.0.1.tar.gz">0.2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-magic-search/XStatic-Magic-Search-0.2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-magic-search</p></td>
+<td><p>60d6954a36e54afa1f925324e7b527d235bdb484</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-mdi">
+<span id="team-independent-xstatic-mdi"></span><h3>xstatic-mdi<a class="headerlink" href="#xstatic-mdi" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-mdi/XStatic-mdi-1.6.50.2.tar.gz">1.6.50.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-mdi/XStatic-mdi-1.6.50.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-mdi</p></td>
+<td><p>64dca40a7ce5794e1bf046de3b0548e99422c49b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-mdi/XStatic-mdi-1.6.50.1.tar.gz">1.6.50.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-mdi/XStatic-mdi-1.6.50.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-mdi</p></td>
+<td><p>29bc27f557d366382b172bb07190a3d040a04065</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-rickshaw">
+<span id="team-independent-xstatic-rickshaw"></span><h3>xstatic-rickshaw<a class="headerlink" href="#xstatic-rickshaw" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-rickshaw/XStatic-Rickshaw-1.5.1.0.tar.gz">1.5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-rickshaw/XStatic-Rickshaw-1.5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-rickshaw</p></td>
+<td><p>8ceea48e79c5abc864c64012e2bde239afea011c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-roboto-fontface">
+<span id="team-independent-xstatic-roboto-fontface"></span><h3>xstatic-roboto-fontface<a class="headerlink" href="#xstatic-roboto-fontface" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-roboto-fontface/XStatic-roboto-fontface-0.5.0.0.tar.gz">0.5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-roboto-fontface/XStatic-roboto-fontface-0.5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-roboto-fontface</p></td>
+<td><p>480b520263b01ef06bafa6026c42c410112dd1a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xstatic-spin">
+<span id="team-independent-xstatic-spin"></span><h3>xstatic-spin<a class="headerlink" href="#xstatic-spin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-spin/XStatic-Spin-1.2.5.3.tar.gz">1.2.5.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/xstatic-spin/XStatic-Spin-1.2.5.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/xstatic-spin</p></td>
+<td><p>14237451bad092de9c352d48ef7e0ce1c85d7a58</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="heat.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Heat"></i></a>
+          
+          
+            <a href="ironic.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Ironic"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Horizon</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-horizon">horizon</a></li>
+<li><a class="reference internal" href="#tempest-horizon">tempest-horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-horizon">horizon</a></li>
+<li><a class="reference internal" href="#team-ussuri-tempest-horizon">tempest-horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-horizon">horizon</a></li>
+<li><a class="reference internal" href="#team-train-tempest-horizon">tempest-horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-horizon">horizon</a></li>
+<li><a class="reference internal" href="#team-stein-tempest-horizon">tempest-horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#django-openstack-auth">django_openstack_auth</a></li>
+<li><a class="reference internal" href="#team-pike-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-django-openstack-auth">django_openstack_auth</a></li>
+<li><a class="reference internal" href="#team-ocata-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-django-openstack-auth">django_openstack_auth</a></li>
+<li><a class="reference internal" href="#team-newton-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-django-openstack-auth">django-openstack-auth</a></li>
+<li><a class="reference internal" href="#team-mitaka-horizon">horizon</a></li>
+<li><a class="reference internal" href="#manila-ui">manila-ui</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-django-openstack-auth">django-openstack-auth</a></li>
+<li><a class="reference internal" href="#team-liberty-horizon">horizon</a></li>
+<li><a class="reference internal" href="#team-liberty-manila-ui">manila-ui</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-django-openstack-auth">django-openstack-auth</a></li>
+<li><a class="reference internal" href="#team-kilo-horizon">horizon</a></li>
+<li><a class="reference internal" href="#team-kilo-manila-ui">manila-ui</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#folsom">Folsom</a><ul>
+<li><a class="reference internal" href="#team-folsom-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#essex">Essex</a><ul>
+<li><a class="reference internal" href="#team-essex-horizon">horizon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#django-openstack-auth-kerberos-eol">django-openstack-auth-kerberos (EOL)</a></li>
+<li><a class="reference internal" href="#xstatic-angular">xstatic-angular</a></li>
+<li><a class="reference internal" href="#xstatic-angular-bootstrap">xstatic-angular-bootstrap</a></li>
+<li><a class="reference internal" href="#xstatic-angular-gettext">xstatic-angular-gettext</a></li>
+<li><a class="reference internal" href="#xstatic-angular-lrdragndrop">xstatic-angular-lrdragndrop</a></li>
+<li><a class="reference internal" href="#xstatic-angular-material">xstatic-angular-material</a></li>
+<li><a class="reference internal" href="#xstatic-angular-notify">xstatic-angular-notify</a></li>
+<li><a class="reference internal" href="#xstatic-angular-smart-table">xstatic-angular-smart-table</a></li>
+<li><a class="reference internal" href="#xstatic-angular-uuid">xstatic-angular-uuid</a></li>
+<li><a class="reference internal" href="#xstatic-angular-vis">xstatic-angular-vis</a></li>
+<li><a class="reference internal" href="#xstatic-bootstrap-datepicker">xstatic-bootstrap-datepicker</a></li>
+<li><a class="reference internal" href="#xstatic-bootstrap-scss">xstatic-bootstrap-scss</a></li>
+<li><a class="reference internal" href="#xstatic-bootswatch">xstatic-bootswatch</a></li>
+<li><a class="reference internal" href="#xstatic-d3">xstatic-d3</a></li>
+<li><a class="reference internal" href="#xstatic-filesaver">xstatic-filesaver</a></li>
+<li><a class="reference internal" href="#xstatic-font-awesome">xstatic-font-awesome</a></li>
+<li><a class="reference internal" href="#xstatic-hogan">xstatic-hogan</a></li>
+<li><a class="reference internal" href="#xstatic-jasmine">xstatic-jasmine</a></li>
+<li><a class="reference internal" href="#xstatic-jquery-migrate">xstatic-jquery-migrate</a></li>
+<li><a class="reference internal" href="#xstatic-jquery-quicksearch">xstatic-jquery.quicksearch</a></li>
+<li><a class="reference internal" href="#xstatic-jquery-tablesorter">xstatic-jquery.tablesorter</a></li>
+<li><a class="reference internal" href="#xstatic-js-yaml">xstatic-js-yaml</a></li>
+<li><a class="reference internal" href="#xstatic-jsencrypt">xstatic-jsencrypt</a></li>
+<li><a class="reference internal" href="#xstatic-json2yaml">xstatic-json2yaml</a></li>
+<li><a class="reference internal" href="#xstatic-magic-search">xstatic-magic-search</a></li>
+<li><a class="reference internal" href="#xstatic-mdi">xstatic-mdi</a></li>
+<li><a class="reference internal" href="#xstatic-rickshaw">xstatic-rickshaw</a></li>
+<li><a class="reference internal" href="#xstatic-roboto-fontface">xstatic-roboto-fontface</a></li>
+<li><a class="reference internal" href="#xstatic-spin">xstatic-spin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/horizon.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

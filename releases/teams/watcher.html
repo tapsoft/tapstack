@@ -1,0 +1,1554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/watcher.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Watcher</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Watcher</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="watcher">
+<h1>Watcher<a class="headerlink" href="#watcher" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-watcherclient">
+<span id="team-wallaby-python-watcherclient"></span><h3>python-watcherclient<a class="headerlink" href="#python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>6a33b44d7f989043e448030c518210744b35a08e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-watcher">
+<span id="id1"></span><h3>watcher<a class="headerlink" href="#team-wallaby-watcher" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>863815153e3451f2354f14e6c271233e24e84782</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="watcher-dashboard">
+<span id="team-wallaby-watcher-dashboard"></span><h3>watcher-dashboard<a class="headerlink" href="#watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>02bdd270ee5e45ab3286df434a0e7d03275db821</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="watcher-tempest-plugin">
+<span id="team-wallaby-watcher-tempest-plugin"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>f5913409a5ab1887954594089cd275e7a62f2fb8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-watcherclient">
+<span id="id2"></span><h3>python-watcherclient<a class="headerlink" href="#team-victoria-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>80f728b14f821f98a87c230516fea96d167d6550</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>21b106dc15d74ef0cf786e5185b56aa9dfa0dad1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-watcher">
+<span id="id3"></span><h3>watcher<a class="headerlink" href="#team-victoria-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/victoria.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>583c946061f8af815c32254655f4aed8f0c18dc9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-watcher-dashboard">
+<span id="id4"></span><h3>watcher-dashboard<a class="headerlink" href="#team-victoria-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/victoria.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>9e777ec9a471d32f6c28be742496f71a71295bc2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-watcher-tempest-plugin">
+<span id="id5"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#team-victoria-watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>7fbabcafa39e99b58aeb542214ebd44272bc54ab</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-watcherclient">
+<span id="id6"></span><h3>python-watcherclient<a class="headerlink" href="#team-ussuri-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>5946fbb5b1f316a9b0e2509e06a318993930e8e4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>0c7e3066421cb9201ef5f764cdf24ce28a9c888a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-watcher">
+<span id="id7"></span><h3>watcher<a class="headerlink" href="#team-ussuri-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/ussuri.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>870e6d75e0bb0d868ee5188d35685d08bc4724c7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-watcher-dashboard">
+<span id="id8"></span><h3>watcher-dashboard<a class="headerlink" href="#team-ussuri-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/ussuri.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>30bb75d744ce976dbc9922a8d6f6870ccff288b2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-watcher-tempest-plugin">
+<span id="id9"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#team-ussuri-watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>caa50e4c7abace6221201a6213d8065ab2f4ff2b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-watcherclient">
+<span id="id10"></span><h3>python-watcherclient<a class="headerlink" href="#team-train-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>62fdb73dae226ae812c756e98969f8db215b901a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>ea74a22b4998a4214cf98828c4ff93676c8d46c8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-watcher">
+<span id="id11"></span><h3>watcher<a class="headerlink" href="#team-train-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/train.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.2.tar.gz">3.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>70a24cb009e3318c55ca94727f5f6325dc3c8db6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>e37bbf3be3a5472a522cbc02409a164680f90c1d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>85763ccfce7937887cc7086b34c0255633c8b7e5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-watcher-dashboard">
+<span id="id12"></span><h3>watcher-dashboard<a class="headerlink" href="#team-train-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/train.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>e0405ceff6d3499e8f3786df9d678ffaab6ad95f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-watcher-tempest-plugin">
+<span id="id13"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#team-train-watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>569bf8541ba0d2a18590045abae6080708e66aba</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-watcherclient">
+<span id="id14"></span><h3>python-watcherclient<a class="headerlink" href="#team-stein-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>db7a5e4bc9c46041228f1dd99fab353c41282761</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-watcher">
+<span id="id15"></span><h3>watcher<a class="headerlink" href="#team-stein-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/stein.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>922783a5f8b30dbd7e2da95f29ce8e747b812c19</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-watcher-dashboard">
+<span id="id16"></span><h3>watcher-dashboard<a class="headerlink" href="#team-stein-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/stein.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>50437a47e418beff01038d92eed2d65714e50137</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-watcher-tempest-plugin">
+<span id="id17"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#team-stein-watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>f5913409a5ab1887954594089cd275e7a62f2fb8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>d58ad1411156b925192df5769a3765a5d1fc4e95</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-watcherclient">
+<span id="id18"></span><h3>python-watcherclient<a class="headerlink" href="#team-rocky-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>582b52b1b8707f678c16a9f4c1c935b448befda3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>6681724daa2155364a1ef131157d19561209f23f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>db012f1f8fe44ffc55e356645b57c2dd3c8cddbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>673905feadaf43ba335d5d873d3f2599eb77de5a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-watcher">
+<span id="id19"></span><h3>watcher<a class="headerlink" href="#team-rocky-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/rocky.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.12.1.tar.gz">1.12.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.12.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>a8974556ecc29f09e07f411fb745e61e68d8db92</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.12.0.tar.gz">1.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>b471b4ca36f46fa89cdca7be297c3f28dbd21c2b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>595cd1d435319fa5b0a03e10ebab704c05a9f7ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>3591d9fa0a32f75f5043c6ed0971f5c03cb1f613</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>391bb92bd2c7bee2aae68d50fbbf0275c7093e34</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-watcher-dashboard">
+<span id="id20"></span><h3>watcher-dashboard<a class="headerlink" href="#team-rocky-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/rocky.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>09de59300f97cf099f2749e5e3fa266a542440cb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>79fcf55752d350911f50515de7c6956185a3bce7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>233ede982f11d2fc97f404957205b510d2489a7a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-watcher-tempest-plugin">
+<span id="id21"></span><h3>watcher-tempest-plugin<a class="headerlink" href="#team-rocky-watcher-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-tempest-plugin/watcher-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-tempest-plugin</p></td>
+<td><p>8b78066462a76eba0242e264d3598adbd38eabbc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-watcherclient">
+<span id="id22"></span><h3>python-watcherclient<a class="headerlink" href="#team-queens-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>a1b6eed54cb92713e5847a6b033a4e33eb1fa860</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>abd6d8a0cb4a7d59b4d1cce39d63804600929d97</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>0fd1b11f6d9ccc108608297e6dfb28c846152a73</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-watcher">
+<span id="id23"></span><h3>watcher<a class="headerlink" href="#team-queens-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/queens.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.8.1.tar.gz">1.8.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.8.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>5307f5a80ea81c69a1bc37aead007b441a4af450</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>40a653215f37a52394d561742d7975a4be3b946d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>072822d9209523b051bd766340e76a9df5d8b9d3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>c2e16bfa9630b374ccca8ea88493a166dfa5f1a9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>84fb7423f115ee293071313729a9cdf4d2ed7f75</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-watcher-dashboard">
+<span id="id24"></span><h3>watcher-dashboard<a class="headerlink" href="#team-queens-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/queens.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>191d2dbd3ea1591146106385271ed9c86f7e7c14</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>1aae6fe0aa44363606cbfb23d35df9ee5da14615</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>e44c43b6175ca0eaaad8115d0efd96fce09afac6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>e0ef3f01c213341e128b1dea05947561882f88f0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-watcherclient">
+<span id="id25"></span><h3>python-watcherclient<a class="headerlink" href="#team-pike-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>4a8cf8445ed34e88a1afae8b3c8028c9d897bbe6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>c02f584b337b052d5937bbda09bd7006d2118b12</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>5cbce9fb204b7f14f8be0b0497033865724875f1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>723d39cd65e554ac1a98f30dbee7db77ed346a04</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-watcher">
+<span id="id26"></span><h3>watcher<a class="headerlink" href="#team-pike-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/pike.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>30d6f07ceba2ac284bf5167e9bacfc6f8572b391</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>9d2f8d11ec5bd633af6b9d5b4bb506c68f38bc4d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>eaa09a4cfca3a1d4b5d15d1bc2c2955f8d46b403</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>5817f6833c569c7ff4d158314a47c29fddb3f110</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>d7a44739a6dae8f4a6fa66408d46dad9b6fd8262</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>dbff4326e3ec942c06c429485e9f04ac5737f4c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-watcher-dashboard">
+<span id="id27"></span><h3>watcher-dashboard<a class="headerlink" href="#team-pike-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/pike.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>ca1756712322b90efaabd9f297c153bdac09297e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>2e7f77ad48e9f231adaa11696af23962219c014e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>7015a03eb1a8c66f111925fbb1dc990b64843d11</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>87243e036584b8910c8a79523aefc428aabda7f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>69821a61ec48195ba8229d9090317dda42c62ac2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-watcherclient">
+<span id="id28"></span><h3>python-watcherclient<a class="headerlink" href="#team-ocata-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>cec8ee4f153e9fa536c4158c166cf3c40e324da8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.27.0.tar.gz">0.27.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.27.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>b66834506a52fd37f7d737c5a2692fb95e8f1e1b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.26.0.tar.gz">0.26.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.26.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>d960977c9684ee1ec00a4338f8a70b0d848069be</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-watcher">
+<span id="id29"></span><h3>watcher<a class="headerlink" href="#team-ocata-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/ocata.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>1caf89686c7f13e8164dbbd6bd8c09b9ee66f9c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>62cb8a8d298d89bd88a09d7b153cda6b32c47d6d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.34.0.tar.gz">0.34.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.34.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>ecb0e218a981814605da48e63c2c1cba8523052b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.33.0.tar.gz">0.33.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.33.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>695ddf8ae7a2dccff4c62a28821888b7d49e2338</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.32.0.tar.gz">0.32.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.32.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher</p></td>
+<td><p>3ebe8ab70f1abc6df2fdd23ac057d77a12a09d3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-watcher-dashboard">
+<span id="id30"></span><h3>watcher-dashboard<a class="headerlink" href="#team-ocata-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher-dashboard/ocata.html">watcher-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>d9852e72158767df0cf151d11a1eab85f003dd95</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>691a64dee8e0b16efacc1308459d6f60aea4b85a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>88b46623328c7ed559622f5231a2f592f82e98b7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>592b86749290ac02c5cf5f995da6040706bbe3da</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-watcherclient">
+<span id="id31"></span><h3>python-watcherclient<a class="headerlink" href="#team-newton-python-watcherclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.25.1.tar.gz">0.25.1</a></p></td>
+<td></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>d4dfe32d0de44fdfe4f3fdeffde6861bcc856235</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.25.0.tar.gz">0.25.0</a></p></td>
+<td></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>465d0d46a3c61eee8a98ee525bf113c9f0d42b1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.24.0.tar.gz">0.24.0</a></p></td>
+<td></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>5b914e8877e0a0bd6057cff039f3505b6c58f63d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-watcherclient/python-watcherclient-0.23.0.tar.gz">0.23.0</a></p></td>
+<td></td>
+<td><p>openstack/python-watcherclient</p></td>
+<td><p>89cfc55870963c23b76913727305efe5d92fc094</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-watcher">
+<span id="id32"></span><h3>watcher<a class="headerlink" href="#team-newton-watcher" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/watcher/newton.html">watcher</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.31.0.tar.gz">0.31.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher</p></td>
+<td><p>19fdd1557e3a29328c3854a1214f455bca68ced1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.30.0.tar.gz">0.30.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher</p></td>
+<td><p>eeb278835522668a4a215dc6dea6b7f057d52bf9</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.29.0.tar.gz">0.29.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher</p></td>
+<td><p>8a38c4f479b19dbb695ab4e1b4cb074d943b58e2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.28.0.tar.gz">0.28.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher</p></td>
+<td><p>8635beb045c16fc3eb3487557c5e7dc2a9ab7baa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher/python-watcher-0.27.0.tar.gz">0.27.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher</p></td>
+<td><p>3d398b4d224e284773165879fc546d80e7c6015c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-watcher-dashboard">
+<span id="id33"></span><h3>watcher-dashboard<a class="headerlink" href="#team-newton-watcher-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>fa4610560920d61adcf8e0606a705b84884b11dc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/watcher-dashboard/watcher-dashboard-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/watcher-dashboard</p></td>
+<td><p>b62ec3cf250003a4c160284bbff7b2cbc241f872</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="vitrage.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Vitrage"></i></a>
+          
+          
+            <a href="winstackers.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Winstackers"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Watcher</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-watcher">watcher</a></li>
+<li><a class="reference internal" href="#watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-victoria-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-victoria-watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-ussuri-watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-train-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-train-watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-stein-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-stein-watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-rocky-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-rocky-watcher-dashboard">watcher-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-watcher-tempest-plugin">watcher-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-queens-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-queens-watcher-dashboard">watcher-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-pike-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-pike-watcher-dashboard">watcher-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-ocata-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-ocata-watcher-dashboard">watcher-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-watcherclient">python-watcherclient</a></li>
+<li><a class="reference internal" href="#team-newton-watcher">watcher</a></li>
+<li><a class="reference internal" href="#team-newton-watcher-dashboard">watcher-dashboard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/watcher.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:12 GMT -->
+</html>

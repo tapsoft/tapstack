@@ -1,0 +1,1659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/magnum.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Magnum</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Magnum</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="magnum">
+<h1>Magnum<a class="headerlink" href="#magnum" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-magnum">
+<span id="id1"></span><h3>magnum<a class="headerlink" href="#team-wallaby-magnum" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>c2a4a22ac838a14e84685500e977cc1c5c94df2e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="magnum-tempest-plugin">
+<span id="team-wallaby-magnum-tempest-plugin"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>0e797a80b3eadb95986796fd60ce190fd066c5ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>487571aa0cc5854c5101485763abeb5cf959f1fd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="magnum-ui">
+<span id="team-wallaby-magnum-ui"></span><h3>magnum-ui<a class="headerlink" href="#magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/wallaby.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>e5518874c224dc76d3c6ff9f96f1c7f3cda3ce0a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-magnumclient">
+<span id="team-wallaby-python-magnumclient"></span><h3>python-magnumclient<a class="headerlink" href="#python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.4.0.tar.gz">3.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>e2bcf6e98011f04f7768ab5859077f43093166d8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>d549651f6d6699d0c429ab9eed8ffd0d6fe0a4c9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-magnum">
+<span id="id2"></span><h3>magnum<a class="headerlink" href="#team-victoria-magnum" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-11.1.0.tar.gz">11.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-11.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>4b404389fd38dc8673eb6e4dafc21379e0ef6381</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>2a61e7dc1f28c0ab7694b4c2855764358ee1a4ee</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-magnum-tempest-plugin">
+<span id="id3"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#team-victoria-magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>abe58fe334b0fd8d4806c0d8081cd74f4feafef3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-magnum-ui">
+<span id="id4"></span><h3>magnum-ui<a class="headerlink" href="#team-victoria-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/victoria.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>d144650bd91f0a078b2483343e1e6d3edb1e8544</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-magnumclient">
+<span id="id5"></span><h3>python-magnumclient<a class="headerlink" href="#team-victoria-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.2.1.tar.gz">3.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>1b707a7e408370ce328190a0996bf381761e89d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>3da3b4896fa5f7525a346966501c80ab971c8706</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>1c746d8efb00e0d99a4b7f4678e623bb3d329760</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-magnum">
+<span id="id6"></span><h3>magnum<a class="headerlink" href="#team-ussuri-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/ussuri.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-10.1.0.tar.gz">10.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-10.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>9c9a84f6690d11356212070b4c5221c8c3e7777d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>c6e536ae071550077f192562e3a6df33fd01ee04</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-magnum-tempest-plugin">
+<span id="id7"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#team-ussuri-magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>0655f1a2cb6523945a96f9b596e13eee6f8f3bec</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-magnum-ui">
+<span id="id8"></span><h3>magnum-ui<a class="headerlink" href="#team-ussuri-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/ussuri.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>5ff91e0be5db9e0a6058d75c8aa62d22e65cde6d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-magnumclient">
+<span id="id9"></span><h3>python-magnumclient<a class="headerlink" href="#team-ussuri-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>6d1a386e401095c169b069ac7d30930038159de3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>11d2b728983fa675ca0efea1f3d45c5ab27474b1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.17.0.tar.gz">2.17.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.17.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>c0d368360831cd29affa47e77eba4e81e4c6f0f8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-magnum">
+<span id="id10"></span><h3>magnum<a class="headerlink" href="#team-train-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/train.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.4.1.tar.gz">9.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>528ec941da294b454221170e1919b7dc18d10e86</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.4.0.tar.gz">9.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>368241fda7fbe146f824193b1e0b39b73c226f87</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.3.0.tar.gz">9.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>0feb2b185179a20aa97021d64263c96e697901a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.2.0.tar.gz">9.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>1115672e7284bdd77a5951e93d47b22495c33d91</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.1.0.tar.gz">9.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>347b7b74742306f8573d2a6cad8e966a8ccb58fb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>5e66b4fe637e56f2719edae6e21aab354792bb30</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-magnum-tempest-plugin">
+<span id="id11"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#team-train-magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>85700fc464f8fad9cb323659278cdee101d8aaed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-magnum-ui">
+<span id="id12"></span><h3>magnum-ui<a class="headerlink" href="#team-train-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/train.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.3.1.tar.gz">5.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>7e10a6aec2adb7c6ec740f873c616522a0ee7be5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.3.0.tar.gz">5.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>2fd052efa8a5a7ec6669c6e13622213fc43f5721</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.2.1.tar.gz">5.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>5763f3b40a44a9b9badb74a8157148a4a255af14</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.2.0.tar.gz">5.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>baccaeb7939e5183dbd69e4936d4ef2e6a151e5e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-magnumclient">
+<span id="id13"></span><h3>python-magnumclient<a class="headerlink" href="#team-train-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.16.0.tar.gz">2.16.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.16.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>8106c5ff0020aefd755af66cdf8f2c49bb68f969</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.15.0.tar.gz">2.15.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.15.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>93acc927beb6cb6b1c1236c1ad6bb58ed9109bc2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.14.0.tar.gz">2.14.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.14.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>d29d5cdec47fc81792e9e94dec545e39646bd039</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.13.0.tar.gz">2.13.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.13.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>ea7c571162e781804985086fa5f9da63d326ccd9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-magnum">
+<span id="id14"></span><h3>magnum<a class="headerlink" href="#team-stein-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/stein.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.2.1.tar.gz">8.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>38a3c879a589d8f73d7912e8fc2f64d7b8c667c0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.2.0.tar.gz">8.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>1dcedf17314ff111ce5458896a447c2dd2e7f50d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.1.0.tar.gz">8.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>9493f4db27668a4b1fa0a9889ef9d3a932cd79aa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>f0d49da37d8801e921a61261a58017ba1e68eeaa</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-magnum-tempest-plugin">
+<span id="id15"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#team-stein-magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>487571aa0cc5854c5101485763abeb5cf959f1fd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>72a29d8e43daaa03b00d50358b4088e7f60fb859</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-magnum-ui">
+<span id="id16"></span><h3>magnum-ui<a class="headerlink" href="#team-stein-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/stein.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.1.0.tar.gz">5.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>c9c8b713e93251eea04bdf5849f9de370c1b5c70</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-magnumclient">
+<span id="id17"></span><h3>python-magnumclient<a class="headerlink" href="#team-stein-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.12.0.tar.gz">2.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>37e602d160632a386c2960ec8777bfc65642a9a9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>d41daca59bed255ef7c589fc62cab5afa001eb25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-magnum">
+<span id="id18"></span><h3>magnum<a class="headerlink" href="#team-rocky-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/rocky.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.2.0.tar.gz">7.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>1df886df52ace162e88b064d4c3302908c2ba290</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.1.0.tar.gz">7.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>3406b14aa086b6f9f13b97d971ef5098a76f43c7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.2.tar.gz">7.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>52beaa41afa71161a60bd8e6cd262908cac005ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>0dbe6806ed51fdc08e7b118ac10eedd53d365b5b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>0743a561fd1021f651e5d4d98690415bb3a6674f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-magnum-tempest-plugin">
+<span id="id19"></span><h3>magnum-tempest-plugin<a class="headerlink" href="#team-rocky-magnum-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-tempest-plugin/magnum_tempest_plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-tempest-plugin</p></td>
+<td><p>cc0647ce1a6fdb0e1a0b6580c9f2b14e0b26fbb1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-magnum-ui">
+<span id="id20"></span><h3>magnum-ui<a class="headerlink" href="#team-rocky-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/rocky.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>c23a2d84f4f561adad65e49b0d960edd2fd82194</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>cfd93ba5bce986903af3ce113f3ce969390f9d37</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-magnumclient">
+<span id="id21"></span><h3>python-magnumclient<a class="headerlink" href="#team-rocky-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>3e728f945f42e28c4f912c58a45c297d219e03bb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-magnum">
+<span id="id22"></span><h3>magnum<a class="headerlink" href="#team-queens-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/queens.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.3.0.tar.gz">6.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>44ba650536b2a5bbe240295448a3a3972e119736</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.2.0.tar.gz">6.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>ff6c64b4265b1abff2eacd08f0c8fc762c2339a1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.1.1.tar.gz">6.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>197382de3b110410cea9c4e430df27f9053641cc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.1.0.tar.gz">6.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>dd1a2aa3c8e252fcd476520b113403e2fab4d391</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>710192a63fd36186e9669cc2ac00dca2cc4fcc81</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>710192a63fd36186e9669cc2ac00dca2cc4fcc81</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-magnum-ui">
+<span id="id23"></span><h3>magnum-ui<a class="headerlink" href="#team-queens-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/queens.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>a6d173dcede3ecb97791c09986ddb8177fa45c82</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>7a9e3f754d5af80abb25f437aa9c0da18b4400b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-magnumclient">
+<span id="id24"></span><h3>python-magnumclient<a class="headerlink" href="#team-queens-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.9.1.tar.gz">2.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>40327b75edcab608e9c9d9ac0993855de088926b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>13858668f0ffaf98fb6f186b4fe955a5d23eb30b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>e3202b95e1f708a0db284e05f2b0f9a58127b65a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-magnum">
+<span id="id25"></span><h3>magnum<a class="headerlink" href="#team-pike-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/pike.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>6777ba5640b5be87fe48561f9a8a63403b7d9d95</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>fed947d4000119866e66c3dd77463aa8823efb29</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>afa32e8672a2a846eaeaa2cf9a5f1a238328e3e2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-magnum-ui">
+<span id="id26"></span><h3>magnum-ui<a class="headerlink" href="#team-pike-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/pike.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>3dc74b280a01363a64a8d3d368fcba2882ef31bd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>91fa9c8c62b3055a52f66e61c6ac31731427c15e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-magnumclient">
+<span id="id27"></span><h3>python-magnumclient<a class="headerlink" href="#team-pike-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.7.1.tar.gz">2.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>2754b15cd4f2bf73441487a3dde526d61019849f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>f501b618fb344b36d2771ac4921746125e1a0871</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>7d5539f28e95bb2264dbc8268614ea348fb293c3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-magnum">
+<span id="id28"></span><h3>magnum<a class="headerlink" href="#team-ocata-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/ocata.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.4.tar.gz">4.1.4</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.4.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>a6d9f8950cfd91e5856a047061ac8057b7e257f3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.3.tar.gz">4.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>b410770989fb53fed170a1fa503fe8ba176a5e6d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.2.tar.gz">4.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>bdddbdf2defd5b8cd4996ee6163746571146ea7c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.1.tar.gz">4.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>7be95f28db6c796f385f6ea31652aaf4790b67ec</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>5cbb881c50964f0aef320ef1631870fcc2eba6f7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum</p></td>
+<td><p>ae41b4511cd4519c0a313f9b51675472b9acdd0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-magnum-ui">
+<span id="id29"></span><h3>magnum-ui<a class="headerlink" href="#team-ocata-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/ocata.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>722a867ef0d5e1b7a0247ef5cf835e3398b36388</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-magnumclient">
+<span id="id30"></span><h3>python-magnumclient<a class="headerlink" href="#team-ocata-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>e6329a75f9536828c07fb2b65a30df20b18092ae</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>7cb91456538a1a72033a5c6df55aae99ec51c8fe</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-magnum">
+<span id="id31"></span><h3>magnum<a class="headerlink" href="#team-newton-magnum" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum/newton.html">magnum</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.3.1.tar.gz">3.3.1</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>ce5133ce56e3635bde8097a3eaf4b2c86a9a14e9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.3.0.tar.gz">3.3.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>98f4ae9942ee55c1e7454bb257f21d935c403cb2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.2.0.tar.gz">3.2.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>41f9d7f1585c52eb30d09405d22cfcf6ff37cba9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.1.1.tar.gz">3.1.1</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>38bc85a0600d553520f87a2445204c847d58a01f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.1.0.tar.gz">3.1.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>ab3bfca8ac0cead8eabf3431badc56146227353f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>5258fddf9d3d3b0beb4e57fca3af4579884f1e5c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-magnum-ui">
+<span id="id32"></span><h3>magnum-ui<a class="headerlink" href="#team-newton-magnum-ui" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/magnum-ui/newton.html">magnum-ui</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-2.1.1.tar.gz">2.1.1</a></p></td>
+<td></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>d00f938719579c44eabb6e4e603e6146816f4c8d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>d2b975e512bce86d0cd2dbbf7702c6c87d920d07</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum-ui/magnum-ui-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum-ui</p></td>
+<td><p>1b398928f87ce711550b4104505d2aae1b6742bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-magnumclient">
+<span id="id33"></span><h3>python-magnumclient<a class="headerlink" href="#team-newton-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.3.1.tar.gz">2.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>14dfc7d61664b03d2b7bed74dd032c60a0d86a19</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>eaeda5d8ecc88ce276412d3478db2114a56867f0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>63505b62c9df13c38283a10a2b0a40e6d1729696</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>3e025e40b87c602cadf8138aa604127ac89bf458</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-magnum">
+<span id="id34"></span><h3>magnum<a class="headerlink" href="#team-mitaka-magnum" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>eb4b5d60ddadcefa8648eabe7f4b25265cd62a13</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>9c80feb616b262485532b39cf7c7c6c2a51e8319</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/magnum/magnum-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/magnum</p></td>
+<td><p>838fa150541eafe61f91ba3d9172e2d0f742a287</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-python-magnumclient">
+<span id="id35"></span><h3>python-magnumclient<a class="headerlink" href="#team-liberty-python-magnumclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>29b0aa543ca33d3236e77e18d56aa5f11c254682</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-magnumclient/python-magnumclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-magnumclient</p></td>
+<td><p>a5693c0cd632c49f137ae08f92c1e4cbd381edda</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="kuryr.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Kuryr"></i></a>
+          
+          
+            <a href="manila.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Manila"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Magnum</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-magnum">magnum</a></li>
+<li><a class="reference internal" href="#magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-victoria-magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-victoria-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-ussuri-magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-train-magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-train-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-stein-magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-stein-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-rocky-magnum-tempest-plugin">magnum-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-rocky-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-queens-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-queens-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-pike-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-pike-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-ocata-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-ocata-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-magnum">magnum</a></li>
+<li><a class="reference internal" href="#team-newton-magnum-ui">magnum-ui</a></li>
+<li><a class="reference internal" href="#team-newton-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-magnum">magnum</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-python-magnumclient">python-magnumclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/magnum.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:01 GMT -->
+</html>

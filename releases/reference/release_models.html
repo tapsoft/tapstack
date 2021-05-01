@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/reference/release_models.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Release Models</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Release Models</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="release-models">
+<h1>Release Models<a class="headerlink" href="#release-models" title="Permalink to this headline">¶</a></h1>
+<p>Development in OpenStack is organized around 6-month cycles (like
+“kilo”).  At the end of every 6-month cycle, a synchronized release
+of all OpenStack components is produced, along with a common stable
+branch, providing a convenient reference point for downstream teams
+(stable branch maintenance, vulnerability management) and downstream
+users (in particular packagers of OpenStack distributions).</p>
+<p>Most deliverables follow the cycle. If their “final” release is their
+only release of the development cycle, they can produce release
+candidates in the final stages of the release cycle (<a class="reference internal" href="#cycle-with-rc">cycle-with-rc</a>
+release model). Otherwise they can opt to release directly and
+whenever appropriate (<a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> release model).</p>
+<p>The deadline for producing this “final” release varies depending on
+the type of the deliverable. In a development cycle, non-client
+libraries (“library” type) are first, then client libraries
+(“client-library” type), then services and other main deliverables
+(“service” and “other” types), then release-trailing deliverables
+(“trailing” type).</p>
+<p>Finally, some deliverables that are generally useful and not strictly
+tied to the OpenStack development cycle can release independently
+from it using the <a class="reference internal" href="#independent">independent</a> release model.</p>
+<p>A number of rules apply based on what the deliverable is and which
+bucket of the OpenStack map it falls in:</p>
+<ul class="simple">
+<li><p>Components appearing in the <em>openstack</em> bucket in the <a class="reference external" href="https://www.openstack.org/openstack-map">OpenStack map</a>
+form the main components of an OpenStack cloud, and therefore must follow
+the release cycle. They need to pick between <a class="reference internal" href="#cycle-with-rc">cycle-with-rc</a>
+or <a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> models.</p></li>
+<li><p>Libraries cannot use RCs. They need to pick between
+<a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> and <a class="reference internal" href="#independent">independent</a> release models. Libraries
+with strong ties to OpenStack should prefer the <a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a>
+model, while generally-useful libraries should prefer the <a class="reference internal" href="#independent">independent</a>
+model.</p></li>
+<li><p>Trailing deliverables trail the release, so they cannot, by definition,
+be independent. They need to pick between <a class="reference internal" href="#cycle-with-rc">cycle-with-rc</a> or
+<a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> models.</p></li>
+</ul>
+<div class="section" id="cycle-with-rc">
+<span id="id1"></span><h2>cycle-with-rc<a class="headerlink" href="#cycle-with-rc" title="Permalink to this headline">¶</a></h2>
+<p>The “cycle-with-rc” model describes projects that produce a single release at
+the end of the cycle, with one or more release candidates (RC) close to the end
+of the cycle and optional development milestone betas published on a
+per-project need.</p>
+<ul class="simple">
+<li><p>“cycle-with-rc” projects commit to publish at least one release candidate
+following a predetermined schedule published by the Release Management team
+before the start of the cycle.</p></li>
+<li><p>“cycle-with-rc” projects commit to produce a release to match the end of the
+development cycle.</p></li>
+<li><p>Release tags for deliverables using this tag are reviewed and applied by the
+Release Management team.</p></li>
+</ul>
+</div>
+<div class="section" id="cycle-with-intermediary">
+<span id="id2"></span><h2>cycle-with-intermediary<a class="headerlink" href="#cycle-with-intermediary" title="Permalink to this headline">¶</a></h2>
+<p>The “cycle-with-intermediary” model describes projects that produce
+multiple full releases during the development cycle, with a final
+release to match the end of the cycle.</p>
+<ul class="simple">
+<li><p>“cycle-with-intermediary” projects commit to produce a
+release near the end of the 6-month development cycle to be used
+with projects using the other cycle-based release models that are
+required to produce a release at that time.</p></li>
+<li><p>Release tags for deliverables using this tag are reviewed and
+applied by the Release Management team.</p></li>
+</ul>
+</div>
+<div class="section" id="independent">
+<span id="id3"></span><h2>independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<p>Some projects opt to completely bypass the 6-month cycle and release
+independently. For example, that is the case of projects that support
+the development infrastructure. The “independent” model describes such
+projects.</p>
+<ul class="simple">
+<li><p>“independent” projects produce releases from time to time.</p></li>
+<li><p>Release tags for deliverables using this tag are managed without
+oversight from the Release Management team.</p></li>
+</ul>
+</div>
+<div class="section" id="abandoned">
+<span id="id4"></span><h2>abandoned<a class="headerlink" href="#abandoned" title="Permalink to this headline">¶</a></h2>
+<p>As time passes, some deliverables are abandoned, as they are
+no longer useful, or their functionality is absorbed by another deliverable.
+For cycle-tied release models they just disappear in the next cycle. However
+deliverables with a cycle-independent model just stay around.</p>
+<p>The ‘abandoned’ release model describes a formally-independent deliverable
+that will no longer be released, because it changed release models or
+because it was abandoned.</p>
+<ul class="simple">
+<li><p>“abandoned” deliverables never produce new releases.</p></li>
+</ul>
+</div>
+<div class="section" id="untagged">
+<span id="id5"></span><h2>untagged<a class="headerlink" href="#untagged" title="Permalink to this headline">¶</a></h2>
+<p>Some CI tools are used only from source and never tag releases, but
+need to create stable branches.</p>
+</div>
+<div class="section" id="transition-between-release-models">
+<h2>Transition between release models<a class="headerlink" href="#transition-between-release-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="openstack-related-libraries">
+<h3>OpenStack-related libraries<a class="headerlink" href="#openstack-related-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Libraries with strong ties with OpenStack are released with a
+<a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> model, so that:</p>
+<ul class="simple">
+<li><p>they can be released early and often</p></li>
+<li><p>services consuming those libraries can take advantage of their new
+features</p></li>
+<li><p>we detect integration bugs early rather than late</p></li>
+</ul>
+<p>This works well while libraries see lots of changes, however it is a bit
+heavy-handed for feature-complete, stable libraries: it forces those to
+release multiple times per year even if they have not seen any change.</p>
+<p>Once libraries are deemed feature-complete and stable, they should be
+switched to an <a class="reference internal" href="#independent">independent</a> release model (like all our third-party
+libraries). Those would see releases purely as needed for the occasional
+corner case bugfix. They won’t be released early and often, there is no
+new feature to take advantage of, and new integration bugs should be
+very rare.</p>
+<p>This transition should be definitive in most cases. In rare cases where
+a library were to need large feature development work again, we’d have
+two options: develop the new feature in a new library depending on the
+stable one, or grant an exception and switch it back to the
+<a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a> model.</p>
+</div>
+</div>
+<div class="section" id="legacy-release-models">
+<h2>Legacy release models<a class="headerlink" href="#legacy-release-models" title="Permalink to this headline">¶</a></h2>
+<p>Those models were available in previous development cycles, but were
+replaced or abandoned.</p>
+<div class="section" id="cycle-trailing">
+<span id="id6"></span><h3>cycle-trailing<a class="headerlink" href="#cycle-trailing" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cycle-trailing release model has been replaced by a specific
+“trailing” deliverable type that can be applied to cycle-with-rc
+or cycle-with-intermediary release models.</p>
+</div>
+<p>The “cycle-trailing” model was used by projects producing OpenStack
+packaging, installation recipes or lifecycle management tools. Those
+still do one release for every development cycle, but they can’t
+release until OpenStack itself is released.</p>
+<ul class="simple">
+<li><p>“cycle-trailing” projects commit to produce a release no later than
+3 months after the main release.</p></li>
+<li><p>Release tags for deliverables using this tag are reviewed and
+applied by the Release Management team.</p></li>
+</ul>
+</div>
+<div class="section" id="cycle-automatic">
+<span id="id7"></span><h3>cycle-automatic<a class="headerlink" href="#cycle-automatic" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cycle-automatic release model is now better described by the
+cycle-with-intermediary model combined with stable-branch-type: none</p>
+</div>
+<p>The “cycle-automatic” model is used by specific technical deliverables
+that need to be automatically released once at the end of a cycle.
+Those may, optionally, also be released in the middle of the cycle.
+Those do not need a stable branch created. This may be applied only
+to <code class="docutils literal notranslate"><span class="pre">tempest-plugin</span></code> or <code class="docutils literal notranslate"><span class="pre">other</span></code> deliverables.</p>
+<ul class="simple">
+<li><p>“cycle-automatic” deliverables will be automatically released by the
+release team once at the end of a cycle, using the current HEAD of the
+repository. No stable branch will be automatically created.</p></li>
+<li><p>Release tags for deliverables using this model are reviewed and
+applied by the Release Management team.</p></li>
+</ul>
+</div>
+<div class="section" id="cycle-with-milestones">
+<span id="id8"></span><h3>cycle-with-milestones<a class="headerlink" href="#cycle-with-milestones" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The cycle-with-milestones release model has been replaced by the
+cycle-with-rc model.</p>
+</div>
+<p>The “cycle-with-milestones” model described projects that produced a
+single release at the end of the cycle, with development milestones
+published at predetermined times in the cycle schedule.</p>
+<ul class="simple">
+<li><p>“cycle-with-milestones” projects committed to publish development
+milestones following a predetermined schedule published by the Release
+Management team before the start of the 6-month cycle.</p></li>
+<li><p>“cycle-with-milestones” projects committed to produce a release to
+match the end of the 6-month development cycle.</p></li>
+<li><p>Release tags for deliverables using this tag were reviewed and
+applied by the Release Management team.</p></li>
+<li><p>Projects using milestones were expected to tag at least 2 out of the
+3 for each cycle, or risk being dropped as an official project. The
+release team would remind projects that miss the first milestone, and
+create tags on any later milestones for the project team by tagging
+HEAD at the time of the deadline. If the release team force-created
+2 tags for a project in the same given development cycle, the
+project would be treated as inactive and the release team would
+recommend dropping it from the official project list.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="using.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Using This Repository"></i></a>
+          
+          
+            <a href="deliverable_types.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Deliverable Types"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Release Models</a><ul>
+<li><a class="reference internal" href="#cycle-with-rc">cycle-with-rc</a></li>
+<li><a class="reference internal" href="#cycle-with-intermediary">cycle-with-intermediary</a></li>
+<li><a class="reference internal" href="#independent">independent</a></li>
+<li><a class="reference internal" href="#abandoned">abandoned</a></li>
+<li><a class="reference internal" href="#untagged">untagged</a></li>
+<li><a class="reference internal" href="#transition-between-release-models">Transition between release models</a><ul>
+<li><a class="reference internal" href="#openstack-related-libraries">OpenStack-related libraries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#legacy-release-models">Legacy release models</a><ul>
+<li><a class="reference internal" href="#cycle-trailing">cycle-trailing</a></li>
+<li><a class="reference internal" href="#cycle-automatic">cycle-automatic</a></li>
+<li><a class="reference internal" href="#cycle-with-milestones">cycle-with-milestones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/reference/release_models.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+</html>

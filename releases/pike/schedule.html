@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/pike/schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:22 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Pike Release Schedule</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Pike Release Schedule</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="pike-release-schedule">
+<h1>Pike Release Schedule<a class="headerlink" href="#pike-release-schedule" title="Permalink to this headline">¶</a></h1>
+<p>20 February 2017 - 1 September 2017 (27 weeks)</p>
+<table class="colwidths-given schedule docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 6%" />
+<col style="width: 38%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Week</p></th>
+<th class="head"></th>
+<th class="head"><p>Cross-project events</p></th>
+<th class="head"><p>Project-specific events</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Feb 20 - Feb 24</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="../ocata/schedule.html#o-release"><span class="std std-ref">Ocata release</span></a></p></li>
+<li><p><a class="reference internal" href="../ocata/schedule.html#p-ptg0"><span class="std std-ref">Pike Project Team Gathering (PTG)</span></a></p></li>
+<li><p><a class="reference internal" href="#p-goals-research"><span class="std std-ref">Pike Goals Research</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Feb 27 - Mar 03</p></td>
+<td><p>R-26</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Mar 06 - Mar 10</p></td>
+<td><p>R-25</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Mar 13 - Mar 17</p></td>
+<td><p>R-24</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Mar 20 - Mar 24</p></td>
+<td><p>R-23</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Mar 27 - Mar 31</p></td>
+<td><p>R-22</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-glance-spec-prop"><span class="std std-ref">Glance Spec Proposal Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Apr 03 - Apr 07</p></td>
+<td><p>R-21</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 10 - Apr 14</p></td>
+<td><p>R-20</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-1"><span class="std std-ref">Pike-1 milestone</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-glance-spec-freeze"><span class="std std-ref">Glance Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-keystone-spec-proposal-freeze"><span class="std std-ref">Keystone Spec Proposal Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-manila-spec-freeze"><span class="std std-ref">Manila Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-nova-spec-freeze"><span class="std std-ref">Nova Spec Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Apr 17 - Apr 21</p></td>
+<td><p>R-19</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 24 - Apr 28</p></td>
+<td><p>R-18</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>May 01 - May 05</p></td>
+<td><p>R-17</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>May 08 - May 12</p></td>
+<td><p>R-16</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-summit"><span class="std std-ref">OpenStack Summit</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>May 15 - May 19</p></td>
+<td><p>R-15</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>May 22 - May 26</p></td>
+<td><p>R-14</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>May 29 - Jun 02</p></td>
+<td><p>R-13</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Jun 05 - Jun 09</p></td>
+<td><p>R-12</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-2"><span class="std std-ref">Pike-2 milestone</span></a></p></li>
+<li><p><a class="reference internal" href="#p-mf"><span class="std std-ref">Membership Freeze</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-cinder-nddeadline"><span class="std std-ref">Cinder New Backend Driver Deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#p-cinder-spec-freeze"><span class="std std-ref">Cinder Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-keystone-spec-freeze"><span class="std std-ref">Keystone Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-manila-nddeadline"><span class="std std-ref">Manila New Driver Submission Deadline</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Jun 12 - Jun 16</p></td>
+<td><p>R-11</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Jun 19 - Jun 23</p></td>
+<td><p>R-10</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jun 26 - Jun 30</p></td>
+<td><p>R-9</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-keystone-fpfreeze"><span class="std std-ref">Keystone Feature Proposal Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Jul 03 - Jul 07</p></td>
+<td><p>R-8</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jul 10 - Jul 14</p></td>
+<td><p>R-7</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-extra-atcs"><span class="std std-ref">Extra-ATCs deadline</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-manila-fpfreeze"><span class="std std-ref">Manila Feature Proposal Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Jul 17 - Jul 21</p></td>
+<td><p>R-6</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-final-lib"><span class="std std-ref">Final release for non-client libraries</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jul 24 - Jul 28</p></td>
+<td><p>R-5</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-3"><span class="std std-ref">Pike-3 milestone</span></a></p></li>
+<li><p><a class="reference internal" href="#p-ff"><span class="std std-ref">Feature freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-final-clientlib"><span class="std std-ref">Final release for client libraries</span></a></p></li>
+<li><p><a class="reference internal" href="#p-soft-sf"><span class="std std-ref">Soft StringFreeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-rf"><span class="std std-ref">Requirements freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-goals-complete"><span class="std std-ref">Pike Community Goals Completed</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-keystone-ffreeze"><span class="std std-ref">Keystone Feature Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Jul 31 - Aug 04</p></td>
+<td><p>R-4</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#q-ptl-nomination"><span class="std std-ref">Queens PTLs self-nomination</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Aug 07 - Aug 11</p></td>
+<td><p>R-3</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-rc1"><span class="std std-ref">RC1 target week</span></a></p></li>
+<li><p><a class="reference internal" href="#p-hard-sf"><span class="std std-ref">Hard StringFreeze</span></a></p></li>
+<li><p><a class="reference internal" href="#p-trailing-ff"><span class="std std-ref">Pike cycle-trailing feature freeze</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#q-ptl-election"><span class="std std-ref">Queens cycle PTLs election</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Aug 14 - Aug 18</p></td>
+<td><p>R-2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Aug 21 - Aug 25</p></td>
+<td><p>R-1</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-finalrc"><span class="std std-ref">Final RCs and intermediary releases</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Aug 28 - Sep 01</p></td>
+<td><p>R+0</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-release"><span class="std std-ref">Pike release</span></a></p></li>
+<li><p><a class="reference internal" href="#p-trailing-rc"><span class="std std-ref">Pike cycle-trailing RC deadline</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Sep 04 - Sep 08</p></td>
+<td><p>R+1</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sep 11 - Sep 15</p></td>
+<td><p>R+2</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#p-trailing-release"><span class="std std-ref">Pike cycle-trailing release deadline</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="schedule.ics">Subscribe to iCalendar file</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the exception of the final release date and cycle-trailing
+release date, deadlines are generally the Thursday of the week on
+which they are noted above. For example, the Feature Freeze in week
+R-5 is on 27 July. Exceptions to this policy will be explicitly
+mentioned in the event description.</p>
+</div>
+<div class="section" id="cross-project-events">
+<h2>Cross-project events<a class="headerlink" href="#cross-project-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pike-goals-research">
+<span id="p-goals-research"></span><h3>Pike Goals Research<a class="headerlink" href="#pike-goals-research" title="Permalink to this headline">¶</a></h3>
+<p>Pre-cycle planning and investigation into <a class="reference external" href="https://governance.openstack.org/tc/goals/pike/index.html">the community-wide goals
+for Pike</a>.</p>
+</div>
+<div class="section" id="pike-project-team-gathering-ptg">
+<span id="p-ptg"></span><h3>Pike Project Team Gathering (PTG)<a class="headerlink" href="#pike-project-team-gathering-ptg" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.openstack.org/ptg">Project team gathering</a> for the Pike
+release 20-24 February 2017 in Atlanta, Georgia.</p>
+</div>
+<div class="section" id="pike-1-milestone">
+<span id="p-1"></span><h3>Pike-1 milestone<a class="headerlink" href="#pike-1-milestone" title="Permalink to this headline">¶</a></h3>
+<p>13 April 2017 is the Pike-1 milestone window for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-milestones">release:cycle-with-milestones</a> model.</p>
+</div>
+<div class="section" id="pike-community-goals-acknowledgement">
+<span id="p-goals-ack"></span><h3>Pike Community Goals Acknowledgement<a class="headerlink" href="#pike-community-goals-acknowledgement" title="Permalink to this headline">¶</a></h3>
+<p>Teams should prepare their acknowledgement of <a class="reference external" href="https://governance.openstack.org/tc/goals/pike/index.html">the community-wide
+goals for Pike</a>.</p>
+</div>
+<div class="section" id="openstack-summit">
+<span id="p-summit"></span><h3>OpenStack Summit<a class="headerlink" href="#openstack-summit" title="Permalink to this headline">¶</a></h3>
+<p>The OpenStack Summit happens during this week in Boston, USA. It will include
+a “Forum” in which people from all parts of our community will gather to give
+feedback on the last release (Ocata) and discuss requirements for the next
+development cycle (Queens).</p>
+</div>
+<div class="section" id="pike-2-milestone">
+<span id="p-2"></span><h3>Pike-2 milestone<a class="headerlink" href="#pike-2-milestone" title="Permalink to this headline">¶</a></h3>
+<p>8 June 2017 is the Pike-2 milestone window for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-milestones">release:cycle-with-milestones</a> model.</p>
+</div>
+<div class="section" id="final-release-for-non-client-libraries">
+<span id="p-final-lib"></span><h3>Final release for non-client libraries<a class="headerlink" href="#final-release-for-non-client-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Libraries that are not client libraries (Oslo and others) should issue their
+final release during this week. That allows to give time for last-minute
+changes before feature freeze.</p>
+</div>
+<div class="section" id="pike-3-milestone">
+<span id="p-3"></span><h3>Pike-3 milestone<a class="headerlink" href="#pike-3-milestone" title="Permalink to this headline">¶</a></h3>
+<p>27 July 2017 is the Pike-3 milestone window for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-milestones">release:cycle-with-milestones</a> model.</p>
+</div>
+<div class="section" id="pike-community-goals-completed">
+<span id="p-goals-complete"></span><h3>Pike Community Goals Completed<a class="headerlink" href="#pike-community-goals-completed" title="Permalink to this headline">¶</a></h3>
+<p>Teams should prepare their documentation for completing <a class="reference external" href="https://governance.openstack.org/tc/goals/pike/index.html">the
+community-wide goals for Pike</a>.</p>
+</div>
+<div class="section" id="extra-atcs-deadline">
+<span id="p-extra-atcs"></span><h3>Extra-ATCs deadline<a class="headerlink" href="#extra-atcs-deadline" title="Permalink to this headline">¶</a></h3>
+<p>Project teams should identify contributors who have had a significant
+impact this cycle but who would not qualify for ATC status using the
+regular process because they have not submitted a patch. Those names
+should be added to the governance repo for consideration as ATC for
+the future.</p>
+<p>Although extra ATCs can be nominated at any point, there is a deadline
+to be included in electorate for the next release cycle.  The ATC list
+needs to be approved by the TC by (TBD), and in order to appear on the
+TC agenda to be discussed, the proposals need to be submitted to the
+<code class="docutils literal notranslate"><span class="pre">openstack/governance</span></code> repository by (TBD).</p>
+</div>
+<div class="section" id="feature-freeze">
+<span id="p-ff"></span><h3>Feature freeze<a class="headerlink" href="#feature-freeze" title="Permalink to this headline">¶</a></h3>
+<p>The Pike-3 milestone marks feature freeze for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-milestones">release:cycle-with-milestones</a> model. No featureful patch should be landed
+after this point. Exceptions may be granted by the project PTL.</p>
+</div>
+<div class="section" id="requirements-freeze">
+<span id="p-rf"></span><h3>Requirements freeze<a class="headerlink" href="#requirements-freeze" title="Permalink to this headline">¶</a></h3>
+<p>After the Pike-3 milestone, only critical requirements and
+constraints changes will be allowed. Freezing our requirements list
+gives packagers downstream an opportunity to catch up and prepare
+packages for everything necessary for distributions of the upcoming
+release. The requirements remain frozen until the stable branches are
+created, with the release candidates.</p>
+</div>
+<div class="section" id="final-release-for-client-libraries">
+<span id="p-final-clientlib"></span><h3>Final release for client libraries<a class="headerlink" href="#final-release-for-client-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Client libraries should issue their final release during this week, to
+match feature freeze.</p>
+</div>
+<div class="section" id="soft-stringfreeze">
+<span id="p-soft-sf"></span><h3>Soft StringFreeze<a class="headerlink" href="#soft-stringfreeze" title="Permalink to this headline">¶</a></h3>
+<p>You are no longer allowed to accept proposed changes containing
+modifications in user-facing strings. Such changes should be rejected
+by the review team and postponed until the next series development
+opens (which should happen when RC1 is published).</p>
+</div>
+<div class="section" id="membership-freeze">
+<span id="p-mf"></span><h3>Membership Freeze<a class="headerlink" href="#membership-freeze" title="Permalink to this headline">¶</a></h3>
+<p>Projects must participate in at least two milestones in order to be
+considered part of the release. Projects made official after the
+second milestone, or which fail to produce milestone releases for at
+least one of the first and second milestones as well as the third
+milestone, are therefore not considered part of the release for the
+cycle.</p>
+</div>
+<div class="section" id="rc1-target-week">
+<span id="p-rc1"></span><h3>RC1 target week<a class="headerlink" href="#rc1-target-week" title="Permalink to this headline">¶</a></h3>
+<p>The week of 7-11 August 2017 is the target date for projects
+following the <a class="reference external" href="../reference/release_models.html#cycle-with-milestones">release:cycle-with-milestones</a> model to issue their
+first release candidate, with a deadline of 10 August 2017.</p>
+</div>
+<div class="section" id="hard-stringfreeze">
+<span id="p-hard-sf"></span><h3>Hard StringFreeze<a class="headerlink" href="#hard-stringfreeze" title="Permalink to this headline">¶</a></h3>
+<p>This happens when the RC1 for the project is tagged. At this point, ideally
+no strings are changed (or added, or removed), to give translator time to
+finish up their efforts.</p>
+</div>
+<div class="section" id="final-rcs-and-intermediary-releases">
+<span id="p-finalrc"></span><h3>Final RCs and intermediary releases<a class="headerlink" href="#final-rcs-and-intermediary-releases" title="Permalink to this headline">¶</a></h3>
+<p>The week of 21 August 2017 is the last week to issue release candidates or
+intermediary releases before release week. During release week, only
+final-release-critical releases will be accepted (at the discretion of
+the release team).</p>
+</div>
+<div class="section" id="pike-release">
+<span id="p-release"></span><h3>Pike release<a class="headerlink" href="#pike-release" title="Permalink to this headline">¶</a></h3>
+<p>The Pike coordinated release will happen on 30 August 2017.</p>
+</div>
+<div class="section" id="pike-cycle-trailing-feature-freeze">
+<span id="p-trailing-ff"></span><h3>Pike cycle-trailing feature freeze<a class="headerlink" href="#pike-cycle-trailing-feature-freeze" title="Permalink to this headline">¶</a></h3>
+<p>The release deadline for projects using the release:cycle-trailing model that
+follow the main release cycle.</p>
+</div>
+<div class="section" id="pike-cycle-trailing-rc-deadline">
+<span id="p-trailing-rc"></span><h3>Pike cycle-trailing RC deadline<a class="headerlink" href="#pike-cycle-trailing-rc-deadline" title="Permalink to this headline">¶</a></h3>
+<p>The deadline for publishing a first release candidate for projects using the
+release:cycle-trailing model that follow the main release cycle.</p>
+</div>
+<div class="section" id="pike-cycle-trailing-release-deadline">
+<span id="p-trailing-release"></span><h3>Pike cycle-trailing release deadline<a class="headerlink" href="#pike-cycle-trailing-release-deadline" title="Permalink to this headline">¶</a></h3>
+<p>The release deadline for projects using the release:cycle-trailing model that
+follow the main release cycle.</p>
+</div>
+</div>
+<div class="section" id="project-specific-events">
+<h2>Project-specific events<a class="headerlink" href="#project-specific-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="elections">
+<h3>Elections<a class="headerlink" href="#elections" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="queens-ptls-self-nomination">
+<span id="q-ptl-nomination"></span><h4>Queens PTLs self-nomination<a class="headerlink" href="#queens-ptls-self-nomination" title="Permalink to this headline">¶</a></h4>
+<p>Project team lead candidates for the Queens cycle should announce their
+candidacy during this week. Those dates should be confirmed by the Pike
+PTL election officials.</p>
+</div>
+<div class="section" id="queens-cycle-ptls-election">
+<span id="q-ptl-election"></span><h4>Queens cycle PTLs election<a class="headerlink" href="#queens-cycle-ptls-election" title="Permalink to this headline">¶</a></h4>
+<p>Election week for Project team leads (where an election must be held to
+determine the winner). Those dates should be confirmed by the Queens PTL
+election officials.</p>
+</div>
+</div>
+<div class="section" id="cinder">
+<h3>Cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cinder-new-backend-driver-deadline">
+<span id="p-cinder-nddeadline"></span><h4>Cinder New Backend Driver Deadline<a class="headerlink" href="#cinder-new-backend-driver-deadline" title="Permalink to this headline">¶</a></h4>
+<p>The deadline for getting a new backend driver added to Cinder is the 7th of
+June, 2017. All review issues must be addressed and third party CI must be
+reporting and stable with enough time for reviewers prior to the deadline.
+Meeting these requirements on the 14th does not guarantee core reviewers will
+have enough time to merge the driver.</p>
+<p>Note: This is the Wednesday of the milestone week, while the milestone itself
+is typically targeted for Thursday.</p>
+</div>
+<div class="section" id="cinder-spec-freeze">
+<span id="p-cinder-spec-freeze"></span><h4>Cinder Spec Freeze<a class="headerlink" href="#cinder-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Cinder specs must be approved by the 7th of June, 2017.</p>
+<p>Note: This is the Wednesday of the milestone week, while the milestone itself
+is typically targeted for Thursday.</p>
+</div>
+</div>
+<div class="section" id="glance">
+<h3>Glance<a class="headerlink" href="#glance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="glance-spec-proposal-freeze">
+<span id="p-glance-spec-prop"></span><h4>Glance Spec Proposal Freeze<a class="headerlink" href="#glance-spec-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Glance, python-glanceclient, and glance_store specs must be proposed as
+patches to the glance-specs repository by 13:59 UTC on Thursday 30 March 2017
+(that is, before the weekly Glance meeting begins).  This allows two weeks to
+make revisions and work out problems before the Glance Spec Freeze.</p>
+</div>
+<div class="section" id="glance-spec-freeze">
+<span id="p-glance-spec-freeze"></span><h4>Glance Spec Freeze<a class="headerlink" href="#glance-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Glance, python-glanceclient, and glance_store specs must be merged into
+the glance-specs repository by 23:59 on Friday 14 April 2017.  This is
+necessary but not sufficient condition for inclusion in the Pike release.</p>
+</div>
+</div>
+<div class="section" id="keystone">
+<h3>Keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="keystone-spec-proposal-freeze">
+<span id="p-keystone-spec-proposal-freeze"></span><h4>Keystone Spec Proposal Freeze<a class="headerlink" href="#keystone-spec-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Keystone specs targeted to Pike must be submitted to the keystone-specs
+repository by the end of the week.</p>
+</div>
+<div class="section" id="keystone-spec-freeze">
+<span id="p-keystone-spec-freeze"></span><h4>Keystone Spec Freeze<a class="headerlink" href="#keystone-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Keystone specs targeted to Pike must be approved by the end of the week.</p>
+</div>
+<div class="section" id="keystone-feature-proposal-freeze">
+<span id="p-keystone-fpfreeze"></span><h4>Keystone Feature Proposal Freeze<a class="headerlink" href="#keystone-feature-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Keystone features must be proposed and substantially completed, with
+unit tests and documentation by the end of the week.</p>
+</div>
+<div class="section" id="keystone-feature-freeze">
+<span id="p-keystone-ffreeze"></span><h4>Keystone Feature Freeze<a class="headerlink" href="#keystone-feature-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Keystone features must be merged by the end of the week.</p>
+</div>
+</div>
+<div class="section" id="manila">
+<h3>Manila<a class="headerlink" href="#manila" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="manila-new-driver-submission-deadline">
+<span id="p-manila-nddeadline"></span><h4>Manila New Driver Submission Deadline<a class="headerlink" href="#manila-new-driver-submission-deadline" title="Permalink to this headline">¶</a></h4>
+<p>The deadline for submitting new backend drivers to to Manila is 5 June 2017
+(23:59 UTC). New drivers must be substantially complete, with unit tests, and
+passing 3rd party CI by this date. Drivers do not need to be merged until the
+feature freeze date, but drivers that don’t meet this deadline will not be
+considered at all for Pike.</p>
+</div>
+<div class="section" id="manila-spec-freeze">
+<span id="p-manila-spec-freeze"></span><h4>Manila Spec Freeze<a class="headerlink" href="#manila-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Manila specs must be approved by 13 Apr 2017 (23:59 UTC).</p>
+</div>
+<div class="section" id="manila-feature-proposal-freeze">
+<span id="p-manila-fpfreeze"></span><h4>Manila Feature Proposal Freeze<a class="headerlink" href="#manila-feature-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Manila features must be proposed and substantially complete, with unit
+tests by 10 July 2017 (23:59 UTC).</p>
+</div>
+</div>
+<div class="section" id="nova">
+<h3>Nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="nova-spec-freeze">
+<span id="p-nova-spec-freeze"></span><h4>Nova Spec Freeze<a class="headerlink" href="#nova-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Nova specs must be approved by Thursday April 13th, 2017.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="index.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Pike"></i></a>
+          
+          
+            <a href="../ocata/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Ocata"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Pike Release Schedule</a><ul>
+<li><a class="reference internal" href="#cross-project-events">Cross-project events</a><ul>
+<li><a class="reference internal" href="#pike-goals-research">Pike Goals Research</a></li>
+<li><a class="reference internal" href="#pike-project-team-gathering-ptg">Pike Project Team Gathering (PTG)</a></li>
+<li><a class="reference internal" href="#pike-1-milestone">Pike-1 milestone</a></li>
+<li><a class="reference internal" href="#pike-community-goals-acknowledgement">Pike Community Goals Acknowledgement</a></li>
+<li><a class="reference internal" href="#openstack-summit">OpenStack Summit</a></li>
+<li><a class="reference internal" href="#pike-2-milestone">Pike-2 milestone</a></li>
+<li><a class="reference internal" href="#final-release-for-non-client-libraries">Final release for non-client libraries</a></li>
+<li><a class="reference internal" href="#pike-3-milestone">Pike-3 milestone</a></li>
+<li><a class="reference internal" href="#pike-community-goals-completed">Pike Community Goals Completed</a></li>
+<li><a class="reference internal" href="#extra-atcs-deadline">Extra-ATCs deadline</a></li>
+<li><a class="reference internal" href="#feature-freeze">Feature freeze</a></li>
+<li><a class="reference internal" href="#requirements-freeze">Requirements freeze</a></li>
+<li><a class="reference internal" href="#final-release-for-client-libraries">Final release for client libraries</a></li>
+<li><a class="reference internal" href="#soft-stringfreeze">Soft StringFreeze</a></li>
+<li><a class="reference internal" href="#membership-freeze">Membership Freeze</a></li>
+<li><a class="reference internal" href="#rc1-target-week">RC1 target week</a></li>
+<li><a class="reference internal" href="#hard-stringfreeze">Hard StringFreeze</a></li>
+<li><a class="reference internal" href="#final-rcs-and-intermediary-releases">Final RCs and intermediary releases</a></li>
+<li><a class="reference internal" href="#pike-release">Pike release</a></li>
+<li><a class="reference internal" href="#pike-cycle-trailing-feature-freeze">Pike cycle-trailing feature freeze</a></li>
+<li><a class="reference internal" href="#pike-cycle-trailing-rc-deadline">Pike cycle-trailing RC deadline</a></li>
+<li><a class="reference internal" href="#pike-cycle-trailing-release-deadline">Pike cycle-trailing release deadline</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-specific-events">Project-specific events</a><ul>
+<li><a class="reference internal" href="#elections">Elections</a><ul>
+<li><a class="reference internal" href="#queens-ptls-self-nomination">Queens PTLs self-nomination</a></li>
+<li><a class="reference internal" href="#queens-cycle-ptls-election">Queens cycle PTLs election</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cinder">Cinder</a><ul>
+<li><a class="reference internal" href="#cinder-new-backend-driver-deadline">Cinder New Backend Driver Deadline</a></li>
+<li><a class="reference internal" href="#cinder-spec-freeze">Cinder Spec Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#glance">Glance</a><ul>
+<li><a class="reference internal" href="#glance-spec-proposal-freeze">Glance Spec Proposal Freeze</a></li>
+<li><a class="reference internal" href="#glance-spec-freeze">Glance Spec Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#keystone">Keystone</a><ul>
+<li><a class="reference internal" href="#keystone-spec-proposal-freeze">Keystone Spec Proposal Freeze</a></li>
+<li><a class="reference internal" href="#keystone-spec-freeze">Keystone Spec Freeze</a></li>
+<li><a class="reference internal" href="#keystone-feature-proposal-freeze">Keystone Feature Proposal Freeze</a></li>
+<li><a class="reference internal" href="#keystone-feature-freeze">Keystone Feature Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manila">Manila</a><ul>
+<li><a class="reference internal" href="#manila-new-driver-submission-deadline">Manila New Driver Submission Deadline</a></li>
+<li><a class="reference internal" href="#manila-spec-freeze">Manila Spec Freeze</a></li>
+<li><a class="reference internal" href="#manila-feature-proposal-freeze">Manila Feature Proposal Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nova">Nova</a><ul>
+<li><a class="reference internal" href="#nova-spec-freeze">Nova Spec Freeze</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/pike/schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:22 GMT -->
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/release_management.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Release Management</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Release Management</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="release-management">
+<h1>Release Management<a class="headerlink" href="#release-management" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="release-test">
+<span id="team-victoria-release-test"></span><h3>release-test<a class="headerlink" href="#release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.3.1.tar.gz">3.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>bfb977911dd45b2e0666e981aa1dcb35500eef24</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>bfb977911dd45b2e0666e981aa1dcb35500eef24</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>371d36be8f6c72900fd99fcba3b4e1aad0c8eb4e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.3.tar.gz">3.1.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>371d36be8f6c72900fd99fcba3b4e1aad0c8eb4e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.2.tar.gz">3.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>c162f28608a314506a1590aefb98038deab80bed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.1.tar.gz">3.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>12c721461acfab86802cca7c3047fbb4d7e41377</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>f0d941dcfcc216a90445f5d11907a47e47a363e2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-release-test">
+<span id="id1"></span><h3>release-test<a class="headerlink" href="#team-ussuri-release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>600c783cc95005ba70a6aef1847b21587849de33</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>600c783cc95005ba70a6aef1847b21587849de33</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-release-test">
+<span id="id2"></span><h3>release-test<a class="headerlink" href="#team-train-release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>3f36401d256b374188d0991138b79927bb875f3f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-release-test">
+<span id="id3"></span><h3>release-test<a class="headerlink" href="#team-stein-release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.2.tar.gz">1.4.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>8765a73158324b6c0b1d8bd364fd7cf05d747121</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>8765a73158324b6c0b1d8bd364fd7cf05d747121</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>8765a73158324b6c0b1d8bd364fd7cf05d747121</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>bfbe801058ca3fe2be7bceef2e202e6e8c2ca281</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.2.1.tar.gz">1.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>bfbe801058ca3fe2be7bceef2e202e6e8c2ca281</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>3da9679d9b12e2808ce9d073117e93d40ce05da3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-release-test">
+<span id="id4"></span><h3>release-test<a class="headerlink" href="#team-rocky-release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>3da9679d9b12e2808ce9d073117e93d40ce05da3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>32562f743268e874a5f0da760f05d18261ccdd99</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-release-test">
+<span id="id5"></span><h3>release-test<a class="headerlink" href="#team-queens-release-test" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.12.0.tar.gz">0.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>17a88a7e98282a174879c4d2ad4c84d877d303d7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.11.1.tar.gz">0.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>218c9c82f168f1db681b27842b5a829428c6b5e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>218c9c82f168f1db681b27842b5a829428c6b5e1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.2.tar.gz">0.10.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>218c9c82f168f1db681b27842b5a829428c6b5e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.1.tar.gz">0.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>94bf6e8a7e88063b0b7b1460486ad4e52ca2bc64</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>04ee20f0bfe8774935de33b75e87fb3b858d0733</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>04ee20f0bfe8774935de33b75e87fb3b858d0733</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/release-test/openstack-release-test-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/release-test</p></td>
+<td><p>a26e6a2e8a5e321b2e3517dbb01a7b9a56a8bfd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="independent">
+<h2>Independent<a class="headerlink" href="#independent" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reno">
+<span id="team-independent-reno"></span><h3>reno<a class="headerlink" href="#reno" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.3.0.tar.gz">3.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>e45092be853ae0366aa2ab4ae049cceaf2932bd9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.2.0.tar.gz">3.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>35c0a43c390f66e6785e78ad4e0f71561e9f052a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>cc09e3d38c2c1046a529270f133de525c0692809</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>bd3886ac480500eb7515058cfe2ea5662fa53d8d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>ab3eb972bfb66b36f7979e071e8157150d5ecc85</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.3.tar.gz">2.11.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>cba802229b950c962dec5fd7e6e361acb838e445</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.2.tar.gz">2.11.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>9f866b35a16e01cea06deb73006fa2e55f30ea51</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.1.tar.gz">2.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>e12ecf7c77babd935cb67f3db50e64c5df5611ab</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>355e1674be8c37e67f59e8bcd39bf7d6a0aac792</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>9b1c353bd05459a54293e06b3b4f5f0bb04e9ff8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.2.tar.gz">2.9.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>5b8e276418e9e93b1256283a035b29a01af1c456</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.1.tar.gz">2.9.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>451d1ebcb9c9b3744c62f97bd4b63959e793de1b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>52d4c1961da3692bffc1f26f47de11d33c0e545b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>187d586d5fdaba42d4e6b720ffbfa3b5530d4939</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>b9cf9a7371eec7f20089f51bbd12e78963a10960</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>9d058ae097e6cfac079fdbabadfc4270c6297e7f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.5.1.tar.gz">2.5.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.5.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>bbe3543f7855d8dab9ac2c445530d7a782bc1e6e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>ff2ca65e5c3b5ad2f2b60c2b367b5297854537f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.4.1.tar.gz">2.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>a42a617350e36c0f09859c95ba89c64aa38009d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>3b2b36feded3a2f4d4e2b861c6ab32f5a9d9e52c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.2.tar.gz">2.3.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>942bbd84278fa0c4d080575a80367fcad1730833</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.1.tar.gz">2.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>e3dcbdd582b950504a17147b60e02904f3a5e8c8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.0.tar.gz">2.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>2d0d05d3019376af6377f0d47e06ac5bea88c31e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>8b1a3c652747f2d70c2136642ad5e1875971a870</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>5fa63a0fca94b90623b3372a547db9a4d24618a4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.2.tar.gz">2.1.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>3387cfb3a69657a8a7e2e40eabbb56c514c797d4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>2e9cd7cfe53ae2a7c8b81dcc99a67114d410e382</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>65a82c37d2669578e15dc57291cfb6f362b63335</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.3.tar.gz">2.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>2f93c4dedea9edc1ffb4a96f6554469e235d75d7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.2.tar.gz">2.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>3b2062d0eb01038b54afea3c80259ea62261c3ea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>51986ae2b94d38ec53eeab180f9ff56c7ac6ff1e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>7239f6c071302e26116f25a618f205cd0016fd52</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>30f8eff1a338c78946d78f4709ccfe23e97c3aba</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>50c6ed36be4219c24dbfe2c268d26c0b79663cfe</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>45878e06b2b781fb298dd654f4a49fcd84334d5a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.2.tar.gz">1.6.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>11a2b7a88d34d69b1068e8ce100b0cf265bff181</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.1.tar.gz">1.6.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>8df79bf2b8908d344f86011e64299686e118fb7e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>1c1b591ff000896a94d97a381790bedf2119d7cf</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>f4e2d66942bf344cf0974d87ff16e27e5803f05a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>53891ddb1a55e0d6a801c75c3df7d3073a4749f7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.3.1.tar.gz">1.3.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.3.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>052206e189f87fdc89c6c6562bea6c8033f1179a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>f6aca7cb019f9da2faaa14fd0a91499fbe43dedb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>ddec6c5bc75d19f9cd0b5d37fbc52b26a510523f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>d3efb6cfc8012ca829e24bf65d281c3781100bb4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.2.tar.gz">1.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>0feb86ecbb0b77a83da42a5a5add959c7834ffff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.1.tar.gz">1.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>db16ae898db6f2b18973184fe94aff96475e5ed3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>e570dc161b75fcb180c6cdf56e55da8c42243b69</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-0.1.1.tar.gz">0.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-0.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>d95b74044a72f7a1f1170c9f8105669a20042829</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/reno/reno-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/reno</p></td>
+<td><p>f4ed0baabf4512fc72bc549b1a60b8893b7fbe46</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="rally.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Rally"></i></a>
+          
+          
+            <a href="requirements.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Requirements"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Release Management</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a></li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-release-test">release-test</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#independent">Independent</a><ul>
+<li><a class="reference internal" href="#reno">reno</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/release_management.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:10 GMT -->
+</html>

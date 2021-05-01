@@ -1,0 +1,1121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/reference/using.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Using This Repository</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Using This Repository</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="using-this-repository">
+<h1>Using This Repository<a class="headerlink" href="#using-this-repository" title="Permalink to this headline">¶</a></h1>
+<p>This repository is for tracking release requests for OpenStack
+projects. The releases are managed using groups of “deliverables”,
+made up of individual project repositories sharing a Launchpad group
+and a version number history. Many deliverables will only have one
+constituent project.</p>
+<div class="section" id="defining-a-deliverable">
+<h2>Defining a Deliverable<a class="headerlink" href="#defining-a-deliverable" title="Permalink to this headline">¶</a></h2>
+<p>A “deliverable” is a unit of distribution of a useful project. It may
+be a single library or several server components that are packaged
+separately but released and used together. Rather than base the
+definition on technical terms such as packaging, we use the social
+organization of the project to identify deliverables. If the contents
+of two repositories share a bug reporting tool so that bugs for the
+contents of both repositories are mixed together and use the same
+version numbers for all releases (e.g., one launchpad project), they
+are both part of the same deliverable.</p>
+<p>Within this repository, each deliverable is represented by a separate
+file within the release series directory or the _independent
+directory. The data that needs to go into each file is described in
+detail below. All automated manipulation of the deliverable is managed
+through the data file, which is reviewed by the core team when the
+patch is proposed to openstack/releases.</p>
+</div>
+<div class="section" id="adding-deliverables">
+<h2>Adding Deliverables<a class="headerlink" href="#adding-deliverables" title="Permalink to this headline">¶</a></h2>
+<p>In order to be considered to be included in the release for a given
+series, the project must be documented by adding a deliverable file to
+this repository before the second milestone of the series. Exceptions
+will be considered by the release team on a case-by-case basis.</p>
+</div>
+<div class="section" id="requesting-a-release">
+<h2>Requesting a Release<a class="headerlink" href="#requesting-a-release" title="Permalink to this headline">¶</a></h2>
+<p>The PTL or release liaison for a project may request a release from
+master by submitting a patch to this repository, appending the necessary
+release metadata to the file describing the deliverable to be
+released. The release team will review the request and provide
+feedback about the version number.</p>
+<p>The stable maintenance team, PTL, or release liaison for a project may
+request a release from a stable branch by submitting a patch to this
+repository, appending the necessary release metadata to the file
+describing the deliverable to be released. The release team will
+review the request and provide feedback about the version number. If
+the stable release is requested by the stable maintenance team, it
+should be acknowledged by the PTL or release liaison to ensure that
+the development team is aware of the coming change.</p>
+<p>Prepare the release request by submitting a patch to this
+repository.</p>
+<ul>
+<li><p>Always add the new release to the end of the list being edited. The
+version numbers will be reordered for display.</p></li>
+<li><p>Always pick new version numbers for new releases. We do not update
+the contents of previously tagged releases, because that confuses
+users who have already downloaded those packages.</p></li>
+<li><p>Make sure you follow semantic versioning rules <a class="reference external" href="http://semver.org/">semver</a> when picking the version number.</p>
+<p>In particular, if there is a change going into this release which
+requires a higher minimum version of a dependency, then the
+<strong>minor</strong> version should be incremented.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exception to this rule is when the versions of a project are
+pinned between minor versions in stable branches. In those cases
+we frequently release global-requirements syncs with a patch
+version to fix the target branch, e.g. stable/juno, but don’t
+increment the minor version to avoid it being used in a different
+branch, like stable/kilo.  Someone from the <a class="reference external" href="https://review.opendev.org/#/admin/groups/530,members">stable-maint-core</a> team
+should +1 a change like this before it’s approved.</p>
+</div>
+</li>
+<li><p>Do not increment version numbers artificially to maintain
+consistent versions between deliverables. We expect versions of
+compatible deliverables to drift apart over time, and made the
+decision to embrace this by using other tools to document for users
+which combinations of packages go together.</p>
+<p><a class="reference external" href="http://lists.openstack.org/pipermail/openstack-dev/2015-June/065992.html">http://lists.openstack.org/pipermail/openstack-dev/2015-June/065992.html</a></p>
+<p>If two build artifacts always need to have the same version number,
+that implies strongly that they are part of the same deliverable
+and should not be released separately.</p>
+</li>
+<li><p>Start version numbers with 0.1.0 for unstable early editions and
+prototypes. Switch to 1.0.0 for the first production-ready
+release. Do not release the first version of a deliverable with a
+number that matches the version used by other existing related
+deliverables. This confuses consumers about the maturity of the new
+deliverable and about where they should find “older” versions with
+lower numbers, which do not exist.</p></li>
+<li><p>Set the first line (summary) of the commit message to the package
+name and version being requested.</p></li>
+<li><p>If you are not the release liaison or PTL, have the PTL of the
+project acknowledge the request with a +1.</p></li>
+<li><p>Do not use the “Depends-On” feature of zuul to make a release
+request depend on merging another patch in your project. The
+dependency management does not work properly in the release check
+jobs, and the validator requires that the patch listed in your
+deliverable file actually be merged into a proper branch.</p></li>
+<li><p>Do not submit multiple dependent patches for multiple
+releases. Having a patch series with multiple releases means the
+release team cannot properly prioritize processing them. During
+milestone weeks, preference is given to milestone
+releases. Releases from stable branches, independent projects, and
+other types of releases are processed later. If your milestone
+release request depends on a request that is deprioritized, you may
+miss the deadline.</p></li>
+<li><p>RC1 tags and stable branches should be submitted together for
+projects using the cycle-with-rc release model.</p></li>
+</ul>
+</div>
+<div class="section" id="using-new-release-command">
+<h2>Using new-release command<a class="headerlink" href="#using-new-release-command" title="Permalink to this headline">¶</a></h2>
+<p>The releases repository contains several tools to make working with
+the data files easier. The new-release command, for example,
+calculates new version numbers based on the semantic versioning
+information given on the command line and determines the SHA of the
+HEAD of the appropriate branch.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">venv</span></code> tox environment to run the tool, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tox -e venv -- new-release SERIES DELIVERABLE TYPE
+</pre></div>
+</div>
+<p>The SERIES value should be the release series, such as “pike”.</p>
+<p>The DELIVERABLE value should be the deliverable name, such as
+“oslo.config” or “cinder”.</p>
+<p>The TYPE value should be one of:</p>
+<p><code class="docutils literal notranslate"><span class="pre">bugfix</span></code> – For a release containing only bug fixes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">feature</span></code> – For a release with a new feature, a new dependency, or
+a change to the minimum allowed version of a dependency.</p>
+<p><code class="docutils literal notranslate"><span class="pre">major</span></code> – For a release with a backwards-incompatible change.</p>
+<p><code class="docutils literal notranslate"><span class="pre">milestone</span></code> – For a date-based milestone tag.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rc</span></code> – For a release candidate.</p>
+<p>new-series automatically includes a stable branch for the first
+release candidate.</p>
+<p>If the most recent release of cinder during the pike series is
+11.0.0.0b3 then running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tox -e venv -- new-release pike cinder rc
+</pre></div>
+</div>
+<p>detects that this is the first release candidate and updates the file
+deliverables/pike/cinder.yaml with the new release and a new stable
+branch.</p>
+<p>If a deliverable includes multiple git repositories, all of the
+repositories are included in the new release unless their HEAD version
+matches the most recent release from that repository. To re-tag in
+those cases, use the <code class="docutils literal notranslate"><span class="pre">--force</span></code> option.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">--stable-branch</span></code> option to also create a stable branch for the
+new release. Projects following the cycle-with-rc release
+model automatically receive a new stable branch on their first release
+candidate.</p>
+</div>
+<div class="section" id="requesting-a-branch">
+<h2>Requesting a Branch<a class="headerlink" href="#requesting-a-branch" title="Permalink to this headline">¶</a></h2>
+<p>The PTL or release liaison for a project may request a new branch by
+submitting a patch to this repository, adding the necessary branch
+metadata to the file describing the deliverable to be released. The
+release team will review the request and provide feedback about the
+branch point and possibly the name.</p>
+<p>Prepare the branch request by submitting a patch to this repository.</p>
+<ul>
+<li><p>RC1 tags and stable branches should be submitted together for
+projects using the cycle-with-rc release model.</p></li>
+<li><p>Always add the new branch to the end of the list in the file being
+edited.</p></li>
+<li><p>Branches should use one of the standard prefixes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">stable/</span></code> – for stable series</p>
+<p><code class="docutils literal notranslate"><span class="pre">feature/</span></code> – for temporary feature branches</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stable/</span></code> branch names must match a valid series name.</p></li>
+<li><p>If you are not the release liaison or PTL, have the PTL of the
+project acknowledge the request with a +1.</p></li>
+<li><p>Do not use the “Depends-On” feature of zuul to make a branch
+request depend on merging another patch in your project. The
+dependency management does not work properly in the release check
+jobs, and the validator requires that the patch listed in your
+deliverable file actually be merged into a proper branch.</p></li>
+</ul>
+</div>
+<div class="section" id="release-approval">
+<h2>Release Approval<a class="headerlink" href="#release-approval" title="Permalink to this headline">¶</a></h2>
+<p>Releases will only be denied during freeze weeks, periods where there
+are known gate issues, or when releasing will introduce unwanted
+instability. Releases made late in a week may be delayed until early
+in the next week unless there is a pressing need such as a gate
+failure or security issue.</p>
+</div>
+<div class="section" id="who-is-responsible-for-the-release">
+<h2>Who is Responsible for the Release?<a class="headerlink" href="#who-is-responsible-for-the-release" title="Permalink to this headline">¶</a></h2>
+<p>The release team is responsible for helping to clearly signal the
+nature of the changes in the release through good version number
+selection.</p>
+<p>The project team is responsible for understanding the implications for
+consuming projects when a new release is made, and ensuring that
+releases do not break other projects. When breaks occur, the project
+team is responsible for taking the necessary corrective action.</p>
+</div>
+<div class="section" id="deliverable-files">
+<h2>Deliverable Files<a class="headerlink" href="#deliverable-files" title="Permalink to this headline">¶</a></h2>
+<p>Deliverable repositories for projects using cycle_with_intermediary
+or cycle_with_milestones should be placed in their respective releases
+within the deliverables directory. Deliverable repositories for
+projects using the independent release model should be placed in the
+<code class="docutils literal notranslate"><span class="pre">deliverables/_independent</span></code> directory.</p>
+<p>For a deliverable set of projects, we use one YAML file per release
+series to hold all of the metadata for all releases and branches of
+that deliverable. For each deliverable, we need to track:</p>
+<ul class="simple">
+<li><p>the launchpad project name (such as <code class="docutils literal notranslate"><span class="pre">oslo.config</span></code>) or storyboard
+project id (such as <code class="docutils literal notranslate"><span class="pre">760</span></code>)</p></li>
+<li><p>the series (Kilo, Liberty, etc.)</p></li>
+<li><p>the release model being used</p></li>
+<li><p>for each repository</p>
+<ul>
+<li><p>the name (such as <code class="docutils literal notranslate"><span class="pre">openstack/oslo.config</span></code>)</p></li>
+<li><p>the hash of the commit to be tagged</p></li>
+<li><p>the version number to use</p></li>
+</ul>
+</li>
+<li><p>cycle highlights that will be published to
+<code class="docutils literal notranslate"><span class="pre">releases.openstack.org/$SERIES/highlights.html</span></code> (optional, and for
+cycle-with-intermediary and cycle-with-rc projects only)</p></li>
+<li><p>the starting points of all branches</p></li>
+</ul>
+<p>We track this metadata for the history of all releases of the
+deliverable, so we can render a set of release history documentation.</p>
+<p>The file should be named based on the deliverable to be tagged, so
+releases for <code class="docutils literal notranslate"><span class="pre">liberty</span></code> from the <code class="docutils literal notranslate"><span class="pre">openstack/oslo.config</span></code>
+repository will have a file in <code class="docutils literal notranslate"><span class="pre">openstack/releases</span></code> called
+<code class="docutils literal notranslate"><span class="pre">deliverables/liberty/oslo.config.yaml</span></code>. Releases of the same
+deliverable from the <code class="docutils literal notranslate"><span class="pre">stable/kilo</span></code> branch will be described by
+<code class="docutils literal notranslate"><span class="pre">deliverables/kilo/oslo.config.yaml</span></code>.</p>
+</div>
+<div class="section" id="deliverables-file-schema">
+<h2>Deliverables File Schema<a class="headerlink" href="#deliverables-file-schema" title="Permalink to this headline">¶</a></h2>
+<p>The top level of a deliverable file is a mapping with keys:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">team</span></code></dt><dd><p>The name of the team that owns the deliverable, as listed in the
+governance repository data files.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">launchpad</span></code></dt><dd><p>The slug name of the launchpad project, suitable for use in URLs.
+(Not needed for projects using storyboard.)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">storyboard</span></code></dt><dd><p>The ID of the storyboard project, suitable for use in URLs and API
+calls.  (Not needed for projects using launchpad.)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">release-notes</span></code></dt><dd><p>The URL or URLs to the published release notes for the deliverable
+for the series.</p>
+<p>Deliverables contained a single repository should simply include the
+URL to the notes for that repository. Deliverables made up of
+multiple repositories should use a hash to map each repository name
+to its notes URL.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">include-pypi-link</span></code></dt><dd><p>Either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>, indicating whether the release
+announcement should include the link to the package on
+PyPI. Defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">release-model</span></code></dt><dd><p>Identify the release model used by the deliverable. See
+the reference section of the documentation for descriptions
+of the valid models.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type</span></code></dt><dd><p>Categorize the deliverable based on what it does. See the reference
+section of the documentation for descriptions of the valid
+deliverable types.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">artifact-link-mode</span></code></dt><dd><p>Describe how to link to artifacts produced by the project. The
+default is <code class="docutils literal notranslate"><span class="pre">tarball</span></code>. Valid values are:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">tarball</span></code></dt><dd><p>Automatically generates links to version-specific files on
+tarballs.openstack.org.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">none</span></code></dt><dd><p>Do not link to anything, just show the version number.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">repository-settings</span></code></dt><dd><p>Mapping of special settings to control the behavior for each repository,
+keyed by the repository name.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">flags</span></code></dt><dd><p>A list of flags attached to the repository.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">no-artifact-build-job</span></code></dt><dd><p>This repository has no job for building an artifact, but should
+be tagged anyway.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">retired</span></code></dt><dd><p>This repository is no longer used, but was present in old
+versions of a deliverable.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pypi-name</span></code></dt><dd><p>An optional name for the deliverable on pypi.python.org.  This
+value is only needed if the name on PyPI does not match the
+canonicalized output of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">--name</span></code>, such as if it
+uses capitalized letters (“DragonFlow” instead of “dragonflow”).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tarball-base</span></code></dt><dd><p>An optional name for the base of the tarball created by the
+release. If no value is provided, it defaults to the repo base name or
+an overridden value set on a specific release entry under <code class="docutils literal notranslate"><span class="pre">releases</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">release-type</span></code></dt><dd><p>This (optional) key sets the level of validation for the versions numbers.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">python-service</span></code></dt><dd><p>Default: Enforces 3 digit semver version numbers in releases and allows
+for common alpha, beta and dev releases.  This should be appropriate for
+most OpenStack component release requirements.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">python-pypi</span></code></dt><dd><p>Like <code class="docutils literal notranslate"><span class="pre">python-service</span></code> but requires the jobs to publish the component
+to the Python Package Index (PyPI).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">xstatic</span></code></dt><dd><p>Allows a more flexible versioning in line with xstatic package guidelines
+and requirements.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fuel</span></code></dt><dd><p>The Fuel project manages its own packages.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">puppet</span></code></dt><dd><p>All puppet modules should use this. If no release-type is
+specified and the validation job can determine that a module is a
+puppet module, it assumes a release-type of <code class="docutils literal notranslate"><span class="pre">puppet</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">nodejs</span></code></dt><dd><p>All nodejs modules should use this. If no release-type is
+specified and the validation job can determine that a module is a
+nodejs module, it assumes a release-type of <code class="docutils literal notranslate"><span class="pre">nodejs</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">neutron</span></code></dt><dd><p>For projects using the PyPI publishing variant that installs
+neutron in order to build the package. Typically used by neutron
+plugins.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">horizon</span></code></dt><dd><p>For projects using the PyPI publishing variant that installs
+horizon in order to build the package. Typically used by horizon
+plugins.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">releases</span></code></dt><dd><p>A list of the releases for the deliverable.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stable-branch-type</span></code></dt><dd><p>This (optional) key sets the validation for the location associated
+with each stable branch.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">std</span></code></dt><dd><p>Default: Requires stable branches to be created from tagged
+releases. This is the correct branch type for most projects.</p>
+<p>The location must be either an existing version tag or the most
+recently added version number under the releases list (allowing a
+tag and branch to be submitted together).  All repositories
+associated with the version (as identified by the deliverable
+file) will be branched from that version using the name given.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">std-with-versions</span></code></dt><dd><p>This mode has the same meaning as the <code class="docutils literal notranslate"><span class="pre">std</span></code> branch type, with the
+addition that version-based branches can be created as well.</p>
+<p>These version-based branches are shorter term stable branches that
+are named for the major and minor version number (e.g. bugfix/3.1).
+This is primarily used for Ironic releases.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tagless</span></code></dt><dd><p>This mode requires stable branch locations to be a mapping between
+repository name and an existing commit, specified by the
+hash. This mode should only be used for projects that do not tag
+releases, such as devstack and grenade.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">upstream</span></code></dt><dd><p>Stable branch names track upstream release names, rather than
+OpenStack series names.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">none</span></code></dt><dd><p>This mode indicates that the deliverable should never have stable
+branches. This is used for specific deliverables like tempest
+or patrole.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cycle-highlights</span></code></dt><dd><p>A list of plain-text bullet points describing some of the top new
+features or changes you would like to point out for this release
+cycle. Minimal RST markup is supported. These highlights are
+compiled per team and published to
+<code class="docutils literal notranslate"><span class="pre">releases.openstack.org/$SERIES/highlights.html</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">branches</span></code></dt><dd><p>A list of the branches for the deliverable.</p>
+</dd>
+</dl>
+<p>Each <code class="docutils literal notranslate"><span class="pre">release</span></code> entry is a mapping with keys:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">version</span></code></dt><dd><p>The version tag for that release, to be applied to all of the member
+projects.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">projects</span></code></dt><dd><p>A list of all of the projects making up the deliverable for that
+release.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">highlights</span></code></dt><dd><p>An optional message to be included in the release note email
+announcing the release. (Use <code class="docutils literal notranslate"><span class="pre">|</span></code> to indicate a multi-line,
+pre-formatted message.)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">flags</span></code></dt><dd><p>A list of flags attached to the release.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">forced</span></code></dt><dd><p>This release was applied by the release team, and not the project
+team.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">skipped-sig</span></code></dt><dd><p>This independent release pre-dates the Ocata cycle and did not
+generate any signature. Signature link display should be skipped
+when the release website pages are generated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Each entry in the <code class="docutils literal notranslate"><span class="pre">projects</span></code> list is a mapping with keys:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">repo</span></code></dt><dd><p>The name of the repository on git.openstack.org.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hash</span></code></dt><dd><p>The SHA1 hash for the commit to receive the version tag.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tarball-base</span></code></dt><dd><p>An optional name for the base of the tarball created by the
+release. If no value is provided, it defaults to the <code class="docutils literal notranslate"><span class="pre">repository-settings</span></code>
+value if set, else the repo base name.</p>
+</dd>
+</dl>
+<p>Each entry in the <code class="docutils literal notranslate"><span class="pre">branches</span></code> list is a mapping with keys:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">name</span></code></dt><dd><p>The name of the branch.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">location</span></code></dt><dd><p>The location value depends on the name.</p>
+<p>If a branch name starts with stable/ then the location value depends
+on the <code class="docutils literal notranslate"><span class="pre">stable-branch-type</span></code> setting.</p>
+<p>If a branch name starts with feature/ then the location must be a
+mapping between the target repository name and the SHA of a commit
+already in the target repository.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>For example, one version of
+<code class="docutils literal notranslate"><span class="pre">deliverables/liberty/oslo.config.yaml</span></code> might contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">launchpad</span><span class="p">:</span> <span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+<span class="n">branches</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">feature</span><span class="o">/</span><span class="n">random</span><span class="o">-</span><span class="n">feature</span><span class="o">-</span><span class="n">work</span>
+    <span class="n">location</span><span class="p">:</span>
+      <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span><span class="p">:</span> <span class="mi">02</span><span class="n">a86d2eefeda5144ea8c39657aed24b8b0c9a39</span>
+<span class="n">releases</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">version</span><span class="p">:</span> <span class="mf">1.12</span><span class="o">.</span><span class="mi">0</span>
+    <span class="n">projects</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+        <span class="nb">hash</span><span class="p">:</span> <span class="mi">02</span><span class="n">a86d2eefeda5144ea8c39657aed24b8b0c9a39</span>
+</pre></div>
+</div>
+<p>and then for the subsequent release it would be updated to contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">launchpad</span><span class="p">:</span> <span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+<span class="n">branches</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">feature</span><span class="o">/</span><span class="n">random</span><span class="o">-</span><span class="n">feature</span><span class="o">-</span><span class="n">work</span>
+    <span class="n">location</span><span class="p">:</span>
+      <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span><span class="p">:</span> <span class="mi">02</span><span class="n">a86d2eefeda5144ea8c39657aed24b8b0c9a39</span>
+  <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">stable</span><span class="o">/</span><span class="n">newton</span>
+    <span class="n">location</span><span class="p">:</span> <span class="mf">1.12</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">releases</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">version</span><span class="p">:</span> <span class="mf">1.12</span><span class="o">.</span><span class="mi">0</span>
+    <span class="n">projects</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+        <span class="nb">hash</span><span class="p">:</span> <span class="mi">02</span><span class="n">a86d2eefeda5144ea8c39657aed24b8b0c9a39</span>
+  <span class="o">-</span> <span class="n">version</span><span class="p">:</span> <span class="mf">1.12</span><span class="o">.</span><span class="mi">1</span>
+    <span class="n">projects</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+        <span class="nb">hash</span><span class="p">:</span> <span class="mi">0</span><span class="n">c9113f68285f7b55ca01f0bbb5ce6cddada5023</span>
+    <span class="n">highlights</span><span class="p">:</span> <span class="o">|</span>
+       <span class="n">This</span> <span class="n">release</span> <span class="n">includes</span> <span class="n">the</span> <span class="n">change</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">importing</span>
+       <span class="kn">from</span> <span class="nn">the</span> <span class="s1">&#39;oslo&#39;</span> <span class="n">namespace</span> <span class="n">package</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For deliverables with multiple repositories, the list of projects
+would contain all of them. For example, the Neutron deliverable might
+be described by <code class="docutils literal notranslate"><span class="pre">deliverables/mitaka/neutron.yaml</span></code> containing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">launchpad</span><span class="p">:</span> <span class="n">neutron</span>
+<span class="n">release</span><span class="o">-</span><span class="n">notes</span><span class="p">:</span>
+  <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openstack</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releasenotes</span><span class="o">/</span><span class="n">neutron</span><span class="o">/</span><span class="n">mitaka</span><span class="o">.</span><span class="n">html</span>
+  <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">lbaas</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openstack</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releasenotes</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">lbaas</span><span class="o">/</span><span class="n">mitaka</span><span class="o">.</span><span class="n">html</span>
+  <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">fwaas</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openstack</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releasenotes</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">fwaas</span><span class="o">/</span><span class="n">mitaka</span><span class="o">.</span><span class="n">html</span>
+  <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">vpnaas</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openstack</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">releasenotes</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">vpnaas</span><span class="o">/</span><span class="n">mitaka</span><span class="o">.</span><span class="n">html</span>
+<span class="n">releases</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">version</span><span class="p">:</span> <span class="mf">8.0</span><span class="o">.</span><span class="mi">0</span>
+   <span class="n">projects</span><span class="p">:</span>
+     <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span>
+       <span class="nb">hash</span><span class="p">:</span> <span class="mi">3213</span><span class="n">eb124e40b130e174ac3a91067e2b196788dd</span>
+     <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">fwaas</span>
+       <span class="nb">hash</span><span class="p">:</span> <span class="n">ab5622891e2b1a7631f97471f55ffb9b5235e5ee</span>
+     <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">lbaas</span>
+       <span class="nb">hash</span><span class="p">:</span> <span class="mi">19</span><span class="n">b18f05037dae4bbbada848aae6421da18ab490</span>
+     <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">neutron</span><span class="o">-</span><span class="n">vpnaas</span>
+       <span class="nb">hash</span><span class="p">:</span> <span class="n">a1b12601a64a2359b2224fd4406c5db008484700</span>
+</pre></div>
+</div>
+<p>To allow tagging for repositories without build artifacts, set the
+<code class="docutils literal notranslate"><span class="pre">no-artifact-build-job</span></code> flag.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">launchpad</span><span class="p">:</span> <span class="n">astara</span>
+<span class="n">repository</span><span class="o">-</span><span class="n">settings</span><span class="p">:</span>
+  <span class="n">openstack</span><span class="o">/</span><span class="n">astara</span><span class="o">-</span><span class="n">appliance</span><span class="p">:</span>
+    <span class="n">flags</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">no</span><span class="o">-</span><span class="n">artifact</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">job</span>
+<span class="n">releases</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">version</span><span class="p">:</span> <span class="mf">9.0</span><span class="o">.</span><span class="mf">0.0</span><span class="n">b1</span>
+    <span class="n">projects</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">repo</span><span class="p">:</span> <span class="n">openstack</span><span class="o">/</span><span class="n">astara</span><span class="o">-</span><span class="n">appliance</span>
+        <span class="nb">hash</span><span class="p">:</span> <span class="n">c21a64ea7b3b0fbdab8592afecdd31d9b8e64a6a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="helpers">
+<h2>Helpers<a class="headerlink" href="#helpers" title="Permalink to this headline">¶</a></h2>
+<p>In order to help build out these files there are various command line
+based tools that come with this repository. To install these it is as
+easy as <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> in this repository directory.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">new-release</span></code> takes arguments to describe a new release and
+updates the deliverable file, automatically calculating the version
+number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edit-deliverable</span></code> takes arguments to update the contents of a
+single deliverable file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list-changes</span></code> that lists the changes in a given release file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interactive-release</span></code> that goes through a <em>wizard</em> style set of
+questions to produce a new or updated release of a given project or
+set of projects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">missing-releases</span></code> scans deliverable files and verifies that all
+of the releases that should have been tagged by hand have been</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init-series</span></code> initializes a new deliverable directory with stub
+files based on the previous release.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get-contacts</span></code> Loads the governance and liaison data to print contact
+deatils for a given team</p></li>
+</ul>
+<div class="section" id="tools-aclmanager-py">
+<h3>tools/aclmanager.py<a class="headerlink" href="#tools-aclmanager-py" title="Permalink to this headline">¶</a></h3>
+<p>A script to handle pre-release/post-release ACLs on stable/$SERIES
+branches.</p>
+<p>The ‘acls’ action helps to produce a patch over
+openstack-infra/project-config that inserts a specific ACL for
+stable/$SERIES.</p>
+<p>The ‘groups’ action helps to adjust the membership of
+$PROJ-release-branch Gerrit group, based on which stage the release
+branch is at. At pre-release we remove $PROJ-stable-maint, and add the
+$PROJ-release and Release Managers group (pre_release subaction). At
+post-release, we remove $PROJ-release and Release Managers, and add
+$PROJ-stable-maint (post_release subaction).</p>
+<p>Examples:</p>
+<p>To create the ACL patch for stable/newton:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">aclmanager</span> <span class="o">--</span> <span class="o">--</span><span class="n">series</span> <span class="n">newton</span> <span class="n">acls</span> <span class="o">~/</span><span class="n">branches</span><span class="o">/</span><span class="n">openstack</span><span class="o">-</span><span class="n">infra</span><span class="o">/</span><span class="n">project</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>To set the pre-release group membership:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">aclmanager</span> <span class="o">--</span> <span class="n">groups</span> <span class="n">pre_release</span> <span class="n">ttx</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tools-add-reviewers-sh">
+<h3>tools/add_reviewers.sh<a class="headerlink" href="#tools-add-reviewers-sh" title="Permalink to this headline">¶</a></h3>
+<p>A script to add the PTL and release liaisons to one or more reviews.</p>
+<p>Around deadlines during the cycle, and especially near the end of the cycle,
+the release team needs to generate a large number of release patches for
+various subsets of the included deliverables. The <code class="docutils literal notranslate"><span class="pre">add_reviewers.sh</span></code> script
+can be used to make sure the appropriate people have been added as reveiwers
+for these reviews.</p>
+<p>For example, assuming the release candidate patches for the Ussuri cycle are
+generated using the Gerrit review topic of <code class="docutils literal notranslate"><span class="pre">ussuri-rc</span></code>, the following will
+process all of those reviews to add the necessary PTL and liaison reviewers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">add_reviewers</span><span class="o">.</span><span class="n">sh</span> <span class="n">ussuri</span><span class="o">-</span><span class="n">rc</span>
+</pre></div>
+</div>
+<p>Note that any topic may be used, so this script can be used even if just
+adding reviewers to an individual review.</p>
+</div>
+<div class="section" id="tools-check-approval-py">
+<h3>tools/check_approval.py<a class="headerlink" href="#tools-check-approval-py" title="Permalink to this headline">¶</a></h3>
+<p>A script to test that release requests have been approved by a team
+liaison.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">check_approval</span> <span class="o">--</span> <span class="mi">695375</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tools-bulk-review-sh">
+<h3>tools/bulk_review.sh<a class="headerlink" href="#tools-bulk-review-sh" title="Permalink to this headline">¶</a></h3>
+<p>A script for taking a working directory and dividing up the modified files into
+a collection on independent per-team reviews.  Each per-team change should be
+able to be processed in any order.  These reviews will request review from the
+the PTL and all release liaisons.</p>
+<p>This is designed to be used by the release team at key points in the cycle to
+ease bulk releases.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tool will commit ultimately commit all modified deliverables and
+modifies git state.  Therefore it is essential that before running it
+the working tree contains only the logical changes appropriate for the
+stage of the release <em>and</em> all changes are saved elsewhere, in case the
+script encounters a problem.</p>
+</div>
+</div>
+<div class="section" id="tools-make-missing-releases-sh">
+<h3>tools/make_missing_releases.sh<a class="headerlink" href="#tools-make-missing-releases-sh" title="Permalink to this headline">¶</a></h3>
+<p>A wrapper script around <code class="docutils literal notranslate"><span class="pre">new-release</span></code> designed to be run by the release team
+to create releases at appropriate times in the release cycle, e.g milestones.
+Once <code class="docutils literal notranslate"><span class="pre">tools/make_missing_releases.sh</span></code> completes the release manager can use
+<code class="docutils literal notranslate"><span class="pre">tools/bulk_review.sh</span></code> to submit the release requests.</p>
+</div>
+<div class="section" id="tools-process-auto-releases-sh">
+<h3>tools/process_auto_releases.sh<a class="headerlink" href="#tools-process-auto-releases-sh" title="Permalink to this headline">¶</a></h3>
+<p>Automates parts of the process to propose releases for a large set of
+deliverables.</p>
+<p>There are multiple points during the release cycle where the release team
+needs to initiate releases for library releases, tagging RCs, or other cases
+where we need to inspect each deliverable in a set to generate release
+requests.</p>
+<p>This tool asks for input on a few common settings to use for the releases. A
+template commit message is entered on the command line, using the placeholder
+of PROJECT that will be replaced by the actual deliverable name. It then
+iterates through a set of deliverables and shows any commits to the relevant
+repos that have not been included in a release yet. You are then able to
+decide whether it needs to be released and select the release type
+(major, minor, bugfix, rc, etc.) based on the included commits.</p>
+<p>This can be used in conjunction with the <code class="docutils literal notranslate"><span class="pre">list-deliverables</span></code> command to get
+the specific deliverables to process. An example use would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./tools/process_auto_releases.sh ussuri $(list-deliverables --unreleased --series ussuri)
+</pre></div>
+</div>
+<p>As an alternative, it may be useful to be able to edit the list of deliverables
+before running the command. That can be done by something similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tox -e venv -- list-deliverables --unreleased --series ussuri &gt; deliverables.log
+vi deliverables.log  # edit contents as needed
+./tools/process_auto_releases.sh ussuri $(cat deliverables.log)
+</pre></div>
+</div>
+<p>Unlike make_missing_releases.sh, this script will create fresh temporary clones
+of each repo to avoid stale information, and it will submit each new release
+request as it goes.</p>
+</div>
+<div class="section" id="tools-releases-note-links-sh">
+<h3>tools/releases_note_links.sh<a class="headerlink" href="#tools-releases-note-links-sh" title="Permalink to this headline">¶</a></h3>
+<p>A script to add the missing release note links to deliverables if needed.</p>
+<p>This script is designed to be run by the release team
+to ensure that release note links are present in deliverables at appropriate
+times in the release cycle, e.g milestones.</p>
+<p>Example:</p>
+<p>To check for ussuri release note links:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span><span class="o">/</span><span class="n">add_release_note_links</span><span class="o">.</span><span class="n">sh</span> <span class="n">ussuri</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tools-search-email-py">
+<h3>tools/search_email.py<a class="headerlink" href="#tools-search-email-py" title="Permalink to this headline">¶</a></h3>
+<p>A script to search emails on the openstack-discuss mailing list. By default
+this script will search for emails related to the release team, but
+topic can be overriden to looking for specific subjects.</p>
+<p>Examples:</p>
+<p>The most basic example is the following, it will search for emails related
+to releases topics on openstack-discuss during the entire life of
+this mailing list (between the creation date in November 2018 to
+the current date):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py
+</pre></div>
+</div>
+<p>To looking for emails related to release and filtered between 2 dates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py --starting-date 2020-04-01 --ending-date 2020-4-1
+</pre></div>
+</div>
+<p>To looking for emails related to release and filtered by authors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py --authors &quot;Herve Beraud&quot; &quot;Sean McGinnis&quot;
+</pre></div>
+</div>
+<p>To looking for emails related to release between 2 dates and sent by authors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py --starting-date 2020-04-01 --ending-date 2020-4-1 --authors &quot;Herve Beraud&quot; &quot;Sean McGinnis&quot;
+</pre></div>
+</div>
+<p>To looking for emails related to release FFE since August 2020:</p>
+<dl class="simple">
+<dt>::</dt><dd><p>$ tools/search_emails.py –topic “.?[release].*FFE.*” –starting-date 2020-8-1</p>
+</dd>
+</dl>
+<p>To looking for all the release countdown emails sent during victoria:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py --topic &quot;.?\[release\] Release countdown.*&quot; --starting-date 2020-5-1
+</pre></div>
+</div>
+<p>By default will be executed on <code class="docutils literal notranslate"><span class="pre">http://lists.openstack.org/pipermail/openstack-discuss</span></code>
+but you can change the url to execute research on different mailing list.</p>
+<p>In the following example we looking for all release jobs who failed for <code class="docutils literal notranslate"><span class="pre">openstack/watcher*</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tools/search_emails.py --topic &quot;.?openstack/watcher.*&quot; --mailing-list http://lists.openstack.org/pipermail/
+release-job-failures/ --starting-date 2016-6-1
+</pre></div>
+</div>
+<p>Notice that by default we search on <code class="docutils literal notranslate"><span class="pre">http://lists.openstack.org/pipermail/openstack-discuss</span></code>
+and this mailing list was created in November 2018 so the <code class="docutils literal notranslate"><span class="pre">--starting-date</span></code>
+is initialized to this date by default, but the date can’t be before this
+default date except if you search on a different mailing list and if you also
+override it by passing params with <code class="docutils literal notranslate"><span class="pre">--mailing-list</span></code>.</p>
+<p>For more usage and examples:</p>
+<dl class="simple">
+<dt>::</dt><dd><p>$ tools/search_emails.py -h</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tools-list-eol-stale-branches-sh">
+<h3>tools/list_eol_stale_branches.sh<a class="headerlink" href="#tools-list-eol-stale-branches-sh" title="Permalink to this headline">¶</a></h3>
+<p>A script to detect deliverables who have EOL stale branches and optionally
+delete them.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span><span class="o">/</span><span class="n">list_eol_stale_branches</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Another example with predefining the gerrit user to be used for branch deletion:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GERRIT_USER</span><span class="o">=&lt;</span><span class="n">gerrit_user_name</span><span class="o">&gt;</span> <span class="n">tools</span><span class="o">/</span><span class="n">list_eol_stale_branches</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The reason behind this tool is that since the Extended Maintenance model
+have been introduced we stopped removing automatically End of Life (EOL)
+branches. This tool aims to list projects with branches that have been
+declared <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">of</span> <span class="pre">Life</span></code> (that is, tagged with <code class="docutils literal notranslate"><span class="pre">$series-eol</span></code>), but the
+corresponding series branch still exists. The script also offers to delete
+these stale branches.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only release managers have the access rights to delete branches.</p>
+</div>
+</div>
+<div class="section" id="tools-list-unbranched-projects-sh">
+<h3>tools/list_unbranched_projects.sh<a class="headerlink" href="#tools-list-unbranched-projects-sh" title="Permalink to this headline">¶</a></h3>
+<p>A script to detect deliverables who haven’t been branched during previous
+series.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tools</span><span class="o">/</span><span class="n">list_unbranched_projects</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>This tooling aim to avoid to miss branching. This is a side effect of
+the trailing projects, each series some of them are missed and remain
+unbranched. We faced similar use case previously and that led us to
+issues during releasing on stable branches.</p>
+</div>
+<div class="section" id="tools-membership-freeze-test-py">
+<h3>tools/membership_freeze_test.py<a class="headerlink" href="#tools-membership-freeze-test-py" title="Permalink to this headline">¶</a></h3>
+<p>A script to test for new deliverables in governance that were
+never under release management and therefore escape any form of
+release management tracking.</p>
+<p>Those need to be checked around milestone-2 (before MembershipFreeze)
+so that we create deliverable files for them if they are to be part of
+the final release.</p>
+<p>Example:</p>
+<p>To check for Stein release:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">membership_freeze_test</span> <span class="o">--</span> <span class="n">stein</span> <span class="o">~/</span><span class="n">branches</span><span class="o">/</span><span class="n">governance</span><span class="o">/</span><span class="n">reference</span><span class="o">/</span><span class="n">projects</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>This script generate can generate a project url and append it to each results found
+simply by adding the flag <cite>–url</cite> to your command.</p>
+<p>By default the generated urls use the official git repository
+(<a class="reference external" href="https://git.openstack.org/">https://git.openstack.org</a>) but you can use another one like github or your
+specific dist git url by adding the option <cite>–distgit &lt;base-url&gt;</cite> to your command.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">membership_freeze_test</span> <span class="o">--</span> <span class="n">stein</span> <span class="o">~/</span><span class="n">branches</span><span class="o">/</span><span class="n">governance</span><span class="o">/</span><span class="n">reference</span><span class="o">/</span><span class="n">projects</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">url</span> <span class="o">--</span><span class="n">distgit</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="propose-final-releases">
+<h3>propose-final-releases<a class="headerlink" href="#propose-final-releases" title="Permalink to this headline">¶</a></h3>
+<p>Command to edit the deliverable files in a releases repository to
+propose final releases. The command modifies files in an existing copy
+of the repository and does not invoke git at all, so you need to
+create a branch before running it then review the output, commit the
+changes, and push the patch to gerrit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">venv</span> <span class="o">--</span> <span class="n">propose</span><span class="o">-</span><span class="n">final</span><span class="o">-</span><span class="n">releases</span> <span class="n">newton</span> <span class="n">ocata</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="propose-library-branches">
+<h3>propose-library-branches<a class="headerlink" href="#propose-library-branches" title="Permalink to this headline">¶</a></h3>
+<p>Command to edit the deliverable files in a releases repository to
+propose stable branches for libraries. The command modifies files in
+an existing copy of the repository and does not invoke git at all, so
+you need to create a branch before running it then review the output,
+commit the changes, and push the patch to gerrit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">venv</span> <span class="o">--</span> <span class="n">propose</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="n">branches</span>
+<span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">venv</span> <span class="o">--</span> <span class="n">propose</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="n">branches</span> <span class="n">pike</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tools-list-unreleased-changes-sh">
+<h3>tools/list_unreleased_changes.sh<a class="headerlink" href="#tools-list-unreleased-changes-sh" title="Permalink to this headline">¶</a></h3>
+<p>Given a branch and one or more repositories, produce a list of the
+changes in those repositories since their last tag on that
+branch. This is useful for deciding if a project needs to prepare a
+release, and for predicting what the next release version should be by
+looking at the commit logs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">list_unreleased_changes</span><span class="o">.</span><span class="n">sh</span> <span class="n">master</span> <span class="n">openstack</span><span class="o">/</span><span class="n">oslo</span><span class="o">.</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>Print the list of changes in <code class="docutils literal notranslate"><span class="pre">openstack/oslo.config</span></code> along the
+master branch.</p>
+</div>
+<div class="section" id="tools-list-unreleased-changes-for-team-sh">
+<h3>tools/list_unreleased_changes_for_team.sh<a class="headerlink" href="#tools-list-unreleased-changes-for-team-sh" title="Permalink to this headline">¶</a></h3>
+<p>Given a series and team name, produce a list of the changes in the
+repositories for that team since their last tag on that branch. This
+is useful for deciding if a project needs to prepare a release, and
+for predicting what the next release version should be by looking at
+the commit logs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tools</span><span class="o">/</span><span class="n">list_unreleased_changes_for_team</span><span class="o">.</span><span class="n">sh</span> <span class="n">stein</span> <span class="n">oslo</span>
+</pre></div>
+</div>
+<p>Print the list of changes in Oslo team repositories along the branch
+for the stein release (‘master’ before the release and ‘stable/stein’
+after the release).</p>
+</div>
+<div class="section" id="tools-list-library-unreleased-changes-sh">
+<h3>tools/list_library_unreleased_changes.sh<a class="headerlink" href="#tools-list-library-unreleased-changes-sh" title="Permalink to this headline">¶</a></h3>
+<p>Runs list_unreleased_changes.sh for all libraries managed by any
+project.</p>
+</div>
+<div class="section" id="list-stable-unreleased-changes-sh">
+<h3>list_stable_unreleased_changes.sh<a class="headerlink" href="#list-stable-unreleased-changes-sh" title="Permalink to this headline">¶</a></h3>
+<p>Runs list_unreleased_changes.sh with the given branch for all
+repositories tagged with <code class="docutils literal notranslate"><span class="pre">stable:follows-policy</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">list_stable_unreleased_changes</span><span class="o">.</span><span class="n">sh</span> <span class="n">stable</span><span class="o">/</span><span class="n">liberty</span>
+</pre></div>
+</div>
+<p>is equivalent to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./list_unreleased_changes.sh stable/liberty $(list-deliverables --repos --series liberty)
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-em-series">
+<h3>list-em-series<a class="headerlink" href="#list-em-series" title="Permalink to this headline">¶</a></h3>
+<p>Command to list all series tagged as in extended maintenance.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">venv</span> <span class="o">--</span> <span class="nb">list</span><span class="o">-</span><span class="n">em</span><span class="o">-</span><span class="n">series</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="../teams/zun.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Zun"></i></a>
+          
+          
+            <a href="release_models.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Release Models"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Using This Repository</a><ul>
+<li><a class="reference internal" href="#defining-a-deliverable">Defining a Deliverable</a></li>
+<li><a class="reference internal" href="#adding-deliverables">Adding Deliverables</a></li>
+<li><a class="reference internal" href="#requesting-a-release">Requesting a Release</a></li>
+<li><a class="reference internal" href="#using-new-release-command">Using new-release command</a></li>
+<li><a class="reference internal" href="#requesting-a-branch">Requesting a Branch</a></li>
+<li><a class="reference internal" href="#release-approval">Release Approval</a></li>
+<li><a class="reference internal" href="#who-is-responsible-for-the-release">Who is Responsible for the Release?</a></li>
+<li><a class="reference internal" href="#deliverable-files">Deliverable Files</a></li>
+<li><a class="reference internal" href="#deliverables-file-schema">Deliverables File Schema</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#helpers">Helpers</a><ul>
+<li><a class="reference internal" href="#tools-aclmanager-py">tools/aclmanager.py</a></li>
+<li><a class="reference internal" href="#tools-add-reviewers-sh">tools/add_reviewers.sh</a></li>
+<li><a class="reference internal" href="#tools-check-approval-py">tools/check_approval.py</a></li>
+<li><a class="reference internal" href="#tools-bulk-review-sh">tools/bulk_review.sh</a></li>
+<li><a class="reference internal" href="#tools-make-missing-releases-sh">tools/make_missing_releases.sh</a></li>
+<li><a class="reference internal" href="#tools-process-auto-releases-sh">tools/process_auto_releases.sh</a></li>
+<li><a class="reference internal" href="#tools-releases-note-links-sh">tools/releases_note_links.sh</a></li>
+<li><a class="reference internal" href="#tools-search-email-py">tools/search_email.py</a></li>
+<li><a class="reference internal" href="#tools-list-eol-stale-branches-sh">tools/list_eol_stale_branches.sh</a></li>
+<li><a class="reference internal" href="#tools-list-unbranched-projects-sh">tools/list_unbranched_projects.sh</a></li>
+<li><a class="reference internal" href="#tools-membership-freeze-test-py">tools/membership_freeze_test.py</a></li>
+<li><a class="reference internal" href="#propose-final-releases">propose-final-releases</a></li>
+<li><a class="reference internal" href="#propose-library-branches">propose-library-branches</a></li>
+<li><a class="reference internal" href="#tools-list-unreleased-changes-sh">tools/list_unreleased_changes.sh</a></li>
+<li><a class="reference internal" href="#tools-list-unreleased-changes-for-team-sh">tools/list_unreleased_changes_for_team.sh</a></li>
+<li><a class="reference internal" href="#tools-list-library-unreleased-changes-sh">tools/list_library_unreleased_changes.sh</a></li>
+<li><a class="reference internal" href="#list-stable-unreleased-changes-sh">list_stable_unreleased_changes.sh</a></li>
+<li><a class="reference internal" href="#list-em-series">list-em-series</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/reference/using.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:14 GMT -->
+</html>

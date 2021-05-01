@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/train/schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:19 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Train Release Schedule</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Train Release Schedule</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="train-release-schedule">
+<h1>Train Release Schedule<a class="headerlink" href="#train-release-schedule" title="Permalink to this headline">¶</a></h1>
+<p>15 April 2019 - 16 October 2019 (27 weeks)</p>
+<table class="colwidths-given schedule docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 6%" />
+<col style="width: 38%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Week</p></th>
+<th class="head"></th>
+<th class="head"><p>Cross-project events</p></th>
+<th class="head"><p>Project-specific events</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Apr 08 - Apr 12</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="../stein/schedule.html#s-release"><span class="std std-ref">Stein release</span></a></p></li>
+<li><p><a class="reference internal" href="#t-goals-research"><span class="std std-ref">Train Goals Research</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 15 - Apr 19</p></td>
+<td><p>R-26</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Apr 22 - Apr 26</p></td>
+<td><p>R-25</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Apr 29 - May 03</p></td>
+<td><p>R-24</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-summit"><span class="std std-ref">Open Infrastructure Summit</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>May 06 - May 10</p></td>
+<td><p>R-23</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>May 13 - May 17</p></td>
+<td><p>R-22</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>May 20 - May 24</p></td>
+<td><p>R-21</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>May 27 - May 31</p></td>
+<td><p>R-20</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jun 03 - Jun 07</p></td>
+<td><p>R-19</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-1"><span class="std std-ref">Train-1 milestone</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-keystone-spec-proposal-freeze"><span class="std std-ref">Keystone Spec Proposal Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Jun 10 - Jun 14</p></td>
+<td><p>R-18</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jun 17 - Jun 21</p></td>
+<td><p>R-17</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Jun 24 - Jun 28</p></td>
+<td><p>R-16</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jul 01 - Jul 05</p></td>
+<td><p>R-15</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Jul 08 - Jul 12</p></td>
+<td><p>R-14</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Jul 15 - Jul 19</p></td>
+<td><p>R-13</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Jul 22 - Jul 26</p></td>
+<td><p>R-12</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-2"><span class="std std-ref">Train-2 milestone</span></a></p></li>
+<li><p><a class="reference internal" href="#t-mf"><span class="std std-ref">Membership Freeze</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-keystone-spec-freeze"><span class="std std-ref">Keystone Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-manila-spec-freeze"><span class="std std-ref">Manila Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-manila-driver-deadline"><span class="std std-ref">Manila Driver Deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#t-nova-spec-freeze"><span class="std std-ref">Nova Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-cinder-spec-freeze"><span class="std std-ref">Cinder Spec Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-cinder-driver-deadline"><span class="std std-ref">Cinder New Driver Merge Deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#t-cinder-target-driver-deadline"><span class="std std-ref">Cinder New Target Driver Merge Deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#t-cinder-py37-ci-running"><span class="std std-ref">Cinder 3rd Party CIs Running Py37</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Jul 29 - Aug 02</p></td>
+<td><p>R-11</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Aug 05 - Aug 09</p></td>
+<td><p>R-10</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Aug 12 - Aug 16</p></td>
+<td><p>R-9</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-keystone-fpfreeze"><span class="std std-ref">Keystone Feature Proposal Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-manila-fpfreeze"><span class="std std-ref">Manila Feature Proposal Freeze</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Aug 19 - Aug 23</p></td>
+<td><p>R-8</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Aug 26 - Aug 30</p></td>
+<td><p>R-7</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#u-tc-nominations"><span class="std std-ref">TC Election Nomination Begins</span></a></p></li>
+<li><p><a class="reference internal" href="#t-extra-atcs"><span class="std std-ref">Extra-ATCs deadline</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-oslo-feature-freeze"><span class="std std-ref">Oslo Feature Freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#u-ptl-nominations"><span class="std std-ref">‘U’ PTL self-nomination</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Sep 02 - Sep 06</p></td>
+<td><p>R-6</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-final-lib"><span class="std std-ref">Final release for non-client libraries</span></a></p></li>
+<li><p><a class="reference internal" href="#u-election-email-deadline"><span class="std std-ref">Election Email Deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#u-tc-campaigning"><span class="std std-ref">TC Election Campaigning Begins</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Sep 09 - Sep 13</p></td>
+<td><p>R-5</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-3"><span class="std std-ref">Train-3 milestone</span></a></p></li>
+<li><p><a class="reference internal" href="#t-ff"><span class="std std-ref">Feature freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-final-clientlib"><span class="std std-ref">Final release for client libraries</span></a></p></li>
+<li><p><a class="reference internal" href="#t-soft-sf"><span class="std std-ref">Soft StringFreeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-rf"><span class="std std-ref">Requirements freeze</span></a></p></li>
+<li><p><a class="reference internal" href="#t-goals-complete"><span class="std std-ref">Train Community Goals Completed</span></a></p></li>
+<li><p><a class="reference internal" href="#t-cycle-highlights"><span class="std std-ref">Cycle highlights marketing deadline</span></a></p></li>
+<li><p><a class="reference internal" href="#u-tc-polling"><span class="std std-ref">TC Election Polling Begins</span></a></p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-cinder-py37-ci-working"><span class="std std-ref">Cinder 3rd Party CIs Passing Py37 Testing</span></a></p></li>
+<li><p><a class="reference internal" href="#u-ptl-poll"><span class="std std-ref">‘U’ PTL Election Polling Begins</span></a></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Sep 16 - Sep 20</p></td>
+<td><p>R-4</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Sep 23 - Sep 27</p></td>
+<td><p>R-3</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-rc1"><span class="std std-ref">RC1 target week</span></a></p></li>
+<li><p><a class="reference internal" href="#t-hard-sf"><span class="std std-ref">Hard StringFreeze</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Sep 30 - Oct 04</p></td>
+<td><p>R-2</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Oct 07 - Oct 11</p></td>
+<td><p>R-1</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-finalrc"><span class="std std-ref">Final RCs and intermediary releases</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Oct 14 - Oct 18</p></td>
+<td><p>R+0</p></td>
+<td><ul class="simple">
+<li><p><a class="reference internal" href="#t-final"><span class="std std-ref">Train release</span></a></p></li>
+</ul>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="schedule.ics">Subscribe to iCalendar file</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deadlines are generally the Thursday of the week on which they are noted
+above. Exceptions to this policy will be explicitly mentioned in the event
+description.</p>
+</div>
+<div class="section" id="cross-project-events">
+<h2>Cross-project events<a class="headerlink" href="#cross-project-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="train-goals-research">
+<span id="t-goals-research"></span><h3>Train Goals Research<a class="headerlink" href="#train-goals-research" title="Permalink to this headline">¶</a></h3>
+<p>Pre-cycle planning and investigation into <a class="reference external" href="https://governance.openstack.org/tc/goals/train/index.html">the community-wide goals
+for Train</a>.</p>
+</div>
+<div class="section" id="train-1-milestone">
+<span id="t-1"></span><h3>Train-1 milestone<a class="headerlink" href="#train-1-milestone" title="Permalink to this headline">¶</a></h3>
+<p>6 June, 2019 is the Train-1 milestone. See project-specific notes for relevant
+deadlines.</p>
+</div>
+<div class="section" id="train-community-goals-acknowledgement">
+<span id="t-goals-ack"></span><h3>Train Community Goals Acknowledgement<a class="headerlink" href="#train-community-goals-acknowledgement" title="Permalink to this headline">¶</a></h3>
+<p>Teams should prepare their acknowledgement of <a class="reference external" href="https://governance.openstack.org/tc/goals/train/index.html">the community-wide
+goals for</a>.</p>
+</div>
+<div class="section" id="open-infrastructure-summit">
+<span id="t-summit"></span><h3>Open Infrastructure Summit<a class="headerlink" href="#open-infrastructure-summit" title="Permalink to this headline">¶</a></h3>
+<p>The Open Infrastructure Summit happens during this week in Denver, CO, USA. It
+will include a “Forum” in which people from all parts of our community will
+gather to give feedback on the last release (Stein) and discuss requirements
+for the next development cycle (Train).</p>
+</div>
+<div class="section" id="train-2-milestone">
+<span id="t-2"></span><h3>Train-2 milestone<a class="headerlink" href="#train-2-milestone" title="Permalink to this headline">¶</a></h3>
+<p>25 July, 2019 is the Train-2 milestone. See project-specific notes for relevant
+deadlines.</p>
+</div>
+<div class="section" id="final-release-for-non-client-libraries">
+<span id="t-final-lib"></span><h3>Final release for non-client libraries<a class="headerlink" href="#final-release-for-non-client-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Libraries that are not client libraries (Oslo and others) should issue their
+final release during this week. That allows to give time for last-minute
+changes before feature freeze.</p>
+</div>
+<div class="section" id="train-3-milestone">
+<span id="t-3"></span><h3>Train-3 milestone<a class="headerlink" href="#train-3-milestone" title="Permalink to this headline">¶</a></h3>
+<p>12 September, 2019 is the Train-3 milestone. See project-specific notes for
+relevant deadlines.</p>
+</div>
+<div class="section" id="train-community-goals-completed">
+<span id="t-goals-complete"></span><h3>Train Community Goals Completed<a class="headerlink" href="#train-community-goals-completed" title="Permalink to this headline">¶</a></h3>
+<p>Teams should prepare their documentation for completing <a class="reference external" href="https://governance.openstack.org/tc/goals/train/index.html">the
+community-wide goals for Train</a>.</p>
+</div>
+<div class="section" id="extra-atcs-deadline">
+<span id="t-extra-atcs"></span><h3>Extra-ATCs deadline<a class="headerlink" href="#extra-atcs-deadline" title="Permalink to this headline">¶</a></h3>
+<p>Project teams should identify contributors who have had a significant impact
+this cycle but who would not qualify for ATC status using the regular process
+because they have not submitted a patch. Those names should be added to the
+governance repo for consideration as ATC for the future.</p>
+</div>
+<div class="section" id="feature-freeze">
+<span id="t-ff"></span><h3>Feature freeze<a class="headerlink" href="#feature-freeze" title="Permalink to this headline">¶</a></h3>
+<p>The Train-3 milestone marks feature freeze for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-rc">release:cycle-with-rc</a> model. No featureful patch should be landed
+after this point. Exceptions may be granted by the project PTL.</p>
+</div>
+<div class="section" id="requirements-freeze">
+<span id="t-rf"></span><h3>Requirements freeze<a class="headerlink" href="#requirements-freeze" title="Permalink to this headline">¶</a></h3>
+<p>After the Train-3 milestone, only critical requirements and constraints changes
+will be allowed. Freezing our requirements list gives packagers downstream an
+opportunity to catch up and prepare packages for everything necessary for
+distributions of the upcoming release. The requirements remain frozen until the
+stable branches are created, with the release candidates.</p>
+</div>
+<div class="section" id="final-release-for-client-libraries">
+<span id="t-final-clientlib"></span><h3>Final release for client libraries<a class="headerlink" href="#final-release-for-client-libraries" title="Permalink to this headline">¶</a></h3>
+<p>Client libraries should issue their final release during this week, to match
+feature freeze.</p>
+</div>
+<div class="section" id="soft-stringfreeze">
+<span id="t-soft-sf"></span><h3>Soft StringFreeze<a class="headerlink" href="#soft-stringfreeze" title="Permalink to this headline">¶</a></h3>
+<p>You are no longer allowed to accept proposed changes containing modifications
+in user-facing strings. Such changes should be rejected by the review team and
+postponed until the next series development opens (which should happen when RC1
+is published).</p>
+</div>
+<div class="section" id="membership-freeze">
+<span id="t-mf"></span><h3>Membership Freeze<a class="headerlink" href="#membership-freeze" title="Permalink to this headline">¶</a></h3>
+<p>Projects must participate in at least two milestones in order to be considered
+part of the release. Projects made official after the second milestone, or
+which fail to produce milestone releases for at least one of the first and
+second milestones as well as the third milestone, are therefore not considered
+part of the release for the cycle. This does not apply to cycle-trailing
+packaging / lifecycle management projects.</p>
+</div>
+<div class="section" id="rc1-target-week">
+<span id="t-rc1"></span><h3>RC1 target week<a class="headerlink" href="#rc1-target-week" title="Permalink to this headline">¶</a></h3>
+<p>The week of September 23-27 is the target date for projects following the
+<a class="reference external" href="../reference/release_models.html#cycle-with-rc">release:cycle-with-rc</a> model to issue their first release candidate.</p>
+</div>
+<div class="section" id="hard-stringfreeze">
+<span id="t-hard-sf"></span><h3>Hard StringFreeze<a class="headerlink" href="#hard-stringfreeze" title="Permalink to this headline">¶</a></h3>
+<p>This happens when the RC1 for the project is tagged. At this point, ideally
+no strings are changed (or added, or removed), to give translators time to
+finish up their efforts.</p>
+</div>
+<div class="section" id="final-rcs-and-intermediary-releases">
+<span id="t-finalrc"></span><h3>Final RCs and intermediary releases<a class="headerlink" href="#final-rcs-and-intermediary-releases" title="Permalink to this headline">¶</a></h3>
+<p>The week of October 7-11 is the last week to issue release candidates or
+intermediary releases before release week. During release week, only
+final-release-critical releases will be accepted (at the discretion of the
+release team).</p>
+</div>
+<div class="section" id="cycle-highlights-marketing-deadline">
+<span id="t-cycle-highlights"></span><h3>Cycle highlights marketing deadline<a class="headerlink" href="#cycle-highlights-marketing-deadline" title="Permalink to this headline">¶</a></h3>
+<p>Cycle highlights need to be added to the release deliverables by feature freeze to
+be included in any marketing release messaging. Highlights may be added after
+this point, but they will likely only be useful for historical purposes.</p>
+<p>See the <a class="reference external" href="https://docs.openstack.org/project-team-guide/release-management.html#cycle-highlights">project team guide</a>
+for more details and instructions on adding these highlights.</p>
+</div>
+<div class="section" id="election-email-deadline">
+<span id="u-election-email-deadline"></span><h3>Election Email Deadline<a class="headerlink" href="#election-email-deadline" title="Permalink to this headline">¶</a></h3>
+<p>Contributors that will be in the electorate for the upcoming elections
+should confirm their gerrit email addresses by this date (September 3rd, 2019
+at 00:00 UTC). Electorate rolls are generated after this date and ballots will
+be sent to the listed gerrit email address.</p>
+</div>
+<div class="section" id="tc-elections">
+<h3>TC Elections<a class="headerlink" href="#tc-elections" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tc-election-nomination-begins">
+<span id="u-tc-nominations"></span><h4>TC Election Nomination Begins<a class="headerlink" href="#tc-election-nomination-begins" title="Permalink to this headline">¶</a></h4>
+<p>Technical committee candidates interested in serving for the next calendar year
+should announce their candidacies and platforms during this week.  Please see
+the <a class="reference external" href="https://governance.openstack.org/election/">Election site</a> for specific timing imformation.</p>
+</div>
+<div class="section" id="tc-election-campaigning-begins">
+<span id="u-tc-campaigning"></span><h4>TC Election Campaigning Begins<a class="headerlink" href="#tc-election-campaigning-begins" title="Permalink to this headline">¶</a></h4>
+<p>The electorate has time to ask candidates questions about their platforms
+and debate topics before polling begins.  Please see the <a class="reference external" href="https://governance.openstack.org/election/">Election site</a> for
+specific timing information.</p>
+</div>
+<div class="section" id="tc-election-polling-begins">
+<span id="u-tc-polling"></span><h4>TC Election Polling Begins<a class="headerlink" href="#tc-election-polling-begins" title="Permalink to this headline">¶</a></h4>
+<p>Election polling week for open seats on the TC.  Please see the
+<a class="reference external" href="https://governance.openstack.org/election/">Election site</a> for specific timing imformation.</p>
+</div>
+</div>
+<div class="section" id="train-release">
+<span id="t-final"></span><h3>Train release<a class="headerlink" href="#train-release" title="Permalink to this headline">¶</a></h3>
+<p>The Train coordinated release will happen on 16 October 2019.</p>
+</div>
+<div class="section" id="train-cycle-trailing-release-deadline">
+<span id="t-trailing-release"></span><h3>Train cycle-trailing release deadline<a class="headerlink" href="#train-cycle-trailing-release-deadline" title="Permalink to this headline">¶</a></h3>
+<p>The release deadline for projects using the release:cycle-trailing model that
+follow the main release cycle is set to 17 December, 2019.</p>
+</div>
+</div>
+<div class="section" id="project-specific-events">
+<h2>Project-specific events<a class="headerlink" href="#project-specific-events" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ptl-elections">
+<h3>PTL Elections<a class="headerlink" href="#ptl-elections" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="u-ptl-self-nomination">
+<span id="u-ptl-nominations"></span><h4>‘U’ PTL self-nomination<a class="headerlink" href="#u-ptl-self-nomination" title="Permalink to this headline">¶</a></h4>
+<p>Project team lead candidates for the ‘U’ cycle should announce their
+candidacy during this week.  Refer to the <a class="reference external" href="https://governance.openstack.org/election/">Election Site</a> for exact details.</p>
+</div>
+<div class="section" id="u-ptl-election-polling-begins">
+<span id="u-ptl-poll"></span><h4>‘U’ PTL Election Polling Begins<a class="headerlink" href="#u-ptl-election-polling-begins" title="Permalink to this headline">¶</a></h4>
+<p>Election week for Project team leads (where an election must be held to
+determine the winner).  Refer to the <a class="reference external" href="https://governance.openstack.org/election/">Election Site</a> for exact details.</p>
+</div>
+</div>
+<div class="section" id="keystone">
+<h3>Keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="keystone-spec-proposal-freeze">
+<span id="t-keystone-spec-proposal-freeze"></span><h4>Keystone Spec Proposal Freeze<a class="headerlink" href="#keystone-spec-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Keystone specs targeted to Train must be submitted to the keystone-specs
+repository by the end of the week.</p>
+</div>
+<div class="section" id="keystone-spec-freeze">
+<span id="t-keystone-spec-freeze"></span><h4>Keystone Spec Freeze<a class="headerlink" href="#keystone-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Keystone specs targeted to Train must be approved by the end of the week.</p>
+</div>
+<div class="section" id="keystone-feature-proposal-freeze">
+<span id="t-keystone-fpfreeze"></span><h4>Keystone Feature Proposal Freeze<a class="headerlink" href="#keystone-feature-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Keystone features must be proposed and substantially completed, with
+unit tests and documentation by the end of the week.</p>
+</div>
+<div class="section" id="keystone-feature-freeze">
+<span id="t-keystone-ffreeze"></span><h4>Keystone Feature Freeze<a class="headerlink" href="#keystone-feature-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Keystone features must be merged by the end of the week.</p>
+</div>
+</div>
+<div class="section" id="nova">
+<h3>Nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="nova-spec-freeze">
+<span id="t-nova-spec-freeze"></span><h4>Nova Spec Freeze<a class="headerlink" href="#nova-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Nova specs targeted to Train must be approved by Thursday.</p>
+</div>
+<div class="section" id="nova-feature-freeze">
+<span id="t-nova-ffreeze"></span><h4>Nova Feature Freeze<a class="headerlink" href="#nova-feature-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Nova features must be approved by Thursday.</p>
+</div>
+</div>
+<div class="section" id="oslo">
+<h3>Oslo<a class="headerlink" href="#oslo" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="oslo-feature-freeze">
+<span id="t-oslo-feature-freeze"></span><h4>Oslo Feature Freeze<a class="headerlink" href="#oslo-feature-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Oslo features must be proposed and substantially complete, with unit
+tests by the end of the week.</p>
+</div>
+</div>
+<div class="section" id="manila">
+<h3>Manila<a class="headerlink" href="#manila" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="manila-spec-freeze">
+<span id="t-manila-spec-freeze"></span><h4>Manila Spec Freeze<a class="headerlink" href="#manila-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Manila specs targeted to Train must be approved by the end of the week.</p>
+</div>
+<div class="section" id="manila-driver-deadline">
+<span id="t-manila-driver-deadline"></span><h4>Manila Driver Deadline<a class="headerlink" href="#manila-driver-deadline" title="Permalink to this headline">¶</a></h4>
+<p>By the end of the week all new backend drivers for Manila must be substantially
+complete, with unit tests, and passing 3rd party CI.  Drivers do not have to
+actually merge until feature freeze.</p>
+</div>
+<div class="section" id="manila-feature-proposal-freeze">
+<span id="t-manila-fpfreeze"></span><h4>Manila Feature Proposal Freeze<a class="headerlink" href="#manila-feature-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Manila features must be proposed and substantially completed, with
+unit tests and documentation by the end of the week.</p>
+</div>
+<div class="section" id="manila-feature-freeze">
+<span id="t-manila-ffreeze"></span><h4>Manila Feature Freeze<a class="headerlink" href="#manila-feature-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Manila features must be merged by the end of the week.</p>
+</div>
+</div>
+<div class="section" id="cinder">
+<h3>Cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cinder-spec-freeze">
+<span id="t-cinder-spec-freeze"></span><h4>Cinder Spec Freeze<a class="headerlink" href="#cinder-spec-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All Cinder Specs must be approved by 25 Jul 2019 (23:59 UTC).</p>
+</div>
+<div class="section" id="cinder-new-driver-merge-deadline">
+<span id="t-cinder-driver-deadline"></span><h4>Cinder New Driver Merge Deadline<a class="headerlink" href="#cinder-new-driver-merge-deadline" title="Permalink to this headline">¶</a></h4>
+<p>The deadline for merging a new backend driver to Cinder is 25 Jul 2019 (23:59 UTC).
+New drivers must be complete with unit tests at this point in time.  The backend
+driver must also have a 3rd Party CI running reliably and the driver must be
+merged at this point to be included in the Train release.</p>
+</div>
+<div class="section" id="cinder-new-target-driver-merge-deadline">
+<span id="t-cinder-target-driver-deadline"></span><h4>Cinder New Target Driver Merge Deadline<a class="headerlink" href="#cinder-new-target-driver-merge-deadline" title="Permalink to this headline">¶</a></h4>
+<p>The deadline for merging a new target driver to Cinder is 25 Jul 2019 (23:59 UTC).
+New target drivers must be complete with unit tests at this point in time.  The target
+driver must also have a 3rd Party CI running reliably and the target driver must
+be merged at this point to be included in the Train release.</p>
+</div>
+<div class="section" id="cinder-3rd-party-cis-running-py37">
+<span id="t-cinder-py37-ci-running"></span><h4>Cinder 3rd Party CIs Running Py37<a class="headerlink" href="#cinder-3rd-party-cis-running-py37" title="Permalink to this headline">¶</a></h4>
+<p>In preparation for OpenStack’s move to Python 3.x we are requiring that all
+vendors demonstrate their driver running Py37 tests by 25 Jul 2019 (23:59 UTC).
+Vendors who do not meet this reuqirement will have a patch marking their
+driver as unsupported submitted.</p>
+</div>
+<div class="section" id="cinder-3rd-party-cis-passing-py37-testing">
+<span id="t-cinder-py37-ci-working"></span><h4>Cinder 3rd Party CIs Passing Py37 Testing<a class="headerlink" href="#cinder-3rd-party-cis-passing-py37-testing" title="Permalink to this headline">¶</a></h4>
+<p>All vendors must demonstrate that their driver can execute 3rd Party CI
+with Py37 by 12 Sep 2019 (23:59 UTC) or their driver will be marked as
+unsupported.</p>
+</div>
+<div class="section" id="cinder-feature-proposal-freeze">
+<span id="t-cinder-fp-freeze"></span><h4>Cinder Feature Proposal Freeze<a class="headerlink" href="#cinder-feature-proposal-freeze" title="Permalink to this headline">¶</a></h4>
+<p>All new Cinder features must be proposed and substantially complete with unit
+tests by 12 Sep 2019 (23:59 UTC).</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="index.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Train"></i></a>
+          
+          
+            <a href="highlights.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Train Release Highlights"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Train Release Schedule</a><ul>
+<li><a class="reference internal" href="#cross-project-events">Cross-project events</a><ul>
+<li><a class="reference internal" href="#train-goals-research">Train Goals Research</a></li>
+<li><a class="reference internal" href="#train-1-milestone">Train-1 milestone</a></li>
+<li><a class="reference internal" href="#train-community-goals-acknowledgement">Train Community Goals Acknowledgement</a></li>
+<li><a class="reference internal" href="#open-infrastructure-summit">Open Infrastructure Summit</a></li>
+<li><a class="reference internal" href="#train-2-milestone">Train-2 milestone</a></li>
+<li><a class="reference internal" href="#final-release-for-non-client-libraries">Final release for non-client libraries</a></li>
+<li><a class="reference internal" href="#train-3-milestone">Train-3 milestone</a></li>
+<li><a class="reference internal" href="#train-community-goals-completed">Train Community Goals Completed</a></li>
+<li><a class="reference internal" href="#extra-atcs-deadline">Extra-ATCs deadline</a></li>
+<li><a class="reference internal" href="#feature-freeze">Feature freeze</a></li>
+<li><a class="reference internal" href="#requirements-freeze">Requirements freeze</a></li>
+<li><a class="reference internal" href="#final-release-for-client-libraries">Final release for client libraries</a></li>
+<li><a class="reference internal" href="#soft-stringfreeze">Soft StringFreeze</a></li>
+<li><a class="reference internal" href="#membership-freeze">Membership Freeze</a></li>
+<li><a class="reference internal" href="#rc1-target-week">RC1 target week</a></li>
+<li><a class="reference internal" href="#hard-stringfreeze">Hard StringFreeze</a></li>
+<li><a class="reference internal" href="#final-rcs-and-intermediary-releases">Final RCs and intermediary releases</a></li>
+<li><a class="reference internal" href="#cycle-highlights-marketing-deadline">Cycle highlights marketing deadline</a></li>
+<li><a class="reference internal" href="#election-email-deadline">Election Email Deadline</a></li>
+<li><a class="reference internal" href="#tc-elections">TC Elections</a><ul>
+<li><a class="reference internal" href="#tc-election-nomination-begins">TC Election Nomination Begins</a></li>
+<li><a class="reference internal" href="#tc-election-campaigning-begins">TC Election Campaigning Begins</a></li>
+<li><a class="reference internal" href="#tc-election-polling-begins">TC Election Polling Begins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train-release">Train release</a></li>
+<li><a class="reference internal" href="#train-cycle-trailing-release-deadline">Train cycle-trailing release deadline</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-specific-events">Project-specific events</a><ul>
+<li><a class="reference internal" href="#ptl-elections">PTL Elections</a><ul>
+<li><a class="reference internal" href="#u-ptl-self-nomination">‘U’ PTL self-nomination</a></li>
+<li><a class="reference internal" href="#u-ptl-election-polling-begins">‘U’ PTL Election Polling Begins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#keystone">Keystone</a><ul>
+<li><a class="reference internal" href="#keystone-spec-proposal-freeze">Keystone Spec Proposal Freeze</a></li>
+<li><a class="reference internal" href="#keystone-spec-freeze">Keystone Spec Freeze</a></li>
+<li><a class="reference internal" href="#keystone-feature-proposal-freeze">Keystone Feature Proposal Freeze</a></li>
+<li><a class="reference internal" href="#keystone-feature-freeze">Keystone Feature Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nova">Nova</a><ul>
+<li><a class="reference internal" href="#nova-spec-freeze">Nova Spec Freeze</a></li>
+<li><a class="reference internal" href="#nova-feature-freeze">Nova Feature Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oslo">Oslo</a><ul>
+<li><a class="reference internal" href="#oslo-feature-freeze">Oslo Feature Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manila">Manila</a><ul>
+<li><a class="reference internal" href="#manila-spec-freeze">Manila Spec Freeze</a></li>
+<li><a class="reference internal" href="#manila-driver-deadline">Manila Driver Deadline</a></li>
+<li><a class="reference internal" href="#manila-feature-proposal-freeze">Manila Feature Proposal Freeze</a></li>
+<li><a class="reference internal" href="#manila-feature-freeze">Manila Feature Freeze</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cinder">Cinder</a><ul>
+<li><a class="reference internal" href="#cinder-spec-freeze">Cinder Spec Freeze</a></li>
+<li><a class="reference internal" href="#cinder-new-driver-merge-deadline">Cinder New Driver Merge Deadline</a></li>
+<li><a class="reference internal" href="#cinder-new-target-driver-merge-deadline">Cinder New Target Driver Merge Deadline</a></li>
+<li><a class="reference internal" href="#cinder-3rd-party-cis-running-py37">Cinder 3rd Party CIs Running Py37</a></li>
+<li><a class="reference internal" href="#cinder-3rd-party-cis-passing-py37-testing">Cinder 3rd Party CIs Passing Py37 Testing</a></li>
+<li><a class="reference internal" href="#cinder-feature-proposal-freeze">Cinder Feature Proposal Freeze</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/train/schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:20 GMT -->
+</html>

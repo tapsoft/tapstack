@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/stein/highlights.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:16 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Stein Release Highlights</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Stein Release Highlights</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="stein-release-highlights">
+<h1>Stein Release Highlights<a class="headerlink" href="#stein-release-highlights" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are significant changes reported directly from the project teams and
+have not been processed in any way. Some highlights may be more significant
+than others. Please do not take this list as a definitive set of highlights
+for the release until the OpenStack Foundation marketing staff have had a
+chance to compile a more accurate message out of these changes.</p>
+</div>
+<div class="section" id="barbican">
+<h2>Barbican<a class="headerlink" href="#barbican" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Some enhancements were made to the vault back-end.  It is now possible to specify a KV mountpoint and use AppRoles to manage authentication.</p></li>
+<li><p>We now run a Barbican specific Octavia gate to verify the Octavia load balancing scenario.</p></li>
+<li><p>The PKCS#11 plugin was modified to allow the hmac_keywrap_mechanism to be configured.  With this change, Barbican can be deployed with Ultimaco HSMs.</p></li>
+<li><p>It is now possible to deploy Barbican with the pkcs#11 backend using either a Thales or an ATOS HSM via TripleO.</p></li>
+<li><p>Fixes were made to ensure that the barbican-manage commands for key rotation worked for the PKCS#11 plugin.</p></li>
+</ul>
+</div>
+<div class="section" id="blazar">
+<h2>Blazar<a class="headerlink" href="#blazar" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Introduced a new Resource Allocation API allowing operators to query the
+reserved state of their cloud resources.</p></li>
+<li><p>Added support for affinity and no-affinity policies for instance
+reservations, allowing multiple instances of the same reservation to be
+scheduled to the same hypervisor.</p></li>
+<li><p>Added a new plugin for reservation of floating IPs. This new feature is
+available as a preview and will be fully completed in the next release.</p></li>
+<li><p>Integrated numerous bug fixes to improve reliability.</p></li>
+</ul>
+</div>
+<div class="section" id="cinder">
+<h2>Cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added multiattach and deferred deletion support for the RBD driver.</p></li>
+<li><p>Numerous bug fixes have been integrated to address stability and reliability.</p></li>
+<li><p>User experience improvements around driver initialization, data retained during volume transfers and the information returned by commands.</p></li>
+<li><p>Continued improvements in the backup service.</p></li>
+</ul>
+</div>
+<div class="section" id="congress">
+<h2>Congress<a class="headerlink" href="#congress" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Important new NFV fault management capabilities through the addition of multiple new features in Congress integration with Nova, Tacker, and Monasca.</p></li>
+<li><p>The new JGress framework unlocks whole new classes of policy use by making the state of the cloud as given by JSON APIs available for policy evaluation. By adopting a JSON query language for expressing policy directly over JSON API data, JGress enables deployers to plug-in new data sources without being limited by the availability of integration drivers.</p></li>
+<li><p>As with every release, we continue to make Congress more robust and stable than ever with bug fixes and internal improvements.</p></li>
+</ul>
+</div>
+<div class="section" id="cyborg">
+<h2>Cyborg<a class="headerlink" href="#cyborg" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Add FPGA programming support</p></li>
+<li><p>Add GPU drivers</p></li>
+<li><p>DB re-work to align with NOVA placement api strategy</p></li>
+</ul>
+</div>
+<div class="section" id="designate">
+<h2>Designate<a class="headerlink" href="#designate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">CAA</span></code> recordset type for CA authorization for managed DNS Zones</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">NAPTR</span></code> recordset type for service chaining and SIP management</p></li>
+<li><p>Validation of project IDs when updating quotas</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">designate-status</span> <span class="pre">upgrade</span> <span class="pre">check</span></code> command to aid in upgrades.</p></li>
+</ul>
+</div>
+<div class="section" id="heat">
+<h2>Heat<a class="headerlink" href="#heat" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Heat now supports orchestrating stacks in remote OpenStack clouds, using credentials stored by the user in Barbican.</p></li>
+<li><p>It is now easier to recover from accidentally trying to replace a resource with a version that conflicts with the existing resource.</p></li>
+<li><p>New resource types in Heat add support for Neutron Layer 2 Gateways, Blazar, and Tap-as-a-Service.</p></li>
+<li><p>Support Glance web download image resource type, which allow get the image from URL without pre-load it out side of Glance.</p></li>
+</ul>
+</div>
+<div class="section" id="horizon">
+<h2>Horizon<a class="headerlink" href="#horizon" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Cinder Generic Groups admin panels are now supported</p></li>
+<li><p>Added option to mitigate breach attacks</p></li>
+<li><p>Added an upgrade_check management command</p></li>
+<li><p>Custom templates for clouds.yaml and openrc files support</p></li>
+</ul>
+</div>
+<div class="section" id="ironic">
+<h2>Ironic<a class="headerlink" href="#ironic" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Adds additional interfaces for management of hardware including Redfish BIOS settings, explicit iPXE boot interface option, and additional hardware support.</p></li>
+<li><p>Increased capabilities and options for operators including deployment templates, improved parallel conductor workers and disk erasure processes, deployed node protection and descriptions, and use of local HTTP(S) servers for serving images.</p></li>
+<li><p>Improved options for standalone users to request allocations of bare metal nodes and submit configuration data as opposed to pre-formed configuration drives. Additionally allows for ironic to be leveraged using JSON-RPC as opposed to an AMQP message bus.</p></li>
+</ul>
+</div>
+<div class="section" id="karbor">
+<h2>Karbor<a class="headerlink" href="#karbor" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support for reset checkpoint to the specify state</p></li>
+<li><p>Support for cross site backup and restore with volume_glance_plugin</p></li>
+<li><p>Optimization for checkpoints management in different bank cases</p></li>
+</ul>
+</div>
+<div class="section" id="keystone">
+<h2>Keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>This release introduced Multi-Factor Authentication Receipts, which facilitates a much more natural sequential authentication flow when using MFA.</p></li>
+<li><p>The limits API now supports domains in addition to projects, so quota for resources can be allocated to top-level domains and distributed among children projects.</p></li>
+<li><p>JSON Web Tokens are added as a new token format alongside fernet tokens, enabling support for a internet-standard format. JSON Web Tokens are asymmetrically signed and so synchronizing private keys across keystone servers is no longer required with this token format.</p></li>
+<li><p>Multiple keystone APIs now support system scope as a policy target, which reduces the need for customized policies to prevent global access to users with an admin role on any project.</p></li>
+<li><p>Multiple keystone APIs now use default reader, member, and admin roles instead of a catch-all role, which reduces the need for customized policies to create read-only access for certain users.</p></li>
+</ul>
+</div>
+<div class="section" id="kolla">
+<h2>Kolla<a class="headerlink" href="#kolla" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Completed addition of images and playbooks for the OpenStack Monitoring service, Monasca.</p></li>
+<li><p>Added an image and playbooks for the OpenStack Placement service, which has been extracted from Nova into a separate project.</p></li>
+<li><p>Added support for performing full and incremental backups of the MariaDB database.</p></li>
+</ul>
+</div>
+<div class="section" id="kuryr">
+<h2>Kuryr<a class="headerlink" href="#kuryr" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added support for handling and reacting to Network Policies events from
+kubernetes, allowing Kuryr-Kubernetes to handle security group rules on the
+fly based on them.</p></li>
+<li><p>Added support for K8s configured to use CRI-O, the Open Container
+Initiative-based implementation of Kubernetes Container Runtime Interface
+as container runtime.</p></li>
+<li><p>Enhancement of readiness health checks to validate quota of handlers
+resources, improving overall perforamance and stability and for them to be
+marked as unhealthy if needed.</p></li>
+<li><p>Improved DPDK and SRIOV support.</p></li>
+</ul>
+</div>
+<div class="section" id="manila">
+<h2>Manila<a class="headerlink" href="#manila" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Extended support for manage/unmanage support for shares and snapshots to DHSS=True mode
+and added manage/unmanage support for share-servers.</p></li>
+</ul>
+</div>
+<div class="section" id="neutron">
+<h2>Neutron<a class="headerlink" href="#neutron" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support for strict minimum bandwidth based scheduling. With this feature, Nova instances can be scheduled to compute hosts that will honor the minimum bandwidth requirements of the instance as defined by QoS policies of its ports.</p></li>
+<li><p>Network Segment Range Management. This features enables cloud administrators to manage network segment ranges dynamically via a new API extension, as opposed to the previous approach of editing configuration files. This feature targets StarlingX and edge use cases, where ease of of management is paramount.</p></li>
+<li><p>Speed up Neutron port bulk creation. The targets are containers / k8s use cases, where ports are created in groups.</p></li>
+<li><p>(FWaaS) FWaaS v1 has been removed. FWaaS v2 is available since Newton release and it covers all features in FWaaS v1. A migartion script is provided to convert existing FWaaS v1 objects into FWaaS v2 models.</p></li>
+</ul>
+</div>
+<div class="section" id="nova">
+<h2>Nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>It is now possible to run Nova with version 1.0.0 of the recently extracted placement service, hosted from its own repository. Note that install/upgrade of an extracted placement service is not yet fully implemented in all deployment tools. Operators should check with their particular deployment tool for support before proceeding. See the placement <a class="reference external" href="https://docs.openstack.org/placement/latest/install/index.html">install</a> and <a class="reference external" href="https://docs.openstack.org/placement/latest/upgrade/to-stein.html">upgrade</a> documentation for more details. In Stein, operators may choose to continue to run with the integrated placement service from the Nova repository, but should begin planning a migration to the extracted placement service by Train, as the removal of the integrated placement code from Nova is planned for the Train release.</p></li>
+<li><p>Users can now specify a volume type when creating servers.</p></li>
+<li><p>The compute API is now tolerant of transient conditions in a deployment like partial infrastructure failures, for example a cell not being reachable.</p></li>
+<li><p>Users can now create servers with Neutron ports that have quality-of-service minimum bandwidth rules.</p></li>
+<li><p>Operators can now set overcommit allocation ratios using Nova configuration files or the placement API.</p></li>
+<li><p>Compute driver capabilities are now automatically exposed as traits in the placement API so they can be used for scheduling via flavor extra specs and/or image properties.</p></li>
+<li><p>Live migration is now supported for the VMware driver.</p></li>
+<li><p>The placement service was extracted from the Nova project and became a new
+official OpenStack project called Placement.</p></li>
+<li><p>Added the ability to target a candidate resource provider, easing
+specifying a host for workload migration.</p></li>
+<li><p>Increased API performance by 50% for common scheduling operations.</p></li>
+<li><p>Simplified the code by removing unneeded complexity, easing future
+maintenance.</p></li>
+</ul>
+</div>
+<div class="section" id="octavia">
+<h2>Octavia<a class="headerlink" href="#octavia" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Octavia now supports load balancer “flavors”. This allows an operator to create custom load balancer “flavors” that users can select when creating a load balancer.</p></li>
+<li><p>You can now enable TLS client authentication when using TERMINATED_HTTPS listeners.</p></li>
+<li><p>Octavia now supports backend re-encryption of connections to member servers.</p></li>
+<li><p>Metadata tags can now be assigned to the elements of an Octavia load balancer.</p></li>
+</ul>
+</div>
+<div class="section" id="openstackansible">
+<h2>Openstackansible<a class="headerlink" href="#openstackansible" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Tooling optimizations have been done that will result in faster and more reliable deployments.</p></li>
+<li><p>Add Ubuntu Bionic support.</p></li>
+<li><p>Add Mistral support.</p></li>
+<li><p>Add Manila support.</p></li>
+<li><p>Add Masakari support.</p></li>
+</ul>
+</div>
+<div class="section" id="oslo">
+<h2>Oslo<a class="headerlink" href="#oslo" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added a Castellan config driver that allows secrets to be moved from on-disk config files to any Castellan-compatible keystore. This driver lives in the Castellan project, so Castellan must be installed in order to use it.</p></li>
+<li><p>Added a config driver to read values from environment variables, which allows configuration of services in containers without needing to inject a file. This driver is enabled by default in oslo.config.</p></li>
+<li><p>Added a config validation tool, <code class="docutils literal notranslate"><span class="pre">oslo-config-validator</span></code>. This uses the oslo-config-generator data to find options in a config file that are not defined in the service.</p></li>
+</ul>
+</div>
+<div class="section" id="sahara">
+<h2>Sahara<a class="headerlink" href="#sahara" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Sahara plugins are removed from core code for easier maintenance and upgrades.</p></li>
+<li><p>Release of APIv2 as stable.</p></li>
+<li><p>Improvements on boot from volume feature.</p></li>
+</ul>
+</div>
+<div class="section" id="searchlight">
+<h2>Searchlight<a class="headerlink" href="#searchlight" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Searchlight now works with Elasticsearch 5.x</p></li>
+<li><p>We have released a new vision to make Searchlight a multi-cloud application</p></li>
+<li><p>Functional test setup has been improved</p></li>
+<li><p>Searchlight now can work and be tested with Python 3.7</p></li>
+</ul>
+</div>
+<div class="section" id="senlin">
+<h2>Senlin<a class="headerlink" href="#senlin" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Improved performance so that Senlin operations execute multiple orders of magnitude faster.</p></li>
+<li><p>Health policy v1.1 now allows a user to specify multiple types of detection modes.</p></li>
+<li><p>Senlin APIs now issues synchronous failures in case of cluster/node lock, cooldown in effect or action conflict.</p></li>
+<li><p>Operators can now remove completed actions using action-purge subcommand in senlin-manage tool.  This is useful for long-running clusters that have accumulated a large number of actions in the database.</p></li>
+</ul>
+</div>
+<div class="section" id="storlets">
+<h2>Storlets<a class="headerlink" href="#storlets" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support Python 3 runtime for user code</p></li>
+</ul>
+</div>
+<div class="section" id="swift">
+<h2>Swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Numerous improvements to the S3 API compatibility layer.</p></li>
+<li><p>Several fixes and improvements for the data-encryption middleware, including allowing multiple keymaster middlewares. This allows migration from one key provider to another.</p></li>
+<li><p>Operators have more control over account and container server background daemon I/O usage with the new <code class="docutils literal notranslate"><span class="pre">databases_per_second</span></code> config option.</p></li>
+<li><p>Erasure-coded data may now be rebuilt to handoff nodes. This improves data durability when disk failures go unremedied for extended periods.</p></li>
+</ul>
+</div>
+<div class="section" id="tripleo">
+<h2>Tripleo<a class="headerlink" href="#tripleo" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added support for podman and buildah for containers and container images.</p></li>
+<li><p>Open Virtual Network (OVN) now the default network configuration.</p></li>
+<li><p>Improved composable network support for creating L3 routed networks and
+IPV6 network support.</p></li>
+</ul>
+</div>
+<div class="section" id="vitrage">
+<h2>Vitrage<a class="headerlink" href="#vitrage" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>New and simplified template language! the new templates are shorter and much easier to understand and reuse.</p></li>
+<li><p>Added a Trove datasource and a Zaqar notifier.</p></li>
+<li><p>New APIs for querying Vitrage services and for resource count.</p></li>
+<li><p>Performance improvements and faster data retrieval. The memory signature and processing runtime were significantly reduced.</p></li>
+</ul>
+</div>
+<div class="section" id="watcher">
+<h2>Watcher<a class="headerlink" href="#watcher" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Watcher supports API microversions.</p></li>
+<li><p>Watcher consumes Nova notifications to update its internal
+Compute CDM(Cluster Data Model).</p></li>
+<li><p>Building the Compute CDM according to the audit scope.</p></li>
+<li><p>Added start_time and end_time fields to CONTINUOUS audit.</p></li>
+<li><p>Added a new config option ‘action_execution_rule’.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="schedule.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Stein Release Schedule"></i></a>
+          
+          
+            <a href="../rocky/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Rocky"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Stein Release Highlights</a><ul>
+<li><a class="reference internal" href="#barbican">Barbican</a></li>
+<li><a class="reference internal" href="#blazar">Blazar</a></li>
+<li><a class="reference internal" href="#cinder">Cinder</a></li>
+<li><a class="reference internal" href="#congress">Congress</a></li>
+<li><a class="reference internal" href="#cyborg">Cyborg</a></li>
+<li><a class="reference internal" href="#designate">Designate</a></li>
+<li><a class="reference internal" href="#heat">Heat</a></li>
+<li><a class="reference internal" href="#horizon">Horizon</a></li>
+<li><a class="reference internal" href="#ironic">Ironic</a></li>
+<li><a class="reference internal" href="#karbor">Karbor</a></li>
+<li><a class="reference internal" href="#keystone">Keystone</a></li>
+<li><a class="reference internal" href="#kolla">Kolla</a></li>
+<li><a class="reference internal" href="#kuryr">Kuryr</a></li>
+<li><a class="reference internal" href="#manila">Manila</a></li>
+<li><a class="reference internal" href="#neutron">Neutron</a></li>
+<li><a class="reference internal" href="#nova">Nova</a></li>
+<li><a class="reference internal" href="#octavia">Octavia</a></li>
+<li><a class="reference internal" href="#openstackansible">Openstackansible</a></li>
+<li><a class="reference internal" href="#oslo">Oslo</a></li>
+<li><a class="reference internal" href="#sahara">Sahara</a></li>
+<li><a class="reference internal" href="#searchlight">Searchlight</a></li>
+<li><a class="reference internal" href="#senlin">Senlin</a></li>
+<li><a class="reference internal" href="#storlets">Storlets</a></li>
+<li><a class="reference internal" href="#swift">Swift</a></li>
+<li><a class="reference internal" href="#tripleo">Tripleo</a></li>
+<li><a class="reference internal" href="#vitrage">Vitrage</a></li>
+<li><a class="reference internal" href="#watcher">Watcher</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/stein/highlights.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:16 GMT -->
+</html>

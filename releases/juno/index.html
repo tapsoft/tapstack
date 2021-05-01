@@ -1,0 +1,2353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/juno/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:56 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Juno</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Juno</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="juno">
+<h1>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h1>
+<p>Originally Released: 2014-10-16</p>
+<p>Release Notes: <a class="reference external" href="https://wiki.openstack.org/wiki/ReleaseNotes/Juno">https://wiki.openstack.org/wiki/ReleaseNotes/Juno</a></p>
+<div class="contents local topic" id="deliverables">
+<p class="topic-title"><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#service-projects" id="id4">Service Projects</a></p></li>
+<li><p><a class="reference internal" href="#library-projects" id="id5">Library Projects</a></p></li>
+<li><p><a class="reference internal" href="#other-projects" id="id6">Other Projects</a></p></li>
+</ul>
+</div>
+<div class="section" id="service-projects">
+<h2>Service Projects<a class="headerlink" href="#service-projects" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Release Summary</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
+<th class="head"><p>Earliest Version</p></th>
+<th class="head"><p>Most Recent Version</p></th>
+<th class="head"><p>Stable Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-ceilometer"><span class="std std-ref">ceilometer</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-cinder"><span class="std std-ref">cinder</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-glance"><span class="std std-ref">glance</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-heat"><span class="std std-ref">heat</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-horizon"><span class="std std-ref">horizon</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-keystone"><span class="std std-ref">keystone</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-neutron"><span class="std std-ref">neutron</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-nova"><span class="std std-ref">nova</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-sahara"><span class="std std-ref">sahara</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-swift"><span class="std std-ref">swift</span></a></p></td>
+<td><p>2.0.0</p></td>
+<td><p>2.2.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-trove"><span class="std std-ref">trove</span></a></p></td>
+<td><p>2014.2</p></td>
+<td><p>2014.2.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="ceilometer">
+<span id="juno-ceilometer"></span><h3>ceilometer<a class="headerlink" href="#ceilometer" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>6b66124327f31688565d12152b0d47bf21c81737</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>720c2b4915caf5decd3da91ea2d6e6291316b940</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>e8380ba90f29189ffbcee35c8a069b4882a98a99</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>1129b7013359bf242a2ea53be9d4faeccfbfac5a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/ceilometer/ceilometer-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/ceilometer</p></td>
+<td><p>94579bfc81b820380d03703e4e2311b3bd25c022</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cinder">
+<span id="juno-cinder"></span><h3>cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>f7d2a64ac3562060b54b0d1e43a00a8892bafa52</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>48c792513fd342a5f82122b12e4ed2afd0de2ae7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>532b82059fe16678da7f7ed10d2f862ff1d2e9ea</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>b48aee211ad9b2571c8554dd162b37b8a8d80a42</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cinder/cinder-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/cinder</p></td>
+<td><p>be3d4604dc0566e0838959d998ff1d37755de6d3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="glance">
+<span id="juno-glance"></span><h3>glance<a class="headerlink" href="#glance" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>fdf65d26b4f2212d9db387921f8adad2af561acb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>1db07bd8c07bbcde4bd267985c4e3961c22b990e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>cd42a98b61c288b731b5a89fe2e4a8d2e59b93a9</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>055adff1d95dca72074da898b541cb4a6b62406d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/glance/glance-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/glance</p></td>
+<td><p>742c898956d655affa7351505c8a3a5c72881eae</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heat">
+<span id="juno-heat"></span><h3>heat<a class="headerlink" href="#heat" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>79147fc305f7955f330ad5494eb3e98b9b6ecc9e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>fc4c82996a7a694c6f8802226033d5f1920654cd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>b52c916da0759fb5b310ecbcce5db2608b67fdb1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>f2c73c650b16f26eece1841552e0c276b9d954df</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/heat/heat-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/heat</p></td>
+<td><p>c06772571a81383aa37336a78d72d455067b75e8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="horizon">
+<span id="juno-horizon"></span><h3>horizon<a class="headerlink" href="#horizon" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>25bf3ba84362702632fa56c423818189fe847ac8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>b37c1f3565e89a7fe3fef5ce76e9c26b22e3e7c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>889f9d9000f5e0512453e15de66aa08a845b451f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>3d9a31e2a05288e9a48a51eb4fe693c42e92aac7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/horizon/horizon-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/horizon</p></td>
+<td><p>ce839aa58d32a9bd475c099f371d0e820d51f1a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="keystone">
+<span id="juno-keystone"></span><h3>keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>1a3365bfa5dbef73a7e9a43fa1af8caf2b65f405</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>91a33875385ca296d24f67d4ef9629a2b33bed99</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>e400354ba807cfa2feac4fa8559f195c88b397e0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>615f79bb97883eee76923527cea13c2f72baa7ff</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystone/keystone-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/keystone</p></td>
+<td><p>ef8d9aa4e1ca3b5465a5bba0cdb6dcb9be1fe9ca</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="neutron">
+<span id="juno-neutron"></span><h3>neutron<a class="headerlink" href="#neutron" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>b6d966d415ed254ee5bd7419f5761faee90b3702</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>96b5962646510ee67b322aa82242e02e3edfaa83</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>dd715d9bb9e06d4e12e2c20b8e6f947748d67a1a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>dfa4b4b9b6b19a627cfb5eb5c6ab9db4961a06ea</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/neutron/neutron-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/neutron</p></td>
+<td><p>0d0c376d09d85a0eabeb8c9258349d1e63a5cdf0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nova">
+<span id="juno-nova"></span><h3>nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>044154de11ddd0d250e3486718843642ddaf579a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>e6452b995023e89bf6f1a1fb14f39216f83c760b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>78dbed87b53ad3e60dc00f6c077a23506d228b6c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>ba25e9ea6d0d42dd3b78cc6440710fd9362ae1b5</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/nova/nova-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/nova</p></td>
+<td><p>c5ac21f3dbb4ad59efcb631d91e4e64f77fba43f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sahara">
+<span id="juno-sahara"></span><h3>sahara<a class="headerlink" href="#sahara" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>bf4edbad4128ed238b929eed7471a06770c3da93</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>0d7e25d48a233e44a18244258294c1ab89f7019b</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>945fa72ed01ecabf5a260a676c9d98e8377b45af</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.1.tar.gz">2014.2.1</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>2b5f1e6b528b8676e83114cb1db723fc893ffb0f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara/sahara-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara</p></td>
+<td><p>3630ccffb25f66e2efc9297b0ecb852f8d932363</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-extra/sahara-extra-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-extra</p></td>
+<td><p>6706e1998f9c7b60091f92bbc1f1c1d5e5e0f5f1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/sahara-image-elements/sahara-image-elements-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/sahara-image-elements</p></td>
+<td><p>51c33744acf87bbedc68fecf7f44d96e15bf90bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="swift">
+<span id="juno-swift"></span><h3>swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>2e8261a4dc0d0af0c4a46478b81e167bcf02220b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>8d02147d04a41477383de8e13bea6ac3fd2cade0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/swift/swift-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/swift</p></td>
+<td><p>bfa9139649c0ac7f75e8c9503cb04d06f7bae0b9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="trove">
+<span id="juno-trove"></span><h3>trove<a class="headerlink" href="#trove" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/trove/trove-2014.2.4.tar.gz">2014.2.4</a></p></td>
+<td></td>
+<td><p>openstack/trove</p></td>
+<td><p>68ae364cd0f1e169d10cc3cca4e42d7a6ee63623</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/trove/trove-2014.2.3.tar.gz">2014.2.3</a></p></td>
+<td></td>
+<td><p>openstack/trove</p></td>
+<td><p>7db2ae9eadeb2943c0e4f076a95b60190c4437aa</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/trove/trove-2014.2.2.tar.gz">2014.2.2</a></p></td>
+<td></td>
+<td><p>openstack/trove</p></td>
+<td><p>248714492929e673178c30d1115d60ceefebdca2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/trove/trove-2014.2.tar.gz">2014.2</a></p></td>
+<td></td>
+<td><p>openstack/trove</p></td>
+<td><p>a4c38cc6ddbfba2301766eced939229cccc31953</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="library-projects">
+<h2>Library Projects<a class="headerlink" href="#library-projects" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Release Summary</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
+<th class="head"><p>Earliest Version</p></th>
+<th class="head"><p>Most Recent Version</p></th>
+<th class="head"><p>Stable Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-keystonemiddleware"><span class="std std-ref">keystonemiddleware</span></a></p></td>
+<td><p>1.3.2</p></td>
+<td><p>1.3.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-openstack-doc-tools"><span class="std std-ref">openstack-doc-tools</span></a></p></td>
+<td><p>0.11</p></td>
+<td><p>0.20</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-os-client-config"><span class="std std-ref">os-client-config</span></a></p></td>
+<td><p>0.1.0</p></td>
+<td><p>0.2.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-oslo-config"><span class="std std-ref">oslo.config</span></a></p></td>
+<td><p>1.4.0</p></td>
+<td><p>1.4.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-oslo-db"><span class="std std-ref">oslo.db</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-oslo-i18n"><span class="std std-ref">oslo.i18n</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-oslo-messaging"><span class="std std-ref">oslo.messaging</span></a></p></td>
+<td><p>1.4.0</p></td>
+<td><p>1.4.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-oslo-rootwrap"><span class="std std-ref">oslo.rootwrap</span></a></p></td>
+<td><p>1.3.0</p></td>
+<td><p>1.3.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-oslo-serialization"><span class="std std-ref">oslo.serialization</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-oslo-utils"><span class="std std-ref">oslo.utils</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.4.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-oslo-vmware"><span class="std std-ref">oslo.vmware</span></a></p></td>
+<td><p>0.6.0</p></td>
+<td><p>0.6.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-oslosphinx"><span class="std std-ref">oslosphinx</span></a></p></td>
+<td><p>2.2.0</p></td>
+<td><p>2.2.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-oslotest"><span class="std std-ref">oslotest</span></a></p></td>
+<td><p>1.1.0</p></td>
+<td><p>1.3.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-pycadf"><span class="std std-ref">pycadf</span></a></p></td>
+<td><p>0.6.0</p></td>
+<td><p>0.6.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-barbicanclient"><span class="std std-ref">python-barbicanclient</span></a></p></td>
+<td><p>2.2.0</p></td>
+<td><p>2.2.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-ceilometerclient"><span class="std std-ref">python-ceilometerclient</span></a></p></td>
+<td><p>1.0.11</p></td>
+<td><p>1.0.15</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-cinderclient"><span class="std std-ref">python-cinderclient</span></a></p></td>
+<td><p>1.0.9</p></td>
+<td><p>1.1.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-cliff"><span class="std std-ref">python-cliff</span></a></p></td>
+<td><p>1.7.0</p></td>
+<td><p>1.7.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-designateclient"><span class="std std-ref">python-designateclient</span></a></p></td>
+<td><p>1.1.0</p></td>
+<td><p>1.1.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-glanceclient"><span class="std std-ref">python-glanceclient</span></a></p></td>
+<td><p>0.13.0</p></td>
+<td><p>0.14.3</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-heatclient"><span class="std std-ref">python-heatclient</span></a></p></td>
+<td><p>0.2.10</p></td>
+<td><p>0.2.12</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-ironicclient"><span class="std std-ref">python-ironicclient</span></a></p></td>
+<td><p>0.1.4</p></td>
+<td><p>0.3.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-keystoneclient"><span class="std std-ref">python-keystoneclient</span></a></p></td>
+<td><p>0.8.0</p></td>
+<td><p>1.1.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-manilaclient"><span class="std std-ref">python-manilaclient</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-neutronclient"><span class="std std-ref">python-neutronclient</span></a></p></td>
+<td><p>2.3.5</p></td>
+<td><p>2.3.12</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-novaclient"><span class="std std-ref">python-novaclient</span></a></p></td>
+<td><p>2.18.0</p></td>
+<td><p>2.20.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-saharaclient"><span class="std std-ref">python-saharaclient</span></a></p></td>
+<td><p>0.7.1</p></td>
+<td><p>0.7.4</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-stevedore"><span class="std std-ref">python-stevedore</span></a></p></td>
+<td><p>1.0.0</p></td>
+<td><p>1.0.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-swiftclient"><span class="std std-ref">python-swiftclient</span></a></p></td>
+<td><p>2.1.0</p></td>
+<td><p>2.3.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-python-troveclient"><span class="std std-ref">python-troveclient</span></a></p></td>
+<td><p>1.0.6</p></td>
+<td><p>1.0.7</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-zaqarclient"><span class="std std-ref">python-zaqarclient</span></a></p></td>
+<td><p>0.0.1</p></td>
+<td><p>0.1.0</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#juno-taskflow"><span class="std std-ref">taskflow</span></a></p></td>
+<td><p>0.3</p></td>
+<td><p>0.6.2</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="keystonemiddleware">
+<span id="juno-keystonemiddleware"></span><h3>keystonemiddleware<a class="headerlink" href="#keystonemiddleware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/keystonemiddleware/keystonemiddleware-1.3.2.tar.gz">1.3.2</a></p></td>
+<td></td>
+<td><p>openstack/keystonemiddleware</p></td>
+<td><p>4c7366a46164e97663d925568ea74dc3026df471</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="openstack-doc-tools">
+<span id="juno-openstack-doc-tools"></span><h3>openstack-doc-tools<a class="headerlink" href="#openstack-doc-tools" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.20.tar.gz">0.20</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>4906d5018d19439c99f304724f1c06ddfa1d0f7d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.19.tar.gz">0.19</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>20139677b35f3580097891c1c2ea63cb31f1de76</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.18.1.tar.gz">0.18.1</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>edb4ff499811f1c23de136025f96cc032037474f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.18.tar.gz">0.18</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>f8d8886cc08f485c06869f5fdf7788a510fc8f17</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.17.tar.gz">0.17</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>6958e7aaed21dd7ede795e6044dfe0c1491b98b4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.16.1.tar.gz">0.16.1</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>4a4da3e263c8b040249ffdd76e5285c3e8429557</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.16.tar.gz">0.16</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>ca4b24b3960f79741fb011c78d67cf88e0559ee0</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.15.tar.gz">0.15</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>2af6041d179b26976d539a3439eafdcb65a6df1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.14.tar.gz">0.14</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>8618b9aeb7d20a09bec32bf856faa6950bd9b26e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.13.tar.gz">0.13</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>a8cb0407d86636c59465eac98f5d7f50e1655093</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.12.tar.gz">0.12</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>6659c8043587b212607cf38b9366a218cd0139c4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/openstack-doc-tools/openstack-doc-tools-0.11.tar.gz">0.11</a></p></td>
+<td></td>
+<td><p>openstack/openstack-doc-tools</p></td>
+<td><p>38632366024762c626e0697a8a42b93d64913b9a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="os-client-config">
+<span id="juno-os-client-config"></span><h3>os-client-config<a class="headerlink" href="#os-client-config" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-client-config/os-client-config-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/os-client-config</p></td>
+<td><p>0287e7cc4bfcafad919a7ab1decfa8e3707bda82</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/os-client-config/os-client-config-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/os-client-config</p></td>
+<td><p>69d2a3e0ad97a20cec498ab87c81af5e11e5c79c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-config">
+<span id="juno-oslo-config"></span><h3>oslo.config<a class="headerlink" href="#oslo-config" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.config/oslo.config-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.config</p></td>
+<td><p>059579ac2189b94bc9e9555b2e9acfb31a83ef53</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-db">
+<span id="juno-oslo-db"></span><h3>oslo.db<a class="headerlink" href="#oslo-db" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.db/oslo.db-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/oslo.db</p></td>
+<td><p>0bb1e236daae53a3f5b4b88761d7b19f7961ed6c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.db/oslo.db-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/oslo.db</p></td>
+<td><p>2849f1bdca0c39b342d434c06cdc23dc6cf946f4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.db/oslo.db-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.db</p></td>
+<td><p>cc7ae9fecc705924c4dc1d8d104338afc0e2437e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-i18n">
+<span id="juno-oslo-i18n"></span><h3>oslo.i18n<a class="headerlink" href="#oslo-i18n" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.i18n/oslo.i18n-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.i18n</p></td>
+<td><p>040f1d6afa733527385d2309e485bf37e9843b0e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-messaging">
+<span id="juno-oslo-messaging"></span><h3>oslo.messaging<a class="headerlink" href="#oslo-messaging" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.messaging/oslo.messaging-1.4.2.tar.gz">1.4.2</a></p></td>
+<td></td>
+<td><p>openstack/oslo.messaging</p></td>
+<td><p>01a789313dcf5c1eb652c2df53ce955d6bb38fd6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.messaging/oslo.messaging-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.messaging</p></td>
+<td><p>6ea3b12492e86f9e8d109fc3490cc4d3a0edd8b6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-rootwrap">
+<span id="juno-oslo-rootwrap"></span><h3>oslo.rootwrap<a class="headerlink" href="#oslo-rootwrap" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.rootwrap/oslo.rootwrap-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.rootwrap</p></td>
+<td><p>8c68df850ab4c7984885503393f6be8bf6461ba1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-serialization">
+<span id="juno-oslo-serialization"></span><h3>oslo.serialization<a class="headerlink" href="#oslo-serialization" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.serialization/oslo.serialization-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.serialization</p></td>
+<td><p>80fec894a54253d9b4c80dd8a563957966ca0b88</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-utils">
+<span id="juno-oslo-utils"></span><h3>oslo.utils<a class="headerlink" href="#oslo-utils" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.utils/oslo.utils-1.4.1.tar.gz">1.4.1</a></p></td>
+<td></td>
+<td><p>openstack/oslo.utils</p></td>
+<td><p>7eeccd87699acd11b93058bd4e4cbeb801c70986</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.utils/oslo.utils-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.utils</p></td>
+<td><p>6a123fce93895e92004ce9d5bd8dee3c3642cf41</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslo-vmware">
+<span id="juno-oslo-vmware"></span><h3>oslo.vmware<a class="headerlink" href="#oslo-vmware" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslo.vmware/oslo.vmware-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/oslo.vmware</p></td>
+<td><p>047d62c4bbd01a951f77a1a4a75fb2b3d8ce23ee</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslosphinx">
+<span id="juno-oslosphinx"></span><h3>oslosphinx<a class="headerlink" href="#oslosphinx" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslosphinx/oslosphinx-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/oslosphinx</p></td>
+<td><p>98c8c4b8ad297d1fb2269da14ad6ea7009349aeb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="oslotest">
+<span id="juno-oslotest"></span><h3>oslotest<a class="headerlink" href="#oslotest" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslotest/oslotest-1.3.1.tar.gz">1.3.1</a></p></td>
+<td></td>
+<td><p>openstack/oslotest</p></td>
+<td><p>7438de326614bc13e0acc56beac693b72a0b2411</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/oslotest/oslotest-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/oslotest</p></td>
+<td><p>bbfde1e29c72ee7f90b2982e29b47cd2e1574d6d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pycadf">
+<span id="juno-pycadf"></span><h3>pycadf<a class="headerlink" href="#pycadf" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/pycadf/pycadf-0.6.2.tar.gz">0.6.2</a></p></td>
+<td></td>
+<td><p>openstack/pycadf</p></td>
+<td><p>b9c1d41b83e2f5937a69070df8dd7c12439e333a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/pycadf/pycadf-0.6.1.tar.gz">0.6.1</a></p></td>
+<td></td>
+<td><p>openstack/pycadf</p></td>
+<td><p>b9c1d41b83e2f5937a69070df8dd7c12439e333a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/pycadf/pycadf-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/pycadf</p></td>
+<td><p>52727bcea3a98e72331e748ce5f9e3a111a64cd1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-barbicanclient">
+<span id="juno-python-barbicanclient"></span><h3>python-barbicanclient<a class="headerlink" href="#python-barbicanclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>ac30643631b6bc1c40116061f8eb280a7881e422</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-barbicanclient/python-barbicanclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-barbicanclient</p></td>
+<td><p>fd01494d56bd84d1562d24459aa443e27153e227</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-ceilometerclient">
+<span id="juno-python-ceilometerclient"></span><h3>python-ceilometerclient<a class="headerlink" href="#python-ceilometerclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.15.tar.gz">1.0.15</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>fb12aaea1782e8c1be2dd68b2d9b34015d64aa92</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.12.tar.gz">1.0.12</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>7316dd16b8850270db27c1298dcf5a2223f2f1e1</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ceilometerclient/python-ceilometerclient-1.0.11.tar.gz">1.0.11</a></p></td>
+<td></td>
+<td><p>openstack/python-ceilometerclient</p></td>
+<td><p>ae69fb0f975c485d14fc039ff4389439aa78e7eb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cinderclient">
+<span id="juno-python-cinderclient"></span><h3>python-cinderclient<a class="headerlink" href="#python-cinderclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>ac9b0913904c43f4bf12c8164324d6e6a55dc1ab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4c8464114f5539706cffc6888ce007d0d3ceba16</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-cinderclient/python-cinderclient-1.0.9.tar.gz">1.0.9</a></p></td>
+<td></td>
+<td><p>openstack/python-cinderclient</p></td>
+<td><p>4163fa23a4888466a5a0f7471232546c2effd66f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-cliff">
+<span id="juno-python-cliff"></span><h3>python-cliff<a class="headerlink" href="#python-cliff" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/cliff/cliff-1.7.0.tar.gz">1.7.0</a></p></td>
+<td></td>
+<td><p>openstack/cliff</p></td>
+<td><p>42675b2d7ad93f4bba9c4216874c68b8e5834147</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-designateclient">
+<span id="juno-python-designateclient"></span><h3>python-designateclient<a class="headerlink" href="#python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>a900b41e4d8a9eb40e1812295ba16d773e2b9618</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-glanceclient">
+<span id="juno-python-glanceclient"></span><h3>python-glanceclient<a class="headerlink" href="#python-glanceclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.3.tar.gz">0.14.3</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>cfa75cec24b37acb42a851013d6689b2016754e2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.2.tar.gz">0.14.2</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>695dbc910d2068aff89a68d6f5aa088cc835766e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.1.tar.gz">0.14.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>8a877b2752162d6a2db43d7d61d6311c4f42285b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.14.0.tar.gz">0.14.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>33dcea81b2f2ac5f643c0153c5a70cfec2008555</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.13.1.tar.gz">0.13.1</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>caa1a54fd9e69bc2a3fe43157a9805a71c2ef1a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-glanceclient/python-glanceclient-0.13.0.tar.gz">0.13.0</a></p></td>
+<td></td>
+<td><p>openstack/python-glanceclient</p></td>
+<td><p>caa1a54fd9e69bc2a3fe43157a9805a71c2ef1a3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-heatclient">
+<span id="juno-python-heatclient"></span><h3>python-heatclient<a class="headerlink" href="#python-heatclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.12.tar.gz">0.2.12</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6089d31e302d80910cc15132f99a1bf358bbb64f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.11.tar.gz">0.2.11</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>87bef60d09736d1b83d87723ba4826dc14d09f69</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-heatclient/python-heatclient-0.2.10.tar.gz">0.2.10</a></p></td>
+<td></td>
+<td><p>openstack/python-heatclient</p></td>
+<td><p>6630554476e12bfff427016aab6aedb4eaa2f2c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-ironicclient">
+<span id="juno-python-ironicclient"></span><h3>python-ironicclient<a class="headerlink" href="#python-ironicclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.3.1.tar.gz">0.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>e611ae5f206d846e72684ba16c345653232c45c3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>727800dcae54b333811c22f6f3420753d6fd4879</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>8160da5b3b7252cbead915ecbb375eb6c83481bc</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>f0402709fbfaf2c6df67efc4865b8b6c9081457d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.1.5.tar.gz">0.1.5</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>f0402709fbfaf2c6df67efc4865b8b6c9081457d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-ironicclient/python-ironicclient-0.1.4.tar.gz">0.1.4</a></p></td>
+<td></td>
+<td><p>openstack/python-ironicclient</p></td>
+<td><p>7183512cbc58832d8d50d6d33852522736126126</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-keystoneclient">
+<span id="juno-python-keystoneclient"></span><h3>python-keystoneclient<a class="headerlink" href="#python-keystoneclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>04543e7c9ca0ed9935e75e913cd51531a6245b7e</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>4ee6e3302ae53c8858c0e48c27a46c292e771afb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>10860db5f155052ca0d353ce9058e1c16eec8437</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.11.2.tar.gz">0.11.2</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>6d85d182a2cbd50f0e6a8477c97a84e149addbce</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.11.1.tar.gz">0.11.1</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>79d1eec35aad874a7c08ff22c39260884a5524ba</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.11.0.tar.gz">0.11.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>0b06683be6d13d21dfffa19be46e1159edb9fce0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.10.1.tar.gz">0.10.1</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>e58f7999f9011c7810b61483f8389713dfa7c72a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.10.0.tar.gz">0.10.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>c9ae9d1fa267653c1779a9a17613bd287f1297a3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.9.0.tar.gz">0.9.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>dee03a6503bfa82d7300fe5df76cfa25bd5b63d2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-0.8.0.tar.gz">0.8.0</a></p></td>
+<td></td>
+<td><p>openstack/python-keystoneclient</p></td>
+<td><p>db8da0de2e982b4bdb622eee8aa04f05fc9cb646</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-manilaclient">
+<span id="juno-python-manilaclient"></span><h3>python-manilaclient<a class="headerlink" href="#python-manilaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>3b7ff6b2b2b7dfc77ceea88443227613f82d2365</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-manilaclient/python-manilaclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-manilaclient</p></td>
+<td><p>fc2cd23a7d5a2beb94bc1043f7db0936b28bb563</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-neutronclient">
+<span id="juno-python-neutronclient"></span><h3>python-neutronclient<a class="headerlink" href="#python-neutronclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.12.tar.gz">2.3.12</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>3f03a3bdb87782930eaf236f726f9bed7229e441</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.11.tar.gz">2.3.11</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>2fa6faaa9b67c0783c502d2b56bfbacc23ecfe64</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.10.tar.gz">2.3.10</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>4067a482cca0d037ea81c1b4b8c473c1ec50f510</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.9.tar.gz">2.3.9</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>fa5642f1550bc8f818c1686c40edbaf3672d356a</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.8.tar.gz">2.3.8</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>ede859ebf6199e29d45978eb402c7c07f0170e75</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.7.tar.gz">2.3.7</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>f22dbd20446ef5d316ffd3fffb630cf2731b8229</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.6.tar.gz">2.3.6</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>abc54a00b01ea305a9c58a379463edf62d0557ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-neutronclient/python-neutronclient-2.3.5.tar.gz">2.3.5</a></p></td>
+<td></td>
+<td><p>openstack/python-neutronclient</p></td>
+<td><p>c907df85f3bf7caaaada30e53dfbe931618ca46c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-novaclient">
+<span id="juno-python-novaclient"></span><h3>python-novaclient<a class="headerlink" href="#python-novaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.20.0.tar.gz">2.20.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>5ecfdac6b34769e200ff5c4c7429c20518c5b24f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.19.0.tar.gz">2.19.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ce115063bbde435156132eb4a590e4593541e40e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.18.1.tar.gz">2.18.1</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>ecb3320df1fcbea5522a5c147ca8308114d59955</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-novaclient/python-novaclient-2.18.0.tar.gz">2.18.0</a></p></td>
+<td></td>
+<td><p>openstack/python-novaclient</p></td>
+<td><p>580c0aa61128b20aad77e2d43119463fc4d9f99e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-saharaclient">
+<span id="juno-python-saharaclient"></span><h3>python-saharaclient<a class="headerlink" href="#python-saharaclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.4.tar.gz">0.7.4</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>ccec5b71edefe27b91ea461804767b2b17bd22a3</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.3.tar.gz">0.7.3</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>7db47c1151b93c9f8b90de5b6b2b32465c0ec336</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.2.tar.gz">0.7.2</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>5be2179d8c5c1e806537849559bea52a1145028f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-saharaclient/python-saharaclient-0.7.1.tar.gz">0.7.1</a></p></td>
+<td></td>
+<td><p>openstack/python-saharaclient</p></td>
+<td><p>1625d6851efbb3545b5915b4a87ef4948e405534</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-stevedore">
+<span id="juno-python-stevedore"></span><h3>python-stevedore<a class="headerlink" href="#python-stevedore" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/stevedore/stevedore-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/stevedore</p></td>
+<td><p>860bd8f8ecba38fdfda5b41a3a1dbe854d6528e2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-swiftclient">
+<span id="juno-python-swiftclient"></span><h3>python-swiftclient<a class="headerlink" href="#python-swiftclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.2.tar.gz">2.3.2</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>0289a61f6271281f7af616faf6fbcf8ca47df0d5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.1.tar.gz">2.3.1</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>bb4d2ab59c4de9389667eeed255642f51e276f1e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>45465c70e31764167b43fe342c38231a3e0b825c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>394cb57f630b3dfdc1d5b2e172ef0f1c16b8211f</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-swiftclient/python-swiftclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-swiftclient</p></td>
+<td><p>258420f41049d92fc0b59b9263c8381bfe513432</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-troveclient">
+<span id="juno-python-troveclient"></span><h3>python-troveclient<a class="headerlink" href="#python-troveclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-troveclient/python-troveclient-1.0.7.tar.gz">1.0.7</a></p></td>
+<td></td>
+<td><p>openstack/python-troveclient</p></td>
+<td><p>e010a919750f07493afd42a4db867853b925bcbf</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-troveclient/python-troveclient-1.0.6.tar.gz">1.0.6</a></p></td>
+<td></td>
+<td><p>openstack/python-troveclient</p></td>
+<td><p>33c76fab16b80f32a04f83e1653d4f809c22d3bd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-zaqarclient">
+<span id="juno-python-zaqarclient"></span><h3>python-zaqarclient<a class="headerlink" href="#python-zaqarclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-zaqarclient/python-zaqarclient-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-zaqarclient</p></td>
+<td><p>277779098cc6c40ad31ddace9529e933c17aec45</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-zaqarclient/python-zaqarclient-0.0.3.tar.gz">0.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-zaqarclient</p></td>
+<td><p>1ce9c55efe62d036d694c18faec77e1372390a89</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-zaqarclient/python-zaqarclient-0.0.2.tar.gz">0.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-zaqarclient</p></td>
+<td><p>b9cd1104ed1fcea707b6ea780d37adccb1db53aa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-zaqarclient/python-zaqarclient-0.0.1.tar.gz">0.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-zaqarclient</p></td>
+<td><p>9e5323500646c98db712a1c322dd4342cd1d708a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="taskflow">
+<span id="juno-taskflow"></span><h3>taskflow<a class="headerlink" href="#taskflow" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.6.2.tar.gz">0.6.2</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>66c9ae4521f3abacd3df1403e40b639bb2d58679</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.6.1.tar.gz">0.6.1</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>69449ae301fd411722021b47197d0a7eda335cf7</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.6.0.tar.gz">0.6.0</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>ba62a9c7be999f49d89af6c5e0636f6f89bbdd13</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>1caaecc5d6b2aa4cde4a50e31d1d993fce7a66c4</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>4529eb7222ee5a5e5e654306ba6c2230f21d548b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.3.21.tar.gz">0.3.21</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>3192d8de72ad4e46712b8e707750d4c1325017a3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/taskflow/taskflow-0.3.tar.gz">0.3</a></p></td>
+<td></td>
+<td><p>openstack/taskflow</p></td>
+<td><p>c8a281aa360117a03baecb38bde411a990b50551</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="other-projects">
+<h2>Other Projects<a class="headerlink" href="#other-projects" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Release Summary</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Deliverable</p></th>
+<th class="head"><p>Earliest Version</p></th>
+<th class="head"><p>Most Recent Version</p></th>
+<th class="head"><p>Stable Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#juno-python-openstackclient"><span class="std std-ref">python-openstackclient</span></a></p></td>
+<td><p>0.4.0</p></td>
+<td><p>0.4.1</p></td>
+<td><p><a class="reference external" href="https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases">End Of Life</a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="python-openstackclient">
+<span id="juno-python-openstackclient"></span><h3>python-openstackclient<a class="headerlink" href="#python-openstackclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-openstackclient/python-openstackclient-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/python-openstackclient</p></td>
+<td><p>696c9676bcc89d139d18b67e609eb694f110dc62</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-openstackclient/python-openstackclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-openstackclient</p></td>
+<td><p>a732bfae491f8189f234e1bd5c2cbbff3daab4bc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="../kilo/index.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Kilo"></i></a>
+          
+          
+            <a href="../icehouse/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Icehouse"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Juno</a><ul>
+<li><a class="reference internal" href="#service-projects">Service Projects</a><ul>
+<li><a class="reference internal" href="#ceilometer">ceilometer</a></li>
+<li><a class="reference internal" href="#cinder">cinder</a></li>
+<li><a class="reference internal" href="#glance">glance</a></li>
+<li><a class="reference internal" href="#heat">heat</a></li>
+<li><a class="reference internal" href="#horizon">horizon</a></li>
+<li><a class="reference internal" href="#keystone">keystone</a></li>
+<li><a class="reference internal" href="#neutron">neutron</a></li>
+<li><a class="reference internal" href="#nova">nova</a></li>
+<li><a class="reference internal" href="#sahara">sahara</a></li>
+<li><a class="reference internal" href="#swift">swift</a></li>
+<li><a class="reference internal" href="#trove">trove</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#library-projects">Library Projects</a><ul>
+<li><a class="reference internal" href="#keystonemiddleware">keystonemiddleware</a></li>
+<li><a class="reference internal" href="#openstack-doc-tools">openstack-doc-tools</a></li>
+<li><a class="reference internal" href="#os-client-config">os-client-config</a></li>
+<li><a class="reference internal" href="#oslo-config">oslo.config</a></li>
+<li><a class="reference internal" href="#oslo-db">oslo.db</a></li>
+<li><a class="reference internal" href="#oslo-i18n">oslo.i18n</a></li>
+<li><a class="reference internal" href="#oslo-messaging">oslo.messaging</a></li>
+<li><a class="reference internal" href="#oslo-rootwrap">oslo.rootwrap</a></li>
+<li><a class="reference internal" href="#oslo-serialization">oslo.serialization</a></li>
+<li><a class="reference internal" href="#oslo-utils">oslo.utils</a></li>
+<li><a class="reference internal" href="#oslo-vmware">oslo.vmware</a></li>
+<li><a class="reference internal" href="#oslosphinx">oslosphinx</a></li>
+<li><a class="reference internal" href="#oslotest">oslotest</a></li>
+<li><a class="reference internal" href="#pycadf">pycadf</a></li>
+<li><a class="reference internal" href="#python-barbicanclient">python-barbicanclient</a></li>
+<li><a class="reference internal" href="#python-ceilometerclient">python-ceilometerclient</a></li>
+<li><a class="reference internal" href="#python-cinderclient">python-cinderclient</a></li>
+<li><a class="reference internal" href="#python-cliff">python-cliff</a></li>
+<li><a class="reference internal" href="#python-designateclient">python-designateclient</a></li>
+<li><a class="reference internal" href="#python-glanceclient">python-glanceclient</a></li>
+<li><a class="reference internal" href="#python-heatclient">python-heatclient</a></li>
+<li><a class="reference internal" href="#python-ironicclient">python-ironicclient</a></li>
+<li><a class="reference internal" href="#python-keystoneclient">python-keystoneclient</a></li>
+<li><a class="reference internal" href="#python-manilaclient">python-manilaclient</a></li>
+<li><a class="reference internal" href="#python-neutronclient">python-neutronclient</a></li>
+<li><a class="reference internal" href="#python-novaclient">python-novaclient</a></li>
+<li><a class="reference internal" href="#python-saharaclient">python-saharaclient</a></li>
+<li><a class="reference internal" href="#python-stevedore">python-stevedore</a></li>
+<li><a class="reference internal" href="#python-swiftclient">python-swiftclient</a></li>
+<li><a class="reference internal" href="#python-troveclient">python-troveclient</a></li>
+<li><a class="reference internal" href="#python-zaqarclient">python-zaqarclient</a></li>
+<li><a class="reference internal" href="#taskflow">taskflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-projects">Other Projects</a><ul>
+<li><a class="reference internal" href="#python-openstackclient">python-openstackclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/juno/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:56 GMT -->
+</html>

@@ -1,0 +1,1514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/senlin.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Senlin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Senlin</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="senlin">
+<h1>Senlin<a class="headerlink" href="#senlin" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-senlinclient">
+<span id="team-wallaby-python-senlinclient"></span><h3>python-senlinclient<a class="headerlink" href="#python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.2.1.tar.gz">2.2.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.2.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>e6edaee89249f88e7824cc7a175e903f09340ab4</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>aeb56bd25c7488876f7bc9a6723547e1f7252723</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-wallaby-senlin">
+<span id="id1"></span><h3>senlin<a class="headerlink" href="#team-wallaby-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/wallaby.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>e111000aab550635f8dcc3b678a2ae2b6c8b137f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="senlin-dashboard">
+<span id="team-wallaby-senlin-dashboard"></span><h3>senlin-dashboard<a class="headerlink" href="#senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/wallaby.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>65a29cbbe2345d73aff0eb8cb96ebeaf42cf97f6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="senlin-tempest-plugin">
+<span id="team-wallaby-senlin-tempest-plugin"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>652bff95e0c6452ea7abd67706ef2a0fb20d7572</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>a85b110a1dafff478320931878e75e0591e4158c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-python-senlinclient">
+<span id="id2"></span><h3>python-senlinclient<a class="headerlink" href="#team-victoria-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/victoria.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.1.1.tar.gz">2.1.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.1.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>13530356a8a26a8f59627de8c8790bc3a9d9fbfd</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>3b5ceb2386bdd410f7a09ef40ca71976f059560f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-senlin">
+<span id="id3"></span><h3>senlin<a class="headerlink" href="#team-victoria-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/victoria.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>aca5b42d81bf3ec422ea6452027f3527c3b5443b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-senlin-dashboard">
+<span id="id4"></span><h3>senlin-dashboard<a class="headerlink" href="#team-victoria-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/victoria.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>6c5d0219657f39215fa29cde73359401adbdb5cc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-senlin-tempest-plugin">
+<span id="id5"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#team-victoria-senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>a85b110a1dafff478320931878e75e0591e4158c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-python-senlinclient">
+<span id="id6"></span><h3>python-senlinclient<a class="headerlink" href="#team-ussuri-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/ussuri.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.0.1.tar.gz">2.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>d9430360beb9c7104470a6804feab87adae2817f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-2.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>6d2ad89b1f52a76a1d0a5a1db050afe543876367</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-senlin">
+<span id="id7"></span><h3>senlin<a class="headerlink" href="#team-ussuri-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/ussuri.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>dd528700a20ab33396ae498b4f8befa488694c04</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-senlin-dashboard">
+<span id="id8"></span><h3>senlin-dashboard<a class="headerlink" href="#team-ussuri-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/ussuri.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>2da90bb62821e080df554aab36a11346839f29e6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-senlin-tempest-plugin">
+<span id="id9"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#team-ussuri-senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-1.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>38f3acc3f26234b85084ca3cca1165633871103d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-python-senlinclient">
+<span id="id10"></span><h3>python-senlinclient<a class="headerlink" href="#team-train-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/train.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.11.1.tar.gz">1.11.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.11.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>eca92571e99f1e65cdc72d5e1c603ca2b57f1a4d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.11.0.tar.gz">1.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>c23edfc387133f75b8f21d233fc7399e01a709d5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-senlin">
+<span id="id11"></span><h3>senlin<a class="headerlink" href="#team-train-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/train.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>366ee0084c1f2ca6e046bd63b765accd50aba23b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>c19f2de68eff800e6d8ef656d1a77a043a79efb3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-senlin-dashboard">
+<span id="id12"></span><h3>senlin-dashboard<a class="headerlink" href="#team-train-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/train.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>cb2b2cb109db5b94ecd506d64ba85ee07208eb79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-senlin-tempest-plugin">
+<span id="id13"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#team-train-senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.3.0.tar.gz">0.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>e8c68ffb745c241edfe345471b206706eb4914cb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-python-senlinclient">
+<span id="id14"></span><h3>python-senlinclient<a class="headerlink" href="#team-stein-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/stein.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.10.1.tar.gz">1.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>5f9c27da4fb4d614785637389fc62b1c8c036ec1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.10.0.tar.gz">1.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>aeb47baf7da6b0430b37003cac7881f81f7d0a2e</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.9.0.tar.gz">1.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>5deedab653bfa1bf36a989e47e5f7fc288f5bb3d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-senlin">
+<span id="id15"></span><h3>senlin<a class="headerlink" href="#team-stein-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/stein.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>9707977825a5bf5d3218d6787341fd803c670a6c</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-senlin-dashboard">
+<span id="id16"></span><h3>senlin-dashboard<a class="headerlink" href="#team-stein-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/stein.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.10.1.tar.gz">0.10.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.10.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>f4bb5779a939953c17bb052f77b414d6c9cca639</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>16ded081f4a544443bffe5cba9d3f6c50f05a124</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-senlin-tempest-plugin">
+<span id="id17"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#team-stein-senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>a85b110a1dafff478320931878e75e0591e4158c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.2.0.tar.gz">0.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>c5796721c4ae4916bd1f68ba8f1f8d0c7309d2b5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-python-senlinclient">
+<span id="id18"></span><h3>python-senlinclient<a class="headerlink" href="#team-rocky-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/rocky.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.8.0.tar.gz">1.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>08649a0a858b359164990d0e7418eb3f676d4394</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-senlin">
+<span id="id19"></span><h3>senlin<a class="headerlink" href="#team-rocky-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/rocky.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>1ea42387e4ed841c001e09efbd26677fde428bb7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-senlin-dashboard">
+<span id="id20"></span><h3>senlin-dashboard<a class="headerlink" href="#team-rocky-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/rocky.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>ed499720094c3926636a9f80261a0cc3e7b649c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-senlin-tempest-plugin">
+<span id="id21"></span><h3>senlin-tempest-plugin<a class="headerlink" href="#team-rocky-senlin-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.1.0.tar.gz">0.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-tempest-plugin/senlin-tempest-plugin-0.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-tempest-plugin</p></td>
+<td><p>01f7f44d95742f11eafc0a2ee1e050615bf7a9de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-python-senlinclient">
+<span id="id22"></span><h3>python-senlinclient<a class="headerlink" href="#team-queens-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/queens.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.7.0.tar.gz">1.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>e6cdf2dac8493bead57d683cd407599803434ce8</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.6.0.tar.gz">1.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>96a4e0fb0ff15bf74d15a92eaa04c83842f520f3</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>703f41ad5bb4d201401f2455e3370b3b568f7c75</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-senlin">
+<span id="id23"></span><h3>senlin<a class="headerlink" href="#team-queens-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/queens.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>c08609c2a69380fb84ad98f92ca354e376d42472</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>7f83d7995d1b19274b64aabc383c1cee68f33f17</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-senlin-dashboard">
+<span id="id24"></span><h3>senlin-dashboard<a class="headerlink" href="#team-queens-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/queens.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>4afb7e1ab4c324e70f924df370971d7e30ec3bf6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-python-senlinclient">
+<span id="id25"></span><h3>python-senlinclient<a class="headerlink" href="#team-pike-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/pike.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.4.1.tar.gz">1.4.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.4.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>52bce9d14566c8e0d22832c472a341e09ab67910</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>cfdf62a47031d6ad3a8bc88ea3c25c08e04865c8</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.3.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>2c6dce877e3d1c74b63f9c9a4a1a7d842ec9bcd5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-senlin">
+<span id="id26"></span><h3>senlin<a class="headerlink" href="#team-pike-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/pike.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-4.0.1.tar.gz">4.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-4.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>6e4824a698ad125fd14a7ae99a7ae366158adc83</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>59c6ea6617f1199d26d6e00ef431c3e5e42a7089</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-senlin-dashboard">
+<span id="id27"></span><h3>senlin-dashboard<a class="headerlink" href="#team-pike-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/pike.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.7.1.tar.gz">0.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>8f151eae8a57d69b0a8baf21be0f4094203c6795</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>66a1bb79f3578ab19f7eb2bbaeb312df9c259cdf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-python-senlinclient">
+<span id="id28"></span><h3>python-senlinclient<a class="headerlink" href="#team-ocata-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-senlinclient/ocata.html">python-senlinclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>9df5282567b67225ad3407dbfff2783c7bd75bff</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>6ac75fc72d83c78c888f0b7e214afd04f4ae3c64</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-senlin">
+<span id="id29"></span><h3>senlin<a class="headerlink" href="#team-ocata-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/ocata.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-3.0.1.tar.gz">3.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-3.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>ce509a040a55bcf62729c2f3934cb7df2e90a40a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin</p></td>
+<td><p>3278a7fc8777a6153a11987a76b1ba498ecf20e3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-senlin-dashboard">
+<span id="id30"></span><h3>senlin-dashboard<a class="headerlink" href="#team-ocata-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin-dashboard/ocata.html">senlin-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>59eaf4d998c60474de3a098a4d08ed0e4fa0e252</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-python-senlinclient">
+<span id="id31"></span><h3>python-senlinclient<a class="headerlink" href="#team-newton-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>df8b93767d9e31919246ead40a52be34e57122f2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>685ab4d317745811254b7e1eb347cffaafc26f8b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-senlin">
+<span id="id32"></span><h3>senlin<a class="headerlink" href="#team-newton-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/newton.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin</p></td>
+<td><p>0e302ca777819cacd4f7e33e708673e03618849e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-senlin-dashboard">
+<span id="id33"></span><h3>senlin-dashboard<a class="headerlink" href="#team-newton-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.5.0.tar.gz">0.5.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>c6595fd82eaaab5d7fff0ba103592782c00b3c6f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>cc665651376215e362367aff3af033db05bbe591</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-python-senlinclient">
+<span id="id34"></span><h3>python-senlinclient<a class="headerlink" href="#team-mitaka-python-senlinclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-0.4.1.tar.gz">0.4.1</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>25494ac29be0272e7d612e48a1d76f14b36c7db7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-0.4.0.tar.gz">0.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>f07084f5d41349653ad7a942d0e5d58d7a3d9c8c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-0.3.0.tar.gz">0.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>9ca308304ece8ad3ba65d4e6b9f19e0800a1e6c7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-senlinclient/python-senlinclient-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/python-senlinclient</p></td>
+<td><p>9ebc82884d792485cf02b0600152c91752795517</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-senlin">
+<span id="id35"></span><h3>senlin<a class="headerlink" href="#team-mitaka-senlin" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/senlin/mitaka.html">senlin</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin/senlin-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin</p></td>
+<td><p>4da96392ae5ce59f44a3a68c974dc40cf3ba787e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-senlin-dashboard">
+<span id="id36"></span><h3>senlin-dashboard<a class="headerlink" href="#team-mitaka-senlin-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.2.1.tar.gz">0.2.1</a></p></td>
+<td></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>610cc0e4d7e23cc3c3907aa88f3755832233be70</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.2.0.tar.gz">0.2.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>32640843bfa70db83b55852c21868d3777c81b67</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/senlin-dashboard/senlin-dashboard-0.1.0.tar.gz">0.1.0</a></p></td>
+<td></td>
+<td><p>openstack/senlin-dashboard</p></td>
+<td><p>666020fd9099187a59158c9e9866e123fb76b570</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="searchlight.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Searchlight"></i></a>
+          
+          
+            <a href="solum.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Solum"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Senlin</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-wallaby-senlin">senlin</a></li>
+<li><a class="reference internal" href="#senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-victoria-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-victoria-senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-ussuri-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-ussuri-senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-train-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-train-senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-stein-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-stein-senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-rocky-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-rocky-senlin-dashboard">senlin-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-senlin-tempest-plugin">senlin-tempest-plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-queens-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-queens-senlin-dashboard">senlin-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-pike-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-pike-senlin-dashboard">senlin-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-ocata-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-ocata-senlin-dashboard">senlin-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-newton-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-newton-senlin-dashboard">senlin-dashboard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-python-senlinclient">python-senlinclient</a></li>
+<li><a class="reference internal" href="#team-mitaka-senlin">senlin</a></li>
+<li><a class="reference internal" href="#team-mitaka-senlin-dashboard">senlin-dashboard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/senlin.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:11 GMT -->
+</html>

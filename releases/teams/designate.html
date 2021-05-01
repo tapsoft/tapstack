@@ -1,0 +1,1799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/teams/designate.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Designate</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Designate</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="designate">
+<h1>Designate<a class="headerlink" href="#designate" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="xena">
+<h2>Xena<a class="headerlink" href="#xena" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="wallaby">
+<h2>Wallaby<a class="headerlink" href="#wallaby" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-wallaby-designate">
+<span id="id1"></span><h3>designate<a class="headerlink" href="#team-wallaby-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/wallaby.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>37b3fa2ea454183e4a5c6a099eca5129959d10e1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="designate-dashboard">
+<span id="team-wallaby-designate-dashboard"></span><h3>designate-dashboard<a class="headerlink" href="#designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate-dashboard/wallaby.html">designate-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-12.0.0.tar.gz">12.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-12.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>ec54320a2d4ede78b6982c2f7bdfe0e2d1f9fccb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="designate-tempest-plugin">
+<span id="team-wallaby-designate-tempest-plugin"></span><h3>designate-tempest-plugin<a class="headerlink" href="#designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.11.0.tar.gz">0.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>e98a05ac3520a8264ce1a31b1e9a0faef45bebc1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.10.0.tar.gz">0.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>5da3047851aae36f09e0b52f79523426fec6a104</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="python-designateclient">
+<span id="team-wallaby-python-designateclient"></span><h3>python-designateclient<a class="headerlink" href="#python-designateclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-designateclient/wallaby.html">python-designateclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.2.0.tar.gz">4.2.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.2.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>e6e7b191a3b19a2af99fd2c8a860dea3083bc6b1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="victoria">
+<h2>Victoria<a class="headerlink" href="#victoria" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-victoria-designate">
+<span id="id2"></span><h3>designate<a class="headerlink" href="#team-victoria-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/victoria.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>2168b4367d483ce420afee4bc1e5fca371cc40b8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-designate-dashboard">
+<span id="id3"></span><h3>designate-dashboard<a class="headerlink" href="#team-victoria-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate-dashboard/victoria.html">designate-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-11.0.0.tar.gz">11.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-11.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>7b1adbd7be137ff3e67fc051b4b1ffe8745f46c1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-designate-tempest-plugin">
+<span id="id4"></span><h3>designate-tempest-plugin<a class="headerlink" href="#team-victoria-designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.9.0.tar.gz">0.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>5da3047851aae36f09e0b52f79523426fec6a104</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-victoria-python-designateclient">
+<span id="id5"></span><h3>python-designateclient<a class="headerlink" href="#team-victoria-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.1.0.tar.gz">4.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>055d1601beb95644e37976d9f4aa3601d5084bc1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ussuri">
+<h2>Ussuri<a class="headerlink" href="#ussuri" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ussuri-designate">
+<span id="id6"></span><h3>designate<a class="headerlink" href="#team-ussuri-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/ussuri.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>0d52d83697bfd786481be630726530cc27e1b830</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-designate-dashboard">
+<span id="id7"></span><h3>designate-dashboard<a class="headerlink" href="#team-ussuri-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate-dashboard/ussuri.html">designate-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-10.0.0.tar.gz">10.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-10.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>41c19d9159519bd919d7e230ab0fca7c4324121d</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-designate-tempest-plugin">
+<span id="id8"></span><h3>designate-tempest-plugin<a class="headerlink" href="#team-ussuri-designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.8.0.tar.gz">0.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>cc1e4ad8a4226248ef43a796fa745d9225e740df</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ussuri-python-designateclient">
+<span id="id9"></span><h3>python-designateclient<a class="headerlink" href="#team-ussuri-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>9a2f2d4b9caea39ec82823a8d9187f7ddd21aeab</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-3.1.0.tar.gz">3.1.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-3.1.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>eb3c72cd89cc8876433c0e3a39edf6ac4a3a0aea</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="train">
+<h2>Train<a class="headerlink" href="#train" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-train-designate">
+<span id="id10"></span><h3>designate<a class="headerlink" href="#team-train-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/train.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.2.tar.gz">9.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>f9035b251e7de50d398d1a240923862237164f1b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>20addf0d521a950577ee80af6d5e3644fd424f87</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>63f216755a61f76452d900264948d55ce94b75a4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-designate-dashboard">
+<span id="id11"></span><h3>designate-dashboard<a class="headerlink" href="#team-train-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate-dashboard/train.html">designate-dashboard</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-9.0.1.tar.gz">9.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-9.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>51a44589c2f59fca73ed8b1f3933c5d6cffae50c</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-9.0.0.tar.gz">9.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-9.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>410e06916bd54865ad3daa6eac7fe75d6828c42f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-designate-tempest-plugin">
+<span id="id12"></span><h3>designate-tempest-plugin<a class="headerlink" href="#team-train-designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.7.0.tar.gz">0.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>1096ab98898796810d46113389c372eb4367fe39</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-train-python-designateclient">
+<span id="id13"></span><h3>python-designateclient<a class="headerlink" href="#team-train-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-designateclient/train.html">python-designateclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-3.0.0.tar.gz">3.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-3.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>093d8d7170cbf6ef8c7a7c0ff2a4dcd7ecd6361b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.12.0.tar.gz">2.12.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.12.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>5c9bbbfac8f03be416b268798045b5814c3fbe06</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="stein">
+<h2>Stein<a class="headerlink" href="#stein" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-stein-designate">
+<span id="id14"></span><h3>designate<a class="headerlink" href="#team-stein-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/stein.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-8.0.1.tar.gz">8.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-8.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>6307c84e83530ab27124ab9e6a8117ee44069614</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>59d8cab9bbe37529346728778e6dae79a3a57a2a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-designate-dashboard">
+<span id="id15"></span><h3>designate-dashboard<a class="headerlink" href="#team-stein-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-8.0.0.tar.gz">8.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-8.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>ffadf3868f3edd22cffb880591cd41710e685377</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-designate-tempest-plugin">
+<span id="id16"></span><h3>designate-tempest-plugin<a class="headerlink" href="#team-stein-designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-stein-last.tar.gz">stein-last</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-stein-last.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>5da3047851aae36f09e0b52f79523426fec6a104</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.6.0.tar.gz">0.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>c1708fc0c878ea3fa544454c7e96c58581478853</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-stein-python-designateclient">
+<span id="id17"></span><h3>python-designateclient<a class="headerlink" href="#team-stein-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-designateclient/stein.html">python-designateclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.11.0.tar.gz">2.11.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.11.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>f0b7eb4d8c90ef516174538025629d8458d4180b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="rocky">
+<h2>Rocky<a class="headerlink" href="#rocky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-rocky-designate">
+<span id="id18"></span><h3>designate<a class="headerlink" href="#team-rocky-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/rocky.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-7.0.1.tar.gz">7.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-7.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>34160d0602abe7fbc566191126698d8bac23ea9d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>2ff936a38f48f7f6f8c24c3b77fcde18e9c05580</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-designate-dashboard">
+<span id="id19"></span><h3>designate-dashboard<a class="headerlink" href="#team-rocky-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-7.0.0.tar.gz">7.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-7.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>3f5a3294a65cbcd5485f4f705984f30091fff9ad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-designate-tempest-plugin">
+<span id="id20"></span><h3>designate-tempest-plugin<a class="headerlink" href="#team-rocky-designate-tempest-plugin" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.5.0.tar.gz">0.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-tempest-plugin/designate-tempest-plugin-0.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-tempest-plugin</p></td>
+<td><p>bd7e1b0bf0ade7887fc486868acb9e80f326480e</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-rocky-python-designateclient">
+<span id="id21"></span><h3>python-designateclient<a class="headerlink" href="#team-rocky-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-designateclient/rocky.html">python-designateclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.10.0.tar.gz">2.10.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.10.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>200f5192fdaf1abe982fadd1344f756c760a0414</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="queens">
+<h2>Queens<a class="headerlink" href="#queens" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-queens-designate">
+<span id="id22"></span><h3>designate<a class="headerlink" href="#team-queens-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/queens.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>cb60d7316c283667629355f33bf5602c4950101f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>97393a1b8c37e4ef1204d5e8f86692fe09a8a1cf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-designate-dashboard">
+<span id="id23"></span><h3>designate-dashboard<a class="headerlink" href="#team-queens-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-6.0.1.tar.gz">6.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-6.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>e9d8ad0b5071177e0b96653007e9d11971965741</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-6.0.0.tar.gz">6.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-6.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>697adb82e62b8fa1101d7923c27ff4fc30cbcb77</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-queens-python-designateclient">
+<span id="id24"></span><h3>python-designateclient<a class="headerlink" href="#team-queens-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/python-designateclient/queens.html">python-designateclient</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.9.0.tar.gz">2.9.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.9.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>65cc2922677c33e2c7259095e21901d1b80e373d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.8.0.tar.gz">2.8.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.8.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>1a3632cf5748db837b6d85b1f8d40eeae0a270c6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pike">
+<h2>Pike<a class="headerlink" href="#pike" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-pike-designate">
+<span id="id25"></span><h3>designate<a class="headerlink" href="#team-pike-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/pike.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.3.tar.gz">5.0.3</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.3.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>af4fc94034d5a2153e29f7584944858515d55cdb</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>12fbb38799d6731862f07a9e299d5476a5c02f90</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>6beba54a71510525d5bbc4956d20d27bffa982e5</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>edc0684ace513d2ae73f06941e0898d1e963f298</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-designate-dashboard">
+<span id="id26"></span><h3>designate-dashboard<a class="headerlink" href="#team-pike-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.2.tar.gz">5.0.2</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.2.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>2f0ad3b4cc582130efcc02d7a00bb567ebc8ad4d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.1.tar.gz">5.0.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>bc128a7c29a427933fc4ca94a7510ef8c97e5206</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.0.tar.gz">5.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-5.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>8169c4b876e05f0675a1d942b17d7d83b9f9e7d2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-pike-python-designateclient">
+<span id="id27"></span><h3>python-designateclient<a class="headerlink" href="#team-pike-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.7.1.tar.gz">2.7.1</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.7.1.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>da85c37baea5ec7e37851b6b3f66119d2200a33b</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.7.0.tar.gz">2.7.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.7.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>ea41cef9a1753faf5004c5900a486ed4439ca1dd</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="ocata">
+<h2>Ocata<a class="headerlink" href="#ocata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-ocata-designate">
+<span id="id28"></span><h3>designate<a class="headerlink" href="#team-ocata-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/ocata.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate</p></td>
+<td><p>b029ac9934720fde7610b4c955c002fc70f5ae42</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-designate-dashboard">
+<span id="id29"></span><h3>designate-dashboard<a class="headerlink" href="#team-ocata-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-4.0.0.tar.gz">4.0.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-4.0.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>451f0e229ce75649245a129a5a34b0f2dbaf26d8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-ocata-python-designateclient">
+<span id="id30"></span><h3>python-designateclient<a class="headerlink" href="#team-ocata-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.6.0.tar.gz">2.6.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.6.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>5b8cab8079c2eea9f9d084801102ed5b036927fa</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.5.0.tar.gz">2.5.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.5.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>92004a58a5ab5ddd89d3f797f16dca8abd76c9ed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.4.0.tar.gz">2.4.0</a></p></td>
+<td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.4.0.tar.gz.asc">pgp</a></p></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>2912647d00f6ad4f1f2dc1f62357516cd18068c2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="newton">
+<h2>Newton<a class="headerlink" href="#newton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-newton-designate">
+<span id="id31"></span><h3>designate<a class="headerlink" href="#team-newton-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/newton.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>7d7d71ee2439098ce79869e5c44411697697a371</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>c0c599b2f5ea861f515e82ec8b1dad30c11e2575</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-designate-dashboard">
+<span id="id32"></span><h3>designate-dashboard<a class="headerlink" href="#team-newton-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-3.0.1.tar.gz">3.0.1</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>ce5774b8ec6665b70dbdd032c1466a38fd674034</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-3.0.0.tar.gz">3.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>b3b56d4b14b2f2f1c8f9d3aa48c2a840ad54a143</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-newton-python-designateclient">
+<span id="id33"></span><h3>python-designateclient<a class="headerlink" href="#team-newton-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.3.0.tar.gz">2.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>0971bd5483faa5d316ec6de4c5084ce555e4dce7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.2.0.tar.gz">2.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>ca14e9d60d25adef38ea79a81142e3e62cb8fbf0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mitaka">
+<h2>Mitaka<a class="headerlink" href="#mitaka" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-mitaka-designate">
+<span id="id34"></span><h3>designate<a class="headerlink" href="#team-mitaka-designate" title="Permalink to this headline">¶</a></h3>
+<p>Release Notes: <a class="reference external" href="https://docs.openstack.org/releasenotes/designate/mitaka.html">designate</a></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>5203c5cb6c8bdd59792890d815c355461d46aed6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>15588e2502cc785b24b361e3aba91a4803ec58cb</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>f35da84c490448d70ff35c9cef35ed47c4af45b6</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>dc9571a8b724a8b83af3d3d397f6204400bca990</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-mitaka-python-designateclient">
+<span id="id35"></span><h3>python-designateclient<a class="headerlink" href="#team-mitaka-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.1.0.tar.gz">2.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>b337657c4366f762125294c1a0f1f2efa3baaf38</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-2.0.0.tar.gz">2.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>8f3e935f77d1e98c35e0e553c5041cc482167685</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="liberty">
+<h2>Liberty<a class="headerlink" href="#liberty" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-liberty-designate">
+<span id="id36"></span><h3>designate<a class="headerlink" href="#team-liberty-designate" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>35e1b35b17461a960ef22b6510f8ba2f6389b01a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>de0eb1ab8c02e4470b87d0c449377ad3653cdb50</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>b36140c9618912ee9852b272a99585324934344f</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>942fe66e4d00536f0f66b1b98685323142143a42</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate/designate-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate</p></td>
+<td><p>bfe79196c9557559f351ae9a854c73ac757051ee</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>f4f3dd8e20767706573fb9f98d43cd7473f73a81</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-designate-dashboard">
+<span id="id37"></span><h3>designate-dashboard<a class="headerlink" href="#team-liberty-designate-dashboard" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/designate-dashboard/designate-dashboard-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/designate-dashboard</p></td>
+<td><p>f4f3dd8e20767706573fb9f98d43cd7473f73a81</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="team-liberty-python-designateclient">
+<span id="id38"></span><h3>python-designateclient<a class="headerlink" href="#team-liberty-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.5.0.tar.gz">1.5.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>b97ae05612522180cc6f64485212811329da9645</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.4.0.tar.gz">1.4.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>401fa6643a07d5ecf33db2ec5469802f9dd90595</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.3.0.tar.gz">1.3.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>7f2ecd1b1513dc6bac4810186723d0e697ebc733</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.2.0.tar.gz">1.2.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>39d8b54d785bafd550a94b3d396ead8911557cfc</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="kilo">
+<h2>Kilo<a class="headerlink" href="#kilo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-kilo-python-designateclient">
+<span id="id39"></span><h3>python-designateclient<a class="headerlink" href="#team-kilo-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.1.1.tar.gz">1.1.1</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>7363e3b4e98839aaffe20c3a5618d2ef77181304</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="juno">
+<h2>Juno<a class="headerlink" href="#juno" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-juno-python-designateclient">
+<span id="id40"></span><h3>python-designateclient<a class="headerlink" href="#team-juno-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.1.0.tar.gz">1.1.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>a900b41e4d8a9eb40e1812295ba16d773e2b9618</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="icehouse">
+<h2>Icehouse<a class="headerlink" href="#icehouse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-icehouse-python-designateclient">
+<span id="id41"></span><h3>python-designateclient<a class="headerlink" href="#team-icehouse-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.0.3.tar.gz">1.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>6025437b65c50d52d3685d0a94eb33082dac9cc2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.0.2.tar.gz">1.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>c6542d44378afe1727deeca3f34be9bc98edde0c</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.0.1.tar.gz">1.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>c255e57da723ba3ce7c25838e178e8f232b7bdd7</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-1.0.0.tar.gz">1.0.0</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>12c57f2809820aec1344ff43ebfb688dc782b2fd</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.5.tar.gz">0.0.5</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>d22d1afa590704a2cc70b35f1298e74ccf848c33</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="havana">
+<h2>Havana<a class="headerlink" href="#havana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-havana-python-designateclient">
+<span id="id42"></span><h3>python-designateclient<a class="headerlink" href="#team-havana-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.4.tar.gz">0.0.4</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>bd8023493a153780260c8f40f9dcc133c829cd37</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.3.tar.gz">0.0.3</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>d9188704f4b1cdb015a45f70de5bb8b642917c6f</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="grizzly">
+<h2>Grizzly<a class="headerlink" href="#grizzly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-grizzly-python-designateclient">
+<span id="id43"></span><h3>python-designateclient<a class="headerlink" href="#team-grizzly-python-designateclient" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 36%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Signature</p></th>
+<th class="head"><p>Repo</p></th>
+<th class="head"><p>Git Commit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.2.tar.gz">0.0.2</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>fbf8714df61d38f2606609d78bab663b04f323ca</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://tarballs.openstack.org/python-designateclient/python-designateclient-0.0.1.tar.gz">0.0.1</a></p></td>
+<td></td>
+<td><p>openstack/python-designateclient</p></td>
+<td><p>d9737b5b2aa25fa424aaa699c3335881ecb2aa4a</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="cyborg.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Cyborg"></i></a>
+          
+          
+            <a href="documentation.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Documentation"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Designate</a><ul>
+<li><a class="reference internal" href="#xena">Xena</a></li>
+<li><a class="reference internal" href="#wallaby">Wallaby</a><ul>
+<li><a class="reference internal" href="#team-wallaby-designate">designate</a></li>
+<li><a class="reference internal" href="#designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#victoria">Victoria</a><ul>
+<li><a class="reference internal" href="#team-victoria-designate">designate</a></li>
+<li><a class="reference internal" href="#team-victoria-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-victoria-designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-victoria-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ussuri">Ussuri</a><ul>
+<li><a class="reference internal" href="#team-ussuri-designate">designate</a></li>
+<li><a class="reference internal" href="#team-ussuri-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-ussuri-designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-ussuri-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#train">Train</a><ul>
+<li><a class="reference internal" href="#team-train-designate">designate</a></li>
+<li><a class="reference internal" href="#team-train-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-train-designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-train-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stein">Stein</a><ul>
+<li><a class="reference internal" href="#team-stein-designate">designate</a></li>
+<li><a class="reference internal" href="#team-stein-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-stein-designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-stein-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rocky">Rocky</a><ul>
+<li><a class="reference internal" href="#team-rocky-designate">designate</a></li>
+<li><a class="reference internal" href="#team-rocky-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-rocky-designate-tempest-plugin">designate-tempest-plugin</a></li>
+<li><a class="reference internal" href="#team-rocky-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#queens">Queens</a><ul>
+<li><a class="reference internal" href="#team-queens-designate">designate</a></li>
+<li><a class="reference internal" href="#team-queens-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-queens-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pike">Pike</a><ul>
+<li><a class="reference internal" href="#team-pike-designate">designate</a></li>
+<li><a class="reference internal" href="#team-pike-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-pike-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ocata">Ocata</a><ul>
+<li><a class="reference internal" href="#team-ocata-designate">designate</a></li>
+<li><a class="reference internal" href="#team-ocata-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-ocata-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#newton">Newton</a><ul>
+<li><a class="reference internal" href="#team-newton-designate">designate</a></li>
+<li><a class="reference internal" href="#team-newton-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-newton-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mitaka">Mitaka</a><ul>
+<li><a class="reference internal" href="#team-mitaka-designate">designate</a></li>
+<li><a class="reference internal" href="#team-mitaka-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#liberty">Liberty</a><ul>
+<li><a class="reference internal" href="#team-liberty-designate">designate</a></li>
+<li><a class="reference internal" href="#team-liberty-designate-dashboard">designate-dashboard</a></li>
+<li><a class="reference internal" href="#team-liberty-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kilo">Kilo</a><ul>
+<li><a class="reference internal" href="#team-kilo-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#juno">Juno</a><ul>
+<li><a class="reference internal" href="#team-juno-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#icehouse">Icehouse</a><ul>
+<li><a class="reference internal" href="#team-icehouse-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#havana">Havana</a><ul>
+<li><a class="reference internal" href="#team-havana-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grizzly">Grizzly</a><ul>
+<li><a class="reference internal" href="#team-grizzly-python-designateclient">python-designateclient</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/teams/designate.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:03:59 GMT -->
+</html>

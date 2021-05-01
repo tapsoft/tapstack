@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from releases.openstack.org/ussuri/highlights.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:16 GMT -->
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <title>OpenStack Releases: Ussuri Release Highlights</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Pygments CSS -->
+<link href="../_static/css/native.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet">
+<link href="../_static/css/styles.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+  </head>
+  <body>
+<nav class="navbar navbar-default inner" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="brand-wrapper">
+        <a class="navbar-brand" href="../index.html"></a>
+      </div>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-main show">
+        <li>
+          <a href="http://www.openstack.org/software/" class="drop" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuSoftware">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/project-navigator/">Project Navigator</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sample-configs/">Sample Configs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/start/">Get Started</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/roadmap/">Roadmap</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/latest-release/">Latest Release</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/software/sourcecode/">Source Code</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/user-stories/" class="drop" id="dropdownMenuUsers">Users <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUsers">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/user-stories/">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/enterprise/">OpenStack in the Enterprise</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/appdev/">Application Developers</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/surveys/landing">User Survey</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/community/" class="drop" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuCommunity">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/">Welcome! Start Here</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/">OpenStack Foundation</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://wiki.openstack.org/">OpenStack Wiki</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://groups.openstack.org/">User Groups</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/speakers/">Speakers Bureau</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/foundation/companies/">Supporting Companies</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/jobs/">Jobs</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/join/">Join The Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/marketplace/">Marketplace</a>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/events/" class="drop" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">Overview</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.openstack.org/summit/">The OpenStack Summit</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/">More OpenStack Events</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/community/events/#openstack_days">OpenStack Days</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://www.openstack.org/learn/" class="drop" id="dropdownMenuLearn">Learn <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-hover" role="menu" aria-labelledby="dropdownMenuEvents">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/marketplace/training/">Training</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://superuser.openstack.org/">Superuser Magazine</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://ask.openstack.org/">Ask a Technical Question</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/news/">News</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/blog/">Blog</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="http://www.openstack.org/summit/tokyo-2015/summit-videos/">Summit Videos</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://docs.openstack.org/">Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container docs-book-wrapper">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row">
+  <div class="col-lg-8">
+    <h1>Ussuri Release Highlights</h1>
+  </div>
+</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="docs-body">
+
+  <div class="section" id="ussuri-release-highlights">
+<h1>Ussuri Release Highlights<a class="headerlink" href="#ussuri-release-highlights" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are significant changes reported directly from the project teams and
+have not been processed in any way. Some highlights may be more significant
+than others. Please do not take this list as a definitive set of highlights
+for the release until the OpenStack Foundation marketing staff have had a
+chance to compile a more accurate message out of these changes.</p>
+</div>
+<div class="section" id="cinder">
+<h2>Cinder<a class="headerlink" href="#cinder" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Numerous improvements in current functionality, for example, the ability to set minimum and maximum sizes for volume-types; the ability to filter the volume list using time comparison operators.</p></li>
+<li><p>Support for Glance multistore and image data colocation when uploading a volume to the Image Service.</p></li>
+<li><p>Added some new backend drivers, and many current drivers have added support for more features.</p></li>
+</ul>
+</div>
+<div class="section" id="cyborg">
+<h2>Cyborg<a class="headerlink" href="#cyborg" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Users can now launch instances with accelerators managed by
+Cyborg, as the <a class="reference external" href="https://specs.openstack.org/openstack/nova-specs/specs/ussuri/approved/nova-cyborg-interaction.html">Nova-Cyborg integration</a>
+has been completed. See <a class="reference external" href="https://docs.openstack.org/api-guide/compute/accelerator-support.html">accelerator operation guide</a>
+to find which instance operations are supported.</p></li>
+<li><p>New APIs have been implemented to list devices managed by Cyborg
+and, in general, to view and manage inventory of accelerators.</p></li>
+<li><p>Cyborg has laid the foundations for providing backwards compatibility
+in future releases by adopting microversions in v2 API.</p></li>
+<li><p>The Cyborg client is now based on OpenStack SDK and supports
+most Version 2 APIs.</p></li>
+<li><p>Improved quality overall by adding more unit/functional tests and by
+reducing technical debt.</p></li>
+</ul>
+</div>
+<div class="section" id="glance">
+<h2>Glance<a class="headerlink" href="#glance" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Enhancement in multiple stores feature, users now can import single image in multiple stores, copy existing imgae in multiple stores and delete image from single store.</p></li>
+<li><p>New import plugin to decompress the image</p></li>
+<li><p>Introduced S3 driver for glance-store again</p></li>
+</ul>
+</div>
+<div class="section" id="horizon">
+<h2>Horizon<a class="headerlink" href="#horizon" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>This release mainly focuses on bug fixes and improvements from the
+maintenance perspective including deprecations of old features,
+cleanup of deprecated features, integration test coverage improvements,
+migration to mock usage in unit tests and so on.</p></li>
+<li><p>Horizon and all horizon plugins now support Django 2.2 which is
+the only supported LTS of Django. Django is a framework which horizon
+depends on. Note that python 2.7 is no longer supported and
+we have enter into the python3 era.</p></li>
+<li><p>A couple of feature gaps in keystone support are implemented:
+a feature to allow users to change expired password including first login,
+password lock option in the user panel, and
+a support of access rules for application credentials.</p></li>
+</ul>
+</div>
+<div class="section" id="ironic">
+<h2>Ironic<a class="headerlink" href="#ironic" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support for scoped introspection rules which allow to have (and keep)
+rules per node subsets, such as different hardware deliveries.</p></li>
+<li><p>Support for a hardware <a class="reference external" href="https://docs.openstack.org/ironic/latest/admin/retirement.html">retirement workflow</a> to enable automation of hardware decommission in managed clouds.</p></li>
+<li><p>Multitenancy <a class="reference external" href="https://docs.openstack.org/ironic/latest/admin/node-multitenancy.html">concepts and additional policy options</a> are available for non-administrator usage of Ironic.</p></li>
+<li><p>Addition of <a class="reference external" href="https://docs.openstack.org/ironic/latest/admin/agent-token.html">authentication of interactions</a> between Ironic and its remote agent enabling deployment over untrusted networks.</p></li>
+<li><p>UEFI and device selection is now available for Software RAID.</p></li>
+</ul>
+</div>
+<div class="section" id="keystone">
+<h2>Keystone<a class="headerlink" href="#keystone" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>The user experience for creating application credentials and trusts has been greatly improved when using a federated authentication method. Federated users whose role assignments come from mapped group membership will have those group memberships persisted for a configurable TTL after their token expires, during which time their application credentials will remain valid.</p></li>
+<li><p>Keystone to Keystone assertions now contain the user’s group memberships on the keystone Identity Provider which can be mapped to group membership on the keystone Service Provider.</p></li>
+<li><p>Federated users can now be given concrete role assignments without relying on the mapping API by allowing federated users to be created directly in keystone and linked to their Identity Provider.</p></li>
+<li><p>When bootstrapping a new keystone deployment, the admin role now defaults to having the “immutable” option set, which prevents it from being accidentally deleted or modified unless the “immutable” option is deliberately removed.</p></li>
+<li><p>Keystonemiddleware no longer supports the Identity v2.0 API, which was removed from keystone in previous release cycles.</p></li>
+</ul>
+</div>
+<div class="section" id="kolla">
+<h2>Kolla<a class="headerlink" href="#kolla" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>All images, scripts and Ansible playbooks now use Python 3, and support for Python 2 has been dropped.</p></li>
+<li><p>Added support for CentOS 8 hosts and images.</p></li>
+<li><p>Added initial support for TLS encryption of backend API services, providing end-to-end encryption of API traffic. Currently Barbican, Cinder, Glance, Heat, Horizon, Keystone, Nova and Placement are supported.</p></li>
+<li><p>Added support for deployment of Open Virtual Network (OVN) and integration of it with Neutron.</p></li>
+<li><p>Added support for deployment of Zun CNI (Container Networking Interface) components allowing Docker with containerd to support Zun capsules (pods).</p></li>
+<li><p>Added support for Elasticsearch Curator to help manage clustered log data.</p></li>
+<li><p>Added components necessary to use Mellanox networking devices with Neutron.</p></li>
+<li><p>Streamlined configuration of external Ceph integration, making it easy to go from Ceph-Ansible-deployed Ceph cluster to enabling it in OpenStack.</p></li>
+</ul>
+</div>
+<div class="section" id="kuryr">
+<h2>Kuryr<a class="headerlink" href="#kuryr" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support for IPv6.</p></li>
+<li><p>DPDK support for nested setups and various other DPDK and SR-IOV improvements.</p></li>
+<li><p>Multiple fixes related to NetworkPolicy support.</p></li>
+</ul>
+</div>
+<div class="section" id="magnum">
+<h2>Magnum<a class="headerlink" href="#magnum" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support Helm v3 to install all magnum installed charts. Support for Helm v2 client will be removed in X release.</p></li>
+<li><p>A new config option <code class="docutils literal notranslate"><span class="pre">post_install_manifest_url</span></code> is added to support installing cloud provider/vendor specific manifest after deploying a kuberbetes cluster.</p></li>
+<li><p>A new <code class="docutils literal notranslate"><span class="pre">--merge-labels</span></code> boolean flag can be used to merge user labels at cluster/nodegroup scope with cluster template/cluster labels.</p></li>
+<li><p>Cloud admin users now can do rolling upgrade on behalf of end users to do urgent security patching.</p></li>
+<li><p>Magnum now cascade deletes all the load balancers before deleting the cluster, not only including load balancers for the cluster services and ingresses, but also those for Kubernetes API/etcd endpoints.</p></li>
+<li><p>Magnum supports updating the k8s cluster health status via the Magnum cluster update API so that a controller (e.g. magnum-auto-healer) running inside the k8s cluster can call the Magnum update API to update the cluster health status.</p></li>
+</ul>
+</div>
+<div class="section" id="manila">
+<h2>Manila<a class="headerlink" href="#manila" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Share groups have graduated from being an experimental feature to being
+generally available. Starting with API version 2.55, the
+<cite>X-OpenStack-Manila-API-Experimental</cite> header is no longer required
+to create/update/delete share group types, group specifications, group
+quotas and share groups themselves.</p></li>
+<li><p>Shares can be created from snapshots across storage pools when
+compatible. This new feature allows better utilization of back end
+resources by spreading workloads that were previously confined to the
+back end that hosted the snapshot.</p></li>
+<li><p>New quota control mechanisms have been introduced to constrain projects
+and their users to the number and size of share replicas they can create.</p></li>
+<li><p>It is now possible to query asynchronous user messages with time
+intervals.</p></li>
+</ul>
+</div>
+<div class="section" id="neutron">
+<h2>Neutron<a class="headerlink" href="#neutron" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">OVN</span></code> driver is now merged into Neutron repository and is one of the in-tree Neutron ML2 drivers, like <code class="docutils literal notranslate"><span class="pre">linuxbridge</span></code> or <code class="docutils literal notranslate"><span class="pre">openvswitch</span></code>. <code class="docutils literal notranslate"><span class="pre">OVN</span></code> driver benefits over the <code class="docutils literal notranslate"><span class="pre">openvswitch</span></code> driver include for example DVR with distributed SNAT traffic, distributed DHCP and possibility to run without network nodes. Other ML2 drivers are still in-tree and are fully supported. Currently default agent is still <code class="docutils literal notranslate"><span class="pre">openvswitch</span></code> but our plan is to make <code class="docutils literal notranslate"><span class="pre">OVN</span></code> driver to be the default choice in the future.</p></li>
+<li><p>Support for stateless security groups has been added. Users can now create security group set as <code class="docutils literal notranslate"><span class="pre">stateless</span></code> which means that conntrack will not be used for any rule in that group. One port can only use <code class="docutils literal notranslate"><span class="pre">stateless</span></code> or <code class="docutils literal notranslate"><span class="pre">stateful</span></code> security groups. In some use cases stateless security groups will allow operator to choose for optimized datapath performance whereas stateful security groups impose extra processing on the system.</p></li>
+<li><p>Role Based Access Control (<code class="docutils literal notranslate"><span class="pre">RBAC</span></code>) for address scopes and subnet pools has been added. Address scopes and subnet pools are usually defined by operators and exposed to users. This change allows operators to use more granular access controls on address scopes and subnet pools.</p></li>
+<li><p>Support for tagging resources during creation has been added in Neutron API. User can now set tags for resources like e.g. ports directly in <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests. This will improve the performance of kubernetes network operations a lot. The number of API calls which e.g. <code class="docutils literal notranslate"><span class="pre">Kuryr</span></code> has to send to Neutron are greatly reduced.</p></li>
+</ul>
+</div>
+<div class="section" id="nova">
+<h2>Nova<a class="headerlink" href="#nova" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.openstack.org/nova/latest/admin/configuration/cross-cell-resize.html">Support for cold migrating and resizing servers between Nova cells.</a></p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/nova/latest/reference/api-microversion-history.html#id74">Support for precaching Glance images to Nova compute hosts.</a></p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/api-guide/compute/accelerator-support.html">Support for creating servers with accelerator devices via Cyborg.</a></p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/api-guide/compute/port_with_resource_request.html">Further enahanced support for moving servers with minimum bandwidth
+guarantees.</a></p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/nova/latest/cli/nova-manage.html">Support for nova-manage placement audit CLI to find and clean up orphaned
+resource allocations.</a></p></li>
+<li><p><cite>Nova API policies are introducing new default roles with scope_type
+capabilities. These new changes improve the security level and
+manageability. New policies are richer in terms of handling access at
+system and project level token with ‘Read’ &amp; ‘Write’ roles. This feature
+is disabled by default and can be enabled by config options.</cite>
+See the <a class="reference external" href="https://docs.openstack.org/nova/latest/configuration/policy-concepts.html">Policy Concepts</a>
+documentation for more details.</p></li>
+<li><p>Improved robustness for cases where high levels of concurrent
+allocation writes are common, such as a busy clustered hypervisor,
+by making allocation retry count configurable.</p></li>
+</ul>
+</div>
+<div class="section" id="octavia">
+<h2>Octavia<a class="headerlink" href="#octavia" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Octavia now supports deploying load balancers in specific availability zones. This allows the deployment of load balancing capabilities to edge environments.</p></li>
+<li><p>The Octavia amphora driver has added a technology preview feature that improves control plane resiliency. Should a control plane host go down during a load balancer provisioning operation, an alternate controller can resume the in-process provisioning and complete the request.</p></li>
+<li><p>Users can now specify the TLS ciphers acceptable for listeners and pools. This allows load balancers to enforce security compliance requirements.</p></li>
+</ul>
+</div>
+<div class="section" id="openstackansible">
+<h2>Openstackansible<a class="headerlink" href="#openstackansible" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Ceph Octopus support</p></li>
+<li><p>MariaDB upgraded to 10.4 release</p></li>
+<li><p>Added Centos 8 support</p></li>
+<li><p>Added Ubuntu Focal support</p></li>
+</ul>
+</div>
+<div class="section" id="puppet-openstack">
+<h2>Puppet Openstack<a class="headerlink" href="#puppet-openstack" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Puppet OpenStack can now bootstrap Keystone using an admin password instead of using the legacy admin token.</p></li>
+</ul>
+</div>
+<div class="section" id="swift">
+<h2>Swift<a class="headerlink" href="#swift" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added a new system-namespace for Swift containers and objects.</p></li>
+<li><p>Added a new Swift object-versioning API using the new namespace.</p></li>
+<li><p>Added support for S3 versioning using the new API.</p></li>
+<li><p>Added the ability to use <code class="docutils literal notranslate"><span class="pre">SIGUSR1</span></code> to perform “seamless” reloads, where the WSGI server socket never stops accepting connections.</p></li>
+</ul>
+</div>
+<div class="section" id="vitrage">
+<h2>Vitrage<a class="headerlink" href="#vitrage" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added more concise and friendly <a class="reference external" href="https://docs.openstack.org/vitrage/latest/contributor/vitrage-templates.html#template-structure">Template Version 3 syntax</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="watcher">
+<h2>Watcher<a class="headerlink" href="#watcher" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Added a new webhook API and a new audit type EVENT. Now Watcher
+user can create audit with EVENT type and the audit will be
+triggered by webhook API.</p></li>
+<li><p>The building of the compute (Nova) data model will be done using the
+decision engine threadpool, thereby, significantly reducing the total
+time required to build it.</p></li>
+</ul>
+</div>
+<div class="section" id="zaqar">
+<h2>Zaqar<a class="headerlink" href="#zaqar" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Support querying queues with ‘with_count’ to return the amount of the queues. Help users to quickly get the exact total number of queues which they own.</p></li>
+<li><p>Introduce new resource called Topic which is a concept from SNS. User can send message to a Topic and then subscribers will get the message according to different protocols like http, email, sms, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="zun">
+<h2>Zun<a class="headerlink" href="#zun" title="Permalink to this headline">¶</a></h2>
+<p><strong>Notes:</strong></p>
+<ul class="simple">
+<li><p>Starting from this release, Zun adds support for CRI-compatible runtime. Zun uses CRI runtime to realize the concept of capsule (pod). As a result, users can use Zun API to create pods in Kata container via a CRI runtime.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="docs-actions">
+          
+            <a href="schedule.html"><i class="fa fa-angle-double-left" data-toggle="tooltip" data-placement="top" title="Previous: Ussuri Release Schedule"></i></a>
+          
+          
+            <a href="../train/index.html"><i class="fa fa-angle-double-right" data-toggle="tooltip" data-placement="top" title="Next: Train"></i></a>
+          
+          </div>
+          <div class="row docs-byline bottom">
+            <div class="docs-updated">updated: Fri Apr 30 20:24:15 2021, commit f67b41074</div>
+          </div>
+          <div class="row">
+            <div class="docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+ <img src="../_static/images/docs/license.png" alt="Creative Commons Attribution 3.0 License"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="http://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+  <div class="btn-group docs-sidebar-releases">
+    <button onclick="location.href='../index-2.html'" class="btn docs-sidebar-home" data-toggle="tooltip" data-placement="top" title="Releases Home"><i class="fa fa-arrow-circle-o-left"></i> Releases Home</button>
+  </div>
+  <div class="docs-sidebar-toc">
+    <div class="docs-sidebar-section" id="table-of-contents">
+      <a href="../index-2.html" class="docs-sidebar-section-title"><h4>Contents</h4></a>
+      <ul>
+<li><a class="reference internal" href="#">Ussuri Release Highlights</a><ul>
+<li><a class="reference internal" href="#cinder">Cinder</a></li>
+<li><a class="reference internal" href="#cyborg">Cyborg</a></li>
+<li><a class="reference internal" href="#glance">Glance</a></li>
+<li><a class="reference internal" href="#horizon">Horizon</a></li>
+<li><a class="reference internal" href="#ironic">Ironic</a></li>
+<li><a class="reference internal" href="#keystone">Keystone</a></li>
+<li><a class="reference internal" href="#kolla">Kolla</a></li>
+<li><a class="reference internal" href="#kuryr">Kuryr</a></li>
+<li><a class="reference internal" href="#magnum">Magnum</a></li>
+<li><a class="reference internal" href="#manila">Manila</a></li>
+<li><a class="reference internal" href="#neutron">Neutron</a></li>
+<li><a class="reference internal" href="#nova">Nova</a></li>
+<li><a class="reference internal" href="#octavia">Octavia</a></li>
+<li><a class="reference internal" href="#openstackansible">Openstackansible</a></li>
+<li><a class="reference internal" href="#puppet-openstack">Puppet Openstack</a></li>
+<li><a class="reference internal" href="#swift">Swift</a></li>
+<li><a class="reference internal" href="#vitrage">Vitrage</a></li>
+<li><a class="reference internal" href="#watcher">Watcher</a></li>
+<li><a class="reference internal" href="#zaqar">Zaqar</a></li>
+<li><a class="reference internal" href="#zun">Zun</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+<footer>
+  <div class="container">
+    <div class="row footer-links">
+      <div class="col-lg-2 col-sm-2">
+        <h3>OpenStack</h3>
+        <ul>
+          <li><a href="http://openstack.org/projects/">Projects</a></li>
+          <li><a href="http://openstack.org/projects/openstack-security/">OpenStack Security</a></li>
+          <li><a href="http://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+          <li><a href="http://openstack.org/blog/">Blog</a></li>
+          <li><a href="http://openstack.org/news/">News</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="http://openstack.org/community/">User Groups</a></li>
+          <li><a href="http://openstack.org/community/events/">Events</a></li>
+          <li><a href="http://openstack.org/community/jobs/">Jobs</a></li>
+          <li><a href="http://openstack.org/foundation/companies/">Companies</a></li>
+          <li><a href="https://docs.openstack.org/infra/manual/developers.html">Contribute</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="https://docs.openstack.org/">OpenStack Manuals</a></li>
+          <li><a href="http://openstack.org/software/start/">Getting Started</a></li>
+          <li><a href="http://developer.openstack.org/">API Documentation</a></li>
+          <li><a href="https://wiki.openstack.org/">Wiki</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-sm-2">
+        <h3>Branding & Legal</h3>
+        <ul>
+          <li><a href="http://openstack.org/brand/">Logos & Guidelines</a></li>
+          <li><a href="http://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+          <li><a href="http://openstack.org/privacy/">Privacy Policy</a></li>
+          <li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-sm-4">
+        <h3>Stay In Touch</h3>
+        <a href="https://twitter.com/OpenStack" target="_blank" class="social-icons footer-twitter"></a>
+        <a href="https://www.facebook.com/openstack" target="_blank" class="social-icons footer-facebook"></a>
+        <a href="https://www.linkedin.com/company/openstack" target="_blank" class="social-icons footer-linkedin"></a>
+        <a href="https://www.youtube.com/user/OpenStackFoundation" target="_blank" class="social-icons footer-youtube"></a>
+        <p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="http://rackspace.com/" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script type="text/javascript" src="../_static/js/jquery-1.11.3.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="../_static/js/bootstrap.min.js"></script>
+
+<!-- The rest of the JS -->
+<script type="text/javascript" src="../_static/js/navigation.js"></script>
+
+<!-- Docs JS -->
+<script type="text/javascript" src="../_static/js/docs.js"></script>
+
+<!-- Popovers -->
+<script type="text/javascript" src="../_static/js/webui-popover.js"></script>
+<!-- extra script files -->
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  </body>
+
+<!-- Mirrored from releases.openstack.org/ussuri/highlights.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 15:04:16 GMT -->
+</html>
